@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "aws s3 sync build s3://miko-portfolio-website/"
+    "deploy": "next build && aws s3 sync .next/static/ s3://miko-portfolio-website/.next/static/ && aws s3 sync public/ s3://miko-portfolio-website/public/"
   },
   "dependencies": {
     "react": "^18",
