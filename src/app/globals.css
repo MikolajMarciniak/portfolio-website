@@ -1,3 +1,12 @@
+/* Define the Nunito variable font */
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 900; /* Define the weight range of the variable font */
+  font-style: normal;
+}
+
+/* Tailwind CSS imports */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -24,6 +33,7 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  font-family: 'Nunito', sans-serif; /* Apply the Nunito font globally */
 }
 
 @layer utilities {
