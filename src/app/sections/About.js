@@ -1,16 +1,14 @@
 import React from 'react';
 
-const AboutSection = () => {
+const LandingSection = () => {
   return (
-    <section className="about-section py-16 bg-gray-100 text-gray-900">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold mb-4">About Me</h2>
-        <p className="text-lg">
-          I am a passionate developer with experience in various technologies. I love building applications and solving problems.
-        </p>
+    <section className="landing-section min-h-screen flex items-center justify-center bg-gray-900 text-white">
+      <div className="text-center shadow">
+        <h1 className="text-4xl font-bold">Welcome to My Portfolio</h1>
+        <p className="mt-4 text-lg">Showcasing my work and projects.</p>
       </div>
     </section>
   );
 };
 
-export default AboutSection;
+export default LandingSection;

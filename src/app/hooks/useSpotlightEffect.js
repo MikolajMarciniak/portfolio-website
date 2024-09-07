@@ -1,25 +1,27 @@
 import { useEffect, useState } from 'react';
 
 export const useSpotlightEffect = (ref) => {
-  const [isFocused, setIsFocused] = useState(false);
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [opacity, setOpacity] = useState(0);
 
   useEffect(() => {
+    if (typeof window === 'undefined') return; // Check if window is defined
+
     const handleMouseMove = (e) => {
-      if (!ref.current || isFocused) return;
-      const div = ref.current;
-      const rect = div.getBoundingClientRect();
-      setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
+      if (!ref.current) return;
+
+      const rect = ref.current.getBoundingClientRect();
+      setPosition({
+        x: e.clientX - rect.left,
+        y: e.clientY - rect.top,
+      });
     };
 
     const handleFocus = () => {
-      setIsFocused(true);
       setOpacity(1);
     };
 
     const handleBlur = () => {
-      setIsFocused(false);
       setOpacity(0);
     };
 
@@ -41,11 +43,35 @@ export const useSpotlightEffect = (ref) => {
       div.removeEventListener('mouseenter', handleMouseEnter);
       div.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [ref, isFocused]);
+  }, [ref]);
 
-  // Calculate shadow offset
-  const shadowOffsetX = (position.x - ref.current?.offsetWidth / 2) * 0.1;
-  const shadowOffsetY = (position.y - ref.current?.offsetHeight / 2) * 0.1;
+  // Use client-side window dimensions
+  useEffect(() => {
+    if (typeof window === 'undefined') return; // Check if window is defined
 
-  return { position, opacity, shadowOffsetX, shadowOffsetY };
+    const updateShadowOffsets = () => {
+      const viewportWidth = window.innerWidth;
+      const viewportHeight = window.innerHeight;
+
+      const shadowOffsetX = -(((position.x - window.scrollX) / viewportWidth) - 0.5) * viewportWidth * 0.02;
+      const shadowOffsetY = -(((position.y - window.scrollY) / viewportHeight) - 0.5) * viewportHeight * 0.02;
+      
+    
+
+      // Update CSS variables
+      if (ref.current) {
+        ref.current.style.setProperty('--shadow-offset-x', `${shadowOffsetX}px`);
+        ref.current.style.setProperty('--shadow-offset-y', `${shadowOffsetY}px`);
+      }
+    };
+
+    updateShadowOffsets();
+    window.addEventListener('resize', updateShadowOffsets);
+
+    return () => {
+      window.removeEventListener('resize', updateShadowOffsets);
+    };
+  }, [position]);
+
+  return { position, opacity,  };
 };

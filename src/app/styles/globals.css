@@ -42,3 +42,6 @@ body {
   }
 }
 
+.shadow {filter: drop-shadow(
+  var(--shadow-offset-x) var(--shadow-offset-y) 3px #4444dd);
+}
