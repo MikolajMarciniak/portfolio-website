@@ -2,15 +2,19 @@ import { useEffect, useState } from 'react';
 
 export const useSpotlightEffect = (ref) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [scrollPosition, setScrollPosition] = useState({ y: 0 });
   const [opacity, setOpacity] = useState(0);
   const [shrinkFactor, setShrinkFactor] = useState(1);
 
-  const updateShadowOffsets = (viewportWidth, viewportHeight, scrollY) => {
-    // Calculate shrinkFactor with a max of 1 and a min of 0.5
+  const updateShadowOffsets = () => {
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const scrollY = window.scrollY;
+
     const shrinkFactor = Math.max(0.5, 1 - (scrollY / viewportHeight));
 
     const shadowOffsetX = -(((position.x - window.scrollX) / viewportWidth) - 0.5) * viewportWidth * 0.02 * shrinkFactor;
-    const shadowOffsetY = -(((position.y - window.scrollY) / viewportHeight) - 0.5) * viewportHeight * 0.02 * shrinkFactor;
+    const shadowOffsetY = -(((position.y - window.scrollY) / viewportHeight) - 0.5) * viewportHeight * 0.05 * shrinkFactor;
 
     if (ref.current) {
       ref.current.style.setProperty('--shadow-offset-x', `${shadowOffsetX}px`);
@@ -20,36 +24,41 @@ export const useSpotlightEffect = (ref) => {
   };
 
   useEffect(() => {
-    if (typeof window === 'undefined') return; // Ensure this runs on client-side
+    if (typeof window === 'undefined') return;
+    if (!ref.current) return;
 
     const handleMouseMove = (e) => {
-      if (!ref.current) return;
-
       const rect = ref.current.getBoundingClientRect();
+      const posX = e.clientX - rect.left
+      const posY = e.clientY - rect.top
+      
       setPosition({
-        x: e.clientX - rect.left,
-        y: e.clientY - rect.top,
+        x: posX,
+        y: posY,
       });
 
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
-      const scrollY = window.scrollY;
+      setScrollPosition({
+        y: window.scrollY,
+      })
 
-      // Update shadow offsets on mouse move
-      updateShadowOffsets(viewportWidth, viewportHeight, scrollY);
+      console.log(posY)
+      updateShadowOffsets();
     };
 
     const handleScroll = () => {
-      const viewportWidth = window.innerWidth;
-      const viewportHeight = window.innerHeight;
       const scrollY = window.scrollY;
-
+      const scrollChange = scrollY-scrollPosition.y 
+      const posY = position.y + scrollChange 
+      
+      setScrollPosition({y: scrollY})
+      
       setPosition({
         x: position.x,
-        y: position.y - scrollY,
+        y: posY,
       });
-      // Update shadow offsets on scroll
-      updateShadowOffsets(viewportWidth, viewportHeight, scrollY);
+
+
+      updateShadowOffsets();
     };
 
     const handleMouseEnter = () => setOpacity(0.75);
@@ -57,17 +66,14 @@ export const useSpotlightEffect = (ref) => {
 
     const div = ref.current;
 
-    // Add event listeners
     div.addEventListener('mousemove', handleMouseMove);
     div.addEventListener('mouseenter', handleMouseEnter);
     div.addEventListener('mouseleave', handleMouseLeave);
     window.addEventListener('scroll', handleScroll);
 
-    // Initialize shadow offsets
-    updateShadowOffsets(window.innerWidth, window.innerHeight, window.scrollY);
+    updateShadowOffsets();
 
     return () => {
-      // Cleanup event listeners
       div.removeEventListener('mousemove', handleMouseMove);
       div.removeEventListener('mouseenter', handleMouseEnter);
       div.removeEventListener('mouseleave', handleMouseLeave);
