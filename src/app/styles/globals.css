@@ -42,6 +42,7 @@ body {
   }
 }
 
-.shadow {filter: drop-shadow(
-  var(--shadow-offset-x) var(--shadow-offset-y) 3px #4444dd);
+.shadow {
+  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px #4444dd);
+  box-shadow: none;
 }
