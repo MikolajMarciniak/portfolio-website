@@ -10,8 +10,6 @@ import ContactSection from './sections/Contact';
 export default function Home() {
   const ref = useRef(null);
   const { initialAnimationDone } = useSpotlightEffect(ref);
-
-  // Apply class based on whether the initial animation is done
   const spotlightClass = initialAnimationDone ? '' : 'animation';
 
   return (
