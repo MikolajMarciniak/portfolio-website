@@ -47,38 +47,36 @@ body {
   box-shadow: none;
 }
 
-/* Spotlight for the initial animation (centered) */
 .animation {
-  animation: expandCircle 2s ease-in forwards; /* Use 'forwards' to retain the final state of the animation */
+  animation: expandCircle 2s ease-in forwards;
 }
-
-/* After the initial animation, transition to spotlight following the cursor */
 .spotlight {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   background: radial-gradient(
-    circle at var(--spotlight-x) var(--spotlight-y), 
-    rgba(255, 255, 255, var(--spotlight-opacity)), 
+    circle at var(--spotlight-x) var(--spotlight-y),
+    rgba(255, 255, 255, var(--spotlight-opacity)) 0%,
     transparent var(--spotlight-radius)
   );
-  transition: opacity 2s ease-in;
+  pointer-events: none;
+  transition: opacity 1s ease-in;
   opacity: var(--spotlight-opacity);
-  pointer-events: none; 
   filter: blur(5px);
   mix-blend-mode: screen;
   z-index: 10;
 }
 
-/* Animation for expanding the spotlight during initial load */
 @keyframes expandCircle {
   0% {
-    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 10%);
+    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 11%);
     opacity: 0;
   }
-  100%{
-    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 10%);
-    opacity: 1; 
+  100% {
+    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 11%);
+    opacity: 0.6;
   }
 }
 
