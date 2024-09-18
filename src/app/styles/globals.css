@@ -1,12 +1,11 @@
-/* Define the Nunito variable font */
 @font-face {
   font-family: 'Nunito';
   src: url('/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
-  font-weight: 200 900; /* Define the weight range of the variable font */
+  font-weight: 200 900;
   font-style: normal;
 }
 
-/* Tailwind CSS imports */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -49,12 +48,21 @@ body {
 .shadow {
   filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color));
   box-shadow: none;
-  &.landing{
-    filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color-landing))
-  }
+  text-shadow:
+   -2px -1px 0 #000,  
+    2px -1px 0 #000,
+    -2px 1px 0 #000,
+     2px 1px 0 #000;
+
+}
+.shadow.landing{
+  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 2px var(--shadow-color-landing));
 }
 
-
+.link.landing:hover{
+  cursor:pointer;
+  color: var(--shadow-color-landing);
+}
 
 .animation {
   animation: expandCircle 2s ease-in forwards;
