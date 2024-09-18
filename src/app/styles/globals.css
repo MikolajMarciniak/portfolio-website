@@ -1,10 +1,10 @@
+
 @font-face {
   font-family: 'Nunito';
   src: url('/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
   font-weight: 200 900;
   font-style: normal;
 }
-
 
 @tailwind base;
 @tailwind components;
@@ -41,9 +41,18 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  
+  .highlight {
+    background: transparent;
+    color: yellow;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0); 
+  }
 }
 
-
+::selection {
+  background: transparent;
+  color: yellow;
+}
 
 .shadow {
   filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color));
@@ -53,10 +62,11 @@ body {
     2px -1px 0 #000,
     -2px 1px 0 #000,
      2px 1px 0 #000;
-
 }
+
 .shadow.landing{
   filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 2px var(--shadow-color-landing));
+  box-shadow: none;
 }
 
 .link.landing:hover{
@@ -96,4 +106,3 @@ body {
     opacity: 0.6;
   }
 }
-
