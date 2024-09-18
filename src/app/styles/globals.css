@@ -15,6 +15,8 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+  --text-color: #ffffff;
+  --shadow-color: #4444dd;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -42,10 +44,17 @@ body {
   }
 }
 
+
+
 .shadow {
-  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px #4444dd);
+  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color));
   box-shadow: none;
+  &.landing{
+    filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color-landing))
+  }
 }
+
+
 
 .animation {
   animation: expandCircle 2s ease-in forwards;
