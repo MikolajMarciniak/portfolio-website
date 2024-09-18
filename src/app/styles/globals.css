@@ -1,0 +1,108 @@
+
+@font-face {
+  font-family: 'Nunito';
+  src: url('/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 900;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --text-color: #ffffff;
+  --shadow-color: #4444dd;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+  font-family: 'Nunito', sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .highlight {
+    background: transparent;
+    color: yellow;
+    text-shadow: 0 0 0 rgba(0, 0, 0, 0); 
+  }
+}
+
+::selection {
+  background: transparent;
+  color: yellow;
+}
+
+.shadow {
+  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color));
+  box-shadow: none;
+  text-shadow:
+   -2px -1px 0 #000,  
+    2px -1px 0 #000,
+    -2px 1px 0 #000,
+     2px 1px 0 #000;
+}
+
+.shadow.landing{
+  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 2px var(--shadow-color-landing));
+  box-shadow: none;
+}
+
+.link.landing:hover{
+  cursor:pointer;
+  color: var(--shadow-color-landing);
+}
+
+.animation {
+  animation: expandCircle 2s ease-in forwards;
+}
+.spotlight {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at var(--spotlight-x) var(--spotlight-y),
+    rgba(255, 255, 255, var(--spotlight-opacity)) 0%,
+    transparent var(--spotlight-radius)
+  );
+  pointer-events: none;
+  transition: opacity 1s ease-in;
+  opacity: var(--spotlight-opacity);
+  filter: blur(5px);
+  mix-blend-mode: screen;
+  z-index: 10;
+}
+
+@keyframes expandCircle {
+  0% {
+    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 11%);
+    opacity: 0;
+  }
+  100% {
+    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 11%);
+    opacity: 0.6;
+  }
+}
