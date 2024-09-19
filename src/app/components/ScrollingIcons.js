@@ -1,73 +1,91 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/about.css";
 
 const LazyImage = ({ src, alt, className }) => {
-  const [inView, setInView] = useState(false);
-  const imgRef = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setInView(true);
-          observer.disconnect(); // Stop observing after the image has loaded
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    if (imgRef.current) {
-      observer.observe(imgRef.current);
-    }
-
-    return () => {
-      if (imgRef.current) {
-        observer.unobserve(imgRef.current);
-      }
-    };
-  }, []);
-
-  return (
-    <img ref={imgRef} src={inView ? src : ""} alt={alt} className={className} />
-  );
+  return <img src={src} alt={alt} className={className} />;
 };
 
-const IconLoop = ({ icons, first = undefined, last = undefined }) => (
+const IconLoop = ({
+  icons,
+  first = undefined,
+  last = undefined,
+  scrollDirection,
+}) => (
   <div
     data-first={first}
     data-last={last}
-    className="scroll flex h-60 w-full items-center justify-around gap-8 whitespace-nowrap px-4"
+    className={`scroll flex h-56 w-full items-center justify-around gap-8 whitespace-nowrap ${
+      scrollDirection === "reverse" ? "reverse" : ""
+    }`}
   >
-    {icons.map((icon) => (
+    {icons.map((icon, index) => (
       <a
         key={icon.name}
+        className="icon"
         href={icon.documentation}
         target="_blank"
         rel="noopener noreferrer"
-        className="tooltip"
         data-tip={icon.fullname}
       >
         <LazyImage
           src={`/icons/${icon.name}.svg`}
           alt={icon.fullname}
-          className="h-60 w-60"
+          className="h-56 w-56"
         />
       </a>
     ))}
   </div>
 );
 
-const ScrollingIcons = ({ icons }) => (
-  <div>
-    <div className="relative h-60 w-full overflow-hidden">
-      <div className="gradient-edges"></div>
-      <div className="scroll-container relative grid h-full w-full">
-        <IconLoop icons={icons.slice(0, 5)} first={true} />
-        <IconLoop icons={icons.slice(5, 10)} />
-        <IconLoop icons={icons.slice(10, 15)} last={true} />
+const ScrollingIcons = ({ icons }) => {
+  const [scrollDirection, setScrollDirection] = useState("forward");
+
+  useEffect(() => {
+    // Preload all images
+    icons.forEach((icon) => {
+      const img = new Image();
+      img.src = `/icons/${icon.name}.svg`;
+    });
+
+    let lastScrollTop = 0;
+
+    const handleScroll = () => {
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+      setScrollDirection(scrollTop > lastScrollTop ? "forward" : "reverse");
+      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [icons]);
+
+  return (
+    <div>
+      <div className="relative h-60 w-full">
+        <div className="gradient-edges"></div>
+        <div className="scroll-container relative grid h-full w-full items-center">
+          <IconLoop
+            icons={icons.slice(0, 5)}
+            first={true}
+            scrollDirection={scrollDirection}
+          />
+          <IconLoop
+            icons={icons.slice(5, 10)}
+            scrollDirection={scrollDirection}
+          />
+          <IconLoop
+            icons={icons.slice(10, 15)}
+            last={true}
+            scrollDirection={scrollDirection}
+          />
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default ScrollingIcons;
