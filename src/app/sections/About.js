@@ -1,14 +1,15 @@
-import React from 'react';
+// About.js
+import React from "react";
+import ScrollingIcons from "../components/ScrollingIcons";
+import "../styles/about.css";
+import { icons } from "../data/iconData";
 
-const LandingSection = () => {
+const About = () => {
   return (
-    <section id="about" className="landing-section min-h-screen flex items-center justify-center bg-gray-900 text-white">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold">About me</h1>
-        <p className="mt-4 text-lg"></p>
-      </div>
+    <section id="about">
+      <ScrollingIcons icons={icons} />
     </section>
   );
 };
 
-export default LandingSection;
+export default About;

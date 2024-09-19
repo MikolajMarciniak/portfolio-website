@@ -1,4 +1,3 @@
-
 @font-face {
   font-family: 'Nunito';
   src: url('/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
@@ -11,18 +10,19 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-  --text-color: #ffffff;
-  --shadow-color: #4444dd;
+  --foreground-rgb: 0, 0, 0; /* Black text */
+  --background-start-rgb: 214, 219, 220; /* Light background color */
+  --background-end-rgb: 255, 255, 255; /* White background color */
+  --text-color: #ffffff; /* White text color */
+  --shadow-color: #4444dd; /* Blue shadow color */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground-rgb: 255, 255, 255; /* White text in dark mode */
+    --background-start-rgb: 0, 0, 0; /* Black background in dark mode */
+    --background-end-rgb: 0, 0, 0; /* Black background in dark mode */
+    --section-background: #0056b3; /* Darker blue for dark mode */
   }
 }
 
