@@ -55,10 +55,10 @@
     pointer-events: none;
     background: linear-gradient(
       90deg,
-      rgb(255, 0, 0) 0%,
+      rgb(0, 0, 0) 0%,
       transparent 10%,
       transparent 90%,
-      rgb(255, 0, 0) 100%
+      rgb(0, 0, 0) 100%
     );
     z-index: 2; 
   }

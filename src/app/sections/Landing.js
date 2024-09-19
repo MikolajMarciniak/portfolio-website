@@ -26,7 +26,7 @@ const LandingSection = () => {
     >
       <div className="text-center">
         <h1 className="text-7xl inline-block leading-none text-left">
-          Hello, I'm{" "}
+          Hello, I'm&nbsp;
           <Link
             to="about"
             smooth={true}
@@ -38,7 +38,7 @@ const LandingSection = () => {
           </Link>
           ,
           <br />
-          your next{" "}
+          your next&nbsp;
           <TypedText
             strings={coloredStrings}
             colorClass={colorClass}
