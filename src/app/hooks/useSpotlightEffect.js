@@ -6,7 +6,7 @@ export const useSpotlightEffect = (ref) => {
   const scrollPosition = useRef({ y: 0 });
   const spotlightSize = useRef({
     opacity: 0.6,
-    radius: 11,
+    radius: 14,
     expanding: true,
     scrollFactor: 1,
   });
@@ -41,23 +41,26 @@ export const useSpotlightEffect = (ref) => {
     }
   };
 
-  const expandSpotlight = (min = 9, max = 13, speed = 0.02, cancel = false) => {
+  const expandSpotlight = (min = 13, max = 15, speed = 0.01) => {
     if (spotlightSize.current.expanding) {
       spotlightSize.current.radius += speed;
       if (spotlightSize.current.radius >= max) {
         spotlightSize.current.expanding = false;
+        if (speed >= 0.1) {
+          return;
+        }
       }
     } else {
       spotlightSize.current.radius -= speed;
       if (spotlightSize.current.radius <= min) {
         spotlightSize.current.expanding = true;
-        if (cancel) {
+        if (speed > 0.1) {
           return;
         }
       }
     }
     updateSpotlightSizeRefs();
-    requestAnimationFrame(() => expandSpotlight(min, max, speed, cancel));
+    requestAnimationFrame(() => expandSpotlight(min, max, speed));
   };
 
   const updateShadows = () => {
@@ -170,7 +173,9 @@ export const useSpotlightEffect = (ref) => {
     };
 
     const handleClick = () => {
-      requestAnimationFrame(() => expandSpotlight(undefined, 15, 0.2, true));
+      if (slowPhase.current) return;
+      spotlightSize.current.expanding = true;
+      requestAnimationFrame(() => expandSpotlight(13, 16, 0.1, true));
     };
 
     const div = ref.current;
