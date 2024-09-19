@@ -15,6 +15,11 @@ const icons = [
     documentation: "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
   },
   {
+    name: "typescript",
+    fullname: "TypeScript",
+    documentation: "https://www.typescriptlang.org/docs",
+  },
+  {
     name: "react",
     fullname: "React",
     documentation: "https://reactjs.org/docs/getting-started.html",
@@ -30,27 +35,6 @@ const icons = [
     documentation: "https://tailwindcss.com/docs",
   },
   {
-    name: "typescript",
-    fullname: "TypeScript",
-    documentation: "https://www.typescriptlang.org/docs",
-  },
-
-  {
-    name: "java",
-    fullname: "Java",
-    documentation: "https://docs.oracle.com/en/java/",
-  },
-  {
-    name: "spring",
-    fullname: "Spring",
-    documentation: "https://spring.io/projects/spring-framework",
-  },
-  {
-    name: "express",
-    fullname: "Express.js",
-    documentation: "https://expressjs.com/en/starter/installing.html",
-  },
-  {
     name: "php",
     fullname: "PHP",
     documentation: "https://www.php.net/docs.php",
@@ -61,30 +45,14 @@ const icons = [
     documentation: "https://docs.python.org/3/",
   },
   {
-    name: "mongo",
-    fullname: "MongoDB",
-    documentation: "https://www.mongodb.com/docs/",
-  },
-  {
     name: "postgresql",
     fullname: "PostgreSQL",
     documentation: "https://www.postgresql.org/docs/",
   },
   {
-    name: "socketio",
-    fullname: "Socket.IO",
-    documentation: "https://socket.io/docs/",
-  },
-
-  {
     name: "aws",
     fullname: "AWS (Amazon Web Services)",
     documentation: "https://docs.aws.amazon.com/",
-  },
-  {
-    name: "azure",
-    fullname: "Azure",
-    documentation: "https://learn.microsoft.com/en-us/azure/",
   },
   {
     name: "docker",
@@ -92,19 +60,9 @@ const icons = [
     documentation: "https://docs.docker.com/",
   },
   {
-    name: "kubernetes",
-    fullname: "Kubernetes",
-    documentation: "https://kubernetes.io/docs/home/",
-  },
-  {
     name: "github",
     fullname: "GitHub",
     documentation: "https://docs.github.com/en",
-  },
-  {
-    name: "jenkins",
-    fullname: "Jenkins",
-    documentation: "https://www.jenkins.io/doc/",
   },
   {
     name: "jest",

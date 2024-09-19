@@ -2,7 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-
 @layer components {
   @keyframes first-loop {
     0% {
@@ -12,6 +11,7 @@
       transform: translateX(-200%);
     }
   }
+
   @keyframes loop {
     0% {
       transform: translateX(100%);
@@ -28,13 +28,17 @@
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;
     grid-template-areas: 'scroll-area';
+    position: relative;
+    z-index: 1; /* Ensure this is behind the gradient-edges */
   }
 
   .scroll {
     grid-area: scroll-area;
     animation: loop var(--time) linear infinite;
     transform: translateX(100%);
-
+    position: relative;
+    z-index: 1; /* Ensure this is behind the gradient-edges */
+    
     &[data-first] {
       animation: first-loop var(--time) linear forwards;
       transform: translateX(0);
@@ -45,13 +49,17 @@
     }
   }
 
-  .fade {
+  .gradient-edges {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
     background: linear-gradient(
       90deg,
-      #fff,
-      transparent 30%,
-      transparent 70%,
-      #fff
+      rgb(255, 0, 0) 0%,
+      transparent 10%,
+      transparent 90%,
+      rgb(255, 0, 0) 100%
     );
+    z-index: 2; 
   }
 }

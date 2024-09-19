@@ -10,32 +10,17 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0; /* Black text */
-  --background-start-rgb: 214, 219, 220; /* Light background color */
-  --background-end-rgb: 255, 255, 255; /* White background color */
-  --text-color: #ffffff; /* White text color */
-  --shadow-color: #4444dd; /* Blue shadow color */
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255; /* White text in dark mode */
-    --background-start-rgb: 0, 0, 0; /* Black background in dark mode */
-    --background-end-rgb: 0, 0, 0; /* Black background in dark mode */
-    --section-background: #0056b3; /* Darker blue for dark mode */
-  }
+  --text-color: #ffffff;
+  --shadow-color: #4444dd;
+  --background-color: #000000;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: var(--text-color);
+  background: var(--background-color);
   font-family: 'Nunito', sans-serif;
 }
+
 
 @layer utilities {
   .text-balance {
@@ -86,7 +71,7 @@ body {
   background: radial-gradient(
     circle at var(--spotlight-x) var(--spotlight-y),
     rgba(255, 255, 255, var(--spotlight-opacity)) 0%,
-    transparent var(--spotlight-radius)
+    transparent var(--spotlight-radius, 14%)
   );
   pointer-events: none;
   transition: opacity 1s ease-in;
@@ -98,11 +83,11 @@ body {
 
 @keyframes expandCircle {
   0% {
-    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 11%);
+    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 14%);
     opacity: 0;
   }
   100% {
-    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 11%);
+    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 14%);
     opacity: 0.6;
   }
 }

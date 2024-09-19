@@ -22,7 +22,7 @@ const LandingSection = () => {
   return (
     <section
       id="landing"
-      className="landing-section min-h-screen flex flex-col items-center justify-center bg-gray-900 text-white p-6"
+      className="landing-section min-h-screen flex flex-col items-center justify-center p-6"
     >
       <div className="text-center">
         <h1 className="text-7xl inline-block leading-none text-left">

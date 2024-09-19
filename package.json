@@ -11,6 +11,7 @@
     "deploy": "next build && node deploy.js"
   },
   "dependencies": {
+    "lodash": "^4.17.21",
     "next": "^14.2.12",
     "react": "^18",
     "react-dom": "^18",
