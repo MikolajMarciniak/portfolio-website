@@ -50,14 +50,19 @@ export default function Home() {
       className="min-h-screen flex flex-col relative overflow-hidden"
       data-theme={isDarkMode ? "dark" : "light"}
     >
-      <button onClick={toggleTheme} className="fixed top-4 right-4 p-2 rounded">
-        {isDarkMode ? "Light Mode" : "Dark Mode"}
-      </button>
+      <div className="mx-auto w-full max-w-5xl">
+        <button
+          onClick={toggleTheme}
+          className="fixed top-4 right-4 p-2 rounded"
+        >
+          {isDarkMode ? "Light Mode" : "Dark Mode"}
+        </button>
 
-      <LandingSection />
-      <AboutSection />
-      <ProjectsSection />
-      <ContactSection />
+        <LandingSection />
+        <AboutSection />
+        <ProjectsSection />
+        <ContactSection />
+      </div>
       <div className={`spotlight ${spotlightClass}`} />
     </main>
   );

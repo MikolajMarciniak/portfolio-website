@@ -29,14 +29,13 @@ const About = () => {
             continuously strive to learn and grow. Below are some of the tools
             and technologies I've worked with.
           </p>
+          {/* <ScrollingIcons icons={icons} /> */}
         </div>
       </div>
 
       <div className="text-center mb-12">
         <h2 className="text-3xl font-semibold mb-4">Skills</h2>
       </div>
-
-      <ScrollingIcons icons={icons} />
     </section>
   );
 };

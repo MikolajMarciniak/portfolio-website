@@ -1,14 +1,52 @@
-import React from 'react';
+import React from "react";
+import ProjectCard from "../components/ProjectCard";
 
-const LandingSection = () => {
+const projects = [
+  {
+    id: 1,
+    title: "Project 1",
+    description: "Description of Project 1",
+    link: "https://example.com",
+    image: "https://via.placeholder.com/300",
+  },
+  {
+    id: 2,
+    title: "Project 2",
+    description: "Description of Project 2",
+    link: "https://example.com",
+    image: "https://via.placeholder.com/300",
+  },
+  {
+    id: 3,
+    title: "Project 3",
+    description: "Description of Project 3",
+    link: "https://example.com",
+    image: "https://via.placeholder.com/300",
+  },
+];
+
+const ProjectsSection = () => {
   return (
-    <section id="projects" className="landing-section min-h-screen flex items-center justify-center bg-gray-900 text-white">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold">Projects</h1>
-        <p className="mt-4 text-lg"></p>
+    <section
+      id="projects"
+      className="min-h-screen flex flex-col items-center justify-center"
+    >
+      <div className="text-center mb-12">
+        <h2 className="text-5xl font-bold mb-6">My Projects</h2>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
+        {projects.map((project) => (
+          <ProjectCard
+            key={project.id}
+            title={project.title}
+            description={project.description}
+            link={project.link}
+            image={project.image}
+          />
+        ))}
       </div>
     </section>
   );
 };
 
-export default LandingSection;
+export default ProjectsSection;
