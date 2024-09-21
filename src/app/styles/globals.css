@@ -93,21 +93,37 @@ body {
 }
 
 
-
-.dark-mode-toggle-icon{
-  transition:all 0.3s ease;
+.dark-mode-button {
+  transition: all 0.3s ease;
   border-radius: 50%;
-  &&:hover{
-    color: rgb(255, 255, 0);
+  border: 2px solid transparent;
+  
+  &.toggle:hover {
+    color: rgb(255, 255, 0)!important; 
   }
-  &.moon{
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+
+  &.scroll-top:hover {
+    color: rgb(0, 0, 255);
   }
-  &.sun{
-    color: rgb(255, 255, 255);
-    background-color: rgb(0, 0, 0);}  
-} 
+
+  &.dark {
+    &.scroll{color: rgb(255, 255, 255);}
+    &.toggle{
+      color: rgb(0, 0, 0);
+      background-color: rgb(255, 255, 255);
+  }
+}
+
+  &.light {
+    &.scroll{color: rgb(0, 0, 0);}
+    &.toggle{
+      color: rgb(255, 255, 255);
+      background-color: rgb(0, 0, 0);
+  }
+}
+}
 
 
-
+.lazy-load {
+  border: 2px dashed red; /* or any visible color */
+}

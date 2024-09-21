@@ -2,6 +2,8 @@
 
 import { useEffect, useRef, useState } from "react";
 import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
+
+import ScrollToTopButton from "./components/ScrollToTopButton";
 import Navbar from "./components/Navbar";
 import LandingSection from "./sections/Landing";
 import AboutSection from "./sections/About";
@@ -13,15 +15,8 @@ export default function Home() {
   const { initialAnimationDone } = useSpotlightEffect(ref);
   const spotlightClass = initialAnimationDone ? "" : "animation";
 
-  const [isDarkMode, setIsDarkMode] = useState(() => {
-    if (typeof window !== "undefined") {
-      const savedTheme = localStorage.getItem("theme");
-      return savedTheme
-        ? savedTheme === "dark"
-        : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    }
-    return true;
-  });
+  // Default to dark mode
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   const updateThemeRefs = () => {
     document.documentElement.style.setProperty(
@@ -39,9 +34,7 @@ export default function Home() {
   }, [isDarkMode]);
 
   const toggleTheme = () => {
-    const newTheme = !isDarkMode ? "dark" : "light";
-    setIsDarkMode(!isDarkMode);
-    localStorage.setItem("theme", newTheme);
+    setIsDarkMode((prev) => !prev);
     updateThemeRefs();
   };
 
@@ -60,6 +53,7 @@ export default function Home() {
           <ContactSection />
         </div>
         <div className={`spotlight ${spotlightClass}`} />
+        <ScrollToTopButton isDarkMode={isDarkMode} />
       </main>
     </div>
   );

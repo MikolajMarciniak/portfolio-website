@@ -17,7 +17,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-40 bg-[var(--background-color)] transition-all duration-300 ease-in-out ${
+      className={`fixed top-0 left-0 w-full z-40 bg-[var(--background-color)] ${
         isScrolled ? "py-2 shadow-lg" : "py-4"
       }`}
     >
@@ -32,7 +32,6 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
         </ScrollLink>
 
         <div className="flex items-center space-x-4 text-gray-700">
-          {/* Navbar Links */}
           <ScrollLink
             to="about"
             smooth={true}
@@ -64,8 +63,8 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           {/* Dark Mode Toggle */}
           <button
             onClick={toggleTheme}
-            className={` transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all dark-mode-toggle-icon ${
-              isDarkMode ? "moon" : "sun"
+            className={` transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all dark-mode-button toggle ${
+              isDarkMode ? "dark" : "light"
             }`}
           >
             {isDarkMode ? (
@@ -73,7 +72,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
                 className="w-6 h-6"
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="-1 0 19 16"
                 height="200px"
                 width="200px"
