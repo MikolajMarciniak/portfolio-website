@@ -16,7 +16,7 @@ export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window !== "undefined") {
       const savedTheme = localStorage.getItem("theme");
-      return !savedTheme
+      return savedTheme
         ? savedTheme === "dark"
         : window.matchMedia("(prefers-color-scheme: dark)").matches;
     }
@@ -26,17 +26,17 @@ export default function Home() {
   const updateThemeRefs = () => {
     document.documentElement.style.setProperty(
       "--background-color",
-      !isDarkMode ? "#000000" : "#ffffff"
+      isDarkMode ? "#000000" : "#ffffff"
     );
     document.documentElement.style.setProperty(
       "--text-color",
-      !isDarkMode ? "#ffffff" : "#000000"
-    );
-    document.documentElement.style.setProperty(
-      "--accent-color",
-      isDarkMode ? "#000000" : "#ffffff"
+      isDarkMode ? "#ffffff" : "#000000"
     );
   };
+
+  useEffect(() => {
+    updateThemeRefs();
+  }, [isDarkMode]);
 
   const toggleTheme = () => {
     const newTheme = !isDarkMode ? "dark" : "light";
@@ -52,15 +52,8 @@ export default function Home() {
         className="min-h-screen flex flex-col relative overflow-hidden"
         data-theme={isDarkMode ? "dark" : "light"}
       >
-        <Navbar />
+        <Navbar toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
         <div className="mx-auto w-full max-w-6xl">
-          <button
-            onClick={toggleTheme}
-            className="fixed top-4 right-4 p-2 rounded"
-          >
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
-          </button>
-
           <LandingSection />
           <AboutSection />
           <ProjectsSection />
