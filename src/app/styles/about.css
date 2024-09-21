@@ -1,0 +1,77 @@
+@keyframes first-loop {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+.scroll-container {
+  --time: 60s; /* Default animation time */
+  --half-time: 30s; /* Default half-time for last loop */
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'scroll-area';
+  /* animation-direction: var(--animation-direction, reverse); */
+
+  animation-direction: normal;
+  position: relative;
+  z-index: 1;
+}
+
+/* Hover effect */
+.scroll-container:hover .scroll {
+  animation-play-state: paused; /* Pause animation on hover */
+}
+
+.scroll {
+  grid-area: scroll-area;
+  animation: loop var(--time) linear infinite;
+  transform: translateX(100%);
+  position: relative;
+  z-index: 1;
+
+  &[data-first] {
+    animation: first-loop var(--time) linear forwards;
+    transform: translateX(0);
+  }
+
+  &[data-last] {
+    animation-delay: var(--half-time);
+  }
+}
+
+.gradient-edges {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    90deg,
+    var(--background-color, #000000) 0%,
+    transparent 10%,
+    transparent 90%,
+    var(--background-color, #000000) 100%
+  );
+  z-index: 2; 
+}
+
+/* Grow animation for icons */
+a {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+a.icon:hover {
+  transform: scale(1.1); /* Adjust scale as needed */
+}
