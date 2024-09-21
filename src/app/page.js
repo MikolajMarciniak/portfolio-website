@@ -50,7 +50,7 @@ export default function Home() {
       className="min-h-screen flex flex-col relative overflow-hidden"
       data-theme={isDarkMode ? "dark" : "light"}
     >
-      <div className="mx-auto w-full max-w-5xl">
+      <div className="mx-auto w-full max-w-6xl">
         <button
           onClick={toggleTheme}
           className="fixed top-4 right-4 p-2 rounded"
