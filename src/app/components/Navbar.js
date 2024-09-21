@@ -17,11 +17,11 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-40 bg-[var(--background-color)] ${
-        isScrolled ? "py-2 shadow-lg" : "py-4"
+      className={`fixed top-0 left-0 w-full z-40 bg-[var(--background-color)] transition-all duration-300 ease-in-out ${
+        isScrolled ? "shadow-lg py-2" : "py-4"
       }`}
     >
-      <div className="container mx-auto max-w-6xl flex justify-between items-center py-4">
+      <div className="container mx-auto max-w-6xl flex justify-between items-center py-2">
         <ScrollLink
           to="landing"
           smooth={true}

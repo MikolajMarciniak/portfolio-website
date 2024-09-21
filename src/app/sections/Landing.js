@@ -4,7 +4,7 @@ import { Link } from "react-scroll";
 
 const coloredStrings = [
   { text: "developer.", color: "text-red-500", shadowColor: "#f87171" },
-  { text: "teacher.", color: "text-blue-500", shadowColor: "#93c5fd" },
+  { text: ".", color: "text-blue-500", shadowColor: "#93c5fd" },
   { text: "designer.", color: "text-purple-500", shadowColor: "#d8b4fe" },
   { text: "freelancer.", color: "text-yellow-500", shadowColor: "#facc15" },
 ];
