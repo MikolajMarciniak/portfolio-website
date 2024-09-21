@@ -1,12 +1,8 @@
 import { useEffect, useState, useRef } from "react";
-import _ from "lodash";
-
-export const useDebounce = (callback, delay) => {
-  return _.debounce(callback, delay);
-};
 
 export const useSpotlightEffect = (ref) => {
   const [initialAnimationDone, setInitialAnimationDone] = useState(false);
+  const dimensions = useRef({ width: 0, height: 0 });
   const slowPhase = useRef(true);
   const scrollPosition = useRef({ y: 0 });
   const spotlightSize = useRef({
@@ -14,42 +10,63 @@ export const useSpotlightEffect = (ref) => {
     radius: 14,
     min: 13,
     max: 15,
-    speed: 0.03,
+    speed: 0.05,
     expanding: true,
     isClicked: false,
     scrollFactor: 1,
   });
   const targetPosition = useRef({ x: 0, y: 0 });
   const spotlightPosition = useRef({ x: 0, y: 0 });
-  const lastFrameTime = useRef(0);
+  const lastExpandFrameTime = useRef(0);
+  const lastMoveFrameTime = useRef(0);
   const animationFrameId = useRef(null);
   const isAnimating = useRef(false);
 
-  const updateSpotlightPositionRefs = (spotlightX, spotlightY) => {
-    if (ref.current) {
-      ref.current.style.setProperty("--spotlight-x", `${spotlightX}px`);
-      ref.current.style.setProperty("--spotlight-y", `${spotlightY}px`);
-    }
+  const handleResize = () => {
+    if (!ref.current) return;
+    dimensions.current = {
+      width: window.innerWidth,
+      height: window.innerHeight,
+    };
   };
 
-  const updateSpotlightSizeRefs = () => {
-    if (ref.current) {
-      ref.current.style.setProperty(
-        "--spotlight-radius",
-        `${spotlightSize.current.radius * spotlightSize.current.scrollFactor}%`
-      );
-      ref.current.style.setProperty(
-        "--spotlight-opacity",
-        `${spotlightSize.current.opacity}`
-      );
-    }
-  };
+  const updateAllStyles = () => {
+    if (!ref.current) return;
 
-  const updateShadowRefs = (shadowX, shadowY) => {
-    if (ref.current) {
-      ref.current.style.setProperty("--shadow-offset-x", `${shadowX}px`);
-      ref.current.style.setProperty("--shadow-offset-y", `${shadowY}px`);
-    }
+    ref.current.style.setProperty(
+      "--spotlight-x",
+      `${spotlightPosition.current.x}px`
+    );
+    ref.current.style.setProperty(
+      "--spotlight-y",
+      `${spotlightPosition.current.y}px`
+    );
+    ref.current.style.setProperty(
+      "--spotlight-radius",
+      `${spotlightSize.current.radius * spotlightSize.current.scrollFactor}%`
+    );
+    ref.current.style.setProperty(
+      "--spotlight-opacity",
+      spotlightSize.current.opacity
+    );
+
+    const shadowX =
+      -(spotlightPosition.current.x / dimensions.current.width - 0.5) *
+      dimensions.current.width *
+      0.02 *
+      (spotlightSize.current.radius / 10);
+    const shadowY =
+      -(
+        (spotlightPosition.current.y - window.scrollY) /
+          dimensions.current.height -
+        0.5
+      ) *
+      dimensions.current.height *
+      0.02 *
+      (spotlightSize.current.radius / 10);
+
+    ref.current.style.setProperty("--shadow-offset-x", `${shadowX}px`);
+    ref.current.style.setProperty("--shadow-offset-y", `${shadowY}px`);
   };
 
   const expandSpotlight = (isImmediate) => {
@@ -58,7 +75,15 @@ export const useSpotlightEffect = (ref) => {
 
     const speed = isImmediate ? 0.3 : spotlightSize.current.speed;
     isImmediate ? (spotlightSize.current.max = 17) : 15;
+
     const animate = () => {
+      const now = performance.now();
+
+      if (now - lastExpandFrameTime.current < 1000 / 30) {
+        animationFrameId.current = requestAnimationFrame(animate);
+        return;
+      }
+
       if (spotlightSize.current.expanding) {
         spotlightSize.current.radius += speed;
         if (spotlightSize.current.radius >= spotlightSize.current.max) {
@@ -75,48 +100,27 @@ export const useSpotlightEffect = (ref) => {
           }
         }
       }
-      updateSpotlightSizeRefs();
 
+      updateAllStyles();
+
+      lastExpandFrameTime.current = now;
       animationFrameId.current = requestAnimationFrame(animate);
     };
+
     animate();
   };
 
-  const debouncedExpandSpotlight = useDebounce((isImmediate) => {
-    expandSpotlight(isImmediate);
-  }, 50);
+  const calculateSpeed = (diffX, diffY) => {
+    const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
 
-  const updateShadows = () => {
-    const viewportWidth = window.innerWidth;
-    const viewportHeight = window.innerHeight;
-
-    const shadowX =
-      -((spotlightPosition.current.x - window.scrollX) / viewportWidth - 0.5) *
-      viewportWidth *
-      0.03 *
-      (spotlightSize.current.radius / 10);
-    const shadowY =
-      -((spotlightPosition.current.y - window.scrollY) / viewportHeight - 0.5) *
-      viewportHeight *
-      0.03 *
-      (spotlightSize.current.radius / 10);
-
-    updateShadowRefs(shadowX, shadowY);
-  };
-
-  const calculateSpeed = () => {
-    const distanceX = Math.abs(
-      targetPosition.current.x - spotlightPosition.current.x
-    );
-    const distanceY = Math.abs(
-      targetPosition.current.y - spotlightPosition.current.y
-    );
-    const distance = Math.sqrt(distanceX ** 2 + distanceY ** 2);
-    if (slowPhase.current && distanceX < 100 && distanceY < 100) {
+    if (slowPhase.current && distance < 200) {
       slowPhase.current = false;
     }
-    const baseSpeed = slowPhase.current ? 0.005 : 0.05;
-    let dynamicSpeed = baseSpeed * Math.max(0.5, distance / 100);
+
+    const baseSpeed = slowPhase.current ? 0.4 : 0.9;
+    const proximityFactor = Math.max(0.5, 200 / Math.max(distance, 1));
+
+    const dynamicSpeed = baseSpeed * 0.5 * proximityFactor;
 
     return Math.min(dynamicSpeed, 0.5);
   };
@@ -125,17 +129,20 @@ export const useSpotlightEffect = (ref) => {
     if (!initialAnimationDone) return;
 
     const now = performance.now();
-    if (now - lastFrameTime.current < 1000 / 60) {
+    if (now - lastMoveFrameTime.current < 1000 / 30) {
       requestAnimationFrame(smoothMoveSpotlight);
       return;
     }
 
-    const speed = calculateSpeed();
+    const diffX = targetPosition.current.x - spotlightPosition.current.x;
+    const diffY = targetPosition.current.y - spotlightPosition.current.y;
 
-    spotlightPosition.current.x +=
-      (targetPosition.current.x - spotlightPosition.current.x) * speed;
-    spotlightPosition.current.y +=
-      (targetPosition.current.y - spotlightPosition.current.y) * speed;
+    if (Math.abs(diffX) < 20 && Math.abs(diffY) < 20) return;
+
+    const speed = calculateSpeed(diffX, diffY);
+
+    spotlightPosition.current.x += diffX * speed;
+    spotlightPosition.current.y += diffY * speed;
 
     spotlightPosition.current.x = Math.max(
       0,
@@ -146,20 +153,13 @@ export const useSpotlightEffect = (ref) => {
       Math.min(spotlightPosition.current.y, ref.current.clientHeight)
     );
 
-    updateSpotlightPositionRefs(
-      spotlightPosition.current.x,
-      spotlightPosition.current.y
-    );
+    updateAllStyles();
 
-    updateShadows();
-
-    if (
-      Math.abs(targetPosition.current.x - spotlightPosition.current.x) > 10 ||
-      Math.abs(targetPosition.current.y - spotlightPosition.current.y) > 10
-    ) {
+    if (Math.abs(diffX) > 20 || Math.abs(diffY) > 20) {
       requestAnimationFrame(smoothMoveSpotlight);
     }
-    lastFrameTime.current = now;
+
+    lastMoveFrameTime.current = now;
   };
 
   useEffect(() => {
@@ -186,7 +186,7 @@ export const useSpotlightEffect = (ref) => {
       const newSpotlightY = targetPosition.current.y + scrollChange;
       spotlightSize.current.scrollFactor = Math.max(
         0.5,
-        1 - currentScroll / window.innerHeight
+        1 - currentScroll / dimensions.current.height
       );
       scrollPosition.current.y = currentScroll;
 
@@ -207,7 +207,7 @@ export const useSpotlightEffect = (ref) => {
         expandSpotlight(true);
         spotlightSize.current.isClicked = false;
         isAnimating.current = false;
-        debouncedExpandSpotlight(false);
+        expandSpotlight(false);
       }
     };
 
@@ -215,11 +215,13 @@ export const useSpotlightEffect = (ref) => {
     div.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("click", handleClick);
+    window.addEventListener("resize", handleResize);
 
     return () => {
       div.removeEventListener("mousemove", handleMouseMove);
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("click", handleClick);
+      window.removeEventListener("resize", handleResize);
     };
   }, [ref, initialAnimationDone]);
 
@@ -227,35 +229,31 @@ export const useSpotlightEffect = (ref) => {
     if (!ref?.current) return;
     if (initialAnimationDone) return;
 
+    handleResize();
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
     targetPosition.current = {
-      x: window.innerWidth / 2,
-      y: window.innerHeight / 2,
+      x: width / 2,
+      y: height / 2,
     };
     spotlightPosition.current = {
-      x: window.innerWidth / 2,
-      y: window.innerHeight / 2,
+      x: width / 2,
+      y: height / 2,
     };
 
-    updateSpotlightPositionRefs(
-      spotlightPosition.current.x,
-      spotlightPosition.current.y
-    );
-    updateSpotlightSizeRefs(
-      spotlightSize.current.radius,
-      spotlightSize.current.opacity
-    );
+    updateAllStyles();
 
     const animationTimer = setTimeout(() => {
       setInitialAnimationDone(true);
       requestAnimationFrame(smoothMoveSpotlight);
-      debouncedExpandSpotlight(false);
+      expandSpotlight(false);
     }, 1000);
 
     return () => {
       clearTimeout(animationTimer);
-      // cancelAnimationFrame(animationFrameId.current);
     };
-  }, [ref, initialAnimationDone]);
+  }, [initialAnimationDone]);
 
   return { initialAnimationDone };
 };

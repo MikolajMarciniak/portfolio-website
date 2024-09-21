@@ -19,6 +19,7 @@ body {
   color: var(--text-color);
   background: var(--background-color);
   font-family: 'Nunito', sans-serif;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Corrected syntax */
 }
 
 
