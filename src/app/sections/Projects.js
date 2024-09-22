@@ -1,4 +1,4 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import ProjectCard from "../components/ProjectCard";
 
 const projects = [
@@ -25,9 +25,10 @@ const projects = [
   },
 ];
 
-const ProjectsSection = () => {
+const ProjectsSection = forwardRef((props, ref) => {
   return (
     <section
+      ref={ref}
       id="projects"
       className="min-h-screen flex flex-col items-center justify-center"
     >
@@ -47,6 +48,6 @@ const ProjectsSection = () => {
       </div>
     </section>
   );
-};
+});
 
 export default ProjectsSection;

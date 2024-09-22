@@ -1,12 +1,16 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import ScrollingIcons from "../components/ScrollingIcons";
 import "../styles/about.css";
 import { icons } from "../data/iconData";
 const mikoImage = "/images/miko.jpg";
 
-const About = () => {
+const About = forwardRef((props, ref) => {
   return (
-    <section id="about" className="about-section min-h-screen flex flex-col">
+    <section
+      ref={ref}
+      id="about"
+      className="about-section min-h-screen flex flex-col"
+    >
       <div className="text-center mb-12">
         <h2 className="text-5xl font-bold mb-4">
           About <span className="text-blue-500">Me</span>
@@ -19,7 +23,6 @@ const About = () => {
             src={mikoImage}
             alt="Miko"
             className="w-full h-auto max-h-96 object-cover rounded-lg shadow-lg"
-            // Adjust max-h-96 to the height you want to cap
           />
         </div>
         <div className="flex-grow flex items-center max-w-md">
@@ -38,6 +41,6 @@ const About = () => {
       </div>
     </section>
   );
-};
+});
 
 export default About;

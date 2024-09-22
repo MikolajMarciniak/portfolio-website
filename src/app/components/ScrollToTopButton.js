@@ -3,26 +3,32 @@ import { Link } from "react-scroll";
 const ScrollToTopButton = ({ isDarkMode, isScrolled }) => {
   return (
     <div
-      className={`fixed bottom-4 right-6 transition-all duration-500 ease-in-out ${
+      className={`fixed bottom-6 right-8 transition-all duration-500 ease-in-out ${
         !isScrolled && "opacity-0"
       }`}
     >
-      <Link
-        to="landing"
-        smooth={true}
-        duration={500}
-        className={`transition-transform transform hover:scale-150 cursor-pointer flex items-center justify-center w-20 h-20 dark-mode-button scroll-top rounded-full bg-[var(--background-color)] ${
-          isDarkMode ? "dark" : "light"
-        }`}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10"
-          fill="currentColor"
-          viewBox="0 0 24 24"
+      <Link to="landing" smooth={true} duration={500}>
+        <button
+          className={`scroll-button scroll-up dark-mode-button px-3 py-3 text-lg font-bold rounded-full transition-all ease-in-out duration-300 hover:shadow-lg ${
+            isDarkMode ? "dark" : "light"
+          }`}
         >
-          <path d="M12 4l8 8H4l8-8z" fill="currentColor" />
-        </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="w-8 h-8"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            strokeWidth={2}
+            style={{ transform: "rotate(180deg)" }}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
       </Link>
     </div>
   );

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, forwardRef } from "react";
 import TypedText from "../components/TypedText";
 import { Link } from "react-scroll";
 import ScrollDownButton from "../components/ScrollDownButton";
@@ -22,7 +22,7 @@ const coloredStrings = [
   },
 ];
 
-const LandingSection = ({ isDarkMode }) => {
+const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
   const [colorClass, setColorClass] = useState(coloredStrings[0].color);
   const [shadowColor, setShadowColor] = useState(coloredStrings[0].shadowColor);
 
@@ -34,8 +34,9 @@ const LandingSection = ({ isDarkMode }) => {
 
   return (
     <section
+      ref={ref}
       id="landing"
-      className="landing-section min-h-screen flex flex-col justify-between items-center" // Added justify-between
+      className="landing-section min-h-screen flex flex-col justify-between items-center"
     >
       <div className="text-center flex-grow flex flex-col justify-center">
         <h1 className="text-7xl inline-block leading-none text-left">
@@ -44,6 +45,7 @@ const LandingSection = ({ isDarkMode }) => {
             to="about"
             smooth={true}
             duration={500}
+            padding={-100}
             className="font-bold shadow landing link"
             style={{ "--shadow-color-landing": shadowColor }}
           >
@@ -60,10 +62,10 @@ const LandingSection = ({ isDarkMode }) => {
       </div>
 
       <div className="mb-10">
-        <ScrollDownButton isDarkMode={isDarkMode} />
+        <ScrollDownButton isScrolled={isScrolled} isDarkMode={isDarkMode} />
       </div>
     </section>
   );
-};
+});
 
 export default LandingSection;

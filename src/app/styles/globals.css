@@ -13,33 +13,11 @@
   --text-color: #ffffff;
   --shadow-color: #4444dd;
   --background-color: #000000;
-  --scrollbar-color: #3490dc;
-}
-
-::-webkit-scrollbar {
-  width: 16px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-color);
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: darken(var(--scrollbar-color), 20%);
-}
-
-* {
-  scrollbar-width: thin;
-  scrollbar-color: var(--scrollbar-color) transparent;
-}
-
-*::-webkit-scrollbar-thumb:hover {
-  background-color: darken(var(--scrollbar-color), 20%);
+  --accent-color: #EF4444;
+  --landing-color:#EF4444;
+  --about-color:#A855F7;
+  --projects-color:#3B82F6;
+  --contact-color:#F59E0B;
 }
 
 
@@ -117,7 +95,7 @@ body {
   z-index:20;
 
   &.animation {
-    animation: spotlightFade 1s ease-in forwards;
+    animation: spotlightFade 1s forwards;
   }
 
   &.light{
@@ -159,27 +137,22 @@ body {
     color: rgb(255, 255, 0)!important; 
   }
 
-  &.scroll-top:hover {
-    color: rgb(0, 0, 255);
+  &.scroll-button:hover {
+    color: rgb(0, 0, 0);
+    background-color: var(--landing-color);
+    &.scroll-up{
+      background-color: var(--accent-color);   
+    }
   }
 
   &.dark {
-    &.scroll{color: rgb(255, 255, 255);}
-    &.toggle{
       color: rgb(0, 0, 0);
       background-color: rgb(255, 255, 255);
   }
-}
+
 
   &.light {
-    &.scroll{color: rgb(0, 0, 0);}
-    &.toggle{
-      color: rgb(255, 255, 255);
-      background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
   }
 }
-}
-
-#contact, #about, #projects{
-  margin-top: 0px;
-} 

@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import LandingSection from "./sections/Landing";
 import AboutSection from "./sections/About";
@@ -13,9 +14,32 @@ export default function Home() {
   const ref = useRef(null);
   const { initialAnimationDone } = useSpotlightEffect(ref);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+
+  const landingRef = useRef();
+  const aboutRef = useRef();
+  const projectsRef = useRef();
+  const contactRef = useRef();
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 100);
+    updateAccentColor();
+  };
+
+  const updateAccentColor = () => {
+    const sections = [
+      { ref: landingRef, color: "var(--landing-color)" },
+      { ref: aboutRef, color: "var(--about-color)" },
+      { ref: projectsRef, color: "var(--projects-color)" },
+      { ref: contactRef, color: "var(--contact-color)" },
+    ];
+
+    sections.forEach(({ ref, color }) => {
+      const rect = ref.current.getBoundingClientRect();
+      if (rect.top >= 0 && rect.top < window.innerHeight) {
+        document.documentElement.style.setProperty("--accent-color", color);
+      }
+    });
   };
 
   useEffect(() => {
@@ -25,9 +49,9 @@ export default function Home() {
     };
   }, []);
 
-  const isAnimating = initialAnimationDone ? "" : "animation";
-
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  useEffect(() => {
+    updateThemeRefs();
+  }, [isDarkMode]);
 
   const updateThemeRefs = () => {
     document.documentElement.style.setProperty(
@@ -44,15 +68,13 @@ export default function Home() {
     );
   };
 
-  useEffect(() => {
-    updateThemeRefs();
-  }, [isDarkMode]);
-
   const toggleTheme = () => {
     setIsDarkMode((prev) => !prev);
     updateThemeRefs();
   };
+
   const themeClass = isDarkMode ? "dark" : "light";
+  const isAnimating = initialAnimationDone ? "" : "animation";
 
   return (
     <div>
@@ -67,14 +89,19 @@ export default function Home() {
         />
 
         <div className="mx-auto w-full max-w-6xl scrollbar-thin scrollbar-thumb-custom scrollbar-track-custom-light hover:scrollbar-thumb-[#059669] active:scrollbar-thumb-emerald-500/50 h-full">
-          <LandingSection isDarkMode={isDarkMode} />
-          <AboutSection className="snap-start h-screen" />
-          <ProjectsSection className="snap-start h-screen" />
-          <ContactSection className="snap-start h-screen" />
+          <LandingSection
+            ref={landingRef}
+            isDarkMode={isDarkMode}
+            isScrolled={isScrolled}
+          />
+          <AboutSection ref={aboutRef} className="snap-start h-screen" />
+          <ProjectsSection ref={projectsRef} className="snap-start h-screen" />
+          <ContactSection ref={contactRef} className="snap-start h-screen" />
         </div>
 
         <div className={`spotlight ${isAnimating} ${themeClass}`} />
         <ScrollToTopButton isDarkMode={isDarkMode} isScrolled={isScrolled} />
+        <Footer isDarkMode={isDarkMode} />
       </main>
     </div>
   );

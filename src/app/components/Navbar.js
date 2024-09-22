@@ -4,8 +4,10 @@ import { Link as ScrollLink } from "react-scroll";
 const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-40 bg-trasparent  transition-all duration-500 ease-in-out ${
-        isScrolled ? "shadow-lg py-2 bg-[var(--background-color)]" : " py-4"
+      className={`fixed top-0 left-0 w-full z-40  transition-all duration-500 ease-in-out ${
+        isScrolled
+          ? "shadow-lg py-2 bg-[var(--background-color)]"
+          : "py-4 bg-transparent"
       }`}
     >
       <div className="container mx-auto max-w-6xl flex justify-between items-center py-2">
@@ -15,44 +17,48 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
           duration={500}
           className="cursor-pointer hover:text-indigo-500"
         >
-          <div className="text-2xl font-bold text-indigo-600">MyLogo</div>
+          <div className="text-3xl font-bold">
+            <span className="text-[var(--accent-color)]">M</span>
+            <span className="text-[var(--text-color)]">arciniakM</span>
+          </div>
         </ScrollLink>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-6">
+          {" "}
+          {/* Increased space-x-4 to space-x-6 */}
           <ScrollLink
             to="about"
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-[var(--text-color)] cursor-pointer relative group hover:text-indigo-500"
+            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--about-color)]" // Changed font size to text-lg
           >
             About
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-indigo-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--about-color)] transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
           <ScrollLink
             to="projects"
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-[var(--text-color)] cursor-pointer relative group hover:text-indigo-500"
+            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--projects-color)]" // Changed font size to text-lg
           >
             Projects
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-indigo-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--projects-color)] transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
           <ScrollLink
             to="contact"
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-[var(--text-color)] cursor-pointer relative group hover:text-indigo-500"
+            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--contact-color)]" // Changed font size to text-lg
           >
             Contact
-            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-indigo-500 transition-all duration-300 group-hover:w-full"></span>
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--contact-color)] transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
-
           <button
             onClick={toggleTheme}
-            className={` transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all dark-mode-button toggle ${
+            className={`transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all dark-mode-button toggle ${
               isDarkMode ? "dark" : "light"
             }`}
           >
