@@ -1,24 +1,11 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 
-const Navbar = ({ toggleTheme, isDarkMode }) => {
-  const [isScrolled, setIsScrolled] = React.useState(false);
-
-  const handleScroll = () => {
-    setIsScrolled(window.scrollY > 100);
-  };
-
-  React.useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
   return (
     <nav
-      className={`fixed top-0 left-0 w-full z-40 bg-[var(--background-color)] transition-all duration-300 ease-in-out ${
-        isScrolled ? "shadow-lg py-2" : "py-4"
+      className={`fixed top-0 left-0 w-full z-40 bg-trasparent  transition-all duration-500 ease-in-out ${
+        isScrolled ? "shadow-lg py-2 bg-[var(--background-color)]" : " py-4"
       }`}
     >
       <div className="container mx-auto max-w-6xl flex justify-between items-center py-2">
@@ -31,10 +18,11 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           <div className="text-2xl font-bold text-indigo-600">MyLogo</div>
         </ScrollLink>
 
-        <div className="flex items-center space-x-4 text-gray-700">
+        <div className="flex items-center space-x-4">
           <ScrollLink
             to="about"
             smooth={true}
+            offset={-100}
             duration={500}
             className="text-[var(--text-color)] cursor-pointer relative group hover:text-indigo-500"
           >
@@ -44,6 +32,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           <ScrollLink
             to="projects"
             smooth={true}
+            offset={-100}
             duration={500}
             className="text-[var(--text-color)] cursor-pointer relative group hover:text-indigo-500"
           >
@@ -53,6 +42,7 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
           <ScrollLink
             to="contact"
             smooth={true}
+            offset={-100}
             duration={500}
             className="text-[var(--text-color)] cursor-pointer relative group hover:text-indigo-500"
           >
@@ -60,7 +50,6 @@ const Navbar = ({ toggleTheme, isDarkMode }) => {
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-indigo-500 transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
 
-          {/* Dark Mode Toggle */}
           <button
             onClick={toggleTheme}
             className={` transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all dark-mode-button toggle ${

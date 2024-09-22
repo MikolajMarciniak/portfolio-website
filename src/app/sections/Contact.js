@@ -4,10 +4,7 @@ import "../styles/contact.css";
 
 const ContactSection = () => {
   return (
-    <section
-      id="contact"
-      className="contact-section min-h-screen flex flex-col"
-    >
+    <section id="contact" className="contact-section flex flex-col">
       <ContactForm />
     </section>
   );

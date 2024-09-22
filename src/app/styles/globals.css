@@ -13,9 +13,41 @@
   --text-color: #ffffff;
   --shadow-color: #4444dd;
   --background-color: #000000;
+  --scrollbar-color: #3490dc;
 }
 
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: darken(var(--scrollbar-color), 20%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) transparent;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: darken(var(--scrollbar-color), 20%);
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
 body {
+  scroll-behavior: smooth;
   color: var(--text-color);
   background: var(--background-color);
   font-family: 'Nunito', sans-serif;
@@ -40,31 +72,34 @@ body {
   color: yellow;
 }
 
+.light .shadow.landing.link{
+  text-shadow: 0 0 0 rgb(0, 0, 0);
+}
+
+
 .shadow {
   filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color));
   box-shadow: none;
-  text-shadow:
-   -2px -1px 0 #000,  
-    2px -1px 0 #000,
-    -2px 1px 0 #000,
-     2px 1px 0 #000;
-}
 
-.shadow.landing{
+  
+&.landing{
   filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 2px var(--shadow-color-landing));
   box-shadow: none;
+
+  &.link {
+    color: var(--text-color);
+    text-shadow:
+    -2px -2px 0 #000,  
+     2px -2px 0 #000,
+     -2px 2px 0 #000,
+      2px 2px 0 #000;
+  
+  &:hover {
+    cursor:pointer;
+    color: var(--shadow-color-landing);  }
+}
 }
 
-.link.landing:hover{
-  cursor:pointer;
-  color: var(--shadow-color-landing);
-}
-
-.circle {
-  pointer-events: none;
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(10px);
 }
 
 
@@ -79,7 +114,7 @@ body {
   opacity: 0.6;
   filter: blur(5px);
   mix-blend-mode: screen;
-  z-index: 10;
+  z-index:20;
 
   &.animation {
     animation: spotlightFade 1s ease-in forwards;
@@ -144,3 +179,7 @@ body {
   }
 }
 }
+
+#contact, #about, #projects{
+  margin-top: 0px;
+} 

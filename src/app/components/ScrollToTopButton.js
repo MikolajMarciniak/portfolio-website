@@ -1,13 +1,17 @@
 import { Link } from "react-scroll";
 
-const ScrollToTopButton = ({ isDarkMode }) => {
+const ScrollToTopButton = ({ isDarkMode, isScrolled }) => {
   return (
-    <div className="fixed bottom-4 right-6">
+    <div
+      className={`fixed bottom-4 right-6 transition-all duration-500 ease-in-out ${
+        !isScrolled && "opacity-0"
+      }`}
+    >
       <Link
         to="landing"
         smooth={true}
         duration={500}
-        className={`transition-transform transform hover:scale-150 cursor-pointer flex items-center justify-center w-12 h-12 dark-mode-button scroll-top rounded-full bg-[var(--background-color)] ${
+        className={`transition-transform transform hover:scale-150 cursor-pointer flex items-center justify-center w-20 h-20 dark-mode-button scroll-top rounded-full bg-[var(--background-color)] ${
           isDarkMode ? "dark" : "light"
         }`}
       >
