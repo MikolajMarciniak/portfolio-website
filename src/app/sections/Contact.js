@@ -4,11 +4,7 @@ import "../styles/contact.css";
 
 const ContactSection = forwardRef((props, ref) => {
   return (
-    <section
-      ref={ref}
-      id="contact"
-      className="contact-section flex flex-col min-h-screen"
-    >
+    <section ref={ref} id="contact" className="contact-section flex flex-col">
       <ContactForm />
     </section>
   );

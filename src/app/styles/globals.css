@@ -11,8 +11,8 @@
 
 :root {
   --text-color: #ffffff;
-  --shadow-color: #4444dd;
   --background-color: #000000;
+  --foreground-color: #313131;
   --accent-color: #EF4444;
   --landing-color:#EF4444;
   --about-color:#A855F7;
@@ -50,21 +50,16 @@ body {
   color: yellow;
 }
 
-.light .shadow.landing.link{
+.light .shadow {
   text-shadow: 0 0 0 rgb(0, 0, 0);
 }
 
 
 .shadow {
-  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color));
+  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--accent-color));
   box-shadow: none;
 
   
-&.landing{
-  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 2px var(--shadow-color-landing));
-  box-shadow: none;
-
-  &.link {
     color: var(--text-color);
     text-shadow:
     -2px -2px 0 #000,  
@@ -72,14 +67,16 @@ body {
      -2px 2px 0 #000,
       2px 2px 0 #000;
   
-  &:hover {
+&.landing{
+  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 2px var(--shadow-color-landing));
+  box-shadow: none;
+
+  
+  &.landing:hover {
     cursor:pointer;
     color: var(--shadow-color-landing);  }
 }
 }
-
-}
-
 
 .spotlight {
   position: absolute;
@@ -156,3 +153,4 @@ body {
     background-color: rgb(0, 0, 0);
   }
 }
+

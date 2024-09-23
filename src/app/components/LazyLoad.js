@@ -16,7 +16,7 @@ const LazyLoad = ({ children }) => {
         }
       },
       {
-        threshold: 0.1, // Adjust as needed
+        threshold: 0.1,
       }
     );
 

@@ -45,7 +45,7 @@ const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
             to="about"
             smooth={true}
             duration={500}
-            padding={-100}
+            offset={-100}
             className="font-bold shadow landing link"
             style={{ "--shadow-color-landing": shadowColor }}
           >

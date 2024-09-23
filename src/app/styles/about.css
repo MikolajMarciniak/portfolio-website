@@ -75,3 +75,19 @@ a {
 a.icon:hover {
   transform: scale(1.1); /* Adjust scale as needed */
 }
+
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s forwards;
+}
+
+

@@ -70,10 +70,21 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="contact-section">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold mb-4">Contact Me</h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
+    <section
+      id="contact"
+      className="min-h-screen flex flex-col relative overflow-x-hidden"
+    >
+      <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
+        <h2 className="text-5xl font-bold mb-4 mt-4">
+          <span className="shadow text-[--contact-color]">Contact Me</span>
+        </h2>
+      </div>
+
+      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col gap-8 px-6">
+        <form
+          className="space-y-4 w-full max-w-lg mx-auto"
+          onSubmit={handleSubmit}
+        >
           <div className="form-group">
             <input
               type="text"
@@ -82,8 +93,8 @@ const ContactForm = () => {
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-2 bg-gray-800 text-blue-500 rounded-lg ${
-                errors.name ? "border-red-500" : "border-gray-300"
+              className={`w-full p-2 rounded-lg bg-[--background-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+                errors.name ? "border-red-500" : ""
               }`}
               required
             />
@@ -99,8 +110,8 @@ const ContactForm = () => {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full p-2 bg-gray-800 text-blue-500 rounded-lg ${
-                errors.email ? "border-red-500" : "border-gray-300"
+              className={`w-full p-2 rounded-lg bg-[--background-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+                errors.email ? "border-red-500" : ""
               }`}
               required
             />
@@ -115,8 +126,8 @@ const ContactForm = () => {
               placeholder="Message"
               value={formData.message}
               onChange={handleChange}
-              className={`w-full p-2 bg-gray-800 text-blue-500 rounded-lg ${
-                errors.message ? "border-red-500" : "border-gray-300"
+              className={`w-full p-2 rounded-lg bg-[--background-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+                errors.message ? "border-red-500" : ""
               }`}
               rows="4"
               required
@@ -127,7 +138,7 @@ const ContactForm = () => {
           </div>
           <button
             type="submit"
-            className={`bg-indigo-500 p-2 text-white rounded-lg hover:bg-indigo-600 flex items-center justify-center ${
+            className={`bg-[--contact-color] p-2 text-white rounded-lg hover:bg-indigo-600 flex items-center justify-center ${
               loading ? "opacity-50" : ""
             }`}
             disabled={loading}
@@ -139,23 +150,24 @@ const ContactForm = () => {
             )}
           </button>
         </form>
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-          style={{
-            backgroundColor: "var(--background-color)", // Matches the toast background to --background-color
-            color: "#fff", // Ensures the text is white
-          }}
-        />
       </div>
+
+      <ToastContainer
+        position="bottom-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="colored"
+        style={{
+          backgroundColor: "var(--background-color)",
+          color: "#fff",
+        }}
+      />
     </section>
   );
 };

@@ -41,7 +41,6 @@ const ScrollingIcons = ({ icons }) => {
   const [scrollDirection, setScrollDirection] = useState("forward");
 
   useEffect(() => {
-    // Preload all images
     icons.forEach((icon) => {
       const img = new Image();
       img.src = `/icons/${icon.name}.svg`;

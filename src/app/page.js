@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
+// import { useSpotlightEffect } from "./hooks/useSpotlightEffect"; // Disabled spotlight effect
 import ScrollToTopButton from "./components/ScrollToTopButton";
+import { ParallaxProvider } from "react-scroll-parallax";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import LandingSection from "./sections/Landing";
@@ -12,7 +13,7 @@ import ContactSection from "./sections/Contact";
 
 export default function Home() {
   const ref = useRef(null);
-  const { initialAnimationDone } = useSpotlightEffect(ref);
+  // const { initialAnimationDone } = useSpotlightEffect(ref); // Disabled spotlight effect
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
 
@@ -64,7 +65,7 @@ export default function Home() {
     );
     document.documentElement.style.setProperty(
       "--foreground-color",
-      isDarkMode ? "#0000ff" : "#ff0000"
+      isDarkMode ? "#222222" : "#444444"
     );
   };
 
@@ -74,32 +75,35 @@ export default function Home() {
   };
 
   const themeClass = isDarkMode ? "dark" : "light";
-  const isAnimating = initialAnimationDone ? "" : "animation";
+  // const isAnimating = initialAnimationDone ? "" : "animation"; // Disabled spotlight effect
 
   return (
     <div>
       <main
         ref={ref}
-        className={`${themeClass} min-h-screen flex flex-col relative overflow-hidden`}
+        className={`${themeClass} min-h-screen flex flex-col relative`}
       >
         <Navbar
           isScrolled={isScrolled}
           toggleTheme={toggleTheme}
           isDarkMode={isDarkMode}
         />
-
-        <div className="mx-auto w-full max-w-6xl scrollbar-thin scrollbar-thumb-custom scrollbar-track-custom-light hover:scrollbar-thumb-[#059669] active:scrollbar-thumb-emerald-500/50 h-full">
-          <LandingSection
-            ref={landingRef}
-            isDarkMode={isDarkMode}
-            isScrolled={isScrolled}
-          />
-          <AboutSection ref={aboutRef} className="snap-start h-screen" />
-          <ProjectsSection ref={projectsRef} className="snap-start h-screen" />
-          <ContactSection ref={contactRef} className="snap-start h-screen" />
-        </div>
-
-        <div className={`spotlight ${isAnimating} ${themeClass}`} />
+        <ParallaxProvider>
+          <div className="h-full">
+            <LandingSection
+              ref={landingRef}
+              isDarkMode={isDarkMode}
+              isScrolled={isScrolled}
+            />
+            <AboutSection ref={aboutRef} className="snap-start h-screen" />
+            <ProjectsSection
+              ref={projectsRef}
+              className="snap-start h-screen"
+            />
+            <ContactSection ref={contactRef} className="snap-start h-screen" />
+          </div>
+        </ParallaxProvider>
+        {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}
         <ScrollToTopButton isDarkMode={isDarkMode} isScrolled={isScrolled} />
         <Footer isDarkMode={isDarkMode} />
       </main>

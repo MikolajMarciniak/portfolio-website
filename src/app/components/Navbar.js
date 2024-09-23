@@ -15,23 +15,23 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
           to="landing"
           smooth={true}
           duration={500}
-          className="cursor-pointer hover:text-indigo-500"
+          className="cursor-pointer hover:scale-110"
         >
           <div className="text-3xl font-bold">
-            <span className="text-[var(--accent-color)]">M</span>
+            <span className="text-[var(--accent-color)] transition-all duration-500 ease-in-out">
+              M
+            </span>
             <span className="text-[var(--text-color)]">arciniakM</span>
           </div>
         </ScrollLink>
 
-        <div className="flex items-center space-x-6">
-          {" "}
-          {/* Increased space-x-4 to space-x-6 */}
+        <div className="flex items-center space-x-6 font-semibold">
           <ScrollLink
             to="about"
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--about-color)]" // Changed font size to text-lg
+            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--about-color)]"
           >
             About
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--about-color)] transition-all duration-300 group-hover:w-full"></span>
@@ -41,7 +41,7 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--projects-color)]" // Changed font size to text-lg
+            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--projects-color)]"
           >
             Projects
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--projects-color)] transition-all duration-300 group-hover:w-full"></span>
@@ -51,7 +51,7 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
             smooth={true}
             offset={-100}
             duration={500}
-            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--contact-color)]" // Changed font size to text-lg
+            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--contact-color)]"
           >
             Contact
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--contact-color)] transition-all duration-300 group-hover:w-full"></span>
