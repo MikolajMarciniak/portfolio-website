@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
+import Button from "../components/Button";
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
@@ -70,16 +71,7 @@ const ContactForm = () => {
   };
 
   return (
-    <section
-      id="contact"
-      className="min-h-screen flex flex-col relative overflow-x-hidden"
-    >
-      <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
-        <h2 className="text-5xl font-bold mb-4 mt-4">
-          <span className="shadow text-[--contact-color]">Contact Me</span>
-        </h2>
-      </div>
-
+    <div>
       <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col gap-8 px-6">
         <form
           className="space-y-4 w-full max-w-lg mx-auto"
@@ -93,7 +85,7 @@ const ContactForm = () => {
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-2 rounded-lg bg-[--background-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+              className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
                 errors.name ? "border-red-500" : ""
               }`}
               required
@@ -110,7 +102,7 @@ const ContactForm = () => {
               placeholder="Email"
               value={formData.email}
               onChange={handleChange}
-              className={`w-full p-2 rounded-lg bg-[--background-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+              className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
                 errors.email ? "border-red-500" : ""
               }`}
               required
@@ -126,7 +118,7 @@ const ContactForm = () => {
               placeholder="Message"
               value={formData.message}
               onChange={handleChange}
-              className={`w-full p-2 rounded-lg bg-[--background-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+              className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
                 errors.message ? "border-red-500" : ""
               }`}
               rows="4"
@@ -136,39 +128,40 @@ const ContactForm = () => {
               <p className="text-red-500 text-sm mt-1">{errors.message}</p>
             )}
           </div>
-          <button
-            type="submit"
-            className={`bg-[--contact-color] p-2 text-white rounded-lg hover:bg-indigo-600 flex items-center justify-center ${
-              loading ? "opacity-50" : ""
-            }`}
-            disabled={loading}
-          >
-            {loading ? (
-              <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-6 w-6"></div>
-            ) : (
-              "Send"
-            )}
-          </button>
+          <div className="">
+            <Button
+              type="submit"
+              disabled={loading}
+              className={`inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--contact-color] hover:bg-[--contact-color] ${
+                loading ? "opacity-50" : ""
+              }`}
+            >
+              {loading ? (
+                <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-6 w-6"></div>
+              ) : (
+                "Submit"
+              )}
+            </Button>
+          </div>
         </form>
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          style={{
+            backgroundColor: "var(--foreground-color)",
+            color: "var(--text-color)",
+          }}
+        />
       </div>
-
-      <ToastContainer
-        position="bottom-right"
-        autoClose={5000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="colored"
-        style={{
-          backgroundColor: "var(--background-color)",
-          color: "#fff",
-        }}
-      />
-    </section>
+    </div>
   );
 };
 

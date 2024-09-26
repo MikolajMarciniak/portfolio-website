@@ -6,30 +6,28 @@ import ScrollDownButton from "../components/ScrollDownButton";
 const coloredStrings = [
   {
     text: "Fullstack Developer.",
-    color: "text-red-500",
-    shadowColor: "#f87171",
+    colorVar: "--landing-color",
   },
   {
     text: "Git Guru.",
-    color: "text-blue-500",
-    shadowColor: "#93c5fd",
+    colorVar: "--about-color",
   },
-  { text: "Freelancer.", color: "text-purple-500", shadowColor: "#d8b4fe" },
+  {
+    text: "Freelancer.",
+    colorVar: "--projects-color",
+  },
   {
     text: "Based in the UK.",
-    color: "text-yellow-500",
-    shadowColor: "#facc15",
+    colorVar: "--contact-color",
   },
 ];
 
 const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
-  const [colorClass, setColorClass] = useState(coloredStrings[0].color);
-  const [shadowColor, setShadowColor] = useState(coloredStrings[0].shadowColor);
+  const [colorClass, setColorClass] = useState(coloredStrings[0].colorVar);
 
   const handleStringTyped = (index) => {
     const currentString = coloredStrings[index % coloredStrings.length];
-    setColorClass(currentString.color);
-    setShadowColor(currentString.shadowColor);
+    setColorClass(currentString.colorVar);
   };
 
   return (
@@ -39,7 +37,7 @@ const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
       className="landing-section min-h-screen flex flex-col justify-between items-center"
     >
       <div className="text-center flex-grow flex flex-col justify-center">
-        <h1 className="text-7xl inline-block leading-none text-left">
+        <h1 className="text-7xl inline-block leading-none text-left mt-[100px]">
           Hello, I'm&nbsp;
           <Link
             to="about"
@@ -47,7 +45,9 @@ const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
             duration={500}
             offset={-100}
             className="font-bold shadow landing link"
-            style={{ "--shadow-color-landing": shadowColor }}
+            style={{
+              "--shadow-color": `var(${colorClass})`,
+            }}
           >
             Mikołaj Marciniak
           </Link>

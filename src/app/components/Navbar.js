@@ -15,13 +15,15 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
           to="landing"
           smooth={true}
           duration={500}
-          className="cursor-pointer hover:scale-110"
+          className="cursor-pointer "
         >
           <div className="text-3xl font-bold">
-            <span className="text-[var(--accent-color)] transition-all duration-500 ease-in-out">
+            <span className="transition-all duration-500 ease-in-out text-[var(--accent-color)]">
               M
             </span>
-            <span className="text-[var(--text-color)]">arciniakM</span>
+            <span className="transition-all duration-500 ease-in-out hover:text-[var(--accent-color)] text-[var(--text-color)]">
+              arciniakM
+            </span>
           </div>
         </ScrollLink>
 
@@ -58,7 +60,7 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
           </ScrollLink>
           <button
             onClick={toggleTheme}
-            className={`transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all dark-mode-button toggle ${
+            className={`transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all round dark-mode-button toggle ${
               isDarkMode ? "dark" : "light"
             }`}
           >

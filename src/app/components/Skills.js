@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { icons } from "../data/iconData";
+import Button from "./Button";
 
 const Skills = () => {
   const [activeTab, setActiveTab] = useState("frontend");
   const [visibleIcons, setVisibleIcons] = useState([]);
 
-  // Tabs configuration
   const tabs = [
     { label: "Frontend", value: "frontend" },
     { label: "Backend", value: "backend" },
@@ -30,20 +30,20 @@ const Skills = () => {
   const filteredIcons = icons[activeTab];
 
   return (
-    <div className="flex flex-col items-center p-8 rounded-lg shadow-lg">
-      <div className="mb-8">
+    <div className="mt-6 shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-2xl mx-auto bg-[--foreground-color]">
+      <div className="mb-8 flex space-x-4 justify-center">
         {tabs.map((tab) => (
-          <button
+          <Button
             key={tab.value}
             onClick={() => handleTabChange(tab.value)}
-            className={`cursor-pointer relative inline-block py-2 px-4 shadow-lg transition-transform transform hover:bg-blue-800 mx-2 ${
+            className={`dark-mode-button border-2 w-32 text-[--text-color] hover:bg-purple-700 hover:border-purple-700 hover:scale-110 transition-transform transform shadow-2xl${
               activeTab === tab.value
-                ? "bg-blue-500 text-white"
-                : "text-blue-500 border border-blue-500"
-            } rounded-lg`}
+                ? "border-[--about-color] bg-[--about-color]"
+                : "border-[--about-color]"
+            }`}
           >
             {tab.label}
-          </button>
+          </Button>
         ))}
       </div>
 

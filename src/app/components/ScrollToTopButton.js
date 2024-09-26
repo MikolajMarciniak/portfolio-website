@@ -9,9 +9,8 @@ const ScrollToTopButton = ({ isDarkMode, isScrolled }) => {
     >
       <Link to="landing" smooth={true} duration={500}>
         <button
-          className={`scroll-button scroll-up dark-mode-button px-3 py-3 text-lg font-bold rounded-full transition-all ease-in-out duration-300 hover:shadow-lg ${
-            isDarkMode ? "dark" : "light"
-          }`}
+          className={`scroll-button border-4 border-[--accent-color] scroll-up round dark-mode-button px-3 py-3 text-lg font-bold rounded-full transition-transform transform hover:scale-110 ease-in-out duration-500 
+            hover:shadow-lg ${isDarkMode ? "dark" : "light"}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"

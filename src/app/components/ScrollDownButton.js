@@ -12,7 +12,7 @@ const ScrollDownButton = ({ isDarkMode, isScrolled }) => {
         smooth={true}
         duration={500}
         offset={-100}
-        className={`transition-transform transform hover:scale-110 cursor-pointer flex items-center justify-center`}
+        className={`transition-transform transform hover:scale-110 border-4 border-[--landing-color] rounded-full cursor-pointer flex items-center justify-center`}
       >
         <button
           className={` scroll-button bg-[var(--landing-color)] dark-mode-button px-3 py-3 text-lg font-semibold rounded-full transition-all ease-in-out duration-300 hover:shadow-lg ${

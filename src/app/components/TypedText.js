@@ -3,7 +3,12 @@ import { ReactTyped } from "react-typed";
 
 const TypedText = ({ strings, colorClass, handleStringTyped }) => {
   return (
-    <span className={`inline-block ${colorClass}`}>
+    <span
+      className="inline-block"
+      style={{
+        color: `var(${colorClass})`, // Dynamic text color
+      }}
+    >
       <ReactTyped
         strings={strings.map((s) => s.text)}
         typeSpeed={50}
