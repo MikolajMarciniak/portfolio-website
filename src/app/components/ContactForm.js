@@ -7,6 +7,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
@@ -58,7 +59,7 @@ const ContactForm = () => {
 
       if (response.ok) {
         toast.success("Email sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         toast.error("Failed to send email.");
       }
@@ -77,7 +78,7 @@ const ContactForm = () => {
           className="space-y-4 w-full max-w-lg mx-auto"
           onSubmit={handleSubmit}
         >
-          <div className="form-group">
+          <div className="form-group flex justify-between gap-4">
             <input
               type="text"
               id="name"
@@ -85,7 +86,7 @@ const ContactForm = () => {
               placeholder="Name"
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+              className={`w-1/2 p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
                 errors.name ? "border-red-500" : ""
               }`}
               required
@@ -93,7 +94,19 @@ const ContactForm = () => {
             {errors.name && (
               <p className="text-red-500 text-sm mt-1">{errors.name}</p>
             )}
+
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              value={formData.subject}
+              onChange={handleChange}
+              className={`w-1/2 p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color]`}
+              required
+            />
           </div>
+
           <div className="form-group">
             <input
               type="email"
@@ -111,6 +124,7 @@ const ContactForm = () => {
               <p className="text-red-500 text-sm mt-1">{errors.email}</p>
             )}
           </div>
+
           <div className="form-group">
             <textarea
               id="message"

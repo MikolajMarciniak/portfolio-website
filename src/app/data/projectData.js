@@ -43,7 +43,7 @@ const hiddenProjects = [
     githubLink: "https://github.com/yourrepo/project4",
     imageStatic: "1.png",
     imageGif: "1.webp",
-    parallax: ["22%", "-8%"],
+    parallax: ["25%", "-5%"],
     icons: [""],
   },
   {
@@ -54,7 +54,7 @@ const hiddenProjects = [
     githubLink: "https://github.com/yourrepo/project5",
     imageStatic: "1.png",
     imageGif: "1.webp",
-    parallax: ["12%", "38%"],
+    parallax: ["12%", "42%"],
     icons: [""],
   },
   {
@@ -65,7 +65,7 @@ const hiddenProjects = [
     githubLink: "https://github.com/yourrepo/project6",
     imageStatic: "1.png",
     imageGif: "1.webp",
-    parallax: ["22%", "-8%"],
+    parallax: ["25%", "-5%"],
     icons: [""],
   },
 ];
