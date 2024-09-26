@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "version": "0.2.0",
+  "version": "0.5.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "print": "npx dotenv -p AWS_BUCKET_NAME",
-    "deploy": "next build && node deploy.js"
+    "deploy": "node deploy.js"
   },
   "dependencies": {
     "lodash": "^4.17.21",

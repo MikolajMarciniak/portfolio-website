@@ -38,17 +38,13 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-  
-  .highlight {
-    background: transparent;
-    color: yellow;
-    text-shadow: 0 0 0 rgba(0, 0, 0, 0); 
-  }
+
 }
 
 ::selection {
   background: transparent;
   color: yellow;
+  &.light{color: blue;}
 }
 
 .light .shadow {
@@ -124,6 +120,24 @@ body {
     opacity: 0.6;
   }
 }
+.fadeIn {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
 
 
 .dark-mode-button {

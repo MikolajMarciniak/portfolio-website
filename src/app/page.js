@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-// import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import { ParallaxProvider } from "react-scroll-parallax";
 import Footer from "./components/Footer";
@@ -10,12 +9,14 @@ import LandingSection from "./sections/Landing";
 import AboutSection from "./sections/About";
 import ProjectsSection from "./sections/Projects";
 import ContactSection from "./sections/Contact";
+// import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
 
 export default function Home() {
   const ref = useRef(null);
-  // const { initialAnimationDone, spotlightStyles } = useSpotlightEffect(ref);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(true);
+  // const { initialAnimationDone } = useSpotlightEffect(ref);
+  // const isAnimating = initialAnimationDone ? "" : "animation";
 
   const landingRef = useRef();
   const aboutRef = useRef();
@@ -75,7 +76,6 @@ export default function Home() {
   };
 
   const themeClass = isDarkMode ? "dark" : "light";
-  // const isAnimating = initialAnimationDone ? "" : "animation";
 
   return (
     <div>
@@ -107,10 +107,7 @@ export default function Home() {
             <ContactSection ref={contactRef} className="snap-start h-screen" />
           </div>
         </ParallaxProvider>
-        {/* <div
-          className={`spotlight ${isAnimating} ${themeClass}`}
-          style={spotlightStyles}
-        /> */}
+        {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}
         <ScrollToTopButton isDarkMode={isDarkMode} isScrolled={isScrolled} />
         <Footer isDarkMode={isDarkMode} />
       </main>

@@ -1,0 +1,73 @@
+const projects = [
+  {
+    id: 1,
+    title: "Project 1",
+    description: "Description of Project 1",
+    link: "https://example.com",
+    githubLink: "https://github.com/yourrepo/project1",
+    imageStatic: "1.png",
+    imageGif: "1.webp",
+    parallax: ["30%", "0%"],
+    icons: ["/icons/linkedIn.svg", "/icons/github.svg"],
+  },
+  {
+    id: 2,
+    title: "Project 2",
+    description: "Description of Project 2",
+    link: "https://example.com",
+    githubLink: "https://github.com/yourrepo/project2",
+    imageStatic: "1.png",
+    imageGif: "1.webp",
+    parallax: ["0%", "30%"],
+    icons: [""],
+  },
+  {
+    id: 3,
+    title: "Project 3",
+    description: "Description of Project 3",
+    link: "https://example.com",
+    githubLink: "https://github.com/yourrepo/project3",
+    imageStatic: "1.png",
+    imageGif: "1.webp",
+    parallax: ["30%", "0%"],
+    icons: [""],
+  },
+];
+
+const hiddenProjects = [
+  {
+    id: 4,
+    title: "Project 4",
+    description: "Description of Project 4",
+    link: "https://example.com",
+    githubLink: "https://github.com/yourrepo/project4",
+    imageStatic: "1.png",
+    imageGif: "1.webp",
+    parallax: ["22%", "-8%"],
+    icons: [""],
+  },
+  {
+    id: 5,
+    title: "Project 5",
+    description: "Description of Project 5",
+    link: "https://example.com",
+    githubLink: "https://github.com/yourrepo/project5",
+    imageStatic: "1.png",
+    imageGif: "1.webp",
+    parallax: ["12%", "38%"],
+    icons: [""],
+  },
+  {
+    id: 6,
+    title: "Project 6",
+    description: "Description of Project 6",
+    link: "https://example.com",
+    githubLink: "https://github.com/yourrepo/project6",
+    imageStatic: "1.png",
+    imageGif: "1.webp",
+    parallax: ["22%", "-8%"],
+    icons: [""],
+  },
+];
+
+export { projects, hiddenProjects };

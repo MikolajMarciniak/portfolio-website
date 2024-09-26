@@ -1,37 +1,41 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
-const LazyLoad = ({ children }) => {
-  const ref = useRef();
+const LazyLoad = ({ children, enableFadeOut = true }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const domRef = useRef();
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          console.log("Component is now visible");
           setIsVisible(true);
-        } else {
-          console.log("Component is no longer visible");
+        } else if (enableFadeOut) {
           setIsVisible(false);
         }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
+      });
+    });
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (domRef.current) {
+      observer.observe(domRef.current);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (domRef.current) {
+        observer.unobserve(domRef.current);
       }
     };
-  }, []);
+  }, [enableFadeOut]);
 
-  return <div ref={ref}>{isVisible && children}</div>;
+  return (
+    <div
+      ref={domRef}
+      className={`fadeIn ${isVisible ? "visible" : ""} ${
+        enableFadeOut && !isVisible ? "fadeOut" : ""
+      }`}
+    >
+      {children}
+    </div>
+  );
 };
 
 export default LazyLoad;

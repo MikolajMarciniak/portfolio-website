@@ -38,7 +38,7 @@ const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
     >
       <div className="text-center flex-grow flex flex-col justify-center">
         <h1 className="text-7xl inline-block leading-none text-left mt-[100px]">
-          Hello, I'm&nbsp;
+          Hello, I&apos;m&nbsp;
           <Link
             to="about"
             smooth={true}
@@ -68,4 +68,5 @@ const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
   );
 });
 
+LandingSection.displayName = "Landing";
 export default LandingSection;
