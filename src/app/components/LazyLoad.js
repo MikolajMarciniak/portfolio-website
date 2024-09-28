@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 
-const LazyLoad = ({ children, enableFadeOut = true }) => {
+const LazyLoad = ({ children, enableFadeOut = true, fullWidth = false }) => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
 
@@ -29,9 +29,9 @@ const LazyLoad = ({ children, enableFadeOut = true }) => {
   return (
     <div
       ref={domRef}
-      className={`fadeIn ${isVisible ? "visible" : ""} ${
-        enableFadeOut && !isVisible ? "fadeOut" : ""
-      }`}
+      className={`${fullWidth && "w-full"} fadeIn ${
+        isVisible ? "visible" : ""
+      } ${enableFadeOut && !isVisible ? "fadeOut" : ""}`}
     >
       {children}
     </div>

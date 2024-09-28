@@ -4,101 +4,78 @@ import { Link } from "react-scroll";
 import { Parallax } from "react-scroll-parallax";
 import Button from "../components/Button";
 import LazyLoad from "../components/LazyLoad";
-import { projects, hiddenProjects } from "../data/projectData";
+import { projectColumns } from "../data/projectData";
 import "../styles/projects.css";
 
 const ProjectsSection = forwardRef((props, ref) => {
+  const [expandedColumn, setExpandedColumn] = useState(null);
+  const [expandedItem, setExpandedItem] = useState(null);
   const [showMore, setShowMore] = useState(false);
-  const [expandedProject, setExpandedProject] = useState(null);
-
-  const projectIds = projects.map((project) => project.id);
-  const hiddenProjectIds = hiddenProjects.map((project) => project.id);
 
   const toggleShowMore = () => {
+    showMore
+      ? [2, 4, 6].includes(expandedItem)
+        ? toggleExpand(expandedItem)
+        : ""
+      : "";
     setShowMore((prev) => !prev);
   };
 
-  const handleExpand = (id) => {
-    setExpandedProject((prev) => (prev === id ? null : id));
+  const toggleExpand = (projectIndex) => {
+    setExpandedItem((prev) => (prev === projectIndex ? null : projectIndex));
+    let columnIndex = null;
+    if (projectIndex <= 2) {
+      columnIndex = 0;
+    } else if (projectIndex <= 4) {
+      columnIndex = 1;
+    } else if (projectIndex <= 6) {
+      columnIndex = 2;
+    }
+    setExpandedColumn((prev) =>
+      prev === columnIndex && projectIndex === expandedItem ? null : columnIndex
+    );
   };
 
   return (
     <section
       ref={ref}
       id="projects"
-      className={`transition-height duration-500 flex flex-col relative overflow-hidden mx-auto w-full max-w-6xl ${
-        showMore ? "h-[135vh]" : "h-[100vh]"
-      }`}
+      className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[100vh] ${
+        showMore ? "expand" : ""
+      } overflow-hidden`}
     >
-      <LazyLoad>
-        <div className="relative z-10 text-center">
-          <h2 className="text-5xl font-bold mb-4 mt-6">
-            <span className="shadow text-[--projects-color]">My Projects</span>
-          </h2>
-        </div>
-      </LazyLoad>
-      <LazyLoad>
-        <div className="flex flex-wrap gap-4">
-          {projects.map((project) => {
-            const otherExpanded =
-              expandedProject !== project.id &&
-              projectIds.includes(expandedProject);
-            const isExpanded = expandedProject === project.id;
-
-            return (
-              <Parallax
-                key={`parallax ${project.id} `}
-                className={`transition-all duration-500 h-full flex-shrink-0 ${
-                  isExpanded
-                    ? "flex-grow-[1] basis-[50%]"
-                    : otherExpanded
-                    ? "flex-grow-[0.5] basis-[20%]"
-                    : "flex-grow basis-[30%]"
-                }`}
-                translateY={project.parallax}
-              >
-                <ProjectCard
-                  key={project.id}
-                  title={project.title}
-                  description={project.description}
-                  link={project.link}
-                  githubLink={project.githubLink}
-                  imageStatic={project.imageStatic}
-                  imageGif={project.imageGif}
-                  icons={project.icons}
-                  isExpanded={isExpanded}
-                  otherExpanded={otherExpanded}
-                  onExpand={() => handleExpand(project.id)}
-                />
-              </Parallax>
-            );
-          })}
-        </div>
-      </LazyLoad>
-      <LazyLoad>
-        <div
-          className={`flex flex-wrap gap-4 transition-opacity duration-500 ${
-            showMore ? "opacity-1" : "opacity-0 max-h-0 pointer-events-none"
+      {projectColumns.map((column, columnIndex) => (
+        <Parallax
+          translateY={column.parallax}
+          key={column.id}
+          className={`flex flex-col items-${
+            column.id === 1 ? "end" : column.id === 3 ? "start" : "center"
+          } space-y-4 project-grow  ${
+            expandedColumn === columnIndex ? "w-[200%]" : "w-full"
           }`}
         >
-          {hiddenProjects.map((project) => {
-            const otherExpanded =
-              expandedProject !== project.id &&
-              hiddenProjectIds.includes(expandedProject);
-            const isExpanded = expandedProject === project.id;
-
-            return (
-              <Parallax
-                key={`parallax ${project.id} `}
-                className={`transition-all duration-500 h-full flex-shrink-0 ${
-                  isExpanded
-                    ? "flex-grow-[1] basis-[50%]"
-                    : otherExpanded
-                    ? "flex-grow-[0.5] basis-[20%]"
-                    : "flex-grow basis-[30%]"
-                } min-w-[200px]`}
-                translateY={project.parallax}
-              >
+          {column.items.map((project, itemIndex) => (
+            <div
+              key={itemIndex}
+              className={`items-center flex project-grow justify-center transition-all duration-1000 ease-in-out ${
+                itemIndex === 1
+                  ? showMore
+                    ? "opacity-100 max-h-full"
+                    : "opacity-0 max-h-0 pointer-events-none"
+                  : "opacity-100"
+              } ${
+                expandedColumn === columnIndex
+                  ? project.id === expandedItem
+                    ? "w-[100%]"
+                    : "w-[50%]"
+                  : "w-[100%]"
+              }`}
+              style={{
+                transition:
+                  "opacity 0.7s ease-in-out, max-height 1s ease-in-out, width 1s ease-in-out",
+              }}
+            >
+              <LazyLoad fullWidth={true}>
                 <ProjectCard
                   key={project.id}
                   title={project.title}
@@ -108,30 +85,38 @@ const ProjectsSection = forwardRef((props, ref) => {
                   imageStatic={project.imageStatic}
                   imageGif={project.imageGif}
                   icons={project.icons}
-                  isExpanded={isExpanded}
-                  otherExpanded={otherExpanded}
-                  onExpand={() => handleExpand(project.id)}
+                  isExpanded={expandedItem === project.id}
+                  otherExpanded={
+                    expandedItem !== project.id && expandedItem !== undefined
+                  }
+                  onExpand={() => toggleExpand(project.id)}
                 />
-              </Parallax>
-            );
-          })}
-        </div>
-      </LazyLoad>
-      <Parallax
-        className={`${showMore && "mt-[5%]"}`}
-        translateY={["200%", "400%"]}
-      >
-        <div className="text-center">
-          <Link to={showMore ? "projects" : ""} offset={-100} duration={1000}>
-            <Button
-              onClick={toggleShowMore}
-              className="inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--text-color] hover:bg-[--projects-color]"
-            >
-              {showMore ? "Show Less" : "See More"}
-            </Button>
-          </Link>
-        </div>
-      </Parallax>
+              </LazyLoad>
+            </div>
+          ))}
+          {columnIndex === 1 && (
+            <>
+              {!showMore ? (
+                <Button
+                  onClick={toggleShowMore}
+                  className="mt-10 inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
+                >
+                  See More
+                </Button>
+              ) : (
+                <Link to="projects" offset={-100} duration={300} smooth={true}>
+                  <Button
+                    onClick={toggleShowMore}
+                    className="mt-10 inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
+                  >
+                    Show Less
+                  </Button>
+                </Link>
+              )}
+            </>
+          )}
+        </Parallax>
+      ))}
     </section>
   );
 });
