@@ -1,3 +1,5 @@
+@import '~react-toastify/dist/ReactToastify.min.css';
+
 @font-face {
   font-family: 'Nunito';
   src: url('/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');

@@ -32,39 +32,72 @@ export const icons = {
     },
     {
       name: "tailwind",
-      fullname: "Tailwind CSS",
+      fullname: "Tailwind",
       documentation: "https://tailwindcss.com/docs",
     },
   ],
 
   backend: [
     {
-      name: "php",
-      fullname: "PHP",
-      documentation: "https://www.php.net/docs.php",
-    },
-    {
       name: "python",
       fullname: "Python",
       documentation: "https://docs.python.org/3/",
     },
     {
+      name: "java",
+      fullname: "Java",
+      documentation: "https://docs.oracle.com/en/java/",
+    },
+
+    {
+      name: "spring",
+      fullname: "Spring",
+      documentation: "https://spring.io/projects/spring-framework",
+    },
+
+    {
+      name: "mongo",
+      fullname: "MongoDB",
+      documentation: "https://docs.mongodb.com/",
+    },
+
+    {
       name: "postgresql",
       fullname: "PostgreSQL",
       documentation: "https://www.postgresql.org/docs/",
+    },
+    {
+      name: "php",
+      fullname: "PHP",
+      documentation: "https://www.php.net/docs.php",
+    },
+    {
+      name: "node",
+      fullname: "Node.js",
+      documentation: "https://nodejs.org/en/docs/",
     },
   ],
 
   tools: [
     {
       name: "aws",
-      fullname: "Amazon Web Services",
+      fullname: "AWS",
       documentation: "https://docs.aws.amazon.com/",
+    },
+    {
+      name: "azure",
+      fullname: "Azure",
+      documentation: "https://docs.microsoft.com/en-us/azure/.",
     },
     {
       name: "docker",
       fullname: "Docker",
       documentation: "https://docs.docker.com/",
+    },
+    {
+      name: "kubernetes",
+      fullname: "Kubernetes",
+      documentation: "https://kubernetes.io/docs/home/.",
     },
     {
       name: "github",
@@ -77,9 +110,9 @@ export const icons = {
       documentation: "https://jestjs.io/docs/getting-started",
     },
     {
-      name: "c",
-      fullname: "C",
-      documentation: "https://en.cppreference.com/w/c/language",
+      name: "jenkins",
+      fullname: "Jenkins",
+      documentation: "https://jestjs.io/docs/getting-started",
     },
   ],
 };

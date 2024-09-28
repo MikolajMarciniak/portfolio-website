@@ -14,7 +14,7 @@ const ContactSection = forwardRef((props, ref) => {
         <div className="mx-auto w-full max-w-6xl mb-10 mt-12 flex flex-col md:flex-row gap-8]">
           <div className=" md:items-start w-full text-left">
             <h2 className="text-5xl font-bold mb-8">
-              <span className="shadow text-[--contact-color]">Contact Me</span>
+              <span className="shadow text-[--contact-color]">Contact</span>
             </h2>
 
             <div className="flex items-center space-x-4 mb-6">

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { icons } from "../data/iconData";
 import Button from "./Button";
 
-const Skills = () => {
+const Skills = ({ isdarkmode }) => {
   const [activeTab, setActiveTab] = useState("frontend");
   const [visibleIcons, setVisibleIcons] = useState([]);
 
@@ -30,13 +30,13 @@ const Skills = () => {
   const filteredIcons = icons[activeTab];
 
   return (
-    <div className="mt-6 shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-2xl mx-auto bg-[--foreground-color]">
+    <div className="mt-6 shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-3xl mx-auto bg-[--foreground-color]">
       <div className="mb-8 flex space-x-4 justify-center">
         {tabs.map((tab) => (
           <Button
             key={tab.value}
             onClick={() => handleTabChange(tab.value)}
-            className={`dark-mode-button border-2 w-32 text-[--text-color] hover:bg-purple-700 hover:border-purple-700 hover:scale-110 transition-transform transform shadow-2xl${
+            className={` border-2 w-32 text-[--text-color] hover:bg-purple-700 border-[--about-color] hover:scale-105 transition-transform transform shadow-2xl${
               activeTab === tab.value
                 ? "border-[--about-color] bg-[--about-color]"
                 : "border-[--about-color]"
@@ -48,7 +48,7 @@ const Skills = () => {
       </div>
 
       <div className="flex justify-center w-full">
-        <div className="flex space-x-6">
+        <div className="flex space-x-8">
           {filteredIcons.map((icon, index) => (
             <div
               key={icon.name}
@@ -62,14 +62,21 @@ const Skills = () => {
                 href={icon.documentation}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="transform transition-transform duration-300 hover:scale-125"
               >
                 <img
                   src={`/icons/${icon.name}.svg`}
                   alt={icon.fullname}
-                  className="w-16 h-16 mb-2"
+                  className={` w-16 h-16 mb-2 ${
+                    icon.name === "github"
+                      ? isdarkmode
+                        ? "filter invert"
+                        : ""
+                      : ""
+                  }`}
                 />
               </a>
-              <h3 className="text-lg font-semibold text-white">
+              <h3 className="text-lg font-semibold text-[--text-color]">
                 {icon.fullname}
               </h3>
             </div>

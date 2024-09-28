@@ -2,7 +2,7 @@ import React from "react";
 
 const Button = ({ href, onClick, className, children }) => {
   const baseClasses =
-    "cursor-pointer font-semibold rounded-full relative inline-block py-2 px-8 rounded-lg shadow-xl transition-transform transform duration-500";
+    "cursor-pointer font-bold rounded-full relative inline-block py-2 px-8 rounded-lg shadow-xl transition-transform transform duration-500";
   if (href) {
     return (
       <a

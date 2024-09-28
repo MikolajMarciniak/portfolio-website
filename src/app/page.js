@@ -14,7 +14,7 @@ import ContactSection from "./sections/Contact";
 export default function Home() {
   const ref = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isdarkmode, setisdarkmode] = useState(true);
   // const { initialAnimationDone } = useSpotlightEffect(ref);
   // const isAnimating = initialAnimationDone ? "" : "animation";
 
@@ -53,29 +53,29 @@ export default function Home() {
 
   useEffect(() => {
     updateThemeRefs();
-  }, [isDarkMode]);
+  }, [isdarkmode]);
 
   const updateThemeRefs = () => {
     document.documentElement.style.setProperty(
       "--background-color",
-      isDarkMode ? "#080808" : "#FFFFFF"
+      isdarkmode ? "#080808" : "#FFFFFF"
     );
     document.documentElement.style.setProperty(
       "--text-color",
-      isDarkMode ? "#FFFFFF" : "#000000"
+      isdarkmode ? "#FFFFFF" : "#000000"
     );
     document.documentElement.style.setProperty(
       "--foreground-color",
-      isDarkMode ? "#262626" : "#c7c7c7"
+      isdarkmode ? "#262626" : "#c7c7c7"
     );
   };
 
   const toggleTheme = () => {
-    setIsDarkMode((prev) => !prev);
+    setisdarkmode((prev) => !prev);
     updateThemeRefs();
   };
 
-  const themeClass = isDarkMode ? "dark" : "light";
+  const themeClass = isdarkmode ? "dark" : "light";
 
   return (
     <div>
@@ -86,18 +86,18 @@ export default function Home() {
         <Navbar
           isScrolled={isScrolled}
           toggleTheme={toggleTheme}
-          isDarkMode={isDarkMode}
+          isdarkmode={isdarkmode}
         />
         <ParallaxProvider>
           <div className="h-full">
             <LandingSection
               ref={landingRef}
-              isDarkMode={isDarkMode}
+              isdarkmode={isdarkmode}
               isScrolled={isScrolled}
             />
             <AboutSection
               ref={aboutRef}
-              isDarkMode={isDarkMode}
+              isdarkmode={isdarkmode}
               className="snap-start h-screen"
             />
             <ProjectsSection
@@ -108,8 +108,8 @@ export default function Home() {
           </div>
         </ParallaxProvider>
         {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}
-        <ScrollToTopButton isDarkMode={isDarkMode} isScrolled={isScrolled} />
-        <Footer isDarkMode={isDarkMode} />
+        <ScrollToTopButton isdarkmode={isdarkmode} isScrolled={isScrolled} />
+        <Footer isdarkmode={isdarkmode} />
       </main>
     </div>
   );

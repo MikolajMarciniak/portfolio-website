@@ -2,11 +2,11 @@ import React, { forwardRef } from "react";
 import { Parallax } from "react-scroll-parallax";
 import Button from "../components/Button";
 import Skills from "../components/Skills";
-import LazyLoad from "../components/LazyLoad"; // Use the updated LazyLoad component
+import LazyLoad from "../components/LazyLoad";
 
 const mikoImage = "/images/miko.jpg";
 
-const AboutSection = forwardRef(({ isDarkMode }, ref) => {
+const AboutSection = forwardRef(({ isdarkmode }, ref) => {
   return (
     <section
       ref={ref}
@@ -16,7 +16,7 @@ const AboutSection = forwardRef(({ isDarkMode }, ref) => {
       <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
         <LazyLoad>
           <h2 className="text-5xl font-bold mb-10 mt-10">
-            <span className="shadow text-[--about-color]">About Me</span>
+            <span className="shadow text-[--about-color]">About</span>
           </h2>
         </LazyLoad>
       </div>
@@ -46,7 +46,7 @@ const AboutSection = forwardRef(({ isDarkMode }, ref) => {
                   <Button
                     href="/documents/MikolajMarciniak.pdf"
                     className={`dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--text-color]  hover:bg-[--about-color] ${
-                      isDarkMode ? "dark" : "light"
+                      isdarkmode ? "dark" : "light"
                     }`}
                   >
                     View CV
@@ -60,10 +60,10 @@ const AboutSection = forwardRef(({ isDarkMode }, ref) => {
 
       <div className="mt-[15vh] w-full mb-[15vh]">
         <LazyLoad>
-          <h2 className="text-4xl font-semibold mb-6 text-center">Skills</h2>
+          <h2 className="text-4xl font-bold mb-6 text-center">Skills</h2>
 
           <Parallax translateY={[10, -15]}>
-            <Skills />
+            <Skills isdarkmode={isdarkmode} />
           </Parallax>
         </LazyLoad>
       </div>

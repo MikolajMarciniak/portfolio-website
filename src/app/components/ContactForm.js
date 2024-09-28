@@ -146,12 +146,12 @@ const ContactForm = () => {
             <Button
               type="submit"
               disabled={loading}
-              className={`inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--contact-color] hover:bg-[--contact-color] ${
+              className={`inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-105 border-2 border-[--contact-color] hover:bg-[--contact-color] ${
                 loading ? "opacity-50" : ""
               }`}
             >
               {loading ? (
-                <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-6 w-6"></div>
+                <div className="loader ease-linear rounded-full border-2 border-t-2 border-gray-200 h-6 w-6"></div>
               ) : (
                 "Submit"
               )}

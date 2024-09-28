@@ -22,7 +22,7 @@ const coloredStrings = [
   },
 ];
 
-const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
+const LandingSection = forwardRef(({ isdarkmode, isScrolled }, ref) => {
   const [colorClass, setColorClass] = useState(coloredStrings[0].colorVar);
 
   const handleStringTyped = (index) => {
@@ -62,7 +62,7 @@ const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
       </div>
 
       <div className="mb-10">
-        <ScrollDownButton isScrolled={isScrolled} isDarkMode={isDarkMode} />
+        <ScrollDownButton isScrolled={isScrolled} isdarkmode={isdarkmode} />
       </div>
     </section>
   );

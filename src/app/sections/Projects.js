@@ -37,86 +37,99 @@ const ProjectsSection = forwardRef((props, ref) => {
   };
 
   return (
-    <section
-      ref={ref}
-      id="projects"
-      className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[100vh] ${
-        showMore ? "expand" : ""
-      } overflow-hidden`}
-    >
-      {projectColumns.map((column, columnIndex) => (
-        <Parallax
-          translateY={column.parallax}
-          key={column.id}
-          className={`flex flex-col items-${
-            column.id === 1 ? "end" : column.id === 3 ? "start" : "center"
-          } space-y-4 project-grow  ${
-            expandedColumn === columnIndex ? "w-[200%]" : "w-full"
-          }`}
-        >
-          {column.items.map((project, itemIndex) => (
-            <div
-              key={itemIndex}
-              className={`items-center flex project-grow justify-center transition-all duration-1000 ease-in-out ${
-                itemIndex === 1
-                  ? showMore
-                    ? "opacity-100 max-h-full"
-                    : "opacity-0 max-h-0 pointer-events-none"
-                  : "opacity-100"
-              } ${
-                expandedColumn === columnIndex
-                  ? project.id === expandedItem
-                    ? "w-[100%]"
-                    : "w-[50%]"
-                  : "w-[100%]"
-              }`}
-              style={{
-                transition:
-                  "opacity 0.7s ease-in-out, max-height 1s ease-in-out, width 1s ease-in-out",
-              }}
-            >
-              <LazyLoad fullWidth={true}>
-                <ProjectCard
-                  key={project.id}
-                  title={project.title}
-                  description={project.description}
-                  link={project.link}
-                  githubLink={project.githubLink}
-                  imageStatic={project.imageStatic}
-                  imageGif={project.imageGif}
-                  icons={project.icons}
-                  isExpanded={expandedItem === project.id}
-                  otherExpanded={
-                    expandedItem !== project.id && expandedItem !== undefined
-                  }
-                  onExpand={() => toggleExpand(project.id)}
-                />
-              </LazyLoad>
-            </div>
-          ))}
-          {columnIndex === 1 && (
-            <>
-              {!showMore ? (
-                <Button
-                  onClick={toggleShowMore}
-                  className="mt-10 inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
-                >
-                  See More
-                </Button>
-              ) : (
-                <Link to="projects" offset={-100} duration={300} smooth={true}>
+    <section ref={ref} id="projects">
+      <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
+        <LazyLoad>
+          <h2 className="text-5xl font-bold mb-10 mt-10">
+            <span className="shadow text-[--about-color]">Projects</span>
+          </h2>
+        </LazyLoad>
+      </div>
+
+      <div
+        className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[100vh] ${
+          showMore ? "expand" : ""
+        } overflow-hidden`}
+      >
+        {projectColumns.map((column, columnIndex) => (
+          <Parallax
+            translateY={column.parallax}
+            key={column.id}
+            className={`flex flex-col items-${
+              column.id === 1 ? "end" : column.id === 3 ? "start" : "center"
+            } space-y-4 project-grow  ${
+              expandedColumn === columnIndex ? "w-[200%]" : "w-full"
+            }`}
+          >
+            {column.items.map((project, itemIndex) => (
+              <div
+                key={itemIndex}
+                className={`items-center flex project-grow justify-center transition-all duration-1000 ease-in-out ${
+                  itemIndex === 1
+                    ? showMore
+                      ? "opacity-100 max-h-full"
+                      : "opacity-0 max-h-0 pointer-events-none"
+                    : "opacity-100"
+                } ${
+                  expandedColumn === columnIndex
+                    ? project.id === expandedItem
+                      ? "w-[100%]"
+                      : "w-[50%]"
+                    : "w-[100%]"
+                }`}
+                style={{
+                  transition:
+                    "opacity 0.7s ease-in-out, max-height 1s ease-in-out, width 1s ease-in-out",
+                }}
+              >
+                <LazyLoad fullWidth={true}>
+                  <ProjectCard
+                    key={project.id}
+                    title={project.title}
+                    description={project.description}
+                    link={project.link}
+                    githubLink={project.githubLink}
+                    imageStatic={project.imageStatic}
+                    imageGif={project.imageGif}
+                    icons={project.icons}
+                    isExpanded={expandedItem === project.id}
+                    otherExpanded={
+                      expandedItem !== project.id && expandedItem !== undefined
+                    }
+                    onExpand={() => toggleExpand(project.id)}
+                  />
+                </LazyLoad>
+              </div>
+            ))}
+            {columnIndex === 1 && (
+              <>
+                {!showMore ? (
                   <Button
                     onClick={toggleShowMore}
-                    className="mt-10 inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
+                    className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
                   >
-                    Show Less
+                    Show More
                   </Button>
-                </Link>
-              )}
-            </>
-          )}
-        </Parallax>
-      ))}
+                ) : (
+                  <Link
+                    to="projects"
+                    offset={-100}
+                    duration={300}
+                    smooth={true}
+                  >
+                    <Button
+                      onClick={toggleShowMore}
+                      className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
+                    >
+                      Show Less
+                    </Button>
+                  </Link>
+                )}
+              </>
+            )}
+          </Parallax>
+        ))}
+      </div>
     </section>
   );
 });

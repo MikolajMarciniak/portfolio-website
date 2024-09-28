@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 
-const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
+const Navbar = ({ toggleTheme, isdarkmode, isScrolled }) => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-40  transition-all duration-500 ease-in-out ${
@@ -17,11 +17,11 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
           duration={500}
           className="cursor-pointer "
         >
-          <div className="text-3xl font-bold">
+          <div className="text-3xl font-bold hover:text-[var(--accent-color)] text-[var(--text-color)]">
             <span className="transition-all duration-500 ease-in-out text-[var(--accent-color)]">
               M
             </span>
-            <span className="transition-all duration-500 ease-in-out hover:text-[var(--accent-color)] text-[var(--text-color)]">
+            <span className="transition-all duration-500 ease-in-out ">
               arciniakM
             </span>
           </div>
@@ -61,10 +61,10 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
           <button
             onClick={toggleTheme}
             className={`transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all round dark-mode-button toggle ${
-              isDarkMode ? "dark" : "light"
+              isdarkmode ? "dark" : "light"
             }`}
           >
-            {isDarkMode ? (
+            {isdarkmode ? (
               <svg
                 className="w-6 h-6"
                 stroke="currentColor"
