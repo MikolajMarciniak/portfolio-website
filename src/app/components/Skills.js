@@ -5,6 +5,8 @@ import Button from "./Button";
 const Skills = ({ isdarkmode }) => {
   const [activeTab, setActiveTab] = useState("frontend");
   const [visibleIcons, setVisibleIcons] = useState([]);
+  const [loadedIcons, setLoadedIcons] = useState({}); // Track loaded icons
+  const [loading, setLoading] = useState(true); // Track loading state
 
   const tabs = [
     { label: "Frontend", value: "frontend" },
@@ -15,7 +17,37 @@ const Skills = ({ isdarkmode }) => {
   const handleTabChange = (tabValue) => {
     setActiveTab(tabValue);
     setVisibleIcons([]);
+    setLoadedIcons({}); // Reset loaded icons for new tab
+    setLoading(true); // Start loading state
 
+    // Check if all icons are loaded before starting the animation
+    const allIconsLoaded = icons[tabValue].every(
+      (icon) => loadedIcons[icon.name]
+    );
+
+    if (allIconsLoaded) {
+      // If all icons are loaded, trigger the animation immediately
+      triggerAnimation(tabValue);
+    } else {
+      // Otherwise, wait for icons to load
+      const loadIconPromises = icons[tabValue].map((icon) => {
+        return new Promise((resolve) => {
+          const img = new Image();
+          img.src = `/icons/${icon.name}.svg`;
+          img.onload = () => {
+            handleIconLoad(icon.name); // Mark the icon as loaded
+            resolve(); // Resolve the promise
+          };
+        });
+      });
+
+      Promise.all(loadIconPromises).then(() => {
+        triggerAnimation(tabValue); // Trigger animation after all icons are loaded
+      });
+    }
+  };
+
+  const triggerAnimation = (tabValue) => {
     icons[tabValue].forEach((_, index) => {
       setTimeout(() => {
         setVisibleIcons((prevIcons) => [...prevIcons, index]);
@@ -29,6 +61,10 @@ const Skills = ({ isdarkmode }) => {
 
   const filteredIcons = icons[activeTab];
 
+  const handleIconLoad = (iconName) => {
+    setLoadedIcons((prev) => ({ ...prev, [iconName]: true }));
+  };
+
   return (
     <div className="mt-6 shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-3xl mx-auto bg-[--foreground-color]">
       <div className="mb-8 flex space-x-4 justify-center">
@@ -36,7 +72,7 @@ const Skills = ({ isdarkmode }) => {
           <Button
             key={tab.value}
             onClick={() => handleTabChange(tab.value)}
-            className={` border-2 w-32 text-[--text-color] hover:bg-purple-700 border-[--about-color] hover:scale-105 transition-transform transform shadow-2xl${
+            className={`border-2 w-32 text-[--text-color] hover:bg-purple-700 border-[--about-color] hover:scale-105 transition-transform transform shadow-2xl ${
               activeTab === tab.value
                 ? "border-[--about-color] bg-[--about-color]"
                 : "border-[--about-color]"
@@ -67,12 +103,9 @@ const Skills = ({ isdarkmode }) => {
                 <img
                   src={`/icons/${icon.name}.svg`}
                   alt={icon.fullname}
-                  className={` w-16 h-16 mb-2 ${
-                    icon.name === "github"
-                      ? isdarkmode
-                        ? "filter invert"
-                        : ""
-                      : ""
+                  onLoad={() => handleIconLoad(icon.name)} // Handle icon load
+                  className={`w-16 h-16 mb-2 ${
+                    icon.name === "github" && isdarkmode ? "filter invert" : ""
                   }`}
                 />
               </a>

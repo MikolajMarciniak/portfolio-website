@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
 import Button from "../components/Button";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const ContactForm = () => {
@@ -158,22 +158,6 @@ const ContactForm = () => {
             </Button>
           </div>
         </form>
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-          style={{
-            backgroundColor: "var(--foreground-color)",
-            color: "var(--text-color)",
-          }}
-        />
       </div>
     </div>
   );

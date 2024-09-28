@@ -9,6 +9,9 @@ import LandingSection from "./sections/Landing";
 import AboutSection from "./sections/About";
 import ProjectsSection from "./sections/Projects";
 import ContactSection from "./sections/Contact";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
 
 export default function Home() {
@@ -108,6 +111,22 @@ export default function Home() {
           </div>
         </ParallaxProvider>
         {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}
+        <ToastContainer
+          position="bottom-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          style={{
+            backgroundColor: "var(--foreground-color)",
+            color: "var(--text-color)",
+          }}
+        />
         <ScrollToTopButton isdarkmode={isdarkmode} isScrolled={isScrolled} />
         <Footer isdarkmode={isdarkmode} />
       </main>
