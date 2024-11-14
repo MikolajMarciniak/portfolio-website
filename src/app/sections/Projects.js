@@ -36,6 +36,11 @@ const ProjectsSection = forwardRef((props, ref) => {
     );
   };
 
+  const twoRows = [
+    projectColumns[0],
+    projectColumns[1],
+    projectColumns[2],
+  ].some((col) => col.items.length > 1);
   return (
     <section ref={ref} id="projects">
       <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
@@ -92,6 +97,8 @@ const ProjectsSection = forwardRef((props, ref) => {
                     imageStatic={project.imageStatic}
                     imageGif={project.imageGif}
                     icons={project.icons}
+                    videoFile={project.videoFile}
+                    coverVideo={project.id != 5}
                     isExpanded={expandedItem === project.id}
                     otherExpanded={
                       expandedItem !== project.id && expandedItem !== undefined
@@ -103,28 +110,30 @@ const ProjectsSection = forwardRef((props, ref) => {
             ))}
             {columnIndex === 1 && (
               <>
-                {!showMore ? (
-                  <Button
-                    onClick={toggleShowMore}
-                    className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
-                  >
-                    Show More
-                  </Button>
-                ) : (
-                  <Link
-                    to="projects"
-                    offset={-100}
-                    duration={300}
-                    smooth={true}
-                  >
-                    <Button
-                      onClick={toggleShowMore}
-                      className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
-                    >
-                      Show Less
-                    </Button>
-                  </Link>
-                )}
+                {!showMore
+                  ? twoRows && (
+                      <Button
+                        onClick={toggleShowMore}
+                        className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
+                      >
+                        Show More
+                      </Button>
+                    )
+                  : twoRows && (
+                      <Link
+                        to="projects"
+                        offset={-100}
+                        duration={300}
+                        smooth={true}
+                      >
+                        <Button
+                          onClick={toggleShowMore}
+                          className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
+                        >
+                          Show Less
+                        </Button>
+                      </Link>
+                    )}
               </>
             )}
           </Parallax>

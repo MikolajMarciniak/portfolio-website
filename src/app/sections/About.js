@@ -45,7 +45,7 @@ const AboutSection = forwardRef(({ isdarkmode }, ref) => {
                 <div className="flex justify-center mt-6">
                   <Button
                     href="/documents/MikolajMarciniak.pdf"
-                    className={`dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--text-color]  hover:bg-[--about-color] ${
+                    className={`dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110  hover:bg-purple-700 ${
                       isdarkmode ? "dark" : "light"
                     }`}
                   >
