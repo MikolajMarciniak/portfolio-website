@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 
-const ScrollToTopButton = ({ isdarkmode, isScrolled }) => {
+const ScrollToTopButton = ({ isDarkMode, isScrolled }) => {
   return (
     <div
       className={`fixed bottom-6 right-8 transition-all duration-500 ease-in-out ${
@@ -10,7 +10,7 @@ const ScrollToTopButton = ({ isdarkmode, isScrolled }) => {
       <Link to="landing" smooth={true} duration={500}>
         <button
           className={`scroll-button border-4 border-[--accent-color] scroll-up round dark-mode-button px-3 py-3 text-lg font-bold rounded-full transition-all transform hover:scale-110 ease-in-out duration-500 
-            hover:shadow-lg ${isdarkmode ? "dark" : "light"}`}
+            hover:shadow-lg ${isDarkMode ? "dark" : "light"}`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -18,7 +18,7 @@ const ScrollToTopButton = ({ isdarkmode, isScrolled }) => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={2}
+            strokeWidth={4}
             style={{ transform: "rotate(180deg)" }}
           >
             <path

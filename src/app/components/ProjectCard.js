@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 import "../styles/projects.css";
 
 const ProjectCard = ({
@@ -11,6 +13,7 @@ const ProjectCard = ({
   githubLink,
   icons,
   isExpanded,
+  isDarkMode,
   otherExpanded,
   coverVideo,
   onExpand,
@@ -31,9 +34,9 @@ const ProjectCard = ({
           src={`/videos/${videoFile}`}
           className={`rounded w-full aspect-video ${
             coverVideo ? "object-cover" : "object-contain"
-          }  ${isHovered ? "controls-visible" : "controls-hidden"}`}
-          poster={imageStatic}
-          controls
+          } `}
+          poster={`/images/${imageStatic}`}
+          controls={isHovered ? true : false}
           playsInline
           preload="auto"
         />
@@ -45,29 +48,31 @@ const ProjectCard = ({
             {title}
           </h5>
           <div className="flex space-x-1">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-8 h-8 transform transition-transform duration-100 hover:scale-110 text-[--text-color] hover:text-[--projects-color]"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 22 20"
-                fill="none"
-                stroke="currentColor"
-                width="28"
-                height="28"
-                class="inline-block"
+            {link && (
+              <a
+                href={link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-8 h-8 transform transition-transform duration-100 hover:scale-110 text-[--text-color] hover:text-[--projects-color]"
               >
-                <path
-                  d="M10 5H8.2C7.08 5 6.52 5 6.09 5.218C5.72 5.41 5.41 5.72 5.22 6.09C5 6.52 5 7.08 5 8.2V15.8C5 16.92 5 17.48 5.22 17.907C5.41 18.284 5.72 18.59 6.09 18.782C6.52 19 7.08 19 8.2 19H15.8C16.92 19 17.48 19 17.907 18.782C18.28 18.59 18.59 18.283 18.78 17.907C19 17.48 19 16.92 19 15.8V14M20 9V4M20 4H15M20 4L13 11"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </a>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 22 20"
+                  fill="none"
+                  stroke="currentColor"
+                  width="28"
+                  height="28"
+                  className="inline-block"
+                >
+                  <path
+                    d="M10 5H8.2C7.08 5 6.52 5 6.09 5.218C5.72 5.41 5.41 5.72 5.22 6.09C5 6.52 5 7.08 5 8.2V15.8C5 16.92 5 17.48 5.22 17.907C5.41 18.284 5.72 18.59 6.09 18.782C6.52 19 7.08 19 8.2 19H15.8C16.92 19 17.48 19 17.907 18.782C18.28 18.59 18.59 18.283 18.78 17.907C19 17.48 19 16.92 19 15.8V14M20 9V4M20 4H15M20 4L13 11"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </a>
+            )}
             <a
               href={githubLink}
               target="_blank"
@@ -93,20 +98,46 @@ const ProjectCard = ({
         </div>
 
         <div className="flex">
-          <div className="flex mr-1 ml-1 space-x-2 items-center overflow-hidden">
+          <div className="flex mr-2 ml-1 space-x-2 items-center overflow-hidden">
             {icons &&
-              icons.map((path, index) => (
-                <img
+              icons.map((icon, index) => (
+                <Tippy
+                  content={icon.label}
                   key={index}
-                  src={`/icons/${path}.svg`}
-                  className="w-7 h-7 hover:scale-110 transition-all duration-300 transform"
-                />
+                  className="blue-tooltip"
+                >
+                  <img
+                    id={`${icon.path}`}
+                    src={`/icons/${
+                      icon.path === "react" && !isDarkMode
+                        ? "react-dark"
+                        : `${icon.path}`
+                    }.svg`}
+                    alt={icon.label}
+                    className={`w-8 h-8 transition-all duration-300 icon ${
+                      otherExpanded && index >= 3
+                        ? "icon-shrink"
+                        : "icon-expand"
+                    }`}
+                  />
+                </Tippy>
               ))}
+            {otherExpanded && icons.length > 3 && (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                className="w-8 h-8 cursor-pointer"
+                onClick={() => setOtherExpanded(false)}
+              >
+                <path d="M12 4c0.552 0 1 0.448 1 1v6h6c0.552 0 1 0.448 1 1s-0.448 1-1 1h-6v6c0 0.552-0.448 1-1 1s-1-0.448-1-1v-6h-6c-0.552 0-1-0.448-1-1s0.448-1 1-1h6v-6c0-0.552 0.448-1 1-1z" />
+              </svg>
+            )}
           </div>
           <div className="flex ml-auto">
             <Button
               onClick={onExpand}
-              className={` inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-all duration-500 transform hover:scale-105 border-2 border-[--text-color] hover:bg-[--projects-color]`}
+              className={` inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-all duration-100 transform hover:scale-105 border-2 border-[--text-color] hover:bg-[--projects-color]`}
             >
               {isExpanded ? "Collapse" : "Expand"}
             </Button>

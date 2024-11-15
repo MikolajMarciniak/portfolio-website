@@ -1,6 +1,6 @@
 import { Link } from "react-scroll";
 
-const ScrollDownButton = ({ isdarkmode, isScrolled }) => {
+const ScrollDownButton = ({ isDarkMode, isScrolled }) => {
   return (
     <div
       className={`relative w-full flex justify-center items-end pb-10 transition-all duration-300 ease-in-out ${
@@ -16,7 +16,7 @@ const ScrollDownButton = ({ isdarkmode, isScrolled }) => {
       >
         <button
           className={` scroll-button bg-[var(--landing-color)] dark-mode-button px-3 py-3 text-lg font-semibold rounded-full transition-all ease-in-out duration-300 hover:shadow-lg ${
-            isdarkmode ? "dark" : "light"
+            isDarkMode ? "dark" : "light"
           }`}
         >
           <svg

@@ -7,7 +7,7 @@ import LazyLoad from "../components/LazyLoad";
 import { projectColumns } from "../data/projectData";
 import "../styles/projects.css";
 
-const ProjectsSection = forwardRef((props, ref) => {
+const ProjectsSection = forwardRef(({ isDarkMode }, ref) => {
   const [expandedColumn, setExpandedColumn] = useState(null);
   const [expandedItem, setExpandedItem] = useState(null);
   const [showMore, setShowMore] = useState(false);
@@ -46,7 +46,9 @@ const ProjectsSection = forwardRef((props, ref) => {
       <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
         <LazyLoad>
           <h2 className="text-5xl font-bold mb-10 mt-10">
-            <span className="shadow text-[--about-color]">Projects</span>
+            <span className="shadow text-[--about-color]">
+              Featured Projects
+            </span>
           </h2>
         </LazyLoad>
       </div>
@@ -100,8 +102,9 @@ const ProjectsSection = forwardRef((props, ref) => {
                     videoFile={project.videoFile}
                     coverVideo={project.id != 5}
                     isExpanded={expandedItem === project.id}
+                    isDarkMode={isDarkMode}
                     otherExpanded={
-                      expandedItem !== project.id && expandedItem !== undefined
+                      expandedItem !== project.id && expandedItem !== null
                     }
                     onExpand={() => toggleExpand(project.id)}
                   />
@@ -143,5 +146,5 @@ const ProjectsSection = forwardRef((props, ref) => {
   );
 });
 
-ProjectsSection.displayName = "Projects";
+ProjectsSection.displayName = "Featured Projects";
 export default ProjectsSection;

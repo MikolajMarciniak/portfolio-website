@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { icons } from "../data/iconData";
 import Button from "./Button";
 
-const Skills = ({ isdarkmode }) => {
+const Skills = ({ isDarkMode }) => {
   const [activeTab, setActiveTab] = useState("frontend");
   const [visibleIcons, setVisibleIcons] = useState([]);
   const [loadedIcons, setLoadedIcons] = useState({}); // Track loaded icons
@@ -98,14 +98,18 @@ const Skills = ({ isdarkmode }) => {
                 href={icon.documentation}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transform transition-transform duration-300 hover:scale-125"
+                className="transform transition-transform duration-200 hover:scale-125"
               >
                 <img
-                  src={`/icons/${icon.name}.svg`}
+                  src={`/icons/${
+                    icon.name === "react" && !isDarkMode
+                      ? "react-dark"
+                      : `${icon.name}`
+                  }.svg`}
                   alt={icon.fullname}
-                  onLoad={() => handleIconLoad(icon.name)} // Handle icon load
+                  onLoad={() => handleIconLoad(icon.name)}
                   className={`w-16 h-16 mb-2 ${
-                    icon.name === "github" && isdarkmode ? "filter invert" : ""
+                    icon.name === "github" && isDarkMode ? "filter invert" : ""
                   }`}
                 />
               </a>

@@ -6,7 +6,7 @@ import LazyLoad from "../components/LazyLoad";
 
 const mikoImage = "/images/miko.jpg";
 
-const AboutSection = forwardRef(({ isdarkmode }, ref) => {
+const AboutSection = forwardRef(({ isDarkMode }, ref) => {
   return (
     <section
       ref={ref}
@@ -46,7 +46,7 @@ const AboutSection = forwardRef(({ isdarkmode }, ref) => {
                   <Button
                     href="/documents/MikolajMarciniak.pdf"
                     className={`dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110  hover:bg-purple-700 ${
-                      isdarkmode ? "dark" : "light"
+                      isDarkMode ? "dark" : "light"
                     }`}
                   >
                     View CV
@@ -63,7 +63,7 @@ const AboutSection = forwardRef(({ isdarkmode }, ref) => {
           <h2 className="text-4xl font-bold mb-6 text-center">Skills</h2>
 
           <Parallax translateY={[10, -15]}>
-            <Skills isdarkmode={isdarkmode} />
+            <Skills isDarkMode={isDarkMode} />
           </Parallax>
         </LazyLoad>
       </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
 
-const Navbar = ({ toggleTheme, isdarkmode, isScrolled }) => {
+const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-40  transition-all duration-500 ease-in-out ${
@@ -61,10 +61,10 @@ const Navbar = ({ toggleTheme, isdarkmode, isScrolled }) => {
           <button
             onClick={toggleTheme}
             className={`transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all round dark-mode-button toggle ${
-              isdarkmode ? "dark" : "light"
+              isDarkMode ? "dark" : "light"
             }`}
           >
-            {isdarkmode ? (
+            {isDarkMode ? (
               <svg
                 className="w-6 h-6"
                 stroke="currentColor"

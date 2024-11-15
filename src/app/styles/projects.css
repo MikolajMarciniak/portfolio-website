@@ -28,3 +28,19 @@
   transition: height 1s ease, max-height 1s ease, min-height 1s ease;
   transition: width 1s ease, max-width 1s ease, min-width 1s ease;
 }
+
+.icon {
+  transition: width 1s ease, opacity 1s ease;
+}
+
+.icon-shrink {
+  width: 0 !important;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0px !important;
+}
+
+.icon-expand {
+  opacity: 1;
+  overflow: visible;
+}

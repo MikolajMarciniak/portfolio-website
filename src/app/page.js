@@ -17,7 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 export default function Home() {
   const ref = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isdarkmode, setisdarkmode] = useState(true);
+  const [isDarkMode, setisDarkMode] = useState(true);
   // const { initialAnimationDone } = useSpotlightEffect(ref);
   // const isAnimating = initialAnimationDone ? "" : "animation";
 
@@ -56,29 +56,29 @@ export default function Home() {
 
   useEffect(() => {
     updateThemeRefs();
-  }, [isdarkmode]);
+  }, [isDarkMode]);
 
   const updateThemeRefs = () => {
     document.documentElement.style.setProperty(
       "--background-color",
-      isdarkmode ? "#080808" : "#FFFFFF"
+      isDarkMode ? "#080808" : "#FFFFFF"
     );
     document.documentElement.style.setProperty(
       "--text-color",
-      isdarkmode ? "#FFFFFF" : "#000000"
+      isDarkMode ? "#FFFFFF" : "#000000"
     );
     document.documentElement.style.setProperty(
       "--foreground-color",
-      isdarkmode ? "#262626" : "#c7c7c7"
+      isDarkMode ? "#262626" : "#c7c7c7"
     );
   };
 
   const toggleTheme = () => {
-    setisdarkmode((prev) => !prev);
+    setisDarkMode((prev) => !prev);
     updateThemeRefs();
   };
 
-  const themeClass = isdarkmode ? "dark" : "light";
+  const themeClass = isDarkMode ? "dark" : "light";
 
   return (
     <div>
@@ -89,22 +89,23 @@ export default function Home() {
         <Navbar
           isScrolled={isScrolled}
           toggleTheme={toggleTheme}
-          isdarkmode={isdarkmode}
+          isDarkMode={isDarkMode}
         />
         <ParallaxProvider>
           <div className="h-full">
             <LandingSection
               ref={landingRef}
-              isdarkmode={isdarkmode}
+              isDarkMode={isDarkMode}
               isScrolled={isScrolled}
             />
             <AboutSection
               ref={aboutRef}
-              isdarkmode={isdarkmode}
+              isDarkMode={isDarkMode}
               className="snap-start h-screen"
             />
             <ProjectsSection
               ref={projectsRef}
+              isDarkMode={isDarkMode}
               className="snap-start h-screen"
             />
             <ContactSection ref={contactRef} className="snap-start h-screen" />
@@ -127,8 +128,8 @@ export default function Home() {
             color: "var(--text-color)",
           }}
         />
-        <ScrollToTopButton isdarkmode={isdarkmode} isScrolled={isScrolled} />
-        <Footer isdarkmode={isdarkmode} />
+        <ScrollToTopButton isDarkMode={isDarkMode} isScrolled={isScrolled} />
+        <Footer isDarkMode={isDarkMode} />
       </main>
     </div>
   );
