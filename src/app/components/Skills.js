@@ -17,32 +17,28 @@ const Skills = ({ isDarkMode }) => {
   const handleTabChange = (tabValue) => {
     setActiveTab(tabValue);
     setVisibleIcons([]);
-    setLoadedIcons({}); // Reset loaded icons for new tab
-    setLoading(true); // Start loading state
-
-    // Check if all icons are loaded before starting the animation
+    setLoadedIcons({});
+    setLoading(true);
     const allIconsLoaded = icons[tabValue].every(
       (icon) => loadedIcons[icon.name]
     );
 
     if (allIconsLoaded) {
-      // If all icons are loaded, trigger the animation immediately
       triggerAnimation(tabValue);
     } else {
-      // Otherwise, wait for icons to load
       const loadIconPromises = icons[tabValue].map((icon) => {
         return new Promise((resolve) => {
           const img = new Image();
           img.src = `/icons/${icon.name}.svg`;
           img.onload = () => {
-            handleIconLoad(icon.name); // Mark the icon as loaded
-            resolve(); // Resolve the promise
+            handleIconLoad(icon.name);
+            resolve();
           };
         });
       });
 
       Promise.all(loadIconPromises).then(() => {
-        triggerAnimation(tabValue); // Trigger animation after all icons are loaded
+        triggerAnimation(tabValue);
       });
     }
   };

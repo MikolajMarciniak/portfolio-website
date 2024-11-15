@@ -54,7 +54,7 @@ const ProjectsSection = forwardRef(({ isDarkMode }, ref) => {
       </div>
 
       <div
-        className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[80vh] ${
+        className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[100vh] ${
           showMore ? "expand" : ""
         } overflow-hidden`}
       >

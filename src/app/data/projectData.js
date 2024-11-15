@@ -20,6 +20,22 @@ const projectColumns = [
           { path: "aws", label: "AWS" },
         ],
       },
+      // {
+      //   id: 2,
+      //   title: "DriveGuage",
+      //   description: `<p className="mb-3 break-words whitespace-normal font-semibold"> asdf</p>`,
+      //   githubLink: "https://github.com/yourrepo/project1",
+      //   imageStatic: "dg-poster.png",
+      //   videoFile: "dg-ready.mp4",
+      //   icons: [
+      //     { path: "react", label: "React" },
+      //     { path: "redux", label: "Redux" },
+      //     { path: "sass", label: "Sass" },
+      //     { path: "jest", label: "Jest" },
+      //     { path: "webpack", label: "Webpack" },
+      //     { path: "aws", label: "AWS" },
+      //   ],
+      // },
     ],
   },
   {
