@@ -29,7 +29,7 @@ const AboutSection = forwardRef(({ isDarkMode }, ref) => {
                 <img
                   src={mikoImage}
                   alt="Miko"
-                  className="w-[90%] h-auto object-cover rounded-full"
+                  className="w-[90%] h-auto object-cover rounded-full border-2 border-[--text-color] shadow-lg transition-all duration-300"
                 />
               </div>
               <div className="text-xl max-w-lg md:ml-6 -rotate-3 font-semibold">

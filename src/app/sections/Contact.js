@@ -1,15 +1,19 @@
 import React, { forwardRef } from "react";
 import ContactForm from "../components/ContactForm";
+import ContactBanner from "../components/ContactBanner";
 import LazyLoad from "../components/LazyLoad";
 import "../styles/contact.css";
 
 const ContactSection = forwardRef((props, ref) => {
   return (
     <section
-      ref={ref}
       id="contact"
+      ref={ref}
       className="shadow-2xl transition-all contact-section flex flex-col"
     >
+      <LazyLoad>
+        <ContactBanner />
+      </LazyLoad>
       <LazyLoad>
         <div className="mx-auto w-full max-w-6xl mb-10 mt-12 flex flex-col md:flex-row gap-8]">
           <div className=" md:items-start w-full text-left">
