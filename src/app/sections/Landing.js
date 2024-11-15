@@ -1,6 +1,7 @@
 import React, { useState, forwardRef } from "react";
 import TypedText from "../components/TypedText";
 import { Link } from "react-scroll";
+import LazyLoad from "../components/LazyLoad";
 import ScrollDownButton from "../components/ScrollDownButton";
 
 const coloredStrings = [
@@ -37,30 +38,31 @@ const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
       className="landing-section min-h-screen flex flex-col justify-between items-center"
     >
       <div className="text-center flex-grow flex flex-col justify-center">
-        <h1 className="text-7xl inline-block leading-none text-left mt-[100px]">
-          Hello, I&apos;m&nbsp;
-          <Link
-            to="about"
-            smooth={true}
-            duration={500}
-            offset={-100}
-            className="font-bold shadow landing link"
-            style={{
-              "--shadow-color": `var(${colorClass})`,
-            }}
-          >
-            Mikołaj Marciniak
-          </Link>
-          .
-          <br />
-          <TypedText
-            strings={coloredStrings}
-            colorClass={colorClass}
-            handleStringTyped={handleStringTyped}
-          />
-        </h1>
+        <LazyLoad>
+          <h1 className="text-7xl inline-block leading-none text-left mt-[100px]">
+            Hello, I&apos;m&nbsp;
+            <Link
+              to="about"
+              smooth={true}
+              duration={500}
+              offset={-100}
+              className="font-bold shadow landing link"
+              style={{
+                "--shadow-color": `var(${colorClass})`,
+              }}
+            >
+              Mikołaj Marciniak
+            </Link>
+            .
+            <br />
+            <TypedText
+              strings={coloredStrings}
+              colorClass={colorClass}
+              handleStringTyped={handleStringTyped}
+            />
+          </h1>
+        </LazyLoad>
       </div>
-
       <div className="mb-10">
         <ScrollDownButton isScrolled={isScrolled} isDarkMode={isDarkMode} />
       </div>

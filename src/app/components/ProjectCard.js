@@ -66,9 +66,9 @@ const ProjectCard = ({
                 >
                   <path
                     d="M10 5H8.2C7.08 5 6.52 5 6.09 5.218C5.72 5.41 5.41 5.72 5.22 6.09C5 6.52 5 7.08 5 8.2V15.8C5 16.92 5 17.48 5.22 17.907C5.41 18.284 5.72 18.59 6.09 18.782C6.52 19 7.08 19 8.2 19H15.8C16.92 19 17.48 19 17.907 18.782C18.28 18.59 18.59 18.283 18.78 17.907C19 17.48 19 16.92 19 15.8V14M20 9V4M20 4H15M20 4L13 11"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </a>

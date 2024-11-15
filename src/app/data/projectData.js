@@ -6,8 +6,8 @@ const projectColumns = [
     items: [
       {
         id: 1,
-        title: "Bug Tracker",
-        description: "asdf",
+        title: "DriveGuage",
+        description: `<p className="mb-3 break-words whitespace-normal font-semibold"> asdf</p>`,
         githubLink: "https://github.com/yourrepo/project1",
         imageStatic: "dg-poster.png",
         videoFile: "dg-ready.mp4",
@@ -30,7 +30,7 @@ const projectColumns = [
       {
         id: 3,
         title: "Extra-English",
-        description: "Description of Project 2",
+        description: `<p className="mb-3 break-words whitespace-normal font-semibold"> asdf</p>`,
         link: "https://www.extra-english.pl/",
         githubLink: "https://github.com/scalony2002/ee_www",
         imageStatic: "ee-poster.png",
