@@ -29,10 +29,10 @@ const AboutSection = forwardRef(({ isDarkMode }, ref) => {
                 <img
                   src={mikoImage}
                   alt="Miko"
-                  className="w-[90%] h-auto object-cover rounded-full border-2 border-[--text-color] shadow-lg transition-all duration-300"
+                  className="w-[90%] h-auto object-cover rounded-full border-2 border-white shadow-lg transition-all duration-300"
                 />
               </div>
-              <div className="text-xl max-w-lg md:ml-6 -rotate-3 font-semibold">
+              <div className="dark text-white text-xl max-w-lg md:ml-6 -rotate-3 font-semibold">
                 <p>
                   I&apos;m a fullstack developer specialising in the MERN stack.
                   Since the beginning of my journey, I&apos;ve created bespoke

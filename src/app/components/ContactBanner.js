@@ -2,7 +2,7 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="relative w-full h-[450px] overflow-hidden">
+    <div className="relative w-full h-[450px] overflow-hidden dark">
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-fixed"
         style={{
@@ -10,8 +10,7 @@ const Banner = () => {
         }}
       ></div>
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-orange-600 to-blue-600 opacity-60"></div>
-      <div className="relative z-10 flex flex-col items-center justify-center h-full">
-        {/* Quote */}
+      <div className="relative  flex flex-col items-center justify-center h-full">
         <p className="mb-5 text-white font-semibold text-2xl italic">
           "Let's build something amazing together - drop me a message below!"
         </p>
@@ -23,7 +22,9 @@ const Banner = () => {
           />
         </div>
 
-        <p className="text-white text-xl mt-3">Mikołaj Marciniak</p>
+        <p className="text-white text-xl mt-3 font-semibold">
+          Mikołaj Marciniak
+        </p>
       </div>
     </div>
   );
