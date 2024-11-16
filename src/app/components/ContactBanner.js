@@ -6,7 +6,7 @@ const Banner = () => {
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-fixed"
         style={{
-          backgroundImage: "url('./images/6.jpg')",
+          backgroundImage: "url('./images/banner.jpg')",
         }}
       ></div>
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-orange-600 to-blue-600 opacity-60"></div>
