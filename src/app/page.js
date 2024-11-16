@@ -9,6 +9,7 @@ import LandingSection from "./sections/Landing";
 import AboutSection from "./sections/About";
 import ProjectsSection from "./sections/Projects";
 import ContactSection from "./sections/Contact";
+import LoadingSlider from "./components/LoadingSlider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -25,6 +26,11 @@ export default function Home() {
   const aboutRef = useRef();
   const projectsRef = useRef();
   const contactRef = useRef();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setIsLoading(false), 10);
+  }, []);
 
   const handleScroll = () => {
     setIsScrolled(window.scrollY > 100);
@@ -80,7 +86,9 @@ export default function Home() {
 
   const themeClass = isDarkMode ? "dark" : "light";
 
-  return (
+  return isLoading ? (
+    <LoadingSlider />
+  ) : (
     <div>
       <main
         ref={ref}

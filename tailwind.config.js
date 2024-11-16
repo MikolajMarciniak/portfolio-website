@@ -5,6 +5,18 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  theme: {},
+  theme: {
+    extend: {
+      animation: {
+        fill: "fill ease-out 1.3s forwards",
+      },
+      keyframes: {
+        fill: {
+          "0%": { maxWidth: "0%" },
+          "100%": { maxWidth: "100%" },
+        },
+      },
+    },
+  },
   plugins: [],
 };
