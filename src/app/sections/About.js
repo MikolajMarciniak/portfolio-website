@@ -6,7 +6,7 @@ import LazyLoad from "../components/LazyLoad";
 
 const mikoImage = "/images/miko.jpg";
 
-const AboutSection = forwardRef(({ isDarkMode }, ref) => {
+const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
   return (
     <section
       ref={ref}
@@ -34,22 +34,17 @@ const AboutSection = forwardRef(({ isDarkMode }, ref) => {
               </div>
               <div className="dark text-white text-xl max-w-lg md:ml-6 -rotate-3 font-semibold">
                 <p>
-                  I&apos;m a fullstack developer specialising in the MERN stack.
-                  Since the beginning of my journey, I&apos;ve created bespoke
-                  digital solutions for both business and consumer use. I
-                  particularly enjoy integrating powerful backends with
-                  beautiful interfaces for data visualisation. In my free time
-                  I&apos;m experimenting with artificial intelligence and
-                  brewing my own wine.
+                  {translation.description}
+
                 </p>
                 <div className="flex justify-center mt-6">
                   <Button
-                    href="/documents/MikolajMarciniak.pdf"
+                    href={translation.cv}
                     className={`dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110  hover:bg-purple-700 ${
                       isDarkMode ? "dark" : "light"
                     }`}
                   >
-                    View CV
+                    {translation.viewcv}
                   </Button>
                 </div>
               </div>
@@ -60,10 +55,9 @@ const AboutSection = forwardRef(({ isDarkMode }, ref) => {
 
       <div className="mt-[15vh] w-full mb-[15vh]">
         <LazyLoad>
-          <h2 className="text-4xl font-bold mb-6 text-center">Skills</h2>
-
+          <h2 className="text-4xl font-bold mb-6 text-center">{translation.skillstitle}</h2>
           <Parallax translateY={[10, -15]}>
-            <Skills isDarkMode={isDarkMode} />
+            <Skills translation={translation} isDarkMode={isDarkMode} />
           </Parallax>
         </LazyLoad>
       </div>

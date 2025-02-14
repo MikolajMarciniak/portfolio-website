@@ -4,7 +4,7 @@ import ContactBanner from "../components/ContactBanner";
 import LazyLoad from "../components/LazyLoad";
 import "../styles/contact.css";
 
-const ContactSection = forwardRef((props, ref) => {
+const ContactSection = forwardRef(({translation}, ref) => {
   return (
     <section
       id="contact"

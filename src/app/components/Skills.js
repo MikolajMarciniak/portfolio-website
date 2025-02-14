@@ -2,16 +2,16 @@ import React, { useState, useEffect } from "react";
 import { icons } from "../data/iconData";
 import Button from "./Button";
 
-const Skills = ({ isDarkMode }) => {
+const Skills = ({ translation, isDarkMode }) => {
   const [activeTab, setActiveTab] = useState("frontend");
   const [visibleIcons, setVisibleIcons] = useState([]);
-  const [loadedIcons, setLoadedIcons] = useState({}); // Track loaded icons
-  const [loading, setLoading] = useState(true); // Track loading state
+  const [loadedIcons, setLoadedIcons] = useState({});
+  const [loading, setLoading] = useState(true);
 
   const tabs = [
-    { label: "Frontend", value: "frontend" },
-    { label: "Backend", value: "backend" },
-    { label: "Tools", value: "tools" },
+    { label: translation[1] || "Frontend", value: "frontend" },
+    { label: translation[2] || "Backend", value: "backend" },
+    { label: translation[3] || "Tools", value: "tools" },
   ];
 
   const handleTabChange = (tabValue) => {

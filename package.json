@@ -5,6 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "buildnl": "next build --no-lint",
+    "serve": "npx serve build",
     "start": "next start",
     "lint": "next lint",
     "print": "npx dotenv -p AWS_BUCKET_NAME",

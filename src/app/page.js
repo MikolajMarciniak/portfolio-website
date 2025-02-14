@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import { ParallaxProvider } from "react-scroll-parallax";
+import { LocaleContext } from './components/LocaleProvider';
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import LandingSection from "./sections/Landing";
@@ -16,6 +17,7 @@ import "react-toastify/dist/ReactToastify.css";
 // import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
 
 export default function Home() {
+  const t = useContext(LocaleContext).currentTranslations;
   const ref = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setisDarkMode] = useState(true);
@@ -95,6 +97,7 @@ export default function Home() {
         className={`${themeClass} min-h-screen flex flex-col relative`}
       >
         <Navbar
+          translation = {t.navbar}
           isScrolled={isScrolled}
           toggleTheme={toggleTheme}
           isDarkMode={isDarkMode}
@@ -102,21 +105,24 @@ export default function Home() {
         <ParallaxProvider>
           <div className="h-full">
             <LandingSection
+            translation = {t.landing}
               ref={landingRef}
               isDarkMode={isDarkMode}
               isScrolled={isScrolled}
             />
             <AboutSection
+            translation = {t.about}
               ref={aboutRef}
               isDarkMode={isDarkMode}
               className="snap-start h-screen"
             />
             <ProjectsSection
+            translation = {t.projects}
               ref={projectsRef}
               isDarkMode={isDarkMode}
               className="snap-start h-screen"
             />
-            <ContactSection ref={contactRef} className="snap-start h-screen" />
+            <ContactSection translation = {t.contact} ref={contactRef} className="snap-start h-screen" />
           </div>
         </ParallaxProvider>
         {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}

@@ -1,4 +1,5 @@
 import React, { useState, forwardRef } from "react";
+import { LocaleContext } from "./LocaleProvider";
 import ProjectCard from "../components/ProjectCard";
 import { Link } from "react-scroll";
 import { Parallax } from "react-scroll-parallax";
@@ -7,11 +8,17 @@ import LazyLoad from "../components/LazyLoad";
 import { projectColumns } from "../data/projectData";
 import "../styles/projects.css";
 
-const ProjectsSection = forwardRef(({ isDarkMode }, ref) => {
+const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
+  const { currentTranslations } = useContext(LocaleContext);
   const [expandedColumn, setExpandedColumn] = useState(null);
   const [expandedItem, setExpandedItem] = useState(null);
   const [showMore, setShowMore] = useState(false);
 
+  const translatedProjects = projects.map(project => ({
+    ...project,
+    description: currentTranslations.projects.find(p => p.id === project.id)?.description || project.description
+  }));
+  
   const toggleShowMore = () => {
     showMore
       ? [2, 4, 6].includes(expandedItem)

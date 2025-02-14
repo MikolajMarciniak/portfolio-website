@@ -1,7 +1,10 @@
+"use client"
+
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
+import {LanguageSwitcher} from "./LanguageSwitcher";
 
-const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
+const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
   return (
     <nav
       className={`fixed top-0 left-0 w-full z-40  transition-all duration-500 ease-in-out ${
@@ -28,6 +31,7 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
         </ScrollLink>
 
         <div className="flex items-center space-x-6 font-semibold">
+          <LanguageSwitcher />
           <ScrollLink
             to="about"
             smooth={true}
@@ -35,7 +39,7 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
             duration={500}
             className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--about-color)]"
           >
-            About
+          {translation.about}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--about-color)] transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
           <ScrollLink
@@ -45,7 +49,7 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
             duration={500}
             className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--projects-color)]"
           >
-            Projects
+            {translation.projects}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--projects-color)] transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
           <ScrollLink
@@ -55,7 +59,7 @@ const Navbar = ({ toggleTheme, isDarkMode, isScrolled }) => {
             duration={500}
             className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--contact-color)]"
           >
-            Contact
+            {translation.contact}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--contact-color)] transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
           <button

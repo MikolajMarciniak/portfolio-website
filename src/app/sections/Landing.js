@@ -4,26 +4,27 @@ import { Link } from "react-scroll";
 import LazyLoad from "../components/LazyLoad";
 import ScrollDownButton from "../components/ScrollDownButton";
 
-const coloredStrings = [
-  {
-    text: "Fullstack Developer.",
-    colorVar: "--landing-color",
-  },
-  {
-    text: "Git Guru.",
-    colorVar: "--about-color",
-  },
-  {
-    text: "Freelancer.",
-    colorVar: "--projects-color",
-  },
-  {
-    text: "Based in the UK.",
-    colorVar: "--contact-color",
-  },
-];
+const LandingSection = forwardRef(({ translation, isDarkMode, isScrolled }, ref) => {
+  const coloredStrings = [
+    {
+      text: translation.strings[1] || "Fullstack Developer.",
+      colorVar: "--landing-color",
+    },
+    {
+      text: translation.strings[2] || "Git Guru.",
+      colorVar: "--about-color",
+    },
+    {
+      text: translation.strings[3] || "Freelancer.",
+      colorVar: "--projects-color",
+    },
+    {
+      text: translation.strings[4] || "Based in the UK.",
+      colorVar: "--contact-color",
+    },
+  ];
 
-const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
+  // ✅ Now use it in useState after it's declared
   const [colorClass, setColorClass] = useState(coloredStrings[0].colorVar);
 
   const handleStringTyped = (index) => {
@@ -39,7 +40,7 @@ const LandingSection = forwardRef(({ isDarkMode, isScrolled }, ref) => {
     >
       <div className="text-center flex-grow flex flex-col justify-center">
         <h1 className="text-7xl inline-block leading-none text-left mt-[100px]">
-          Hello, I&apos;m&nbsp;
+          {translation.hero}
           <Link
             to="about"
             smooth={true}

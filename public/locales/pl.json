@@ -1,0 +1,24 @@
+{
+  "navbar": {
+    "about": "O mnie",
+    "projects": "Projekty",
+    "contact": "Kontakt"
+  },
+  "landing": {
+    "hero": "Cześć, jestem ",
+    "strings": [
+      "Fullstack Developer.",
+      "Git Guru.",
+      "Freelancer.",
+      "Mieszkający w Wielkiej Brytanii."
+    ]
+  },
+  "about": {
+    "description": "Jestem deweloperem fullstack specjalizującym się w technologii MERN. Od początku mojej kariery tworzę dedykowane rozwiązania cyfrowe zarówno dla firm, jak i użytkowników indywidualnych. Szczególnie lubię integrować potężne zaplecza z pięknymi interfejsami do wizualizacji danych. W wolnym czasie eksperymentuję z sztuczną inteligencją i warzę własne wino.",
+    "cv": "/documents/MikolajMarciniak.pdf",
+    "viewcv": "Zobacz CV",
+    "skills": "Skills"
+  },
+  "projects": {},
+  "contact": {}
+}
