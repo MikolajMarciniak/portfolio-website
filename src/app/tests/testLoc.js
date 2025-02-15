@@ -1,7 +1,6 @@
 const fs = require("fs");
 const path = require("path");
 
-// Recursively compare the localization keys
 const compareLocalization = (
   enObj,
   compareObj,
@@ -31,17 +30,16 @@ const compareLocalization = (
   return missingKeys;
 };
 
-// Load all localizations dynamically
 const loadLocalizations = (localesDir) => {
-  const absoluteLocalesDir = path.resolve(localesDir); // Ensure absolute path
+  const absoluteLocalesDir = path.resolve(localesDir);
   const files = fs.readdirSync(absoluteLocalesDir);
   const localizations = {};
 
   files.forEach((file) => {
     if (file.endsWith(".json")) {
-      const fileName = path.basename(file, ".json"); // Get the name without the .json extension
-      const filePath = path.join(absoluteLocalesDir, file); // Correct the file path
-      localizations[fileName] = require(filePath); // Dynamically load the JSON file
+      const fileName = path.basename(file, ".json");
+      const filePath = path.join(absoluteLocalesDir, file);
+      localizations[fileName] = require(filePath);
     }
   });
 
@@ -51,10 +49,9 @@ const loadLocalizations = (localesDir) => {
 const runLocalizationTest = (localesDir) => {
   const localizations = loadLocalizations(localesDir);
 
-  const enLocalization = localizations["en"]; // English localization file
+  const enLocalization = localizations["en"];
   const missingKeysByLocale = {};
 
-  // Compare all localizations against English
   Object.keys(localizations).forEach((locale) => {
     if (locale !== "en") {
       const missingKeys = compareLocalization(
@@ -67,7 +64,6 @@ const runLocalizationTest = (localesDir) => {
     }
   });
 
-  // Print out the missing keys for each locale
   if (Object.keys(missingKeysByLocale).length > 0) {
     console.log("Missing keys in other localizations:");
     Object.keys(missingKeysByLocale).forEach((locale) => {

@@ -1,4 +1,4 @@
-"use client"; // Ensures this runs on the client side
+"use client";
 
 import React, { useState, useEffect } from "react";
 
