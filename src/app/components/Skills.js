@@ -20,7 +20,7 @@ const Skills = ({ translation, isDarkMode }) => {
     setLoadedIcons({});
     setLoading(true);
     const allIconsLoaded = icons[tabValue].every(
-      (icon) => loadedIcons[icon.name]
+      (icon) => loadedIcons[icon.name],
     );
 
     if (allIconsLoaded) {
@@ -45,9 +45,12 @@ const Skills = ({ translation, isDarkMode }) => {
 
   const triggerAnimation = (tabValue) => {
     icons[tabValue].forEach((_, index) => {
-      setTimeout(() => {
-        setVisibleIcons((prevIcons) => [...prevIcons, index]);
-      }, (index + 1) * 150);
+      setTimeout(
+        () => {
+          setVisibleIcons((prevIcons) => [...prevIcons, index]);
+        },
+        (index + 1) * 150,
+      );
     });
   };
 
@@ -97,7 +100,7 @@ const Skills = ({ translation, isDarkMode }) => {
                 className="transform transition-transform duration-200 hover:scale-125"
               >
                 <img
-                  src={`/icons/${
+                  src={`/icons/tech/${
                     icon.name === "react" && !isDarkMode
                       ? "react-dark"
                       : `${icon.name}`

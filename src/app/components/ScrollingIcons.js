@@ -43,7 +43,7 @@ const ScrollingIcons = ({ icons }) => {
   useEffect(() => {
     icons.forEach((icon) => {
       const img = new Image();
-      img.src = `/icons/${icon.name}.svg`;
+      img.src = `/icons/tech/${icon.name}.svg`;
     });
 
     let lastScrollTop = 0;

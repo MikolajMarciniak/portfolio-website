@@ -31,7 +31,9 @@ body {
   color: var(--text-color);
   background: var(--background-color);
   font-family: "Nunito", sans-serif;
-  transition: color 0.3s ease, background-color 0.3s ease,
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
     foreground-color 0.3s ease;
 }
 
@@ -63,7 +65,10 @@ body {
   );
   box-shadow: none;
   color: var(--text-color);
-  text-shadow: -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000,
+  text-shadow:
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
     2px 2px 0 #000;
 
   &.landing {
@@ -77,6 +82,14 @@ body {
       color: var(--shadow-color);
     }
   }
+}
+
+.text-outline {
+  text-shadow:
+    -0.5px -0.5px 0 var(--background-color),
+    0.5px -0.5px 0 var(--background-color),
+    -0.5px 0.5px 0 var(--background-color),
+    0.5px 0.5px 0 var(--background-color);
 }
 
 .spotlight {

@@ -108,7 +108,7 @@ const ProjectCard = ({
                 >
                   <img
                     id={`${icon.path}`}
-                    src={`/icons/${
+                    src={`/icons/tech/${
                       icon.path === "react" && !isDarkMode
                         ? "react-dark"
                         : `${icon.path}`

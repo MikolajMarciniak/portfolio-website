@@ -27,3 +27,11 @@ export function LanguageSwitcher() {
     </div>
   );
 }
+
+/*   useEffect(() => {
+    icons.forEach((icon) => {
+      const img = new Image();
+      img.src = `/icons/tech/${icon.name}.svg`;
+    });
+    
+    */

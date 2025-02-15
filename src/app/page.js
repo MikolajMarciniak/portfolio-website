@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useContext } from "react";
 import ScrollToTopButton from "./components/ScrollToTopButton";
+const _ = require("lodash");
 import { ParallaxProvider } from "react-scroll-parallax";
 import { LocaleContext } from "./components/LocaleProvider";
 import Footer from "./components/Footer";
@@ -14,15 +15,15 @@ import LoadingSlider from "./components/LoadingSlider";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
+import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
 
 export default function Home() {
   const t = useContext(LocaleContext).currentTranslations;
   const ref = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setisDarkMode] = useState(true);
-  // const { initialAnimationDone } = useSpotlightEffect(ref);
-  // const isAnimating = initialAnimationDone ? "" : "animation";
+  const { initialAnimationDone } = useSpotlightEffect(ref);
+  const isAnimating = initialAnimationDone ? "" : "animation";
 
   const landingRef = useRef();
   const aboutRef = useRef();
@@ -35,30 +36,32 @@ export default function Home() {
   }, []);
 
   const handleScroll = () => {
+    window.scrollY > 100 ? setIsScrolled(true) : setIsScrolled(false);
     updateAccentColor();
   };
 
+  const throttledScroll = _.throttle(handleScroll, 100);
+
   const updateAccentColor = () => {
-    const offset = 100;
     const sections = [
-      { ref: landingRef, color: "var(--landing-color)", offset: offset },
+      { ref: landingRef, color: "var(--landing-color)" },
       { ref: aboutRef, color: "var(--about-color)" },
       { ref: projectsRef, color: "var(--projects-color)" },
       { ref: contactRef, color: "var(--contact-color)" },
     ];
 
-    sections.forEach(({ ref, color, offset = 0 }) => {
+    sections.forEach(({ ref, color }) => {
       const rect = ref.current.getBoundingClientRect();
-      if (rect.top >= offset && rect.top < window.innerHeight) {
+      if (rect.top < window.innerHeight) {
         document.documentElement.style.setProperty("--accent-color", color);
       }
     });
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", throttledScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("scroll", throttledScroll);
     };
   }, []);
 
@@ -129,7 +132,7 @@ export default function Home() {
             />
           </div>
         </ParallaxProvider>
-        {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}
+        <div className={`spotlight ${isAnimating} ${themeClass}`} />
         <ToastContainer
           position="bottom-right"
           autoClose={5000}

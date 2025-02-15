@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
-import {LanguageSwitcher} from "./LanguageSwitcher";
+import { LanguageSwitcher } from "./LanguageSwitcher";
 
 const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
   return (
@@ -20,11 +20,11 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           duration={500}
           className="cursor-pointer "
         >
-          <div className="text-3xl font-bold hover:text-[var(--accent-color)] text-[var(--text-color)]">
+          <div className=" text-3xl font-bold hover:text-[var(--accent-color)] text-[var(--text-color)]">
             <span className="transition-all duration-500 ease-in-out text-[var(--accent-color)]">
               M
             </span>
-            <span className="transition-all duration-500 ease-in-out ">
+            <span className=" transition-all duration-500 ease-in-out ">
               arciniakM
             </span>
           </div>
@@ -39,7 +39,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
             duration={500}
             className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--about-color)]"
           >
-          {translation.about}
+            {translation.about}
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--about-color)] transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
           <ScrollLink
