@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ContactForm = () => {
+const ContactForm = ({ translation }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -54,7 +54,7 @@ const ContactForm = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
 
       if (response.ok) {
@@ -83,7 +83,7 @@ const ContactForm = () => {
               type="text"
               id="name"
               name="name"
-              placeholder="Name"
+              placeholder={translation.name}
               value={formData.name}
               onChange={handleChange}
               className={`w-1/2 p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
@@ -99,7 +99,7 @@ const ContactForm = () => {
               type="text"
               id="subject"
               name="subject"
-              placeholder="Subject"
+              placeholder={translation.subject}
               value={formData.subject}
               onChange={handleChange}
               className={`w-1/2 p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color]`}
@@ -112,7 +112,7 @@ const ContactForm = () => {
               type="email"
               id="email"
               name="email"
-              placeholder="Email"
+              placeholder={translation.email}
               value={formData.email}
               onChange={handleChange}
               className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
@@ -129,7 +129,7 @@ const ContactForm = () => {
             <textarea
               id="message"
               name="message"
-              placeholder="Message"
+              placeholder={translation.message}
               value={formData.message}
               onChange={handleChange}
               className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${

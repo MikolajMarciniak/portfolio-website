@@ -4,19 +4,21 @@ import ContactBanner from "../components/ContactBanner";
 import LazyLoad from "../components/LazyLoad";
 import "../styles/contact.css";
 
-const ContactSection = forwardRef(({translation}, ref) => {
+const ContactSection = forwardRef(({ translation }, ref) => {
   return (
     <section
       id="contact"
       ref={ref}
       className="shadow-2xl transition-all contact-section flex flex-col"
     >
-      <ContactBanner />
+      <ContactBanner translation={translation.quote} />
       <LazyLoad>
         <div className="mx-auto w-full max-w-6xl mb-10 mt-12 flex flex-col md:flex-row gap-8]">
           <div className=" md:items-start w-full text-left">
             <h2 className="text-5xl font-bold mb-8">
-              <span className="shadow text-[--contact-color]">Contact</span>
+              <span className="shadow text-[--contact-color]">
+                {translation.title}
+              </span>
             </h2>
 
             <div className="flex items-center space-x-4 mb-6">
@@ -49,7 +51,7 @@ const ContactSection = forwardRef(({translation}, ref) => {
                 onClick={() =>
                   window.open(
                     "https://www.linkedin.com/in/mikolaj-marciniak",
-                    "_blank"
+                    "_blank",
                   )
                 }
               >
@@ -79,7 +81,7 @@ const ContactSection = forwardRef(({translation}, ref) => {
           </div>
 
           <div className="w-full">
-            <ContactForm />
+            <ContactForm translation={translation.form} />
           </div>
         </div>
       </LazyLoad>

@@ -5,12 +5,14 @@ import React, { useState, useEffect } from "react";
 export const LocaleContext = React.createContext();
 
 export function LocaleProvider({ translations, children }) {
-  const [currentLocale, setCurrentLocale] = useState("en"); // Default to English
+  const [currentLocale, setCurrentLocale] = useState("en");
   const [currentTranslations, setCurrentTranslations] = useState(translations);
 
   useEffect(() => {
-    // Run only on the client side to prevent server-side errors
-    const savedLocale = localStorage.getItem("locale") || navigator.language.split("-")[0] || "en";
+    const savedLocale =
+      localStorage.getItem("locale") ||
+      navigator.language.split("-")[0] ||
+      "en";
     setCurrentLocale(savedLocale);
   }, []);
 
@@ -34,7 +36,9 @@ export function LocaleProvider({ translations, children }) {
   };
 
   return (
-    <LocaleContext.Provider value={{ currentLocale, currentTranslations, switchLanguage }}>
+    <LocaleContext.Provider
+      value={{ currentLocale, currentTranslations, switchLanguage }}
+    >
       {children}
     </LocaleContext.Provider>
   );

@@ -1,5 +1,4 @@
 import React, { useState, forwardRef } from "react";
-import { LocaleContext } from "./LocaleProvider";
 import ProjectCard from "../components/ProjectCard";
 import { Link } from "react-scroll";
 import { Parallax } from "react-scroll-parallax";
@@ -9,16 +8,20 @@ import { projectColumns } from "../data/projectData";
 import "../styles/projects.css";
 
 const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
-  const { currentTranslations } = useContext(LocaleContext);
   const [expandedColumn, setExpandedColumn] = useState(null);
   const [expandedItem, setExpandedItem] = useState(null);
   const [showMore, setShowMore] = useState(false);
 
-  const translatedProjects = projects.map(project => ({
+  const translatedProjects = projectColumns.map((project) => ({
     ...project,
-    description: currentTranslations.projects.find(p => p.id === project.id)?.description || project.description
+    items: project.items.map((item) => ({
+      ...item,
+      description:
+        translation?.cards?.find((p) => p.id === item.id)?.description ||
+        item.description,
+    })),
   }));
-  
+
   const toggleShowMore = () => {
     showMore
       ? [2, 4, 6].includes(expandedItem)
@@ -39,14 +42,16 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
       columnIndex = 2;
     }
     setExpandedColumn((prev) =>
-      prev === columnIndex && projectIndex === expandedItem ? null : columnIndex
+      prev === columnIndex && projectIndex === expandedItem
+        ? null
+        : columnIndex,
     );
   };
 
   const twoRows = [
-    projectColumns[0],
-    projectColumns[1],
-    projectColumns[2],
+    translatedProjects[0],
+    translatedProjects[1],
+    translatedProjects[2],
   ].some((col) => col.items.length > 1);
   return (
     <section ref={ref} id="projects">
@@ -65,7 +70,7 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
           showMore ? "expand" : ""
         } overflow-hidden`}
       >
-        {projectColumns.map((column, columnIndex) => (
+        {translatedProjects.map((column, columnIndex) => (
           <Parallax
             translateY={column.parallax}
             key={column.id}

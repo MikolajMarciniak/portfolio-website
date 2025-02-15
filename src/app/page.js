@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState, useContext } from "react";
 import ScrollToTopButton from "./components/ScrollToTopButton";
 import { ParallaxProvider } from "react-scroll-parallax";
-import { LocaleContext } from './components/LocaleProvider';
+import { LocaleContext } from "./components/LocaleProvider";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import LandingSection from "./sections/Landing";
@@ -35,21 +35,21 @@ export default function Home() {
   }, []);
 
   const handleScroll = () => {
-    setIsScrolled(window.scrollY > 100);
     updateAccentColor();
   };
 
   const updateAccentColor = () => {
+    const offset = 100;
     const sections = [
-      { ref: landingRef, color: "var(--landing-color)" },
+      { ref: landingRef, color: "var(--landing-color)", offset: offset },
       { ref: aboutRef, color: "var(--about-color)" },
       { ref: projectsRef, color: "var(--projects-color)" },
       { ref: contactRef, color: "var(--contact-color)" },
     ];
 
-    sections.forEach(({ ref, color }) => {
+    sections.forEach(({ ref, color, offset = 0 }) => {
       const rect = ref.current.getBoundingClientRect();
-      if (rect.top >= 0 && rect.top < window.innerHeight) {
+      if (rect.top >= offset && rect.top < window.innerHeight) {
         document.documentElement.style.setProperty("--accent-color", color);
       }
     });
@@ -69,15 +69,15 @@ export default function Home() {
   const updateThemeRefs = () => {
     document.documentElement.style.setProperty(
       "--background-color",
-      isDarkMode ? "#080808" : "#FFFFFF"
+      isDarkMode ? "#080808" : "#FFFFFF",
     );
     document.documentElement.style.setProperty(
       "--text-color",
-      isDarkMode ? "#FFFFFF" : "#000000"
+      isDarkMode ? "#FFFFFF" : "#000000",
     );
     document.documentElement.style.setProperty(
       "--foreground-color",
-      isDarkMode ? "#262626" : "#c7c7c7"
+      isDarkMode ? "#262626" : "#c7c7c7",
     );
   };
 
@@ -97,7 +97,7 @@ export default function Home() {
         className={`${themeClass} min-h-screen flex flex-col relative`}
       >
         <Navbar
-          translation = {t.navbar}
+          translation={t.navbar}
           isScrolled={isScrolled}
           toggleTheme={toggleTheme}
           isDarkMode={isDarkMode}
@@ -105,24 +105,28 @@ export default function Home() {
         <ParallaxProvider>
           <div className="h-full">
             <LandingSection
-            translation = {t.landing}
+              translation={t.landing}
               ref={landingRef}
               isDarkMode={isDarkMode}
               isScrolled={isScrolled}
             />
             <AboutSection
-            translation = {t.about}
+              translation={t.about}
               ref={aboutRef}
               isDarkMode={isDarkMode}
               className="snap-start h-screen"
             />
             <ProjectsSection
-            translation = {t.projects}
+              translation={t.projects}
               ref={projectsRef}
               isDarkMode={isDarkMode}
               className="snap-start h-screen"
             />
-            <ContactSection translation = {t.contact} ref={contactRef} className="snap-start h-screen" />
+            <ContactSection
+              translation={t.contact}
+              ref={contactRef}
+              className="snap-start h-screen"
+            />
           </div>
         </ParallaxProvider>
         {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}
@@ -143,7 +147,7 @@ export default function Home() {
           }}
         />
         <ScrollToTopButton isDarkMode={isDarkMode} isScrolled={isScrolled} />
-        <Footer isDarkMode={isDarkMode} />
+        <Footer translation={t.footer} isDarkMode={isDarkMode} />
       </main>
     </div>
   );

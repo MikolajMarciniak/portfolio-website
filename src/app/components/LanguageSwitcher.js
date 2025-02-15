@@ -1,7 +1,8 @@
-"use client"; // Mark this as a client-side component
+"use client";
 
 import React, { useContext } from "react";
 import { LocaleContext } from "./LocaleProvider";
+import languages from "../data/languageData";
 
 export function LanguageSwitcher() {
   const { currentLocale, switchLanguage } = useContext(LocaleContext);
@@ -17,9 +18,11 @@ export function LanguageSwitcher() {
         onChange={handleChange}
         className="px-4 py-2 text-black border border-gray-300 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500"
       >
-        <option value="en">English</option>
-        <option value="pl">Polski</option>
-        {/* Add more languages as needed */}
+        {languages.map((language) => (
+          <option key={language.code} value={language.code}>
+            {language.label}
+          </option>
+        ))}
       </select>
     </div>
   );
