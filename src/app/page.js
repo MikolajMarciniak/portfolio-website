@@ -52,7 +52,7 @@ export default function Home() {
 
     sections.forEach(({ ref, color }) => {
       const rect = ref.current.getBoundingClientRect();
-      if (rect.top < window.innerHeight) {
+      if (rect.top + 100 < window.innerHeight) {
         document.documentElement.style.setProperty("--accent-color", color);
       }
     });

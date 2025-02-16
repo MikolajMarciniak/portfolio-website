@@ -49,11 +49,11 @@ const loadLocalizations = (localesDir) => {
 const runLocalizationTest = (localesDir) => {
   const localizations = loadLocalizations(localesDir);
 
-  const enLocalization = localizations["en"];
+  const enLocalization = localizations["en-Us"];
   const missingKeysByLocale = {};
 
   Object.keys(localizations).forEach((locale) => {
-    if (locale !== "en") {
+    if (locale !== "en-Us") {
       const missingKeys = compareLocalization(
         enLocalization,
         localizations[locale],

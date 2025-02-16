@@ -29,7 +29,7 @@ const Skills = ({ translation, isDarkMode }) => {
       const loadIconPromises = icons[tabValue].map((icon) => {
         return new Promise((resolve) => {
           const img = new Image();
-          img.src = `/icons/${icon.name}.svg`;
+          img.src = `/icons/tech/${icon.name}.svg`;
           img.onload = () => {
             handleIconLoad(icon.name);
             resolve();

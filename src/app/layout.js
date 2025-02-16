@@ -1,29 +1,41 @@
-import React from 'react';
-import fs from 'fs';
-import path from 'path';
-import { LocaleProvider } from './components/LocaleProvider';
+import React from "react";
+import fs from "fs";
+import path from "path";
+import { LocaleProvider } from "./components/LocaleProvider";
 
-import './styles/globals.css';
+import "./styles/globals.css";
 
 export const metadata = {
-  title: 'Mikolaj Marciniak',
-  description: 'Freelance full stack developer for hire, ',
+  title: "Mikolaj Marciniak",
+  description: "Freelance full stack developer for hire, ",
 };
 
 async function getTranslations(locale) {
   try {
-    const translationsPath = path.resolve('public', 'locales', `${locale}.json`);
-    const translations = JSON.parse(fs.readFileSync(translationsPath, 'utf8'));
+    const translationsPath = path.resolve(
+      "public",
+      "locales",
+      `${locale}.json`,
+    );
+    const translations = JSON.parse(fs.readFileSync(translationsPath, "utf8"));
     return translations;
   } catch (error) {
-    console.error(`Translation file for ${locale} not found. Falling back to 'en'.`);
-    const fallbackTranslationsPath = path.resolve('public', 'locales', 'en.json');
-    return JSON.parse(fs.readFileSync(fallbackTranslationsPath, 'utf8'));
+    console.error(
+      `Translation file for ${locale} not found. Falling back to 'en'.`,
+    );
+    const fallbackTranslationsPath = path.resolve(
+      "public",
+      "locales",
+      "en-Us.json",
+    );
+    return JSON.parse(fs.readFileSync(fallbackTranslationsPath, "utf8"));
   }
 }
 
 export default async function RootLayout({ children }) {
-  const defaultLocale = typeof window !== 'undefined' ? navigator.language.split('-')[0] : 'en';
+  const defaultLocale =
+    typeof window !== "undefined" ? navigator.language : "en-Us";
+  console.log(navigator.language);
   const translations = await getTranslations(defaultLocale);
 
   return (
@@ -33,9 +45,7 @@ export default async function RootLayout({ children }) {
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body>
-        <LocaleProvider translations={translations}>
-          {children}
-        </LocaleProvider>
+        <LocaleProvider translations={translations}>{children}</LocaleProvider>
       </body>
     </html>
   );

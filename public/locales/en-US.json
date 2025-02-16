@@ -1,0 +1,61 @@
+{
+  "navbar": {
+    "about": "About",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "landing": {
+    "hero": "Hello, I'm ",
+    "strings": [
+      "Fullstack Developer.",
+      "Git Guru.",
+      "Freelancer.",
+      "Based in the UK."
+    ]
+  },
+  "about": {
+    "description": "I'm a fullstack developer specialising in the MERN stack. Since the beginning of my journey, I've created bespoke digital solutions for both business and consumer use. I particularly enjoy integrating powerful backends with beautiful interfaces for data visualisation. In my free time I'm experimenting with artificial intelligence and brewing my own wine.",
+    "cv": "/documents/MikolajMarciniak.pdf",
+    "viewcv": "View CV",
+    "skillstitle": "Skills",
+    "skills": ["Frontend", "Backend", "Tools"]
+  },
+
+  "projects": {
+    "title": "Projects",
+    "showmore": "More",
+    "showless": "Less",
+    "expand": "Expand",
+    "collapse": "Collapse",
+    "cards": [
+      {
+        "id": 1,
+        "title": "DriveGuage",
+        "description": "<div class='mb-3 break-words whitespace-normal font-semibold'>DriveGuage is a blackbox driver performance monitoring system. The system runs on a Raspberry Pi, which connects to the car's OBD port to collect driving data.<br/><br/>The data is uploaded to a server, processed, and displayed through a user-friendly web application. Authenticated clients can track changes in their 'driver score,' a measure of driving habits, like speeding, sharp turns, and rapid acceleration.</div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-English",
+        "description": "<p className='mb-3 break-words whitespace-normal font-semibold'>While at Premium Faber Ltd., I focused on developing a single-page application (SPA) for the Extra-English language school.<br/><br/>The initial version of the app was static, providing key client-facing information. I later expanded its functionality to include a photo gallery, an infinite news feed, a client sign-up form, and an interactive language quiz.<br/><br/>After leaving Premium Faber, I continued working directly with Extra-English. Recently, I implemented user authentication, lesson management and attendance tracking, and automated payment calculations.</p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'Duthie",
+        "description": "<p className='mb-3 break-words whitespace-normal font-semibold'>This community-focused navigation app is a proof of concept developed for the 2024 RGU Hackathon. <br/><br/> It features an interactive map with pins for key landmarks of Aberdeen Duthie park. When tapping on a pin, users can read more information about it or choose to navigate to the pin. The app also has a feed, web-scraped from the 'Friends of Duthie Park' Facebook group. <br/><br/>The app possesses accessibility settings; users can engage high contrast mode or increase the font size for better readability.</p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "quote": "Let's build something amazing together - drop me a message below!",
+
+    "form": {
+      "name": "Name",
+      "subject": "Subject",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Submit"
+    }
+  },
+  "footer": "All rights reserved."
+}

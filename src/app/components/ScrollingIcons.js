@@ -28,7 +28,7 @@ const IconLoop = ({
         data-tip={icon.fullname}
       >
         <LazyImage
-          src={`/icons/${icon.name}.svg`}
+          src={`/icons/tech/${icon.name}.svg`}
           alt={icon.fullname}
           className="h-56 w-56"
         />
