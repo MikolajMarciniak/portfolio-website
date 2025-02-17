@@ -104,33 +104,6 @@ export default function Home() {
           toggleTheme={toggleTheme}
           isDarkMode={isDarkMode}
         />
-        {/* <ParallaxProvider>
-          <div className="h-full">
-            <LandingSection
-              translation={t.landing}
-              ref={landingRef}
-              isDarkMode={isDarkMode}
-              isScrolled={isScrolled}
-            />
-            <AboutSection
-              translation={t.about}
-              ref={aboutRef}
-              isDarkMode={isDarkMode}
-              className="snap-start h-screen"
-            />
-            <ProjectsSection
-              translation={t.projects}
-              ref={projectsRef}
-              isDarkMode={isDarkMode}
-              className="snap-start h-screen"
-            />
-            <ContactSection
-              translation={t.contact}
-              ref={contactRef}
-              className="snap-start h-screen"
-            />
-          </div>
-        </ParallaxProvider> */}
 
         <ParallaxProvider>
           <div className="h-full">

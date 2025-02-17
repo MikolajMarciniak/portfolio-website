@@ -59,7 +59,7 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
         <LazyLoad>
           <h2 className="text-5xl font-bold mb-10 mt-10">
             <span className="shadow text-[--about-color]">
-              Featured Projects
+              {translation.title}
             </span>
           </h2>
         </LazyLoad>
@@ -104,6 +104,7 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
                 <LazyLoad fullWidth={true}>
                   <ProjectCard
                     key={project.id}
+                    translation={translation}
                     title={project.title}
                     description={project.description}
                     link={project.link}

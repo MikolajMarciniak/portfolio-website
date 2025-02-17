@@ -22,7 +22,7 @@
   },
 
   "projects": {
-    "title": "Projects",
+    "title": "Featured Projects",
     "showmore": "More",
     "showless": "Less",
     "expand": "Expand",
@@ -47,7 +47,7 @@
   },
   "contact": {
     "title": "Contact",
-    "quote": "Let's build something amazing together - drop me a message below!",
+    "quote": "Have an idea or simply want to chat? Feel free to drop me a message below!",
 
     "form": {
       "name": "Name",

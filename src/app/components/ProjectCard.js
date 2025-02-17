@@ -6,6 +6,7 @@ import "../styles/projects.css";
 
 const ProjectCard = ({
   title,
+  translation,
   description,
   link,
   imageStatic,
@@ -139,7 +140,7 @@ const ProjectCard = ({
               onClick={onExpand}
               className={` inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-all duration-100 transform hover:scale-105 border-2 border-[--text-color] hover:bg-[--projects-color]`}
             >
-              {isExpanded ? "Collapse" : "Expand"}
+              {isExpanded ? translation.collapse : translation.expand}
             </Button>
           </div>
         </div>

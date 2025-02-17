@@ -47,7 +47,6 @@ export function LanguageSwitcher() {
 
       {isOpen && (
         <div className="absolute mt-2 w-48 bg-[--foreground-color] border border-[--text-color] rounded-md shadow-lg max-h-60 overflow-y-auto">
-          {/* Search Bar */}
           <input
             type="text"
             placeholder="Search languages..."
@@ -55,8 +54,6 @@ export function LanguageSwitcher() {
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full px-4 py-2 border-b border-[--text-color] text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[--foreground-color] placeholder-[--text-color]"
           />
-
-          {/* Language Options */}
           {filteredLanguages
             .sort((a, b) => a.label.localeCompare(b.label))
             .map((language) => (

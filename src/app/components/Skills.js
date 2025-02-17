@@ -9,9 +9,9 @@ const Skills = ({ translation, isDarkMode }) => {
   const [loading, setLoading] = useState(true);
 
   const tabs = [
-    { label: translation[1] || "Frontend", value: "frontend" },
-    { label: translation[2] || "Backend", value: "backend" },
-    { label: translation[3] || "Tools", value: "tools" },
+    { label: translation[0] || "Frontend", value: "frontend" },
+    { label: translation[1] || "Backend", value: "backend" },
+    { label: translation[2] || "Tools", value: "tools" },
   ];
 
   const handleTabChange = (tabValue) => {

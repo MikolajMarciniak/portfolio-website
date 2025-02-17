@@ -33,10 +33,7 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
                 />
               </div>
               <div className="dark text-white text-xl max-w-lg md:ml-6 -rotate-3 font-semibold">
-                <p>
-                  {translation.description}
-
-                </p>
+                <p>{translation.description}</p>
                 <div className="flex justify-center mt-6">
                   <Button
                     href={translation.cv}
@@ -55,9 +52,11 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
 
       <div className="mt-[15vh] w-full mb-[15vh]">
         <LazyLoad>
-          <h2 className="text-4xl font-bold mb-6 text-center">{translation.skillstitle}</h2>
+          <h2 className="text-4xl font-bold mb-6 text-center">
+            {translation.skillstitle}
+          </h2>
           <Parallax translateY={[10, -15]}>
-            <Skills translation={translation} isDarkMode={isDarkMode} />
+            <Skills translation={translation.skills} isDarkMode={isDarkMode} />
           </Parallax>
         </LazyLoad>
       </div>
