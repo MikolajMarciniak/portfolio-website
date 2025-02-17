@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import Tippy from "@tippyjs/react";
+import { Tooltip } from "react-tooltip";
 import "tippy.js/dist/tippy.css";
 import "../styles/projects.css";
 
@@ -101,13 +101,12 @@ const ProjectCard = ({
           <div className="flex mr-2 ml-1 space-x-2 items-center overflow-hidden">
             {icons &&
               icons.map((icon, index) => (
-                <Tippy
-                  content={icon.label}
-                  key={index}
-                  className="blue-tooltip"
-                >
+                <React.Fragment key={index}>
                   <img
                     id={`${icon.path}`}
+                    data-tooltip-id={`${icon.path}`}
+                    data-tooltip-content={icon.label}
+                    data-tooltip-place="top"
                     src={`/icons/tech/${
                       icon.path === "react" && !isDarkMode
                         ? "react-dark"
@@ -120,7 +119,8 @@ const ProjectCard = ({
                         : "icon-expand"
                     }`}
                   />
-                </Tippy>
+                  <Tooltip id={`${icon.path}`} />
+                </React.Fragment>
               ))}
             {otherExpanded && icons.length > 3 && (
               <svg
