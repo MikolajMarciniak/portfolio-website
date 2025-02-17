@@ -4,19 +4,12 @@ import React, { useState, useEffect } from "react";
 
 export const LocaleContext = React.createContext();
 
-export function LocaleProvider({ translations, children }) {
-  const [currentLocale, setCurrentLocale] = useState("en");
+export function LocaleProvider({ defaultLocale, translations, children }) {
+  const [currentLocale, setCurrentLocale] = useState(defaultLocale);
   const [currentTranslations, setCurrentTranslations] = useState(translations);
 
   useEffect(() => {
-    const savedLocale =
-      localStorage.getItem("locale") ||
-      navigator.language.split("-")[0] ||
-      "en";
-    setCurrentLocale(savedLocale);
-  }, []);
-
-  useEffect(() => {
+    if (!currentLocale) return;
     async function fetchTranslations() {
       try {
         const response = await fetch(`/locales/${currentLocale}.json`);
@@ -32,7 +25,6 @@ export function LocaleProvider({ translations, children }) {
 
   const switchLanguage = (newLocale) => {
     setCurrentLocale(newLocale);
-    localStorage.setItem("locale", newLocale);
   };
 
   return (

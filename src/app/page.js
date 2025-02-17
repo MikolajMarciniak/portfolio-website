@@ -13,17 +13,16 @@ import ProjectsSection from "./sections/Projects";
 import ContactSection from "./sections/Contact";
 import LoadingSlider from "./components/LoadingSlider";
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 
-import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
+// import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
 
 export default function Home() {
   const t = useContext(LocaleContext).currentTranslations;
   const ref = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkMode, setisDarkMode] = useState(true);
-  const { initialAnimationDone } = useSpotlightEffect(ref);
-  const isAnimating = initialAnimationDone ? "" : "animation";
+  // const { initialAnimationDone } = useSpotlightEffect(ref);
+  // const isAnimating = initialAnimationDone ? "" : "animation";
 
   const landingRef = useRef();
   const aboutRef = useRef();
@@ -32,7 +31,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => setIsLoading(false), 10);
+    setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
   const handleScroll = () => {
@@ -105,6 +104,34 @@ export default function Home() {
           toggleTheme={toggleTheme}
           isDarkMode={isDarkMode}
         />
+        {/* <ParallaxProvider>
+          <div className="h-full">
+            <LandingSection
+              translation={t.landing}
+              ref={landingRef}
+              isDarkMode={isDarkMode}
+              isScrolled={isScrolled}
+            />
+            <AboutSection
+              translation={t.about}
+              ref={aboutRef}
+              isDarkMode={isDarkMode}
+              className="snap-start h-screen"
+            />
+            <ProjectsSection
+              translation={t.projects}
+              ref={projectsRef}
+              isDarkMode={isDarkMode}
+              className="snap-start h-screen"
+            />
+            <ContactSection
+              translation={t.contact}
+              ref={contactRef}
+              className="snap-start h-screen"
+            />
+          </div>
+        </ParallaxProvider> */}
+
         <ParallaxProvider>
           <div className="h-full">
             <LandingSection
@@ -132,7 +159,8 @@ export default function Home() {
             />
           </div>
         </ParallaxProvider>
-        <div className={`spotlight ${isAnimating} ${themeClass}`} />
+
+        {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}
         <ToastContainer
           position="bottom-right"
           autoClose={5000}
@@ -145,7 +173,6 @@ export default function Home() {
           pauseOnHover
           theme="colored"
           style={{
-            backgroundColor: "var(--foreground-color)",
             color: "var(--text-color)",
           }}
         />

@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       animation: {
-        fill: "fill ease-out 1.3s forwards",
+        fill: "fill ease-out 2s forwards",
       },
       keyframes: {
         fill: {

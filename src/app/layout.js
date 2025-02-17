@@ -26,7 +26,7 @@ async function getTranslations(locale) {
     const fallbackTranslationsPath = path.resolve(
       "public",
       "locales",
-      "en-Us.json",
+      "en.json",
     );
     return JSON.parse(fs.readFileSync(fallbackTranslationsPath, "utf8"));
   }
@@ -34,18 +34,28 @@ async function getTranslations(locale) {
 
 export default async function RootLayout({ children }) {
   const defaultLocale =
-    typeof window !== "undefined" ? navigator.language : "en-Us";
-  console.log(navigator.language);
+    typeof window !== "undefined" ? navigator.language.split("-")[0] : "en";
   const translations = await getTranslations(defaultLocale);
 
   return (
-    <html lang={defaultLocale}>
+    <html lang={defaultLocale} suppressHydrationWarning>
       <head>
         <link rel="preload" href="./images/banner.jpg" as="image" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link
+          key={defaultLocale}
+          rel="preload"
+          href={`/icons/flags/${defaultLocale.split("-")[0]}.svg`}
+          as="image"
+        />
       </head>
       <body>
-        <LocaleProvider translations={translations}>{children}</LocaleProvider>
+        <LocaleProvider
+          defaultLocale={defaultLocale}
+          translations={translations}
+        >
+          {children}
+        </LocaleProvider>
       </body>
     </html>
   );

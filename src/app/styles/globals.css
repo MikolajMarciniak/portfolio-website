@@ -192,14 +192,16 @@ body {
     background-color: rgb(0, 0, 0);
   }
 }
-
-.tippy-box.blue-tooltip {
+.react-tooltip {
+  opacity: 0;
   font-weight: 700;
-  background-color: var(--projects-color);
+  background-color: var(--projects-color) !important;
   color: var(--text-color);
+  transition: opacity 150ms ease-in !important;
 }
-.tippy-box.blue-tooltip[data-placement^="top"] .tippy-arrow::before {
-  color: var(--projects-color);
+
+.react-tooltip[data-show] {
+  opacity: 1 !important;
 }
 
 .masked-element {

@@ -8,18 +8,16 @@ export function LanguageSwitcher() {
   const { currentLocale, switchLanguage } = useContext(LocaleContext);
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
-  const switcherRef = useRef(null); // Reference to the language switcher dropdown
+  const switcherRef = useRef(null);
 
   const selectedLanguage = languages.find(
-    (lang) => lang.fullCode === currentLocale,
+    (lang) => lang.code.split("-")[0] === currentLocale,
   );
 
-  // Filter languages based on search query
   const filteredLanguages = languages.filter((language) =>
     language.label.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
-  // Close dropdown if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (switcherRef.current && !switcherRef.current.contains(event.target)) {
@@ -63,16 +61,16 @@ export function LanguageSwitcher() {
             .sort((a, b) => a.label.localeCompare(b.label))
             .map((language) => (
               <button
-                key={language.fullCode}
+                key={language.code}
                 onClick={() => {
-                  switchLanguage(language.fullCode);
+                  switchLanguage(language.code);
                   setIsOpen(false);
-                  setSearchQuery(""); // Clear the search after selecting a language
+                  setSearchQuery("");
                 }}
                 className="flex items-center space-x-2 px-4 py-2 w-full text-left hover:bg-gray-500"
               >
                 <img
-                  src={`/icons/flags/${language.code}.svg`}
+                  src={`/icons/flags/${language.code.split("-")[0]}.svg`}
                   alt={language.label}
                   className="w-5 h-5"
                 />

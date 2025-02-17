@@ -34,15 +34,15 @@ export const useSpotlightEffect = (ref) => {
 
     ref.current.style.setProperty(
       "--spotlight-x",
-      `${spotlightPosition.current.x}px`
+      `${spotlightPosition.current.x}px`,
     );
     ref.current.style.setProperty(
       "--spotlight-y",
-      `${spotlightPosition.current.y}px`
+      `${spotlightPosition.current.y}px`,
     );
     ref.current.style.setProperty(
       "--spotlight-radius",
-      `${spotlightSize.current.radius * spotlightSize.current.scrollFactor}%`
+      `${spotlightSize.current.radius * spotlightSize.current.scrollFactor}%`,
     );
 
     const shadowX =
@@ -141,11 +141,11 @@ export const useSpotlightEffect = (ref) => {
 
     spotlightPosition.current.x = Math.max(
       0,
-      Math.min(spotlightPosition.current.x, ref.current.clientWidth)
+      Math.min(spotlightPosition.current.x, ref.current.clientWidth),
     );
     spotlightPosition.current.y = Math.max(
       0,
-      Math.min(spotlightPosition.current.y, ref.current.clientHeight)
+      Math.min(spotlightPosition.current.y, ref.current.clientHeight),
     );
 
     updateAllStyles();
@@ -165,11 +165,11 @@ export const useSpotlightEffect = (ref) => {
       const rect = ref.current.getBoundingClientRect();
       targetPosition.current.x = Math.max(
         0,
-        Math.min(e.clientX - rect.left, ref.current.clientWidth)
+        Math.min(e.clientX - rect.left, ref.current.clientWidth),
       );
       targetPosition.current.y = Math.max(
         0,
-        Math.min(e.clientY - rect.top, ref.current.clientHeight)
+        Math.min(e.clientY - rect.top, ref.current.clientHeight),
       );
       scrollPosition.current.y = window.scrollY;
       requestAnimationFrame(smoothMoveSpotlight);
@@ -181,7 +181,7 @@ export const useSpotlightEffect = (ref) => {
       const newSpotlightY = targetPosition.current.y + scrollChange;
       spotlightSize.current.scrollFactor = Math.max(
         0.5,
-        1 - currentScroll / dimensions.current.height
+        1 - currentScroll / dimensions.current.height,
       );
       scrollPosition.current.y = currentScroll;
 

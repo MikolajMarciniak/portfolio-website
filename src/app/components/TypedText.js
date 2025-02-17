@@ -6,7 +6,7 @@ const TypedText = ({ strings, colorClass, handleStringTyped }) => {
     <span
       className="inline-block"
       style={{
-        color: `var(${colorClass})`, // Dynamic text color
+        color: `var(${colorClass})`,
       }}
     >
       <ReactTyped

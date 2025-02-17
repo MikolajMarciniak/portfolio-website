@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Button from "../components/Button";
 import { toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
 const ContactForm = ({ translation }) => {
   const [formData, setFormData] = useState({
     name: "",
