@@ -54,7 +54,7 @@
       "subject": "Subject",
       "email": "Email",
       "message": "Message",
-      "submit": "Submit",
+      "submit": "Send",
       "errors": {
         "emailinvalid": "Invalid email address.",
         "emailrequired": "Email is required.",

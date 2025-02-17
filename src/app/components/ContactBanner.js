@@ -2,18 +2,26 @@ import React from "react";
 
 const Banner = ({ translation }) => {
   return (
-    <div className="relative w-full h-[450px] overflow-hidden dark">
+    <div
+      className="relative w-full h-[70%] min-h-[600px] pt-56 overflow-hidden dark pt-32"
+      style={{
+        clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0% 100%)",
+      }}
+    >
       <div
         className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-fixed"
         style={{
           backgroundImage: "url('./images/banner.jpg')",
         }}
       ></div>
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-orange-600 to-blue-600 opacity-60"></div>
-      <div className="relative  flex flex-col items-center justify-center h-full">
+
+      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-orange-600 to-blue-600 opacity-70"></div>
+
+      <div className="relative flex flex-col items-center justify-center h-full">
         <p className="mb-5 text-white font-semibold text-2xl italic">
           {translation}
         </p>
+
         <div className="mt-5 w-32 h-32 rounded-full bg-[#D3CEBA] overflow-hidden border-2 border-white shadow-lg">
           <img
             src="./images/miko2.jpg"

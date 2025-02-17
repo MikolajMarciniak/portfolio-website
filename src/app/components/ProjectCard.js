@@ -22,8 +22,8 @@ const ProjectCard = ({
   const [isHovered, setHovered] = useState(false);
   return (
     <div
-      className={`shadow-xl rounded-lg bg-[--foreground-color] border-4 
-        hover:border-[--projects-color] border-transparent
+      className={`shadow-xl rounded-lg card  border-2 
+        border-[--projects-color]
       transform transition-all duration-500 project-grow w-full h-full`}
     >
       <div

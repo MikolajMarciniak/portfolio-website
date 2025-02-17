@@ -55,7 +55,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           <ScrollLink
             to="contact"
             smooth={true}
-            offset={-76}
+            offset={0}
             duration={500}
             className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--contact-color)]"
           >

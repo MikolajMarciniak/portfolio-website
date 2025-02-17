@@ -21,34 +21,37 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
         </LazyLoad>
       </div>
 
-      <Parallax translateY={[10, -20]}>
-        <LazyLoad>
-          <div className="shadow-2xl relative w-[110%] h-[60%] md:h-[60%] bg-[--about-color] top-[20%] md:top-[14%] left-[-4%] transform rotate-3 flex items-center justify-center md:justify-between px-6 md:px-16">
-            <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 px-6">
-              <div className="-rotate-6 w-[45%] mt-5 mb-5 overflow-hidden rounded-full flex-shrink-0 ">
-                <img
-                  src={mikoImage}
-                  alt="Miko"
-                  className="w-[90%] h-auto object-cover rounded-full border-2 border-white shadow-lg transition-all duration-300"
-                />
-              </div>
-              <div className="dark text-white text-xl max-w-lg md:ml-6 -rotate-3 font-semibold">
-                <p>{translation.description}</p>
-                <div className="flex justify-center mt-6">
-                  <Button
-                    href={translation.cv}
-                    className={`dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110  hover:bg-purple-700 ${
-                      isDarkMode ? "dark" : "light"
-                    }`}
-                  >
-                    {translation.viewcv}
-                  </Button>
-                </div>
+      <LazyLoad>
+        <div
+          className="shadow-2xl pt-5 pb-28 relative w-[110%] h-[60%] md:h-[60%] bg-[--about-color] top-[20%] md:top-[14%] left-[-4%] flex items-center justify-center md:justify-between px-6 md:px-16"
+          style={{
+            clipPath: "polygon(0 0, 100% 0, 100% 75%, 0% 100%)",
+          }}
+        >
+          <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 px-6">
+            <div className="-rotate-6 w-[45%] mt-5 mb-5 overflow-hidden rounded-full flex-shrink-0 ">
+              <img
+                src={mikoImage}
+                alt="Miko"
+                className="w-[90%] h-auto object-cover rounded-full border-2 border-white shadow-lg transition-all duration-300"
+              />
+            </div>
+            <div className="dark text-white text-xl max-w-lg md:ml-6 font-semibold">
+              <p>{translation.description}</p>
+              <div className="flex justify-center mt-6">
+                <Button
+                  href={translation.cv}
+                  className={`dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110  hover:bg-purple-700 ${
+                    isDarkMode ? "dark" : "light"
+                  }`}
+                >
+                  {translation.viewcv}
+                </Button>
               </div>
             </div>
           </div>
-        </LazyLoad>
-      </Parallax>
+        </div>
+      </LazyLoad>
 
       <div className="mt-[15vh] w-full mb-[15vh]">
         <LazyLoad>
