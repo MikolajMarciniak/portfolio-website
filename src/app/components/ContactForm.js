@@ -23,11 +23,9 @@ const ContactForm = ({ translation }) => {
 
   const validateForm = () => {
     let tempErrors = {};
-    if (!formData.name) tempErrors.name = "Name is required.";
-    if (!formData.email) tempErrors.email = "Email is required.";
+    if (!formData.email) tempErrors.email = translation.errors.emailrequired;
     else if (!validateEmail(formData.email))
-      tempErrors.email = "Invalid email address.";
-    if (!formData.message) tempErrors.message = "Message is required.";
+      tempErrors.email = translation.errors.emailinvalid;
 
     setErrors(tempErrors);
     return Object.keys(tempErrors).length === 0;
@@ -37,7 +35,7 @@ const ContactForm = ({ translation }) => {
     e.preventDefault();
 
     if (!validateForm()) {
-      toast.error("Please correct the errors in the form.");
+      toast.error(translation.errors.forminvalid);
       return;
     }
 
@@ -59,10 +57,10 @@ const ContactForm = ({ translation }) => {
         toast.success("Email sent successfully!");
         setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
-        toast.error("Failed to send email.");
+        toast.error(translation.errors.emailfailed);
       }
     } catch (error) {
-      toast.error("An error occurred. Please try again.");
+      toast.error(translation.errors.genericerror);
       console.log(error);
     }
 
@@ -87,7 +85,6 @@ const ContactForm = ({ translation }) => {
               className={`w-1/2 p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
                 errors.name ? "border-red-500" : ""
               }`}
-              required
             />
             {errors.name && (
               <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -101,7 +98,6 @@ const ContactForm = ({ translation }) => {
               value={formData.subject}
               onChange={handleChange}
               className={`w-1/2 p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color]`}
-              required
             />
           </div>
 
@@ -115,8 +111,7 @@ const ContactForm = ({ translation }) => {
               onChange={handleChange}
               className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
                 errors.email ? "border-red-500" : ""
-              }`}
-              required
+              } `}
             />
             {errors.email && (
               <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -134,7 +129,6 @@ const ContactForm = ({ translation }) => {
                 errors.message ? "border-red-500" : ""
               }`}
               rows="4"
-              required
             />
             {errors.message && (
               <p className="text-red-500 text-sm mt-1">{errors.message}</p>
@@ -151,7 +145,7 @@ const ContactForm = ({ translation }) => {
               {loading ? (
                 <div className="loader ease-linear rounded-full border-2 border-t-2 border-gray-200 h-6 w-6"></div>
               ) : (
-                "Submit"
+                translation.submit
               )}
             </Button>
           </div>

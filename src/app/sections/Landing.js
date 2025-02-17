@@ -8,19 +8,19 @@ const LandingSection = forwardRef(
   ({ translation, isDarkMode, isScrolled }, ref) => {
     const coloredStrings = [
       {
-        text: translation.strings[1] || "Fullstack Developer.",
+        text: translation.strings[0] || "Fullstack Developer.",
         colorVar: "--landing-color",
       },
       {
-        text: translation.strings[2] || "Git Guru.",
+        text: translation.strings[1] || "Git Guru.",
         colorVar: "--about-color",
       },
       {
-        text: translation.strings[3] || "Freelancer.",
+        text: translation.strings[2] || "Freelancer.",
         colorVar: "--projects-color",
       },
       {
-        text: translation.strings[4] || "Based in the UK.",
+        text: translation.strings[3] || "Based in the UK.",
         colorVar: "--contact-color",
       },
     ];
@@ -51,7 +51,7 @@ const LandingSection = forwardRef(
                 "--shadow-color": `var(${colorClass})`,
               }}
             >
-              Mikołaj Marciniak
+              {"  "}Mikołaj Marciniak
             </Link>
             .
             <br />

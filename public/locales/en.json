@@ -5,7 +5,7 @@
     "contact": "Contact"
   },
   "landing": {
-    "hero": "Hello, I'm ",
+    "hero": "Hello, I'm",
     "strings": [
       "Fullstack Developer.",
       "Git Guru.",
@@ -54,7 +54,14 @@
       "subject": "Subject",
       "email": "Email",
       "message": "Message",
-      "submit": "Submit"
+      "submit": "Submit",
+      "errors": {
+        "emailinvalid": "Invalid email address.",
+        "emailrequired": "Email is required.",
+        "forminvalid": "Please correct the errors in the form.",
+        "emailfailed": "Failed to send email. Please try again later.",
+        "genericerror": "An errors occurred. Please try again later."
+      }
     }
   },
   "footer": "All rights reserved."

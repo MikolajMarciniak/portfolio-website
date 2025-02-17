@@ -35,7 +35,7 @@ export function LanguageSwitcher() {
     <div className="relative text-left" ref={switcherRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center space-x-2 px-4 py-2 border border-[--text-color] rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-blue-500 "
+        className="group hover:font-bold transition-all duration-300 flex w-32 items-center space-x-2 px-4 py-2 border border-[--text-color] rounded-md text-sm font-semibold focus:outline-none hover:border-[--accent-color]"
       >
         <img
           src={`/icons/flags/${selectedLanguage.code}.svg`}
@@ -46,13 +46,13 @@ export function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute mt-2 w-48 bg-[--foreground-color] border border-[--text-color] rounded-md shadow-lg max-h-60 overflow-y-auto">
+        <div className="absolute mt-3 left-1/2 transform -translate-x-1/2 w-48 bg-[--foreground-color] border border-[--text-color] rounded-lg shadow-lg max-h-60 overflow-y-auto">
           <input
             type="text"
-            placeholder="Search languages..."
+            placeholder="Search..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-4 py-2 border-b border-[--text-color] text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-[--foreground-color] placeholder-[--text-color]"
+            className="px-4 py-2 mx-2 max-w-[157px] rounded-lg text-black text-sm focus:outline-none bg-white placeholder-gray-500 sticky top-0"
           />
           {filteredLanguages
             .sort((a, b) => a.label.localeCompare(b.label))

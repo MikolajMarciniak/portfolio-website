@@ -223,3 +223,24 @@ body {
   mask-size: cover;
   -webkit-mask-size: cover;
 }
+
+/* The scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Or height for horizontal scrollbar */
+}
+
+/* The track (part the thumb slides within) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* The thumb (the draggable part of the scrollbar) */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Hover effect for the thumb */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
