@@ -1,0 +1,63 @@
+.projects-height {
+  transition:
+    height 1s ease,
+    max-height 1s ease,
+    min-height 1s ease;
+
+  &.expand {
+    min-height: 130vh;
+    transition:
+      height 1s ease,
+      max-height 1s ease,
+      min-height 1s ease;
+  }
+}
+
+.projects-fade {
+  transition: opacity 0.5s ease;
+
+  &.hide {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+  &.show {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+}
+
+.projects-width {
+  transition:
+    width 1s ease,
+    max-width 1s ease,
+    min-width 1s ease;
+}
+
+.project-grow {
+  transition:
+    height 1s ease,
+    max-height 1s ease,
+    min-height 1s ease;
+  transition:
+    width 1s ease,
+    max-width 1s ease,
+    min-width 1s ease;
+}
+
+.icon {
+  transition:
+    width 1s ease,
+    opacity 1s ease;
+}
+
+.icon-shrink {
+  width: 0 !important;
+  opacity: 0;
+  overflow: hidden;
+  margin: 0px !important;
+}
+
+.icon-expand {
+  opacity: 1;
+  overflow: visible;
+}

@@ -1,6 +1,8 @@
+@import "tippy.js/dist/tippy.css";
+
 @font-face {
-  font-family: 'Nunito';
-  src: url('/fonts/Nunito/Nunito-VariableFont_wght.ttf') format('truetype');
+  font-family: "Nunito";
+  src: url("/fonts/Nunito/Nunito-VariableFont_wght.ttf") format("truetype");
   font-weight: 200 900;
   font-style: normal;
 }
@@ -11,83 +13,213 @@
 
 :root {
   --text-color: #ffffff;
-  --shadow-color: #4444dd;
-  --background-color: #000000;
+  --background-color: #080808;
+  --foreground-color: #262626;
+  --accent-color: #ef4444;
+  --shadow-color: #ef4444;
+  --landing-color: #ef4444;
+  --about-color: #a855f7;
+  --projects-color: #3b82f6;
+  --contact-color: #ffa500;
 }
 
+html {
+  scroll-behavior: smooth;
+}
 body {
+  scroll-behavior: smooth;
   color: var(--text-color);
   background: var(--background-color);
-  font-family: 'Nunito', sans-serif;
+  font-family: "Nunito", sans-serif;
+  transition:
+    color 0.3s ease,
+    background-color 0.3s ease,
+    foreground-color 0.3s ease;
 }
-
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
-  
-  .highlight {
-    background: transparent;
-    color: yellow;
-    text-shadow: 0 0 0 rgba(0, 0, 0, 0); 
+}
+.light {
+  ::selection {
+    background: yellow;
   }
 }
 
-::selection {
-  background: transparent;
-  color: yellow;
+.dark {
+  ::selection {
+    background: transparent;
+    color: yellow;
+  }
+}
+
+.light .shadow {
+  text-shadow: 0 0 0 rgb(0, 0, 0);
 }
 
 .shadow {
-  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--shadow-color));
+  filter: drop-shadow(
+    var(--shadow-offset-x) var(--shadow-offset-y) 3px var(--accent-color)
+  );
   box-shadow: none;
+  color: var(--text-color);
   text-shadow:
-   -2px -1px 0 #000,  
-    2px -1px 0 #000,
-    -2px 1px 0 #000,
-     2px 1px 0 #000;
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    2px 2px 0 #000;
+
+  &.landing {
+    filter: drop-shadow(
+      var(--shadow-offset-x) var(--shadow-offset-y) 2px var(--shadow-color)
+    );
+    box-shadow: none;
+
+    &.link:hover {
+      cursor: pointer;
+      color: var(--shadow-color);
+    }
+  }
 }
 
-.shadow.landing{
-  filter: drop-shadow(var(--shadow-offset-x) var(--shadow-offset-y) 2px var(--shadow-color-landing));
-  box-shadow: none;
+.text-outline {
+  text-shadow:
+    -0.5px -0.5px 0 var(--background-color),
+    0.5px -0.5px 0 var(--background-color),
+    -0.5px 0.5px 0 var(--background-color),
+    0.5px 0.5px 0 var(--background-color);
 }
 
-.link.landing:hover{
-  cursor:pointer;
-  color: var(--shadow-color-landing);
-}
-
-.animation {
-  animation: expandCircle 2s ease-in forwards;
-}
 .spotlight {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transition: opacity 1s ease-in;
+  opacity: 0.6;
+  filter: blur(3px);
+  will-change: background;
+  z-index: 20;
+
+  &.animation {
+    animation: spotlightFade 1s forwards;
+  }
+
+  &.light {
+    will-change: background;
+    background: radial-gradient(
+      circle at var(--spotlight-x) var(--spotlight-y),
+      rgba(0, 0, 0, 0.6) 0%,
+      transparent var(--spotlight-radius, 14%)
+    );
+  }
+  &.dark {
+    will-change: background;
+    background: radial-gradient(
+      circle at var(--spotlight-x) var(--spotlight-y),
+      rgba(255, 255, 255, 0.6) 0%,
+      transparent var(--spotlight-radius, 14%)
+    );
+  }
+}
+
+@keyframes spotlightFade {
+  0% {
+    background: radial-gradient(
+      circle at 50vw 50vh,
+      rgba(255, 255, 255, 0.6),
+      transparent 14%
+    );
+    opacity: 0;
+  }
+  100% {
+    background: radial-gradient(
+      circle at 50vw 50vh,
+      rgba(255, 255, 255, 0.6),
+      transparent 14%
+    );
+    opacity: 0.6;
+  }
+}
+.fadeIn {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.visible {
+  opacity: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.hidden {
+  display: none;
+}
+
+.dark-mode-button {
+  transition: all 0.3s ease;
+
+  &.round {
+    border-radius: 50%;
+  }
+
+  &.toggle:hover {
+    color: rgb(255, 255, 0) !important;
+  }
+
+  &.scroll-button {
+    &:hover {
+      color: rgb(0, 0, 0);
+      background-color: var(--landing-color);
+      &.scroll-up {
+        background-color: var(--accent-color);
+      }
+    }
+  }
+
+  &.dark {
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+  }
+
+  &.light {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+  }
+}
+.react-tooltip {
+  opacity: 0;
+  font-weight: 700;
+  background-color: var(--projects-color) !important;
+  color: var(--text-color);
+  transition: opacity 150ms ease-in !important;
+}
+
+.react-tooltip[data-show] {
+  opacity: 1 !important;
+}
+
+.masked-element {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+}
+
+.background {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(
-    circle at var(--spotlight-x) var(--spotlight-y),
-    rgba(255, 255, 255, var(--spotlight-opacity)) 0%,
-    transparent var(--spotlight-radius, 14%)
-  );
-  pointer-events: none;
-  transition: opacity 1s ease-in;
-  opacity: var(--spotlight-opacity);
-  filter: blur(5px);
-  mix-blend-mode: screen;
-  z-index: 10;
-}
-
-@keyframes expandCircle {
-  0% {
-    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 14%);
-    opacity: 0;
-  }
-  100% {
-    background: radial-gradient(circle at 50vw 50vh, rgba(255, 255, 255, 0.6), transparent 14%);
-    opacity: 0.6;
-  }
+  background-color: white;
+  mask-image: url("../../../public/favicon.svg");
+  -webkit-mask-image: url("../../../public/favicon.svg");
+  mask-size: cover;
+  -webkit-mask-size: cover;
 }

@@ -28,7 +28,7 @@ const IconLoop = ({
         data-tip={icon.fullname}
       >
         <LazyImage
-          src={`/icons/${icon.name}.svg`}
+          src={`/icons/tech/${icon.name}.svg`}
           alt={icon.fullname}
           className="h-56 w-56"
         />
@@ -41,10 +41,9 @@ const ScrollingIcons = ({ icons }) => {
   const [scrollDirection, setScrollDirection] = useState("forward");
 
   useEffect(() => {
-    // Preload all images
     icons.forEach((icon) => {
       const img = new Image();
-      img.src = `/icons/${icon.name}.svg`;
+      img.src = `/icons/tech/${icon.name}.svg`;
     });
 
     let lastScrollTop = 0;

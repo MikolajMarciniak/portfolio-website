@@ -1,52 +1,163 @@
-import React from "react";
+import React, { useState, forwardRef } from "react";
 import ProjectCard from "../components/ProjectCard";
+import { Link } from "react-scroll";
+import { Parallax } from "react-scroll-parallax";
+import Button from "../components/Button";
+import LazyLoad from "../components/LazyLoad";
+import { projectColumns } from "../data/projectData";
+import "../styles/projects.css";
 
-const projects = [
-  {
-    id: 1,
-    title: "Project 1",
-    description: "Description of Project 1",
-    link: "https://example.com",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "Description of Project 2",
-    link: "https://example.com",
-    image: "https://via.placeholder.com/300",
-  },
-  {
-    id: 3,
-    title: "Project 3",
-    description: "Description of Project 3",
-    link: "https://example.com",
-    image: "https://via.placeholder.com/300",
-  },
-];
+const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
+  const [expandedColumn, setExpandedColumn] = useState(null);
+  const [expandedItem, setExpandedItem] = useState(null);
+  const [showMore, setShowMore] = useState(false);
 
-const ProjectsSection = () => {
+  const translatedProjects = projectColumns.map((project) => ({
+    ...project,
+    items: project.items.map((item) => ({
+      ...item,
+      description:
+        translation?.cards?.find((p) => p.id === item.id)?.description ||
+        item.description,
+    })),
+  }));
+
+  const toggleShowMore = () => {
+    showMore
+      ? [2, 4, 6].includes(expandedItem)
+        ? toggleExpand(expandedItem)
+        : ""
+      : "";
+    setShowMore((prev) => !prev);
+  };
+
+  const toggleExpand = (projectIndex) => {
+    setExpandedItem((prev) => (prev === projectIndex ? null : projectIndex));
+    let columnIndex = null;
+    if (projectIndex <= 2) {
+      columnIndex = 0;
+    } else if (projectIndex <= 4) {
+      columnIndex = 1;
+    } else if (projectIndex <= 6) {
+      columnIndex = 2;
+    }
+    setExpandedColumn((prev) =>
+      prev === columnIndex && projectIndex === expandedItem
+        ? null
+        : columnIndex,
+    );
+  };
+
+  const twoRows = [
+    translatedProjects[0],
+    translatedProjects[1],
+    translatedProjects[2],
+  ].some((col) => col.items.length > 1);
   return (
-    <section
-      id="projects"
-      className="min-h-screen flex flex-col items-center justify-center"
-    >
-      <div className="text-center mb-12">
-        <h2 className="text-5xl font-bold mb-6">My Projects</h2>
+    <section ref={ref} id="projects">
+      <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
+        <LazyLoad>
+          <h2 className="text-5xl font-bold mb-10 mt-10">
+            <span className="shadow text-[--about-color]">
+              {translation.title}
+            </span>
+          </h2>
+        </LazyLoad>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
-        {projects.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            link={project.link}
-            image={project.image}
-          />
+
+      <div
+        className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[100vh] ${
+          showMore ? "expand" : ""
+        } overflow-hidden`}
+      >
+        {translatedProjects.map((column, columnIndex) => (
+          <Parallax
+            translateY={column.parallax}
+            key={column.id}
+            className={`flex flex-col items-${
+              column.id === 1 ? "end" : column.id === 3 ? "start" : "center"
+            } space-y-4 project-grow  ${
+              expandedColumn === columnIndex ? "w-[200%]" : "w-full"
+            }`}
+          >
+            {column.items.map((project, itemIndex) => (
+              <div
+                key={itemIndex}
+                className={`items-center flex project-grow justify-center transition-all duration-1000 ease-in-out ${
+                  itemIndex === 1
+                    ? showMore
+                      ? "opacity-100 max-h-full"
+                      : "opacity-0 max-h-0 pointer-events-none"
+                    : "opacity-100"
+                } ${
+                  expandedColumn === columnIndex
+                    ? project.id === expandedItem
+                      ? "w-[100%]"
+                      : "w-[50%]"
+                    : "w-[100%]"
+                }`}
+                style={{
+                  transition:
+                    "opacity 0.7s ease-in-out, max-height 1s ease-in-out, width 1s ease-in-out",
+                }}
+              >
+                <LazyLoad fullWidth={true}>
+                  <ProjectCard
+                    key={project.id}
+                    translation={translation}
+                    title={project.title}
+                    description={project.description}
+                    link={project.link}
+                    githubLink={project.githubLink}
+                    imageStatic={project.imageStatic}
+                    imageGif={project.imageGif}
+                    icons={project.icons}
+                    videoFile={project.videoFile}
+                    coverVideo={project.id != 5}
+                    isExpanded={expandedItem === project.id}
+                    isDarkMode={isDarkMode}
+                    otherExpanded={
+                      expandedItem !== project.id && expandedItem !== null
+                    }
+                    onExpand={() => toggleExpand(project.id)}
+                  />
+                </LazyLoad>
+              </div>
+            ))}
+            {columnIndex === 1 && (
+              <>
+                {!showMore
+                  ? twoRows && (
+                      <Button
+                        onClick={toggleShowMore}
+                        className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
+                      >
+                        Show More
+                      </Button>
+                    )
+                  : twoRows && (
+                      <Link
+                        to="projects"
+                        offset={-100}
+                        duration={300}
+                        smooth={true}
+                      >
+                        <Button
+                          onClick={toggleShowMore}
+                          className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
+                        >
+                          Show Less
+                        </Button>
+                      </Link>
+                    )}
+              </>
+            )}
+          </Parallax>
         ))}
       </div>
     </section>
   );
-};
+});
 
+ProjectsSection.displayName = "Featured Projects";
 export default ProjectsSection;

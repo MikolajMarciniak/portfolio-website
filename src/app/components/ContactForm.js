@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-
-const ContactForm = () => {
+import Button from "../components/Button";
+import { toast } from "react-toastify";
+const ContactForm = ({ translation }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
 
@@ -52,12 +52,12 @@ const ContactForm = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(formData),
-        }
+        },
       );
 
       if (response.ok) {
         toast.success("Email sent successfully!");
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", subject: "", message: "" });
       } else {
         toast.error("Failed to send email.");
       }
@@ -70,37 +70,51 @@ const ContactForm = () => {
   };
 
   return (
-    <section id="contact" className="contact-section">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold mb-4">Contact Me</h2>
-        <form className="space-y-4" onSubmit={handleSubmit}>
-          <div className="form-group">
+    <div>
+      <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col gap-8 px-6">
+        <form
+          className="space-y-4 w-full max-w-lg mx-auto"
+          onSubmit={handleSubmit}
+        >
+          <div className="form-group flex justify-between gap-4">
             <input
               type="text"
               id="name"
               name="name"
-              placeholder="Name"
+              placeholder={translation.name}
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-2 bg-gray-800 text-blue-500 rounded-lg ${
-                errors.name ? "border-red-500" : "border-gray-300"
+              className={`w-1/2 p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+                errors.name ? "border-red-500" : ""
               }`}
               required
             />
             {errors.name && (
               <p className="text-red-500 text-sm mt-1">{errors.name}</p>
             )}
+
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder={translation.subject}
+              value={formData.subject}
+              onChange={handleChange}
+              className={`w-1/2 p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color]`}
+              required
+            />
           </div>
+
           <div className="form-group">
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="Email"
+              placeholder={translation.email}
               value={formData.email}
               onChange={handleChange}
-              className={`w-full p-2 bg-gray-800 text-blue-500 rounded-lg ${
-                errors.email ? "border-red-500" : "border-gray-300"
+              className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+                errors.email ? "border-red-500" : ""
               }`}
               required
             />
@@ -108,15 +122,16 @@ const ContactForm = () => {
               <p className="text-red-500 text-sm mt-1">{errors.email}</p>
             )}
           </div>
+
           <div className="form-group">
             <textarea
               id="message"
               name="message"
-              placeholder="Message"
+              placeholder={translation.message}
               value={formData.message}
               onChange={handleChange}
-              className={`w-full p-2 bg-gray-800 text-blue-500 rounded-lg ${
-                errors.message ? "border-red-500" : "border-gray-300"
+              className={`w-full p-2 shadow-lg rounded-lg bg-[--foreground-color] placeholder-[--text-color] text-[--text-color] border-2 border-[--contact-color] ${
+                errors.message ? "border-red-500" : ""
               }`}
               rows="4"
               required
@@ -125,38 +140,24 @@ const ContactForm = () => {
               <p className="text-red-500 text-sm mt-1">{errors.message}</p>
             )}
           </div>
-          <button
-            type="submit"
-            className={`bg-indigo-500 p-2 text-white rounded-lg hover:bg-indigo-600 flex items-center justify-center ${
-              loading ? "opacity-50" : ""
-            }`}
-            disabled={loading}
-          >
-            {loading ? (
-              <div className="loader ease-linear rounded-full border-4 border-t-4 border-gray-200 h-6 w-6"></div>
-            ) : (
-              "Send"
-            )}
-          </button>
+          <div className="">
+            <Button
+              type="submit"
+              disabled={loading}
+              className={`inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-105 border-2 border-[--contact-color] hover:bg-[--contact-color] ${
+                loading ? "opacity-50" : ""
+              }`}
+            >
+              {loading ? (
+                <div className="loader ease-linear rounded-full border-2 border-t-2 border-gray-200 h-6 w-6"></div>
+              ) : (
+                "Submit"
+              )}
+            </Button>
+          </div>
         </form>
-        <ToastContainer
-          position="bottom-right"
-          autoClose={5000}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
-          pauseOnHover
-          theme="colored"
-          style={{
-            backgroundColor: "var(--background-color)", // Matches the toast background to --background-color
-            color: "#fff", // Ensures the text is white
-          }}
-        />
       </div>
-    </section>
+    </div>
   );
 };
 

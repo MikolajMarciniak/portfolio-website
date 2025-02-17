@@ -1,0 +1,60 @@
+{
+  "navbar": {
+    "about": "O mnie",
+    "projects": "Projekty",
+    "contact": "Kontakt"
+  },
+  "landing": {
+    "hero": "Witaj, jestem ",
+    "strings": [
+      "Fullstack Developer.",
+      "Git Guru.",
+      "Freelancer.",
+      "Mieszkam w Wielkiej Brytanii."
+    ]
+  },
+  "about": {
+    "description": "Jestem deweloperem fullstack specjalizującym się w technologii MERN. Od początku mojej drogi tworzyłem dedykowane rozwiązania cyfrowe zarówno dla biznesu, jak i użytkowników indywidualnych. Szczególnie cieszę się z integracji potężnych backendów z pięknymi interfejsami do wizualizacji danych. W wolnym czasie eksperymentuję z sztuczną inteligencją i warzę własne wino.",
+    "cv": "/documents/MikolajMarciniak.pdf",
+    "viewcv": "Zobacz CV",
+    "skillstitle": "Umiejętności",
+    "skills": ["Frontend", "Backend", "Narzędzia"]
+  },
+  "projects": {
+    "title": "Projekty",
+    "showmore": "Więcej",
+    "showless": "Mniej",
+    "expand": "Rozwiń",
+    "collapse": "Zwiń",
+    "cards": [
+      {
+        "id": 1,
+        "title": "DriveGuage",
+        "description": "<div class='mb-3 break-words whitespace-normal font-semibold'>DriveGuage to system monitorowania wydajności kierowcy działający na zasadzie czarnej skrzynki. System działa na Raspberry Pi, które łączy się z portem OBD w samochodzie, aby zbierać dane o stylu jazdy.<br/><br/>Dane są przesyłane na serwer, przetwarzane i wyświetlane za pomocą przyjaznej aplikacji webowej. Uwierzytelnieni klienci mogą śledzić zmiany w swoim 'wyniku kierowcy', mierniku nawyków jazdy, takich jak przekraczanie prędkości, ostre zakręty i szybkie przyspieszanie.</div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-English",
+        "description": "<p className='mb-3 break-words whitespace-normal font-semibold'>Pracując w Premium Faber Ltd., skupiłem się na tworzeniu aplikacji typu single-page (SPA) dla szkoły językowej Extra-English.<br/><br/>Pierwsza wersja aplikacji była statyczna, zawierająca kluczowe informacje skierowane do klienta. Później rozbudowałem jej funkcjonalność o galerię zdjęć, nieskończony feed z wiadomościami, formularz rejestracji klientów oraz interaktywny quiz językowy.<br/><br/>Po zakończeniu współpracy z Premium Faber kontynuowałem współpracę bezpośrednio z Extra-English. Ostatnio wdrożyłem uwierzytelnianie użytkowników, zarządzanie lekcjami i rejestrację obecności, a także zautomatyzowane obliczanie płatności.</p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'Duthie",
+        "description": "<p className='mb-3 break-words whitespace-normal font-semibold'>Ta aplikacja nawigacyjna, skoncentrowana na społeczności, jest dowodem koncepcji opracowanym na Hackathonie RGU 2024. <br/><br/>Zawiera interaktywną mapę z pinezkami oznaczającymi kluczowe punkty w parku Duthie w Aberdeen. Po kliknięciu na pinezkę użytkownicy mogą przeczytać więcej informacji lub wybrać opcję nawigacji do tego punktu. Aplikacja ma również feed, zebrany z grupy 'Friends of Duthie Park' na Facebooku. <br/><br/>Aplikacja oferuje ustawienia dostępności; użytkownicy mogą włączyć tryb wysokiego kontrastu lub powiększyć czcionkę, aby poprawić czytelność.</p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt",
+    "quote": "Zbudujmy coś niesamowitego razem - napisz do mnie poniżej!",
+
+    "form": {
+      "name": "Imię",
+      "subject": "Temat",
+      "email": "Email",
+      "message": "Wiadomość",
+      "submit": "Wyślij"
+    }
+  },
+  "footer": "Wszystkie prawa zastrzeżone."
+}

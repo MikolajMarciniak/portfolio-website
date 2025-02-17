@@ -1,0 +1,63 @@
+{
+  "navbar": {
+    "about": "À propos",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "landing": {
+    "hero": "Bonjour, je suis",
+    "strings": [
+      "Développeur FullStack.",
+      "Git Guru.",
+      "Pigiste.",
+      "Basé au Royaume-Uni."
+    ]
+  },
+  "about": {
+    "description": "Je suis un développeur Fullstack spécialisé dans la pile Mern. Depuis le début de mon parcours, j'ai créé des solutions numériques sur mesure pour l'utilisation des entreprises et des consommateurs. J'aime particulièrement intégrer des backends puissants avec de belles interfaces pour la visualisation des données. Pendant mon temps libre, j'expérimente l'intelligence artificielle et je prépare mon propre vin.",
+    "cv": "/Documents/mikolajmarciniak.pdf",
+    "viewcv": "Voir CV",
+    "skillstitle": "Compétences",
+    "skills": [
+      "L'extrémité avant",
+      "Backend",
+      "Outils"
+    ]
+  },
+  "projects": {
+    "title": "Projets en vedette",
+    "showmore": "Plus",
+    "showless": "Moins",
+    "expand": "Développer",
+    "collapse": "Effondrement",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Drive",
+        "description": "<Div Class = 'MB-3 Break-Words Whitespace-normal Font-Semibold'> DriveGuage est un système de surveillance des performances du pilote BlackBox. Le système s'exécute sur un Raspberry Pi, qui se connecte au port OBD de la voiture pour collecter des données de conduite. <br/> <br/> Les données sont téléchargées sur un serveur, traitées et affichées via une application Web conviviale. Les clients authentifiés peuvent suivre les changements dans leur «score de conducteur», une mesure des habitudes de conduite, comme la vitesse, les virages nets et l'accélération rapide. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-anglais",
+        "description": "<P classname = 'MB-3 Break-Words Whitespace-normal Font-Semibold'> Alors que chez Premium Faber Ltd., je me suis concentré sur le développement d'une application à une seule page (SPA) pour l'école de langue extra-anglaise. <br/> <br/> La version initiale de l'application était statique, fournissant des informations clés face à la clientèle. J'ai ensuite élargi sa fonctionnalité pour inclure une galerie de photos, un fil d'actualités infini, un formulaire d'inscription au client et un quiz linguistique interactif <br/> <br/> Après avoir quitté Preum Faber, j'ai continué à travailler directement avec l'extra-anglais . Récemment, j'ai implémenté l'authentification des utilisateurs, la gestion des leçons et le suivi de la fréquentation et les calculs de paiement automatisés. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<P classname = 'MB-3 Break-Words Whitespace-normal Font-Semibold'> Cette application de navigation axée sur la communauté est une preuve de concept développée pour le hackathon RGU 2024. <br/> <br/> Il dispose d'une carte interactive avec des épingles pour les points de repère clés du parc Aberdeen Duthie. Lorsque vous appuyez sur une broche, les utilisateurs peuvent lire plus d'informations à ce sujet ou choisir de naviguer vers la broche. L'application a également un flux, le web-crampant du groupe Facebook «Friends of Duthie Park». <br/> <br/> L'application possède des paramètres d'accessibilité; Les utilisateurs peuvent engager un mode de contraste élevé ou augmenter la taille de la police pour une meilleure lisibilité. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contact",
+    "quote": "Vous avez une idée ou vous voulez simplement discuter? N'hésitez pas à me laisser un message ci-dessous!",
+    "form": {
+      "name": "Nom",
+      "subject": "Sujet",
+      "email": "E-mail",
+      "message": "Message",
+      "submit": "Soumettre"
+    }
+  },
+  "footer": "Tous droits réservés."
+}

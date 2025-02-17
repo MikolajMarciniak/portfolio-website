@@ -5,8 +5,10 @@ const nextConfig = {
   output: "export",
   basePath: "",
   trailingSlash: true,
+  productionBrowserSourceMaps: false,
   experimental: {
     forceSwcTransforms: true,
+    serverSourceMaps: false,
   },
 };
 
