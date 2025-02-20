@@ -11,8 +11,8 @@ const TypedText = ({ strings, colorClass, handleStringTyped }) => {
     >
       <ReactTyped
         strings={strings.map((s) => s.text)}
-        typeSpeed={50}
-        backSpeed={50}
+        typeSpeed={70}
+        backSpeed={70}
         loop
         preStringTyped={(index) => handleStringTyped(index)}
       />

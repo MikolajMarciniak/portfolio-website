@@ -9,7 +9,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
     <nav
       className={`fixed top-0 left-0 w-full z-40  transition-all duration-500 ease-in-out ${
         isScrolled
-          ? "shadow-lg py-2 bg-[var(--background-color)]"
+          ? "shadow-lg py-2  bg-[var(--navbar-color)]"
           : "py-4 bg-transparent"
       }`}
     >
@@ -35,7 +35,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           <ScrollLink
             to="about"
             smooth={true}
-            offset={-100}
+            offset={-70}
             duration={500}
             className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--about-color)]"
           >
@@ -43,9 +43,19 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
             <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--about-color)] transition-all duration-300 group-hover:w-full"></span>
           </ScrollLink>
           <ScrollLink
+            to="skills"
+            smooth={true}
+            offset={-80}
+            duration={500}
+            className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--skills-color)]"
+          >
+            {translation.skills}
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--skills-color)] transition-all duration-300 group-hover:w-full"></span>
+          </ScrollLink>
+          <ScrollLink
             to="projects"
             smooth={true}
-            offset={-100}
+            offset={-70}
             duration={500}
             className="text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--projects-color)]"
           >
@@ -64,7 +74,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           </ScrollLink>
           <button
             onClick={toggleTheme}
-            className={`transition-transform transform hover:scale-125 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all round dark-mode-button toggle ${
+            className={`transition-transform transform hover:scale-105 focus:outline-none relative w-10 h-10 flex items-center justify-center transition-all round dark-mode-button toggle ${
               isDarkMode ? "dark" : "light"
             }`}
           >

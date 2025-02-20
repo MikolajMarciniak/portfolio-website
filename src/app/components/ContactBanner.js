@@ -3,21 +3,19 @@ import React from "react";
 const Banner = ({ translation }) => {
   return (
     <div
-      className="relative w-full h-[70%] min-h-[600px] pt-56 overflow-hidden dark pt-32"
+      className="shadow-2xl relative w-full min-h-[400px] pt-10 flex items-center justify-center overflow-hidden dark"
       style={{
         clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0% 100%)",
       }}
     >
       <div
-        className="absolute top-0 left-0 w-full h-full bg-cover bg-center bg-fixed"
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{
           backgroundImage: "url('./images/banner.jpg')",
         }}
       ></div>
-
-      <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-orange-600 to-blue-600 opacity-70"></div>
-
-      <div className="relative flex flex-col items-center justify-center h-full">
+      <div className="absolute inset-0 bg-gradient-to-b from-[--projects-color] to-[--contact-color] opacity-70"></div>
+      <div className="relative flex flex-col items-center text-center">
         <p className="mb-5 text-white font-semibold text-2xl italic">
           {translation}
         </p>
@@ -26,7 +24,7 @@ const Banner = ({ translation }) => {
           <img
             src="./images/miko2.jpg"
             alt="Profile"
-            className="w-full h-full object-cover transform translate-x-1 bg-[#D3CEBA]"
+            className="w-full h-full object-cover"
           />
         </div>
 

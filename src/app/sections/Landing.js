@@ -36,22 +36,23 @@ const LandingSection = forwardRef(
       <section
         ref={ref}
         id="landing"
-        className="landing-section min-h-screen flex flex-col justify-between items-center"
+        className="landing-section min-h-screen flex flex-col justify-between items-center shadow-2xl"
       >
-        <div className="text-center flex-grow flex flex-col justify-center">
+        <div className="text-center max-w-6xl flex-grow flex flex-col justify-center">
           <h1 className="text-7xl inline-block leading-none text-left mt-[100px]">
             {translation.hero}
             <Link
               to="about"
               smooth={true}
               duration={500}
-              offset={-100}
-              className="font-bold shadow landing link"
+              offset={-70}
+              className="cursor-pointer font-bold hover:text-[--shadow-color] shadow landing link"
               style={{
                 "--shadow-color": `var(${colorClass})`,
               }}
             >
-              {"  "}Mikołaj Marciniak
+              {"  "}
+              <span className="text-7xl">MIKOŁAJ MARCINIAK</span>
             </Link>
             .
             <br />

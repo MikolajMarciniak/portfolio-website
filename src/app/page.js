@@ -2,102 +2,150 @@
 
 import { useEffect, useRef, useState, useContext } from "react";
 import ScrollToTopButton from "./components/ScrollToTopButton";
-const _ = require("lodash");
 import { ParallaxProvider } from "react-scroll-parallax";
 import { LocaleContext } from "./components/LocaleProvider";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import LandingSection from "./sections/Landing";
 import AboutSection from "./sections/About";
+import SkillsSection from "./sections/Skills";
 import ProjectsSection from "./sections/Projects";
 import ContactSection from "./sections/Contact";
 import LoadingSlider from "./components/LoadingSlider";
 import { ToastContainer } from "react-toastify";
-
-// import { useSpotlightEffect } from "./hooks/useSpotlightEffect";
+import CursorShadowEffect from "./hooks/CursorShadowEffect";
 
 export default function Home() {
   const t = useContext(LocaleContext).currentTranslations;
-  const ref = useRef(null);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [isDarkMode, setisDarkMode] = useState(true);
-  // const { initialAnimationDone } = useSpotlightEffect(ref);
-  // const isAnimating = initialAnimationDone ? "" : "animation";
-
-  const landingRef = useRef();
-  const aboutRef = useRef();
-  const projectsRef = useRef();
-  const contactRef = useRef();
+  const [isDarkMode, setIsDarkMode] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
+
+  const landingRef = useRef(null);
+  const aboutRef = useRef(null);
+  const skillsRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
 
   useEffect(() => {
     setTimeout(() => setIsLoading(false), 1000);
   }, []);
 
-  const handleScroll = () => {
-    window.scrollY > 100 ? setIsScrolled(true) : setIsScrolled(false);
-    updateAccentColor();
-  };
+  useEffect(() => {
+    if (
+      !landingRef.current ||
+      !aboutRef.current ||
+      !skillsRef.current ||
+      !projectsRef.current ||
+      !contactRef.current
+    ) {
+      return;
+    }
 
-  const throttledScroll = _.throttle(handleScroll, 100);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const sectionColors = {
+              landing: "var(--landing-color)",
+              about: "var(--about-color)",
+              skills: "var(--skills-color)",
+              projects: "var(--projects-color)",
+              contact: "var(--contact-color)",
+            };
+            const sectionId = entry.target.id;
+            document.documentElement.style.setProperty(
+              "--accent-color",
+              sectionColors[sectionId],
+            );
+          }
+        });
+      },
+      { threshold: 0.3 },
+    );
 
-  const updateAccentColor = () => {
-    const sections = [
-      { ref: landingRef, color: "var(--landing-color)" },
-      { ref: aboutRef, color: "var(--about-color)" },
-      { ref: projectsRef, color: "var(--projects-color)" },
-      { ref: contactRef, color: "var(--contact-color)" },
-    ];
+    observer.observe(landingRef.current);
+    observer.observe(aboutRef.current);
+    observer.observe(skillsRef.current);
+    observer.observe(projectsRef.current);
+    observer.observe(contactRef.current);
 
-    sections.forEach(({ ref, color }) => {
-      const rect = ref.current.getBoundingClientRect();
-      if (rect.top + 100 < window.innerHeight) {
-        document.documentElement.style.setProperty("--accent-color", color);
-      }
-    });
-  };
+    return () => observer.disconnect();
+  }, [
+    landingRef.current,
+    aboutRef.current,
+    skillsRef.current,
+    projectsRef.current,
+    contactRef.current,
+  ]);
 
   useEffect(() => {
-    window.addEventListener("scroll", throttledScroll);
-    return () => {
-      window.removeEventListener("scroll", throttledScroll);
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 100);
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    updateThemeRefs();
+    const colors = {
+      "--hero-color": isDarkMode
+        ? "rgba(0, 0, 0, 0.9)"
+        : "rgba(200, 200, 200, 0.5)",
+      "--background-color": isDarkMode
+        ? "rgba(25, 25, 25, 1)"
+        : "rgba(230, 230, 230, 0.95)",
+      "--background-color-dark": isDarkMode
+        ? "rgba(20, 20, 20, 1)"
+        : "rgb(211, 211, 211)",
+      "--navbar-color": isDarkMode
+        ? "rgba(15, 15, 15, 1)"
+        : "rgba(235, 235, 235, 1)",
+      "--foreground-color": isDarkMode
+        ? "rgb(60, 60, 60)"
+        : "rgb(207, 207, 207)",
+      "--foreground-color-dark": isDarkMode
+        ? "rgb(40, 40, 40)"
+        : "rgb(159, 159, 159)",
+      "--text-color": isDarkMode
+        ? "rgba(225, 225, 225, 1)"
+        : "rgba(15, 15, 15, 1)",
+    };
+
+    const sectionColors = {
+      "--landing-color": isDarkMode
+        ? "rgba(239, 68, 68, 1)"
+        : "rgba(239, 68, 68, 1)",
+      "--about-color": isDarkMode
+        ? "rgba(168, 85, 247, 1)"
+        : "rgba(168, 85, 247, 1)",
+      "--skills-color": isDarkMode
+        ? "rgba(0, 155, 160, 1)"
+        : "rgba(0, 155, 160, 1)",
+      "--projects-color": isDarkMode
+        ? "rgba(59, 130, 246, 1)"
+        : "rgba(59, 130, 246, 1)",
+      "--contact-color": isDarkMode
+        ? "rgba(255, 165, 0, 1)"
+        : "rgba(255, 165, 0, 1)",
+    };
+
+    Object.entries({ ...colors, ...sectionColors }).forEach(([key, value]) => {
+      document.documentElement.style.setProperty(key, value);
+    });
   }, [isDarkMode]);
 
-  const updateThemeRefs = () => {
-    document.documentElement.style.setProperty(
-      "--background-color",
-      isDarkMode ? "#080808" : "#FFFFFF",
-    );
-    document.documentElement.style.setProperty(
-      "--text-color",
-      isDarkMode ? "#FFFFFF" : "#000000",
-    );
-    document.documentElement.style.setProperty(
-      "--foreground-color",
-      isDarkMode ? "#262626" : "#c7c7c7",
-    );
-  };
-
-  const toggleTheme = () => {
-    setisDarkMode((prev) => !prev);
-    updateThemeRefs();
-  };
-
-  const themeClass = isDarkMode ? "dark" : "light";
+  const toggleTheme = () => setIsDarkMode((prev) => !prev);
 
   return isLoading ? (
     <LoadingSlider />
   ) : (
     <div>
       <main
-        ref={ref}
-        className={`${themeClass} min-h-screen flex flex-col relative`}
+        className={`${isDarkMode ? "dark" : "light"} home-hero min-h-screen flex flex-col relative`}
       >
+        <CursorShadowEffect />
         <Navbar
           translation={t.navbar}
           isScrolled={isScrolled}
@@ -108,32 +156,30 @@ export default function Home() {
         <ParallaxProvider>
           <div className="h-full">
             <LandingSection
-              translation={t.landing}
               ref={landingRef}
+              translation={t.landing}
               isDarkMode={isDarkMode}
               isScrolled={isScrolled}
             />
             <AboutSection
-              translation={t.about}
               ref={aboutRef}
+              translation={t.about}
               isDarkMode={isDarkMode}
-              className="snap-start h-screen"
+            />
+            <SkillsSection
+              ref={skillsRef}
+              translation={t.skills}
+              isDarkMode={isDarkMode}
             />
             <ProjectsSection
-              translation={t.projects}
               ref={projectsRef}
+              translation={t.projects}
               isDarkMode={isDarkMode}
-              className="snap-start h-screen"
             />
-            <ContactSection
-              translation={t.contact}
-              ref={contactRef}
-              className="snap-start h-screen"
-            />
+            <ContactSection ref={contactRef} translation={t.contact} />
+            <Footer translation={t.footer} isDarkMode={isDarkMode} />
           </div>
         </ParallaxProvider>
-
-        {/* <div className={`spotlight ${isAnimating} ${themeClass}`} /> */}
         <ToastContainer
           position="bottom-right"
           autoClose={5000}
@@ -145,12 +191,9 @@ export default function Home() {
           draggable
           pauseOnHover
           theme="colored"
-          style={{
-            color: "var(--text-color)",
-          }}
+          style={{ color: "var(--text-color)" }}
         />
         <ScrollToTopButton isDarkMode={isDarkMode} isScrolled={isScrolled} />
-        <Footer translation={t.footer} isDarkMode={isDarkMode} />
       </main>
     </div>
   );

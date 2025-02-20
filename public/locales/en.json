@@ -2,6 +2,7 @@
   "navbar": {
     "about": "About",
     "projects": "Projects",
+    "skills": "Skills",
     "contact": "Contact"
   },
   "landing": {
@@ -14,19 +15,23 @@
     ]
   },
   "about": {
+    "title": "ABOUT",
     "description": "I'm a fullstack developer specialising in the MERN stack. Since the beginning of my journey, I've created bespoke digital solutions for both business and consumer use. I particularly enjoy integrating powerful backends with beautiful interfaces for data visualisation. In my free time I'm experimenting with artificial intelligence and brewing my own wine.",
     "cv": "/documents/MikolajMarciniak.pdf",
-    "viewcv": "View CV",
-    "skillstitle": "Skills",
-    "skills": ["Frontend", "Backend", "Tools"]
+    "viewcv": "VIEW CV"
+  },
+  "skills": {
+    "skillstitle": "SKILLS",
+    "skills": ["FRONTEND", "BACKEND", "TOOLS"]
   },
 
   "projects": {
-    "title": "Featured Projects",
-    "showmore": "More",
-    "showless": "Less",
-    "expand": "Expand",
-    "collapse": "Collapse",
+    "title": "PROJECTS",
+    "showmore": "SHOW MORE",
+    "showless": "SHOW LESS",
+    "expand": "EXPAND",
+    "collapse": "COLLAPSE",
+    "upcoming": "More projects coming soon...",
     "cards": [
       {
         "id": 1,
@@ -46,15 +51,17 @@
     ]
   },
   "contact": {
-    "title": "Contact",
+    "title": "CONTACT",
     "quote": "Have an idea or simply want to chat? Feel free to drop me a message below!",
 
     "form": {
       "name": "Name",
-      "subject": "Subject",
       "email": "Email",
       "message": "Message",
-      "submit": "Send",
+      "entername": "Enter Your Name",
+      "enteremail": "Enter Your Email",
+      "entermessage": "Enter Your Message",
+      "submit": "SEND",
       "errors": {
         "emailinvalid": "Invalid email address.",
         "emailrequired": "Email is required.",

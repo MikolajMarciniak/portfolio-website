@@ -22,8 +22,7 @@ const ProjectCard = ({
   const [isHovered, setHovered] = useState(false);
   return (
     <div
-      className={`shadow-xl rounded-lg card  border-2 
-        border-[--projects-color]
+      className={`shadow-2xl  rounded-lg card  
       transform transition-all duration-500 project-grow w-full h-full`}
     >
       <div
@@ -54,7 +53,7 @@ const ProjectCard = ({
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-8 h-8 transform transition-transform duration-100 hover:scale-110 text-[--text-color] hover:text-[--projects-color]"
+                className="w-8 h-8 transform transition-transform duration-100 hover:scale-105 text-[--text-color] hover:text-[--projects-color]"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +77,7 @@ const ProjectCard = ({
               href={githubLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 transform transition-transform duration-100 hover:scale-110 text-[--text-color] hover:text-[--projects-color]"
+              className="w-8 h-8 transform transition-transform duration-100 hover:scale-105 text-[--text-color] hover:text-[--projects-color]"
             >
               <svg
                 fill="currentColor"
@@ -138,7 +137,7 @@ const ProjectCard = ({
           <div className="flex ml-auto">
             <Button
               onClick={onExpand}
-              className={` inline-flex items-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-all duration-100 transform hover:scale-105 border-2 border-[--text-color] hover:bg-[--projects-color]`}
+              className={` inline-flex items-center text-[--projects-color] hover:text-[--background-color] transition-all duration-500 transform border-2 border-[--projects-color] hover:bg-[--projects-color]`}
             >
               {isExpanded ? translation.collapse : translation.expand}
             </Button>

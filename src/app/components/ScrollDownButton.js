@@ -3,7 +3,7 @@ import { Link } from "react-scroll";
 const ScrollDownButton = ({ isDarkMode, isScrolled }) => {
   return (
     <div
-      className={`relative w-full flex justify-center items-end pb-10 transition-all duration-300 ease-in-out ${
+      className={`relative w-full flex  justify-center items-end pb-10 transition-all duration-300 ease-in-out ${
         isScrolled && "opacity-0"
       }`}
     >
@@ -12,20 +12,20 @@ const ScrollDownButton = ({ isDarkMode, isScrolled }) => {
         smooth={true}
         duration={500}
         offset={-100}
-        className={`transition-transform transform hover:scale-110 border-4 border-[--landing-color] rounded-full cursor-pointer flex items-center justify-center`}
+        className={`transition-transform transform hover:scale-105 rounded-full cursor-pointer flex items-center justify-center`}
       >
         <button
-          className={` scroll-button bg-[var(--landing-color)] dark-mode-button px-3 py-3 text-lg font-semibold rounded-full transition-all ease-in-out duration-300 hover:shadow-lg ${
+          className={`landing hover:bg-[--landing-color] hover:text-[--background-color-dark] text-[--text-color] border-[--landing-color] border-4 px-4 py-4 rounded-full transition-all ease-in-out duration-300 hover:shadow-xl ${
             isDarkMode ? "dark" : "light"
           }`}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="w-8 h-8"
+            className="w-8 h-8 "
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={2}
+            strokeWidth={3}
           >
             <path
               strokeLinecap="round"

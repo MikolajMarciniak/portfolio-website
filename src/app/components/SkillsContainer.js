@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { icons } from "../data/iconData";
 import Button from "./Button";
 
-const Skills = ({ translation, isDarkMode }) => {
+const SkillsContainer = ({ translation, isDarkMode }) => {
   const [activeTab, setActiveTab] = useState("frontend");
   const [visibleIcons, setVisibleIcons] = useState([]);
   const [loadedIcons, setLoadedIcons] = useState({});
@@ -65,16 +65,16 @@ const Skills = ({ translation, isDarkMode }) => {
   };
 
   return (
-    <div className="mt-6 shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-3xl mx-auto bg-[--foreground-color]">
+    <div className="mt-6 mb-20 shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-3xl mx-auto bg-[--foreground-color]">
       <div className="mb-8 flex space-x-4 justify-center">
         {tabs.map((tab) => (
           <Button
             key={tab.value}
             onClick={() => handleTabChange(tab.value)}
-            className={`border-2 w-32 text-[--text-color] hover:bg-purple-700 border-[--about-color] hover:scale-105 transition-transform transform shadow-2xl ${
+            className={`border-2 w-32 hover:brightness-90  hover:bg-[--skills-color] border-[--skills-color] transition-transform transform shadow-2xl ${
               activeTab === tab.value
-                ? "border-[--about-color] bg-[--about-color]"
-                : "border-[--about-color]"
+                ? "border-[--skills-color] bg-[--skills-color] text-[--background-color]"
+                : "border-[--skills-color] text-[--skills-color] hover:text-[--background-color]"
             }`}
           >
             {tab.label}
@@ -123,4 +123,4 @@ const Skills = ({ translation, isDarkMode }) => {
   );
 };
 
-export default Skills;
+export default SkillsContainer;

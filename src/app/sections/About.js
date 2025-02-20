@@ -1,7 +1,5 @@
 import React, { forwardRef } from "react";
-import { Parallax } from "react-scroll-parallax";
 import Button from "../components/Button";
-import Skills from "../components/Skills";
 import LazyLoad from "../components/LazyLoad";
 
 const mikoImage = "/images/miko.jpg";
@@ -11,12 +9,14 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
     <section
       ref={ref}
       id="about"
-      className="about-section min-h-screen flex flex-col relative overflow-x-hidden"
+      className="about-section bg-[--background-color] min-h-screen flex flex-col relative overflow-x-hidden"
     >
-      <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
+      <div className="relative py-20 z-10 mx-auto w-full max-w-6xl text-center">
         <LazyLoad>
-          <h2 className="text-5xl font-bold mb-10 mt-10">
-            <span className="shadow text-[--about-color]">About</span>
+          <h2 className="text-6xl font-extrabold">
+            <span className="shadow about  text-[--about-color]">
+              {translation.title}
+            </span>
           </h2>
         </LazyLoad>
       </div>
@@ -29,21 +29,20 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
           }}
         >
           <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 px-6">
-            <div className="-rotate-6 w-[45%] mt-5 mb-5 overflow-hidden rounded-full flex-shrink-0 ">
+            <div className="-rotate-6 w-[45%] overflow-hidden rounded-full flex-shrink-0 ">
               <img
                 src={mikoImage}
                 alt="Miko"
                 className="w-[90%] h-auto object-cover rounded-full border-2 border-white shadow-lg transition-all duration-300"
               />
             </div>
-            <div className="dark text-white text-xl max-w-lg md:ml-6 font-semibold">
+            <div className="dark text-white text-xl max-w-lg md:ml-6">
               <p>{translation.description}</p>
-              <div className="flex justify-center mt-6">
+              <div className="flex justify-center">
                 <Button
                   href={translation.cv}
-                  className={`dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110  hover:bg-purple-700 ${
-                    isDarkMode ? "dark" : "light"
-                  }`}
+                  className={`border-2 border-white text-white hover:text-[--about-color] bg-[--about-color] hover:bg-white font-extrabold hover:shadow-lg transition-transform transform  
+                  `}
                 >
                   {translation.viewcv}
                 </Button>
@@ -52,17 +51,6 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
           </div>
         </div>
       </LazyLoad>
-
-      <div className="mt-[15vh] w-full mb-[15vh]">
-        <LazyLoad>
-          <h2 className="text-4xl font-bold mb-6 text-center">
-            {translation.skillstitle}
-          </h2>
-          <Parallax translateY={[10, -15]}>
-            <Skills translation={translation.skills} isDarkMode={isDarkMode} />
-          </Parallax>
-        </LazyLoad>
-      </div>
     </section>
   );
 });

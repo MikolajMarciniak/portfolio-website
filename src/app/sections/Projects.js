@@ -48,17 +48,18 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
     );
   };
 
-  const twoRows = [
-    translatedProjects[0],
-    translatedProjects[1],
-    translatedProjects[2],
-  ].some((col) => col.items.length > 1);
+  const twoRows = true;
+
   return (
-    <section ref={ref} id="projects">
-      <div className="relative z-10 mx-auto w-full max-w-6xl text-center mb-12">
+    <section
+      ref={ref}
+      className=" min-h-screen bg-[--background-color-dark]"
+      id="projects"
+    >
+      <div className="relative py-20 z-10 mx-auto w-full max-w-6xl text-center ">
         <LazyLoad>
-          <h2 className="text-5xl font-bold mb-10 mt-10">
-            <span className="shadow text-[--about-color]">
+          <h2 className="text-6xl font-extrabold ">
+            <span className="shadow projects text-[--projects-color]">
               {translation.title}
             </span>
           </h2>
@@ -66,7 +67,7 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
       </div>
 
       <div
-        className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[100vh] ${
+        className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[1000px] ${
           showMore ? "expand" : ""
         } overflow-hidden`}
       >
@@ -124,33 +125,29 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
                 </LazyLoad>
               </div>
             ))}
+
+            <h1
+              className={`${
+                columnIndex === 1 && showMore
+                  ? "max-h-screen opacity-100"
+                  : "max-h-0 opacity-0 pointer-events-none"
+              } text-center pt-[20px] text-xl text-[--text-color] transition-all duration-500 ease-in-out`}
+              style={{
+                transition:
+                  "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out",
+                maxHeight: showMore ? "100%" : "0%",
+              }}
+            >
+              {translation.upcoming}
+            </h1>
+
             {columnIndex === 1 && (
-              <>
-                {!showMore
-                  ? twoRows && (
-                      <Button
-                        onClick={toggleShowMore}
-                        className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
-                      >
-                        Show More
-                      </Button>
-                    )
-                  : twoRows && (
-                      <Link
-                        to="projects"
-                        offset={-100}
-                        duration={300}
-                        smooth={true}
-                      >
-                        <Button
-                          onClick={toggleShowMore}
-                          className="mt-10 flex justify-center items-center text-center dark-mode-button hover:text-[--text-color] hover:shadow-lg transition-transform transform hover:scale-110 border-2 border-[--projects-color] hover:bg-[--projects-color]"
-                        >
-                          Show Less
-                        </Button>
-                      </Link>
-                    )}
-              </>
+              <Button
+                onClick={toggleShowMore}
+                className="flex justify-center items-center text-center hover:text-[--background-color] hover:shadow-lg transition-transform transform border-2 border-[--projects-color] text-[--projects-color] hover:bg-[--projects-color]"
+              >
+                {showMore ? translation.showless : translation.showmore}
+              </Button>
             )}
           </Parallax>
         ))}

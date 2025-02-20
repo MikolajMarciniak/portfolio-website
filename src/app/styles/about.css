@@ -16,14 +16,12 @@
   }
 }
 
-
 .scroll-container {
-  --time: 60s; /* Default animation time */
-  --half-time: 30s; /* Default half-time for last loop */
+  --time: 60s;
+  --half-time: 30s;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  grid-template-areas: 'scroll-area';
-  /* animation-direction: var(--animation-direction, reverse); */
+  grid-template-areas: "scroll-area";
 
   animation-direction: normal;
   position: relative;
@@ -63,7 +61,7 @@
     transparent 90%,
     var(--background-color, #000000) 100%
   );
-  z-index: 2; 
+  z-index: 2;
 }
 
 /* Grow animation for icons */
@@ -75,7 +73,6 @@ a {
 a.icon:hover {
   transform: scale(1.1); /* Adjust scale as needed */
 }
-
 
 @keyframes fade-in {
   from {
@@ -89,5 +86,3 @@ a.icon:hover {
 .animate-fade-in {
   animation: fade-in 0.5s forwards;
 }
-
-

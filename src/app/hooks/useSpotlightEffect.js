@@ -243,7 +243,7 @@ export const useSpotlightEffect = (ref) => {
       setInitialAnimationDone(true);
       requestAnimationFrame(smoothMoveSpotlight);
       expandSpotlight(false);
-    }, 500);
+    }, 2000);
 
     return () => {
       clearTimeout(animationTimer);
