@@ -13,9 +13,9 @@ const ContactSection = forwardRef(({ translation }, ref) => {
     >
       <ContactBanner translation={translation.quote} />
       <LazyLoad>
-        <div className="contact-hero py-20">
-          <h2 className="text-6xl pb-20 text-center font-extrabold">
-            <span className="shadow contact  text-[--contact-color]">
+        <div className="contact-hero pt-20 pb-40">
+          <h2 className="text-6xl text-center font-extrabold pb-20">
+            <span className="shadow contact text-[--contact-color]">
               {translation.title}
             </span>
           </h2>

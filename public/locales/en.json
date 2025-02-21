@@ -56,7 +56,7 @@
 
     "form": {
       "name": "Name",
-      "email": "Email",
+      "email": "Email*",
       "message": "Message",
       "entername": "Enter Your Name",
       "enteremail": "Enter Your Email",
@@ -71,5 +71,8 @@
       }
     }
   },
-  "footer": "All rights reserved."
+  "footer": {
+    "copyright": "All rights reserved.",
+    "description": "Full Stack Developer with experience in MERN, AWS, and Python. Passionate about building efficient, scalable web apps."
+  }
 }

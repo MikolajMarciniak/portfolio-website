@@ -65,7 +65,7 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
   };
 
   return (
-    <div className="mt-6 mb-20 shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-3xl mx-auto bg-[--foreground-color]">
+    <div className="shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-3xl mx-auto bg-[--foreground-color]">
       <div className="mb-8 flex space-x-4 justify-center">
         {tabs.map((tab) => (
           <Button

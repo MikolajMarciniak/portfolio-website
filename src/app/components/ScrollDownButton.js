@@ -11,11 +11,11 @@ const ScrollDownButton = ({ isDarkMode, isScrolled }) => {
         to="about"
         smooth={true}
         duration={500}
-        offset={-100}
+        offset={-70}
         className={`transition-transform transform hover:scale-105 rounded-full cursor-pointer flex items-center justify-center`}
       >
         <button
-          className={`landing hover:bg-[--landing-color] hover:text-[--background-color-dark] text-[--text-color] border-[--landing-color] border-4 px-4 py-4 rounded-full transition-all ease-in-out duration-300 hover:shadow-xl ${
+          className={`landing text-[--background-color] opacity-25 hover:opacity-100 bg-[--landing-color] border-[--landing-color] border-4 px-4 py-4 rounded-full transition-all ease-in-out duration-300 hover:shadow-xl ${
             isDarkMode ? "dark" : "light"
           }`}
         >

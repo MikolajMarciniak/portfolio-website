@@ -52,7 +52,7 @@ const LandingSection = forwardRef(
               }}
             >
               {"  "}
-              <span className="text-7xl">MIKOŁAJ MARCINIAK</span>
+              <span className="ml-4 text-7xl">MIKOŁAJ MARCINIAK</span>
             </Link>
             .
             <br />

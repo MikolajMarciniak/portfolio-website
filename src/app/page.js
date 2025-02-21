@@ -92,22 +92,22 @@ export default function Home() {
     const colors = {
       "--hero-color": isDarkMode
         ? "rgba(0, 0, 0, 0.9)"
-        : "rgba(200, 200, 200, 0.5)",
+        : "rgba(200, 200, 200, 0.6)",
       "--background-color": isDarkMode
         ? "rgba(25, 25, 25, 1)"
         : "rgba(230, 230, 230, 0.95)",
       "--background-color-dark": isDarkMode
         ? "rgba(20, 20, 20, 1)"
-        : "rgb(211, 211, 211)",
+        : "rgb(225, 225, 225)",
       "--navbar-color": isDarkMode
         ? "rgba(15, 15, 15, 1)"
         : "rgba(235, 235, 235, 1)",
       "--foreground-color": isDarkMode
         ? "rgb(60, 60, 60)"
-        : "rgb(207, 207, 207)",
+        : "rgb(180, 180, 180)",
       "--foreground-color-dark": isDarkMode
         ? "rgb(40, 40, 40)"
-        : "rgb(159, 159, 159)",
+        : "rgb(150, 150, 150)",
       "--text-color": isDarkMode
         ? "rgba(225, 225, 225, 1)"
         : "rgba(15, 15, 15, 1)",
@@ -126,9 +126,7 @@ export default function Home() {
       "--projects-color": isDarkMode
         ? "rgba(59, 130, 246, 1)"
         : "rgba(59, 130, 246, 1)",
-      "--contact-color": isDarkMode
-        ? "rgba(255, 165, 0, 1)"
-        : "rgba(255, 165, 0, 1)",
+      "--contact-color": isDarkMode ? "rgb(255, 166, 0)" : "rgb(220, 106, 0)",
     };
 
     Object.entries({ ...colors, ...sectionColors }).forEach(([key, value]) => {

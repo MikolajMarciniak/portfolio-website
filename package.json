@@ -15,6 +15,7 @@
     "translate": "node ./translate-json.js en.json ./public/locales"
   },
   "dependencies": {
+    "@react-spring/web": "^9.7.5",
     "lodash": "^4.17.21",
     "next": "^15.1.7",
     "next-video": "^1.3.3",
@@ -23,6 +24,7 @@
     "prettier-eslint": "^16.3.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-next-parallax": "^0.1.0",
     "react-player": "^2.16.0",
     "react-scroll": "^1.9.0",
     "react-scroll-parallax": "^3.4.5",
@@ -30,6 +32,7 @@
     "react-tooltip": "^5.28.0",
     "react-typed": "^2.0.12",
     "react-use": "^17.5.1",
+    "react-use-gesture": "^9.1.3",
     "tippy.js": "^6.3.7"
   },
   "devDependencies": {

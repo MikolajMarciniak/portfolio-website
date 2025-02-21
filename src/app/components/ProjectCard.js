@@ -22,7 +22,7 @@ const ProjectCard = ({
   const [isHovered, setHovered] = useState(false);
   return (
     <div
-      className={`shadow-2xl  rounded-lg card  
+      className={`shadow-2xl  rounded-lg bg-[--foreground-color-dark] 
       transform transition-all duration-500 project-grow w-full h-full`}
     >
       <div

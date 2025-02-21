@@ -2,25 +2,17 @@ import React from "react";
 
 const Footer = ({ translation }) => {
   return (
-    <footer className="bg-[rgb(15,15,15)] text-white py-8">
+    <footer className="bg-[rgb(15,15,15)] text-white pt-8 pb-4">
       <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-6 md:space-y-0 pb-10">
-        {/* Left section with description */}
         <div className="flex flex-col items-end md:items-start space-y-4 md:w-1/2">
-          <h2 className="text-4xl font-bold">
-            <span className="shadow contact text-[--contact-color]">
-              {translation.title}
-            </span>
-          </h2>
-
           <p className="text-md max-w-xl">
             <strong>Mikołaj Marciniak</strong>
             <br />
-            Full Stack Developer with experience in MERN, AWS, and Python.
-            Passionate about building efficient, scalable web apps.
+            <br />
+            {translation.description}
           </p>
         </div>
 
-        {/* Right section with div containing icons */}
         <div className="md:w-1/2 flex justify-end">
           <div className="flex flex-col items-start space-y-4">
             <a
@@ -53,10 +45,11 @@ const Footer = ({ translation }) => {
         </div>
       </div>
 
-      <div className="border-t border-[--contact-color] my-4"></div>
+      <div className="border-t border-[--contact-color] opacity-50 max-w-6xl mx-auto pt-4"></div>
       <div className="container mx-auto text-center">
         <p className="text-sm opacity-70">
-          &copy; {new Date().getFullYear()} Mikołaj Marciniak. {translation}
+          &copy; {new Date().getFullYear()} Mikołaj Marciniak.{" "}
+          {translation.copyright}
         </p>
       </div>
     </footer>

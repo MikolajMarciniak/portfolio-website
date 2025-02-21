@@ -76,12 +76,12 @@ const ContactForm = ({ translation }) => {
     <div className=" bg-[--foreground-color] h-full mx-auto max-w-3xl rounded-md shadow-2xl">
       <div className="relative z-10 mx-auto flex flex-col py-12">
         <form
-          className="space-y-8 w-full max-w-2xl mx-auto"
+          className="space-y-6 w-full max-w-2xl mx-auto"
           onSubmit={handleSubmit}
         >
-          <div className="form-group space-y-2">
+          <div className="form-group">
             <label
-              className="text-lg font-bold text-[--contact-color]"
+              className="text-xl font-extrabold text-[--contact-color]"
               htmlFor="name"
             >
               {translation.name}{" "}
@@ -94,18 +94,20 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.entername}
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full p-2 mt-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.name ? "border-red-500" : ""
               }`}
             />
             {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              <span className="text-red-500 text-sm-1 ml-2 mt-1">
+                {errors.name}
+              </span>
             )}
           </div>
 
-          <div className="form-group space-y-2">
+          <div className="form-group ">
             <label
-              className="text-lg font-bold text-[--contact-color]"
+              className="text-xl font-extrabold text-[--contact-color]"
               htmlFor="email"
             >
               {translation.email}{" "}
@@ -117,18 +119,18 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.enteremail}
               value={formData.email}
               onChange={handleChange}
-              className={`w-full p-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full mt-2 p-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.email ? "border-red-500" : ""
               } `}
             />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-            )}
+            <p className="text-red-500 text-sm-1 mt-1 ml-2">
+              {errors.email && errors.email}
+            </p>
           </div>
 
-          <div className="form-group space-y-2">
+          <div className="form-group">
             <label
-              className="text-lg font-bold text-[--contact-color]"
+              className="text-xl font-extrabold text-[--contact-color]"
               htmlFor="message"
             >
               {translation.message}
@@ -139,25 +141,26 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.entermessage}
               value={formData.message}
               onChange={handleChange}
-              className={`w-full p-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full p-2 mt-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.message ? "border-red-500" : ""
               }`}
-              rows="4"
+              rows="8"
             />
             {errors.message && (
-              <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+              <p className="text-red-500 text-sm ml-2 mt-1">{errors.message}</p>
             )}
           </div>
           <div className="">
             <Button
               type="submit"
               disabled={loading}
-              className={`border-2 font-bold shadow-2xl inline-flex items-center hover:text-[--background-color] text-[--contact-color] justify-center w-full dark-mode-button hover:shadow-lg transition-transform transform  border-[--contact-color] bg-[--background-color] hover:bg-[--contact-color] ${
-                loading ? "opacity-50" : ""
+              className={`border-2 font-bold shadow-2xl inline-flex items-center hover:text-[--background-color] \\text-[--contact-color] justify-center w-full dark-mode-button hover:shadow-lg transition-transform transform  border-[--contact-color] bg-[--background-color] hover:bg-[--contact-color] ${
+                loading ? "opacity-50" : "opacity-100"
               }`}
             >
+              <div className="loader ease-linear rounded-full  border-t-2 border-[--contact-color] h-6 w-6"></div>
               {loading ? (
-                <div className="loader ease-linear rounded-full  border-t-2 border-gray-200 h-6 w-6"></div>
+                <div className="loader ease-linear rounded-full  border-t-2 border-[--contact-color] h-6 w-6"></div>
               ) : (
                 translation.submit
               )}

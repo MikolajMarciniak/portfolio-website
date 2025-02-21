@@ -129,9 +129,9 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
             <h1
               className={`${
                 columnIndex === 1 && showMore
-                  ? "max-h-screen opacity-100"
+                  ? "max-h-screen h-20 opacity-100"
                   : "max-h-0 opacity-0 pointer-events-none"
-              } text-center pt-[20px] text-xl text-[--text-color] transition-all duration-500 ease-in-out`}
+              } text-center text-xl text-[--text-color] transition-all duration-500 ease-in-out`}
               style={{
                 transition:
                   "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out",
@@ -144,7 +144,7 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
             {columnIndex === 1 && (
               <Button
                 onClick={toggleShowMore}
-                className="flex justify-center items-center text-center hover:text-[--background-color] hover:shadow-lg transition-transform transform border-2 border-[--projects-color] text-[--projects-color] hover:bg-[--projects-color]"
+                className="duration-500 flex justify-center items-center text-center hover:text-[--background-color] hover:shadow-lg transition-transform transform border-2 border-[--projects-color] text-[--projects-color] hover:bg-[--projects-color]"
               >
                 {showMore ? translation.showless : translation.showmore}
               </Button>

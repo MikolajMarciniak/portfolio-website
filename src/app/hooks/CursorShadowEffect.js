@@ -10,11 +10,11 @@ const CursorShadowEffect = () => {
 
       document.documentElement.style.setProperty(
         "--shadow-offset-x",
-        `${-offsetX * 10}px`,
+        `${-offsetX * 15}px`,
       );
       document.documentElement.style.setProperty(
         "--shadow-offset-y",
-        `${-offsetY * 10}px`,
+        `${-offsetY * 15}px`,
       );
     };
 

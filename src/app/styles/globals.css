@@ -12,16 +12,16 @@
 :root {
   --shadow-offset-x: 0px;
   --shadow-offset-y: 0px;
-  --text-color: #ffffff;
-  --background-color: rgba(15, 15, 15, 0.9);
-  --foreground-color: #262626;
-  --accent-color: #ef4444;
-  --shadow-color: #ef4444;
-  --landing-color: #ef4444;
-  --about-color: #a855f7;
-  --skills-color: #02aab0;
-  --projects-color: #3b82f6;
-  --contact-color: #ffa500;
+  --text-color: rgba(225, 225, 225, 1);
+  --background-color: rgba(25, 25, 25, 1);
+  --foreground-color: rgb(60, 60, 60);
+  --accent-color: rgba(239, 68, 68, 1);
+  --shadow-color: rgba(239, 68, 68, 1);
+  --landing-color: rgba(239, 68, 68, 1);
+  --about-color: rgba(168, 85, 247, 1);
+  --skills-color: rgba(0, 155, 160, 1);
+  --projects-color: rgba(59, 130, 246, 1);
+  --contact-color: rgba(255, 165, 0, 1);
 }
 
 html {

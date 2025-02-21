@@ -9,7 +9,7 @@ const ScrollToTopButton = ({ isDarkMode, isScrolled }) => {
     >
       <Link to="landing" smooth={true} duration={500}>
         <button
-          className={`accent hover:bg-[--accent-color] hover:text-[--background-color-dark] text-[--text-color] border-[--accent-color] border-4 px-4 py-4 rounded-full transition-all ease-in-out duration-500 hover:shadow-xl ${
+          className={`accent opacity-25 hover:opacity-100 bg-[--accent-color] text-[--background-color] border-[--accent-color] border-4 px-4 py-4 rounded-full transition-all ease-in-out duration-500 hover:shadow-xl ${
             isDarkMode ? "dark" : "light"
           }`}
         >

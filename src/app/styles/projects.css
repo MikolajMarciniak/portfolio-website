@@ -61,7 +61,3 @@
   opacity: 1;
   overflow: visible;
 }
-
-.card {
-  background: var(--foreground-color);
-}

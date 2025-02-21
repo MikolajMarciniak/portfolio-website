@@ -1,8 +1,13 @@
 import React, { forwardRef } from "react";
 import Button from "../components/Button";
 import LazyLoad from "../components/LazyLoad";
+import LayeredParallax from "../components/LayeredParallax";
 
+import "../styles/about.css";
 const mikoImage = "/images/miko.jpg";
+const foreground = "/images/miko-foreground.png";
+const midground = "/images/miko-midground.png";
+const background = "/images/miko-background.png";
 
 const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
   return (
@@ -29,13 +34,21 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
           }}
         >
           <div className="relative z-10 mx-auto w-full max-w-6xl flex flex-col md:flex-row items-center justify-between gap-8 px-6">
-            <div className="-rotate-6 w-[45%] overflow-hidden rounded-full flex-shrink-0 ">
+            {/* <div className="-rotate-6 w-[45%] overflow-hidden rounded-full flex-shrink-0 ">
               <img
                 src={mikoImage}
                 alt="Miko"
                 className="w-[90%] h-auto object-cover rounded-full border-2 border-white shadow-lg transition-all duration-300"
               />
-            </div>
+            </div> */}
+            {/* <div className="relative w-[800px] h-[600px] [&>img]:absolute [&>img]:inset-0">
+             */}
+            <LayeredParallax
+              foreground={foreground}
+              midground={midground}
+              background={background}
+            />
+            {/*space*/}
             <div className="dark text-white text-xl max-w-lg md:ml-6">
               <p>{translation.description}</p>
               <div className="flex justify-center">
