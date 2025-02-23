@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import DarkModeSelector from "./DarkModeSelector";
@@ -8,20 +8,73 @@ import DarkModeSelector from "./DarkModeSelector";
 const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showHamburger, setShowHamburger] = useState(false);
+  const focusedIndex = useRef(0);
+  const menuRef = useRef(null);
+
+  const handleResize = () => {
+    if (window.innerWidth < 1280) {
+      setShowHamburger(true);
+    } else {
+      setShowHamburger(false);
+      setIsMenuOpen(false);
+    }
+  };
+
+  const handleKeyDown = (event) => {
+    if (isMenuOpen) {
+      const focusableElements = menuRef.current?.querySelectorAll("a, button");
+
+      if (event.key === "Enter") {
+        focusableElements[focusedIndex.current]?.click();
+        event.preventDefault();
+      }
+
+      if (focusableElements?.length) {
+        if (
+          ["ArrowRight", "ArrowDown"].includes(event.key) ||
+          (event.key === "Tab" && !event.shiftKey)
+        ) {
+          event.preventDefault();
+          let nextIndex = focusedIndex.current + 1;
+          if (nextIndex >= focusableElements.length) nextIndex = 0;
+          if (nextIndex < 0) nextIndex = focusableElements.length - 1;
+          focusableElements[nextIndex]?.focus();
+          focusedIndex.current = nextIndex;
+        }
+
+        if (
+          ["ArrowLeft", "ArrowUp"].includes(event.key) ||
+          (event.key === "Tab" && event.shiftKey)
+        ) {
+          console.log("shift");
+          event.preventDefault();
+          let prevIndexFixed = focusedIndex.current - 1;
+          if (prevIndexFixed >= focusableElements.length) prevIndexFixed = 0;
+          if (prevIndexFixed < 0) prevIndexFixed = focusableElements.length - 1;
+          focusableElements[prevIndexFixed]?.focus();
+          focusedIndex.current = prevIndexFixed;
+        }
+      }
+    }
+  };
 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 1280) {
-        setShowHamburger(true);
-      } else {
-        setShowHamburger(false);
-      }
-    };
-
     handleResize();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    window.addEventListener("keydown", handleKeyDown);
+    if (isMenuOpen) {
+      const focusableElements = menuRef.current?.querySelectorAll("a, button");
+      if (focusableElements?.length) {
+        focusedIndex.current = focusableElements.length - 1;
+        focusableElements[focusableElements.length - 1]?.focus();
+      }
+    }
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isMenuOpen]);
 
   return (
     <nav
@@ -31,8 +84,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           : "py-4 bg-transparent"
       }`}
     >
-      <div className="container mx-auto max-w-6xl flex justify-between items-center py-2">
-        {/* Logo */}
+      <div className="container mx-auto max-w-6xl flex justify-between items-center py-2 px-4">
         <ScrollLink
           to="landing"
           smooth={true}
@@ -49,7 +101,6 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           </div>
         </ScrollLink>
 
-        {/* Desktop Menu */}
         <div className="hidden xl:flex items-center space-x-6 font-semibold">
           <LanguageSwitcher />
           {["about", "skills", "projects", "contact"].map((section) => (
@@ -69,8 +120,11 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           ))}
           <DarkModeSelector toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
         </div>
-
-        {/* Hamburger Button - Animated Slide-in */}
+        {showHamburger && (
+          <div className="ml-auto mr-6">
+            <LanguageSwitcher />
+          </div>
+        )}
         <button
           className={`xl:hidden flex flex-col z-50 items-center justify-center space-y-1 w-10 h-10 transition-all duration-500 ease-in-out transform ${
             showHamburger
@@ -95,9 +149,10 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
         className={`fixed top-0 left-0 w-full h-screen bg-[var(--navbar-color)] flex flex-col items-center justify-center transition-transform duration-500 ${
           isMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
+        ref={menuRef}
       >
         {["landing", "about", "skills", "projects", "contact"].map(
-          (section) => (
+          (section, index) => (
             <ScrollLink
               key={section}
               to={section}
@@ -106,6 +161,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
               duration={500}
               className={`${section == "contact" ? "mb-4" : ""} text-3xl py-8 font-bold hover:text-[--navbar-color] text-[--text-color] w-full text-center py-4 cursor-pointer hover:bg-[--${section}-color] transition-all`}
               onClick={() => setIsMenuOpen(false)}
+              tabIndex={0}
             >
               {translation[section]}
             </ScrollLink>
@@ -115,6 +171,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           large={true}
           toggleTheme={toggleTheme}
           isDarkMode={isDarkMode}
+          tabIndex={0}
         />
       </div>
     </nav>
