@@ -2,12 +2,7 @@ import React from "react";
 
 const Banner = ({ translation }) => {
   return (
-    <div
-      className="shadow-2xl relative w-full min-h-[400px] pt-10 flex items-center justify-center overflow-hidden dark"
-      style={{
-        clipPath: "polygon(0 20%, 100% 0, 100% 100%, 0% 100%)",
-      }}
-    >
+    <div className="shadow-2xl relative w-full min-h-[400px] pt-10 flex items-center justify-center overflow-hidden dark">
       <div
         className="absolute inset-0 bg-cover bg-center bg-fixed"
         style={{

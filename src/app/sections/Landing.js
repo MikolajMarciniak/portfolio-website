@@ -36,17 +36,17 @@ const LandingSection = forwardRef(
       <section
         ref={ref}
         id="landing"
-        className="landing-section min-h-screen flex flex-col justify-between items-center shadow-2xl"
+        className="landing-section min-h-screen flex flex-col justify-between items-center "
       >
         <div className="text-center max-w-6xl flex-grow flex flex-col justify-center">
-          <h1 className="text-7xl inline-block leading-none text-left mt-[100px]">
+          <h1 className="text-6xl inline-block leading-none text-left mt-[100px]">
             {translation.hero}
             <Link
               to="about"
               smooth={true}
               duration={500}
               offset={-70}
-              className="cursor-pointer font-bold hover:text-[--shadow-color] shadow landing link"
+              className="cursor-pointer font-semibold hover:text-[--shadow-color] shadow landing link"
               style={{
                 "--shadow-color": `var(${colorClass})`,
               }}
@@ -56,11 +56,11 @@ const LandingSection = forwardRef(
             </Link>
             .
             <br />
-            <TypedText
+            {/* <TypedText
               strings={coloredStrings}
               colorClass={colorClass}
               handleStringTyped={handleStringTyped}
-            />
+            /> */}
           </h1>
         </div>
         <div className="mb-10">

@@ -71,13 +71,14 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
           <Button
             key={tab.value}
             onClick={() => handleTabChange(tab.value)}
-            className={`border-2 w-32 hover:brightness-90  hover:bg-[--skills-color] border-[--skills-color] transition-transform transform shadow-2xl ${
+            className={`relative border-2 w-36 overflow-hidden hover:brightness-75 transition-all ease-out duration-300 shadow-2xl ${
               activeTab === tab.value
-                ? "border-[--skills-color] bg-[--skills-color] text-[--background-color]"
-                : "border-[--skills-color] text-[--skills-color] hover:text-[--background-color]"
-            }`}
+                ? "border-[--skills-color] bg-[--skills-color]  text-[--background-color]"
+                : "border-[--skills-color] text-[--skills-color]  hover:text-[--background-color]"
+            } group`}
           >
-            {tab.label}
+            <span className="relative z-10">{tab.label}</span>
+            <span className="absolute inset-0 w-0 bg-[--skills-color] transition-all duration-300 ease-out group-hover:w-full"></span>
           </Button>
         ))}
       </div>

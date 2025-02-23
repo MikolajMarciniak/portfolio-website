@@ -11,7 +11,7 @@ const SkillsSection = forwardRef(({ translation, isDarkMode }, ref) => {
     >
       <div className="relative z-10 py-20 mx-auto w-full max-w-6xl text-center">
         <LazyLoad>
-          <h2 className="text-6xl font-extrabold">
+          <h2 className="text-6xl font-semibold">
             <span className="shadow skills text-[--skills-color]">
               {translation.skillstitle}
             </span>

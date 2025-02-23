@@ -35,7 +35,7 @@ export function LanguageSwitcher() {
     <div className="relative text-left" ref={switcherRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group hover:font-bold transition-all duration-300 flex w-32 items-center space-x-2 px-4 py-2 border border-[--text-color] rounded-md text-sm font-semibold focus:outline-none hover:border-[--accent-color]"
+        className="group hover:font-bold text-lg font-semibold transition-all duration-300 flex w-32 items-center space-x-2 px-4 py-2 border border-[--text-color] rounded-sm text-sm font-semibold focus:outline-none hover:border-[--accent-color]"
       >
         <img
           src={`/icons/flags/${selectedLanguage.code}.svg`}
@@ -46,13 +46,13 @@ export function LanguageSwitcher() {
       </button>
 
       {isOpen && (
-        <div className="absolute mt-3 left-1/2 transform -translate-x-1/2 w-48 bg-[--foreground-color] border border-[--text-color] rounded-lg shadow-lg max-h-60 overflow-y-auto">
+        <div className="absolute mt-3 left-1/2 transform -translate-x-1/2 w-48 bg-[--foreground-color] border border-[--text-color] rounded-sm shadow-lg max-h-60 overflow-y-auto">
           <input
             type="text"
             placeholder="Search..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="px-4 py-2 mx-2 max-w-[157px] rounded-lg text-black text-sm focus:outline-none bg-white placeholder-gray-500 sticky top-0"
+            className="px-4 py-2 mx-2 max-w-[157px] rounded-sm text-black text-sm focus:outline-none bg-white placeholder-gray-500 sticky top-0"
           />
           {filteredLanguages
             .sort((a, b) => a.label.localeCompare(b.label))

@@ -74,14 +74,14 @@ const ContactForm = ({ translation }) => {
 
   return (
     <div className=" bg-[--foreground-color] h-full mx-auto max-w-3xl rounded-md shadow-2xl">
-      <div className="relative z-10 mx-auto flex flex-col py-12">
+      <div className="relative z-10 mx-auto flex flex-col pb-18 py-12">
         <form
           className="space-y-6 w-full max-w-2xl mx-auto"
           onSubmit={handleSubmit}
         >
           <div className="form-group">
             <label
-              className="text-xl font-extrabold text-[--contact-color]"
+              className="text-xl font-semibold text-[--contact-color]"
               htmlFor="name"
             >
               {translation.name}{" "}
@@ -94,7 +94,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.entername}
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-2 mt-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full p-2 mt-2 shadow-xl rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.name ? "border-red-500" : ""
               }`}
             />
@@ -107,7 +107,7 @@ const ContactForm = ({ translation }) => {
 
           <div className="form-group ">
             <label
-              className="text-xl font-extrabold text-[--contact-color]"
+              className="text-xl font-semibold text-[--contact-color]"
               htmlFor="email"
             >
               {translation.email}{" "}
@@ -119,7 +119,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.enteremail}
               value={formData.email}
               onChange={handleChange}
-              className={`w-full mt-2 p-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full mt-2 p-2 shadow-xl rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.email ? "border-red-500" : ""
               } `}
             />
@@ -130,7 +130,7 @@ const ContactForm = ({ translation }) => {
 
           <div className="form-group">
             <label
-              className="text-xl font-extrabold text-[--contact-color]"
+              className="text-xl font-semibold text-[--contact-color]"
               htmlFor="message"
             >
               {translation.message}
@@ -141,7 +141,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.entermessage}
               value={formData.message}
               onChange={handleChange}
-              className={`w-full p-2 mt-2 shadow-xl rounded-lg bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full p-2 mt-2 shadow-xl rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.message ? "border-red-500" : ""
               }`}
               rows="8"
@@ -150,20 +150,22 @@ const ContactForm = ({ translation }) => {
               <p className="text-red-500 text-sm ml-2 mt-1">{errors.message}</p>
             )}
           </div>
-          <div className="">
+          <div className="text-center pt-4">
             <Button
               type="submit"
               disabled={loading}
-              className={`border-2 font-bold shadow-2xl inline-flex items-center hover:text-[--background-color] \\text-[--contact-color] justify-center w-full dark-mode-button hover:shadow-lg transition-transform transform  border-[--contact-color] bg-[--background-color] hover:bg-[--contact-color] ${
+              className={`relative border-2 font-bold shadow-2xl inline-flex items-center justify-center px-8 dark-mode-button overflow-hidden group hover:text-[--background-color] text-[--contact-color] transition-transform transform border-[--contact-color] bg-[--background-color] hover:bg-[--contact-color] ${
                 loading ? "opacity-50" : "opacity-100"
               }`}
             >
-              <div className="loader ease-linear rounded-full  border-t-2 border-[--contact-color] h-6 w-6"></div>
-              {loading ? (
-                <div className="loader ease-linear rounded-full  border-t-2 border-[--contact-color] h-6 w-6"></div>
-              ) : (
-                translation.submit
-              )}
+              <span className="relative z-10">
+                {loading ? (
+                  <div className="loader ease-linear rounded-full border-t-2 border-[--contact-color] h-6 w-6"></div>
+                ) : (
+                  translation.submit
+                )}
+              </span>
+              <span className="absolute inset-0 w-0 bg-[--contact-color] transition-all duration-300 ease-out group-hover:w-full"></span>
             </Button>
           </div>
         </form>

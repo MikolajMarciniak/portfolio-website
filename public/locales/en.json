@@ -1,5 +1,6 @@
 {
   "navbar": {
+    "landing": "Home",
     "about": "About",
     "projects": "Projects",
     "skills": "Skills",
@@ -16,7 +17,10 @@
   },
   "about": {
     "title": "ABOUT",
-    "description": "I'm a fullstack developer specialising in the MERN stack. Since the beginning of my journey, I've created bespoke digital solutions for both business and consumer use. I particularly enjoy integrating powerful backends with beautiful interfaces for data visualisation. In my free time I'm experimenting with artificial intelligence and brewing my own wine.",
+    "description": "I'm a fullstack developer specialising in the MERN stack. Over the course of my 3-year journey, I've created tailored web apps for businesses and consumers. I particularly enjoy integrating powerful backends with beautiful interfaces for data visualisation.",
+    "description2": "In my free time I enjoy tinkering with ML models and brewing my own wine. I also enjoy helping other developers by releasing my React components as FOSS and sharing useful content on my",
+    "linkedin": "LinkedIn.",
+    "description3": "If any of that sounds interesting, feel free to follow or message me",
     "cv": "/documents/MikolajMarciniak.pdf",
     "viewcv": "VIEW CV"
   },
@@ -36,17 +40,17 @@
       {
         "id": 1,
         "title": "DriveGuage",
-        "description": "<div class='mb-3 break-words whitespace-normal font-semibold'>DriveGuage is a blackbox driver performance monitoring system. The system runs on a Raspberry Pi, which connects to the car's OBD port to collect driving data.<br/><br/>The data is uploaded to a server, processed, and displayed through a user-friendly web application. Authenticated clients can track changes in their 'driver score,' a measure of driving habits, like speeding, sharp turns, and rapid acceleration.</div>"
+        "description": "<div class='mb-3 break-words whitespace-normal '>DriveGuage is a blackbox driver performance monitoring system. The system runs on a Raspberry Pi, which connects to the car's OBD port to collect driving data.<br/><br/>The data is uploaded to a server, processed, and displayed through a user-friendly web application. Authenticated clients can track changes in their 'driver score,' a measure of driving habits, like speeding, sharp turns, and rapid acceleration.</div>"
       },
       {
         "id": 3,
         "title": "Extra-English",
-        "description": "<p className='mb-3 break-words whitespace-normal font-semibold'>While at Premium Faber Ltd., I focused on developing a single-page application (SPA) for the Extra-English language school.<br/><br/>The initial version of the app was static, providing key client-facing information. I later expanded its functionality to include a photo gallery, an infinite news feed, a client sign-up form, and an interactive language quiz.<br/><br/>After leaving Premium Faber, I continued working directly with Extra-English. Recently, I implemented user authentication, lesson management and attendance tracking, and automated payment calculations.</p>"
+        "description": "<p className='mb-3 break-words whitespace-normal'>While at Premium Faber Ltd., I focused on developing a single-page application (SPA) for the Extra-English language school.<br/><br/>The initial version of the app was static, providing key client-facing information. I later expanded its functionality to include a photo gallery, an infinite news feed, a client sign-up form, and an interactive language quiz.<br/><br/>After leaving Premium Faber, I continued working directly with Extra-English. Recently, I implemented user authentication, lesson management and attendance tracking, and automated payment calculations.</p>"
       },
       {
         "id": 5,
         "title": "Dee'n'Duthie",
-        "description": "<p className='mb-3 break-words whitespace-normal font-semibold'>This community-focused navigation app is a proof of concept developed for the 2024 RGU Hackathon. <br/><br/> It features an interactive map with pins for key landmarks of Aberdeen Duthie park. When tapping on a pin, users can read more information about it or choose to navigate to the pin. The app also has a feed, web-scraped from the 'Friends of Duthie Park' Facebook group. <br/><br/>The app possesses accessibility settings; users can engage high contrast mode or increase the font size for better readability.</p>"
+        "description": "<p className='mb-3 break-words whitespace-normal'>This community-focused navigation app is a proof of concept developed for the 2024 RGU Hackathon. <br/><br/> It features an interactive map with pins for key landmarks of Aberdeen Duthie park. When tapping on a pin, users can read more information about it or choose to navigate to the pin. The app also has a feed, web-scraped from the 'Friends of Duthie Park' Facebook group. <br/><br/>The app possesses accessibility settings; users can engage high contrast mode or increase the font size for better readability.</p>"
       }
     ]
   },

@@ -13,7 +13,7 @@ const Footer = ({ translation }) => {
           </p>
         </div>
 
-        <div className="md:w-1/2 flex justify-end">
+        <div className="flex justify-end">
           <div className="flex flex-col items-start space-y-4">
             <a
               href="mailto:mikolaj@marciniakm.com"

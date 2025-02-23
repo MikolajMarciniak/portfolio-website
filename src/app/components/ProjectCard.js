@@ -137,9 +137,12 @@ const ProjectCard = ({
           <div className="flex ml-auto">
             <Button
               onClick={onExpand}
-              className={` inline-flex items-center text-[--projects-color] hover:text-[--background-color] transition-all duration-500 transform border-2 border-[--projects-color] hover:bg-[--projects-color]`}
+              className="relative inline-flex items-center text-[--projects-color] border-2 border-[--projects-color] overflow-hidden transition-all duration-300 ease-out group"
             >
-              {isExpanded ? translation.collapse : translation.expand}
+              <span className="relative z-10 group-hover:text-[--background-color]">
+                {isExpanded ? translation.collapse : translation.expand}
+              </span>
+              <span className="absolute inset-0 w-0 bg-[--projects-color] transition-all duration-300 ease-out group-hover:w-full"></span>
             </Button>
           </div>
         </div>

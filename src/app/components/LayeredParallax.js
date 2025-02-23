@@ -31,7 +31,7 @@ export default function LayeredParallax({ foreground, midground, background }) {
 
   return (
     <div
-      className="relative aspect-square max-w-[50%] max-h-[50%] min-w-[40%] min-h-[40%] w-full h-full border-2 border-white overflow-hidden rounded-full"
+      className="relative aspect-square max-w-[40%] max-h-[40%] min-w-[40%] min-h-[40%] w-full h-full border-2 border-white overflow-hidden rounded-full"
       onMouseMove={handleMouseMove}
       onMouseLeave={() => set.start({ x: 0, y: 0 })}
     >
