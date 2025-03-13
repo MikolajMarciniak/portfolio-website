@@ -10,9 +10,14 @@ export function LocaleProvider({ defaultLocale, translations, children }) {
 
   useEffect(() => {
     if (!currentLocale) return;
+
+    console.log("Fetching translations for:", currentLocale);
+
     async function fetchTranslations() {
       try {
-        const response = await fetch(`/locales/${currentLocale}.json`);
+        const response = await fetch(
+          `/locales/${currentLocale.split("-")[0]}.json`,
+        );
         const data = await response.json();
         setCurrentTranslations(data);
       } catch (error) {
@@ -24,6 +29,7 @@ export function LocaleProvider({ defaultLocale, translations, children }) {
   }, [currentLocale]);
 
   const switchLanguage = (newLocale) => {
+    console.log("Switching language to:", newLocale);
     setCurrentLocale(newLocale);
   };
 

@@ -2,25 +2,26 @@ import React from "react";
 
 const Footer = ({ translation }) => {
   return (
-    <footer className="bg-[rgb(15,15,15)] text-white pt-8 pb-4">
-      <div className="container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-6 md:space-y-0 pb-10">
+    <footer className="bg-[rgb(15,15,15)] text-white pt-8 pb-4 px-4">
+      <div className=" container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-6 md:space-y-0 pb-10">
         <div className="flex flex-col items-end md:items-start space-y-4 md:w-1/2">
-          <p className="text-md max-w-xl">
+          <p className="text-lg max-w-xl pb-6 md:border-transparent border-b border-white border-opacity-75">
             <strong>Mikołaj Marciniak</strong>
             <br />
             <br />
+
             {translation.description}
           </p>
         </div>
 
-        <div className="flex justify-end">
-          <div className="flex flex-col items-start space-y-4">
+        <div className="flex justify-end pt-2  ">
+          <div className="flex flex-col items-start space-y-4  sm:mt-0 text-md sm:text-md md:text-lg lg:text-xl ">
             <a
               href="mailto:mikolaj@marciniakm.com"
               className="flex items-center space-x-3 hover:text-[--contact-color] transition duration-300"
             >
               <MailIcon />
-              <span className="text-xl">mikolaj@marciniakm.com</span>
+              <span>mikolaj@marciniakm.com</span>
             </a>
             <a
               href="https://www.linkedin.com/in/mikolaj-marciniak"
@@ -29,7 +30,7 @@ const Footer = ({ translation }) => {
               className="flex items-center space-x-3 hover:text-[--contact-color] transition duration-300"
             >
               <LinkedInIcon />
-              <span className="text-xl">linkedin.com/in/mikolaj-marciniak</span>
+              <span>linkedin.com/in/mikolaj-marciniak</span>
             </a>
 
             <a
@@ -39,7 +40,7 @@ const Footer = ({ translation }) => {
               className="flex items-center space-x-3 hover:text-[--contact-color] transition duration-300"
             >
               <GitHubIcon />
-              <span className="text-xl">github.com/MikolajMarciniak</span>
+              <span>github.com/MikolajMarciniak</span>
             </a>
           </div>
         </div>

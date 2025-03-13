@@ -66,12 +66,12 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
   return (
     <section
       ref={ref}
-      className=" min-h-screen bg-[--background-color-dark]"
+      className={` bg-[--background-color-dark]`}
       id="projects"
     >
       <div className="relative py-20 z-10 mx-auto w-full max-w-6xl text-center ">
         <LazyLoad>
-          <h2 className="text-6xl font-semibold ">
+          <h2 className="text-4xl xl:text-5xl 2xl:text-6xl font-semibold ">
             <span className="shadow projects text-[--projects-color]">
               {translation.title}
             </span>
@@ -79,11 +79,11 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
         </LazyLoad>
       </div>
 
-      {width > 1200 ? (
+      {width > 1280 ? (
         <div
-          className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height min-h-[1000px] ${
-            showMore ? "expand" : ""
-          } overflow-hidden`}
+          className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height ${
+            expandedItem ? "expand min-h-[140vh]" : "min-h-screen"
+          } overflow-visible`}
         >
           {translatedProjects.map((column, columnIndex) => (
             <Parallax
@@ -143,12 +143,11 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
               <h1
                 className={`${
                   columnIndex === 1 && showMore
-                    ? "max-h-screen h-20 opacity-100"
-                    : "max-h-0 opacity-0 pointer-events-none"
-                } text-center text-xl text-[--text-color] transition-all duration-500 ease-in-out`}
+                    ? "max-h-screen opacity-100"
+                    : "max-h-screen opacity-0 pointer-events-none"
+                } py-6 text-center text-xl items-center text-[--text-color] `}
                 style={{
-                  transition:
-                    "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out",
+                  transition: "max-height 0.5s ease, opacity 0.6s ease",
                   maxHeight: showMore ? "100%" : "0%",
                 }}
               >
@@ -171,11 +170,9 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
         </div>
       ) : (
         <div
-          className={`flex ${
-            width < 1280 ? "flex-col space-y-4" : "flex-row space-x-4"
-          } w-full max-w-2xl mx-auto projects-height min-h-[1000px] ${
+          className={`flex mx-5 px-4 flex-col space-y-1 w-full max-w-2xl mx-auto projects-height pb-12 min-h-[1000px] ${
             showMore ? "expand" : ""
-          } overflow-hidden`}
+          } overflow-visible`}
         >
           {translatedProjects.map((column, columnIndex) => (
             <div key={column.id} className="flex flex-col w-full">
@@ -223,26 +220,23 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
                   </LazyLoad>
                 </div>
               ))}
-
-              <h1
+              <p
                 className={`${
                   columnIndex === 2 && showMore
-                    ? "max-h-screen h-20 opacity-100"
+                    ? "max-h-[500px] opacity-100"
                     : "max-h-0 opacity-0 pointer-events-none"
-                } text-center text-xl text-[--text-color] transition-all duration-500 ease-in-out`}
+                } overflow-visible py-10 text-center text-[--text-color] transition-[max-height,opacity] duration-500 ease`}
                 style={{
-                  transition:
-                    "max-height 0.5s ease-in-out, opacity 0.5s ease-in-out",
-                  maxHeight: showMore ? "100%" : "0%",
+                  transitionDelay: showMore ? "0s, 0.3s" : "0.3s, 0s",
                 }}
               >
                 {translation.upcoming}
-              </h1>
+              </p>
 
               {columnIndex === 2 && (
                 <Button
                   onClick={toggleShowMore}
-                  className="relative flex justify-center items-center text-center text-[--projects-color] border-2 border-[--projects-color] overflow-hidden group hover:text-[--background-color] hover:shadow-lg transition-transform transform"
+                  className="mb-12 relative flex justify-center items-center text-center text-[--projects-color] border-2 border-[--projects-color] overflow-hidden group hover:text-[--background-color] hover:shadow-lg transition-transform transform"
                 >
                   <span className="relative z-10">
                     {showMore ? translation.showless : translation.showmore}

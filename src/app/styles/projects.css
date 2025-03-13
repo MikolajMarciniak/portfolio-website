@@ -5,7 +5,6 @@
     min-height 1s ease;
 
   &.expand {
-    min-height: 130vh;
     transition:
       height 1s ease,
       max-height 1s ease,

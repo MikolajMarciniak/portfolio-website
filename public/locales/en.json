@@ -1,40 +1,39 @@
 {
   "navbar": {
-    "landing": "Home",
-    "about": "About",
-    "projects": "Projects",
-    "skills": "Skills",
-    "contact": "Contact"
+    "search": "Search...",
+    "landing": "Homepage",
+    "about": "About Me",
+    "projects": "My Projects",
+    "skills": "My Skills",
+    "contact": "Contact Me"
   },
   "landing": {
-    "hero": "Hello, I'm",
-    "strings": [
-      "Fullstack Developer.",
-      "Git Guru.",
-      "Freelancer.",
-      "Based in the UK."
-    ]
+    "hero": "Hi, I'm",
+    "subtitle": "Fullstack developer",
+    "subtitle2": "Freelancer",
+    "subtitle3": "Consultant",
+    "visitor": "Visitor no."
   },
   "about": {
-    "title": "ABOUT",
+    "title": "ABOUT ME",
     "description": "I'm a fullstack developer specialising in the MERN stack. Over the course of my 3-year journey, I've created tailored web apps for businesses and consumers. I particularly enjoy integrating powerful backends with beautiful interfaces for data visualisation.",
-    "description2": "In my free time I enjoy tinkering with ML models and brewing my own wine. I also enjoy helping other developers by releasing my React components as FOSS and sharing useful content on my",
+    "description2": "In my free time I enjoy tinkering with ML models and brewing my own wine. I also enjoy helping others by releasing my React components as FOSS and sharing useful content on my",
     "linkedin": "LinkedIn.",
     "description3": "If any of that sounds interesting, feel free to follow or message me",
     "cv": "/documents/MikolajMarciniak.pdf",
     "viewcv": "VIEW CV"
   },
   "skills": {
-    "skillstitle": "SKILLS",
+    "skillstitle": "MY SKILLS",
     "skills": ["FRONTEND", "BACKEND", "TOOLS"]
   },
 
   "projects": {
-    "title": "PROJECTS",
+    "title": "MY PROJECTS",
     "showmore": "SHOW MORE",
     "showless": "SHOW LESS",
-    "expand": "EXPAND",
-    "collapse": "COLLAPSE",
+    "expand": "+",
+    "collapse": "-",
     "upcoming": "More projects coming soon...",
     "cards": [
       {
@@ -55,8 +54,8 @@
     ]
   },
   "contact": {
-    "title": "CONTACT",
-    "quote": "Have an idea or simply want to chat? Feel free to drop me a message below!",
+    "title": "CONTACT ME",
+    "quote": "Have an idea or simply want to chat? Feel free to send me a message below!",
 
     "form": {
       "name": "Name",
@@ -77,6 +76,6 @@
   },
   "footer": {
     "copyright": "All rights reserved.",
-    "description": "Full Stack Developer with experience in MERN, AWS, and Python. Passionate about building efficient, scalable web apps."
+    "description": "Fullstack Developer with experience in MERN, AWS, and Python. Passionate about building efficient, scalable web apps."
   }
 }

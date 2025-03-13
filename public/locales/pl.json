@@ -1,0 +1,82 @@
+{
+  "navbar": {
+    "search": "Szukaj...",
+    "landing": "Dom",
+    "about": "O",
+    "projects": "Projektowanie",
+    "skills": "Umiejętności",
+    "contact": "Kontakt"
+  },
+  "landing": {
+    "hero": "Witam, jestem",
+    "subtitle": "Deweloper FullStack",
+    "subtitle2": "Pracownik nieetatowy",
+    "subtitle3": "Konsultant"
+  },
+  "about": {
+    "title": "O",
+    "description": "Jestem programistą w pełni specjalizującym się w stosie Mern. W ciągu mojej 3-letniej podróży stworzyłem dostosowane aplikacje internetowe dla firm i konsumentów. Szczególnie lubię zintegrować potężne backendy z pięknymi interfejsami do wizualizacji danych.",
+    "description2": "W wolnym czasie lubię majstrować przy modelach ML i parzyć własne wino. Lubię również pomagać innym programistom poprzez uwalnianie moich komponentów React jako Foss i udostępnianie przydatnych treści w moim",
+    "linkedin": "LinkedIn.",
+    "description3": "Jeśli którekolwiek z tego brzmi interesująco, możesz mi podążać lub napisać do mnie",
+    "cv": "/documents/mikolaJmarcinak.pdf",
+    "viewcv": "Zobacz CV"
+  },
+  "skills": {
+    "skillstitle": "UMIEJĘTNOŚCI",
+    "skills": [
+      "Frontend",
+      "Backend",
+      "NARZĘDZIA"
+    ]
+  },
+  "projects": {
+    "title": "PROJEKTOWANIE",
+    "showmore": "Pokaż więcej",
+    "showless": "Pokaż mniej",
+    "expand": "ZWIĘKSZAĆ",
+    "collapse": "ZAWALIĆ SIĘ",
+    "upcoming": "Więcej projektów już wkrótce ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "DriveGuage",
+        "description": "<div class = 'MB-3 Break-Words Whitespace-Normal'> DriveGuage to system monitorowania wydajności sterownika Blackbox. System działa na Raspberry PI, który łączy się z portem OBD samochodu w celu zbierania danych jazdy. <br/> <br/> Dane są przesyłane na serwer, przetwarzane i wyświetlane za pośrednictwem przyjaznej aplikacji internetowej. Uwierzytelnieni klienci mogą śledzić zmiany w swoim „wyniku kierowcy”, miarę nawyków jazdy, takich jak przekroczenie prędkości, ostre zakręty i szybkie przyspieszenie. </viv>"
+      },
+      {
+        "id": 3,
+        "title": "Pozaprzestopiańskie",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Podczas Premium Faber Ltd. skupiłem się na opracowaniu aplikacji jedno- (SPA) dla szkoły języka pozaplanowego. <br/> <br/> Początkowa wersja aplikacji była statyczna, dostarczając kluczowych informacji skierowanych do klienta. Później rozszerzyłem swoją funkcjonalność o galerię zdjęć, nieskończony kanał informacyjny, formularz rejestracji klienta i interaktywny quiz językowy. <br/> <br/> Po opuszczeniu premium Faber kontynuowałem pracę z Extra-Anglish. Niedawno zaimplementowałem uwierzytelnianie użytkownika, zarządzanie lekcjami i śledzenie frekwencji oraz zautomatyzowane obliczenia płatności. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Ta aplikacja nawigacyjna skoncentrowana na społeczności jest dowodem koncepcji opracowanej dla hackathonu RGU 2024. <br/> <br/> zawiera interaktywną mapę z szpilkami dla kluczowych punktów orientacyjnych Aberdeen Duthie Park. Podczas stukania PIN użytkownicy mogą przeczytać więcej informacji lub zdecydować się na przejście do PIN. Aplikacja ma również kanał, z grupy „Friends of Duthie Park” na Facebooku. <br/> <br/> Aplikacja posiada ustawienia dostępności; Użytkownicy mogą angażować tryb wysokiego kontrastu lub zwiększyć rozmiar czcionki w celu lepszej czytelności. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "KONTAKT",
+    "quote": "Masz pomysł lub po prostu chcesz porozmawiać? Zapraszam do upuszczenia mi wiadomości poniżej!",
+    "form": {
+      "name": "Nazwa",
+      "email": "E-mail*",
+      "message": "Wiadomość",
+      "entername": "Wprowadź swoje imię i nazwisko",
+      "enteremail": "Wprowadź swój e -mail",
+      "entermessage": "Wprowadź swoją wiadomość",
+      "submit": "WYSŁAĆ",
+      "errors": {
+        "emailinvalid": "Nieprawidłowy adres e -mail.",
+        "emailrequired": "Wymagany jest e -mail.",
+        "forminvalid": "Popraw błędy w formularzu.",
+        "emailfailed": "Nie udało się wysłać e -maila. Spróbuj ponownie później.",
+        "genericerror": "Wystąpiły błędy. Spróbuj ponownie później."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Wszelkie prawa zastrzeżone.",
+    "description": "Deweloper z pełnym stosem z doświadczeniem w Mern, AWS i Python. Pasjonat budowania wydajnych, skalowalnych aplikacji internetowych."
+  }
+}

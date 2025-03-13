@@ -61,7 +61,7 @@ export default function Home() {
           }
         });
       },
-      { threshold: 0.3 },
+      { threshold: [0.3, 0.9] },
     );
 
     observer.observe(landingRef.current);
@@ -94,23 +94,19 @@ export default function Home() {
         ? "rgba(0, 0, 0, 0.9)"
         : "rgba(200, 200, 200, 0.6)",
       "--background-color": isDarkMode
-        ? "rgba(25, 25, 25, 1)"
+        ? "rgb(25, 25, 25)"
         : "rgba(230, 230, 230, 0.95)",
       "--background-color-dark": isDarkMode
         ? "rgba(20, 20, 20, 1)"
         : "rgb(225, 225, 225)",
-      "--navbar-color": isDarkMode
-        ? "rgba(15, 15, 15, 1)"
-        : "rgba(235, 235, 235, 1)",
+      "--navbar-color": isDarkMode ? "rgb(15, 15, 15)" : "rgb(235, 235, 235)",
       "--foreground-color": isDarkMode
         ? "rgb(60, 60, 60)"
-        : "rgb(180, 180, 180)",
+        : "rgb(200, 200, 200)",
       "--foreground-color-dark": isDarkMode
         ? "rgb(40, 40, 40)"
-        : "rgb(150, 150, 150)",
-      "--text-color": isDarkMode
-        ? "rgba(225, 225, 225, 1)"
-        : "rgba(15, 15, 15, 1)",
+        : "rgb(180, 180, 180)",
+      "--text-color": isDarkMode ? "rgb(225, 225, 225)" : "rgb(15, 15, 15)",
     };
 
     const sectionColors = {
@@ -141,7 +137,7 @@ export default function Home() {
   ) : (
     <div>
       <main
-        className={`${isDarkMode ? "dark" : "light"} home-hero min-h-screen flex flex-col relative`}
+        className={`${isDarkMode ? "dark" : "light"} home-hero min-h-screen flex flex-col relative  `}
       >
         <CursorShadowEffect />
         <Navbar

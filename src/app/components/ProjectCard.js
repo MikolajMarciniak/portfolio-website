@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+/* eslint-disable @next/next/no-img-element */
+import React, { useRef, useState } from "react";
 import Button from "./Button";
 import { Tooltip } from "react-tooltip";
 import "tippy.js/dist/tippy.css";
@@ -20,28 +21,61 @@ const ProjectCard = ({
   onExpand,
 }) => {
   const [isHovered, setHovered] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const videoRef = useRef(null);
+
+  const togglePlay = () => {
+    if (!videoRef.current) return;
+    if (videoRef.current.paused) {
+      videoRef.current.play();
+      setIsPlaying(true);
+    } else {
+      videoRef.current.pause();
+      setIsPlaying(false);
+    }
+  };
+
   return (
     <div
-      className={`shadow-2xl  rounded-lg bg-[--foreground-color-dark] 
+      className={`shadow-2xl rounded-lg bg-[--foreground-color-dark] 
       transform transition-all duration-500 project-grow w-full h-full`}
     >
       <div
-        className="relative inline-block"
+        className="relative inline-block w-full"
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
       >
         <video
+          ref={videoRef}
           src={`/videos/${videoFile}`}
           className={`rounded w-full aspect-video ${
             coverVideo ? "object-cover" : "object-contain"
           } `}
           poster={`/images/${imageStatic}`}
-          controls={isHovered ? true : false}
           playsInline
           preload="auto"
+          onClick={togglePlay}
+          onPlay={() => setIsPlaying(true)}
+          onPause={() => setIsPlaying(false)}
         />
-      </div>
 
+        {!isPlaying && (
+          <button
+            onClick={togglePlay}
+            className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-25 rounded-lg transition-opacity duration-300 opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="white"
+              width="64"
+              height="64"
+            >
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </button>
+        )}
+      </div>
       <div className={`p-2`}>
         <div className=" flex flex space-x-2 items-center justify-between">
           <h5 className="mt-2 mb-4 text-2xl font-bold tracking-tight">
@@ -91,7 +125,7 @@ const ProjectCard = ({
         </div>
         <div
           className={`mb-4 overflow-hidden projects-height ${
-            isExpanded ? "max-h-60" : "max-h-12"
+            isExpanded ? "max-h-80" : "max-h-12"
           }`}
         >
           <div dangerouslySetInnerHTML={{ __html: description }} />
@@ -137,9 +171,9 @@ const ProjectCard = ({
           <div className="flex ml-auto">
             <Button
               onClick={onExpand}
-              className="relative inline-flex items-center text-[--projects-color] border-2 border-[--projects-color] overflow-hidden transition-all duration-300 ease-out group"
+              className="relative inline-flex items-center text-[--projects-color] py-0 px-2  border-2 border-[--projects-color] overflow-hidden transition-all duration-300 ease-out group"
             >
-              <span className="relative z-10 group-hover:text-[--background-color]">
+              <span className="relative z-10 text-3xl font-extrabold group-hover:text-[--background-color]">
                 {isExpanded ? translation.collapse : translation.expand}
               </span>
               <span className="absolute inset-0 w-0 bg-[--projects-color] transition-all duration-300 ease-out group-hover:w-full"></span>

@@ -1,75 +1,151 @@
-import React, { useState, forwardRef } from "react";
-import TypedText from "../components/TypedText";
+/* eslint-disable @next/next/no-img-element */
+import React, { useState, useEffect, forwardRef } from "react";
 import { Link } from "react-scroll";
-import LazyLoad from "../components/LazyLoad";
+import { useContext } from "react";
+import { LocaleContext } from "../components/LocaleProvider";
 import ScrollDownButton from "../components/ScrollDownButton";
 
 const LandingSection = forwardRef(
   ({ translation, isDarkMode, isScrolled }, ref) => {
-    const coloredStrings = [
-      {
-        text: translation.strings[0] || "Fullstack Developer.",
-        colorVar: "--landing-color",
-      },
-      {
-        text: translation.strings[1] || "Git Guru.",
-        colorVar: "--about-color",
-      },
-      {
-        text: translation.strings[2] || "Freelancer.",
-        colorVar: "--projects-color",
-      },
-      {
-        text: translation.strings[3] || "Based in the UK.",
-        colorVar: "--contact-color",
-      },
-    ];
+    const [currentDate, setCurrentDate] = useState("");
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+    const { currentLocale } = useContext(LocaleContext);
 
-    const [colorClass, setColorClass] = useState(coloredStrings[0].colorVar);
+    useEffect(() => {
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-    const handleStringTyped = (index) => {
-      const currentString = coloredStrings[index % coloredStrings.length];
-      setColorClass(currentString.colorVar);
-    };
+    useEffect(() => {
+      if (!currentLocale) return;
+
+      const today = new Date().toLocaleDateString(currentLocale || "en", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+      });
+
+      setCurrentDate(today);
+    }, [currentLocale]);
 
     return (
       <section
         ref={ref}
         id="landing"
-        className="landing-section min-h-screen flex flex-col justify-between items-center "
+        className="landing-section min-h-screen max-h-screen flex flex-col justify-between items-center "
       >
         <div className="text-center max-w-6xl flex-grow flex flex-col justify-center">
-          <h1 className="text-6xl inline-block leading-none text-left mt-[100px]">
-            {translation.hero}
-            <Link
-              to="about"
-              smooth={true}
-              duration={500}
-              offset={-70}
-              className="cursor-pointer font-semibold hover:text-[--shadow-color] shadow landing link"
-              style={{
-                "--shadow-color": `var(${colorClass})`,
-              }}
+          <h1 className=" leading-none mt-[100px]">
+            <p className=" text-3xl  lg:text-4xl xl:text-5xl 2xl:text-6xl">
+              {translation.hero}
+              {windowWidth >= 300 && (
+                <span className="mt-10 sm:hidden block"></span>
+              )}
+              <span className="text-4xl xl:text-5xl 2xl:text-6xl break-words min-w-md">
+                <Link
+                  to="about"
+                  smooth={true}
+                  duration={500}
+                  offset={-70}
+                  className="cursor-pointer sm:ml-4 ml-0 pt-2 font-semibold hover:text-[--shadow-color] shadow landing link"
+                >
+                  MIKOŁAJ
+                  {windowWidth >= 300 && (
+                    <span className="sm:hidden block"></span>
+                  )}
+                  <span className="ml-0 sm:ml-4">MARCINIAK</span>
+                </Link>
+                <span className="whitespace-nowrap">.</span>
+              </span>
+            </p>
+            <p
+              className={`px-3 text-lg sm:text-lg md:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl mt-10 flex w-full ${isDarkMode ? "text-gray-400" : "text-gray-700"} max-w-6xl justify-center`}
             >
-              {"  "}
-              <span className="ml-4 text-7xl">MIKOŁAJ MARCINIAK</span>
-            </Link>
-            .
-            <br />
-            {/* <TypedText
-              strings={coloredStrings}
-              colorClass={colorClass}
-              handleStringTyped={handleStringTyped}
-            /> */}
+              <span>
+                <span className="inline-block">
+                  {translation.subtitle}
+                  <span
+                    className={`mr-2 text-[--landing-color] ${isDarkMode ? "opacity-50" : "opacity-75"}`}
+                  >
+                    ,
+                  </span>
+                </span>
+
+                <span className="inline-block">
+                  {translation.subtitle2}
+                  <span
+                    className={`mx-2 text-[--landing-color] ${isDarkMode ? "opacity-50" : "opacity-75"}`}
+                  >
+                    &
+                  </span>
+                  {translation.subtitle3}
+                </span>
+              </span>
+            </p>
           </h1>
         </div>
-        <div className="mb-10">
-          <ScrollDownButton isScrolled={isScrolled} isDarkMode={isDarkMode} />
+
+        <div
+          className={`font-[electrolize] text-md sm:text-md md:text-lg lg:text-xl px-2 w-full justify-between items-center max-w-6xl flex pb-10 transition-opacity duration-500 ${isScrolled ? "opacity-0" : "opacity-100"}`}
+        >
+          {windowWidth >= 380 ? (
+            <>
+              <span className="ml-10 pl-2 lg:ml-0 text-gray-500">
+                {translation.visitor} {"   "}
+                <img
+                  className="pl-1 inline-block align-middle"
+                  style={{ height: "1.4em", paddingBottom: "2px" }}
+                  src="https://visit-counter.vercel.app/counter.png?page=marciniakm.com&s=40&c=ef4444BF&bg=00000000&no=1&ff=electrolize&tb=&ta="
+                  alt="visitor no."
+                />
+              </span>
+
+              <ScrollDownButton
+                isScrolled={isScrolled}
+                isDarkMode={isDarkMode}
+              />
+
+              <span className="mr-10 pr-2 lg:mr-0 text-gray-500">
+                {currentDate.split(" ").map((part, index) => (
+                  <span
+                    key={index}
+                    style={
+                      index === 0
+                        ? {
+                            fontSize: "1.11em",
+                            paddingBottom: "2px",
+                            transform: "scaleX(1.2)",
+                            display: "inline-block",
+                          }
+                        : {}
+                    }
+                    className={
+                      index === 0 ? "text-red-500 opacity-75 pr-2" : ""
+                    }
+                  >
+                    {part}{" "}
+                  </span>
+                ))}
+              </span>
+            </>
+          ) : (
+            <>
+              <span className="ml-10 lg:ml-0 text-gray-500" />
+
+              <ScrollDownButton
+                isScrolled={isScrolled}
+                isDarkMode={isDarkMode}
+              />
+
+              <span className="mr-10 lg:mr-0"></span>
+            </>
+          )}
         </div>
       </section>
     );
   },
 );
 
-LandingSection.displayName = "Landing";
+LandingSection.displayName = "LandingSection";
 export default LandingSection;

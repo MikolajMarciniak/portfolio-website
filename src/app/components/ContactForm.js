@@ -73,7 +73,7 @@ const ContactForm = ({ translation }) => {
   };
 
   return (
-    <div className=" bg-[--foreground-color] h-full mx-auto max-w-3xl rounded-md shadow-2xl">
+    <div className="bg-[--foreground-color] h-full text-sm sm:text-md xl:text-lg mx-5 px-4 sm:px-0 sm:mx-auto max-w-3xl rounded-md shadow-2xl">
       <div className="relative z-10 mx-auto flex flex-col pb-18 py-12">
         <form
           className="space-y-6 w-full max-w-2xl mx-auto"
@@ -81,7 +81,7 @@ const ContactForm = ({ translation }) => {
         >
           <div className="form-group">
             <label
-              className="text-xl font-semibold text-[--contact-color]"
+              className="text-md sm:text-lg xl:text-xl font-semibold text-[--contact-color]"
               htmlFor="name"
             >
               {translation.name}{" "}
@@ -94,7 +94,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.entername}
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-2 mt-2 shadow-xl rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full p-2 mt-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.name ? "border-red-500" : ""
               }`}
             />
@@ -107,7 +107,7 @@ const ContactForm = ({ translation }) => {
 
           <div className="form-group ">
             <label
-              className="text-xl font-semibold text-[--contact-color]"
+              className="text-md sm:text-lg xl:text-xl font-semibold text-[--contact-color]"
               htmlFor="email"
             >
               {translation.email}{" "}
@@ -119,7 +119,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.enteremail}
               value={formData.email}
               onChange={handleChange}
-              className={`w-full mt-2 p-2 shadow-xl rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full mt-2 p-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.email ? "border-red-500" : ""
               } `}
             />
@@ -130,7 +130,7 @@ const ContactForm = ({ translation }) => {
 
           <div className="form-group">
             <label
-              className="text-xl font-semibold text-[--contact-color]"
+              className="text-md sm:text-lg xl:text-xl font-semibold text-[--contact-color]"
               htmlFor="message"
             >
               {translation.message}
@@ -141,7 +141,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.entermessage}
               value={formData.message}
               onChange={handleChange}
-              className={`w-full p-2 mt-2 shadow-xl rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`w-full p-2 mt-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.message ? "border-red-500" : ""
               }`}
               rows="8"
@@ -154,7 +154,7 @@ const ContactForm = ({ translation }) => {
             <Button
               type="submit"
               disabled={loading}
-              className={`relative border-2 font-bold shadow-2xl inline-flex items-center justify-center px-8 dark-mode-button overflow-hidden group hover:text-[--background-color] text-[--contact-color] transition-transform transform border-[--contact-color] bg-[--background-color] hover:bg-[--contact-color] ${
+              className={`relative border-2 font-bold shadow-2xl inline-flex items-center justify-center px-8 dark-mode-button overflow-hidden group hover:text-[--background-color] text-[--contact-color] transition-transform transform border-[--contact-color] bg-[--foreground-color] hover:bg-[--contact-color] ${
                 loading ? "opacity-50" : "opacity-100"
               }`}
             >

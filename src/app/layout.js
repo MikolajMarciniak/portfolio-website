@@ -15,7 +15,7 @@ async function getTranslations(locale) {
     const translationsPath = path.resolve(
       "public",
       "locales",
-      `${locale}.json`,
+      `${locale.split("-")[0]}.json`,
     );
     const translations = JSON.parse(fs.readFileSync(translationsPath, "utf8"));
     return translations;
@@ -34,7 +34,7 @@ async function getTranslations(locale) {
 
 export default async function RootLayout({ children }) {
   const defaultLocale =
-    typeof window !== "undefined" ? navigator.language.split("-")[0] : "en";
+    typeof window !== "undefined" ? navigator.language : "en-Gb";
   const translations = await getTranslations(defaultLocale);
 
   return (

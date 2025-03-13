@@ -1,18 +1,21 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { LocaleContext } from "./LocaleProvider";
 import languages from "../data/languageData";
 
-export function LanguageSwitcher() {
+export function LanguageSwitcher({ translation = "Search..." }) {
   const { currentLocale, switchLanguage } = useContext(LocaleContext);
   const [isOpen, setIsOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const switcherRef = useRef(null);
+  const shortLocale = currentLocale ? currentLocale.split("-")[0] : "en";
+  const selectedLanguage = languages.find((lang) => lang.code === shortLocale);
 
-  const selectedLanguage = languages.find(
-    (lang) => lang.code.split("-")[0] === currentLocale,
-  );
+  // console.log("Current Locale:", currentLocale);
+  // console.log("Short Locale:", shortLocale);
+  // console.log("Selected Language:", selectedLanguage);
 
   const filteredLanguages = languages.filter((language) =>
     language.label.toLowerCase().includes(searchQuery.toLowerCase()),
@@ -32,24 +35,26 @@ export function LanguageSwitcher() {
   }, []);
 
   return (
-    <div className="relative text-left" ref={switcherRef}>
+    <div className="language-switcher relative text-left" ref={switcherRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="group hover:font-bold text-lg font-semibold transition-all duration-300 flex w-32 items-center space-x-2 px-4 py-2 border border-[--text-color] rounded-sm text-sm font-semibold focus:outline-none hover:border-[--accent-color]"
+        className="group hover:font-bold text-lg font-semibold transition-all duration-300 flex w-32 items-center space-x-2 px-4 py-2 border border-[--text-color] rounded-sm text-sm font-semibold focus:outline-none hover:border-[--accent-color] focus:border-[--accent-color] "
       >
         <img
-          src={`/icons/flags/${selectedLanguage.code}.svg`}
-          alt={selectedLanguage.label}
+          width={20}
+          height={20}
+          src={`/icons/flags/${shortLocale}.svg`}
+          alt={selectedLanguage?.label || "Unknown Language"}
           className="w-5 h-5"
         />
-        <span>{selectedLanguage.label}</span>
+        <span>{selectedLanguage?.label || "Unknown"}</span>
       </button>
 
       {isOpen && (
-        <div className="absolute mt-3 left-1/2 transform -translate-x-1/2 w-48 bg-[--foreground-color] border border-[--text-color] rounded-sm shadow-lg max-h-60 overflow-y-auto">
+        <div className="absolute z-50 mt-3 left-1/2 transform -translate-x-1/2 w-48 bg-[--foreground-color] border border-[--text-color] rounded-sm shadow-lg max-h-60 overflow-y-auto">
           <input
             type="text"
-            placeholder="Search..."
+            placeholder={translation}
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="px-4 py-2 mx-2 max-w-[157px] rounded-sm text-black text-sm focus:outline-none bg-white placeholder-gray-500 sticky top-0"
@@ -60,14 +65,14 @@ export function LanguageSwitcher() {
               <button
                 key={language.code}
                 onClick={() => {
-                  switchLanguage(language.code);
+                  switchLanguage(language.fullCode);
                   setIsOpen(false);
                   setSearchQuery("");
                 }}
                 className="flex items-center space-x-2 px-4 py-2 w-full text-left hover:bg-gray-500"
               >
                 <img
-                  src={`/icons/flags/${language.code.split("-")[0]}.svg`}
+                  src={`/icons/flags/${language.code}.svg`}
                   alt={language.label}
                   className="w-5 h-5"
                 />

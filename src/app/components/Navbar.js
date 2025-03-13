@@ -11,18 +11,14 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
   const focusedIndex = useRef(0);
   const menuRef = useRef(null);
 
-  const handleResize = () => {
-    if (window.innerWidth < 1280) {
-      setShowHamburger(true);
-    } else {
-      setShowHamburger(false);
-      setIsMenuOpen(false);
-    }
-  };
-
   const handleKeyDown = (event) => {
     if (isMenuOpen) {
-      const focusableElements = menuRef.current?.querySelectorAll("a, button");
+      if (event.key === "Escape") {
+        setIsMenuOpen(false);
+      }
+
+      const focusableElements =
+        menuRef.current?.querySelectorAll("a, button  ");
 
       if (event.key === "Enter") {
         focusableElements[focusedIndex.current]?.click();
@@ -46,7 +42,6 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           ["ArrowLeft", "ArrowUp"].includes(event.key) ||
           (event.key === "Tab" && event.shiftKey)
         ) {
-          console.log("shift");
           event.preventDefault();
           let prevIndexFixed = focusedIndex.current - 1;
           if (prevIndexFixed >= focusableElements.length) prevIndexFixed = 0;
@@ -55,6 +50,15 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           focusedIndex.current = prevIndexFixed;
         }
       }
+    }
+  };
+
+  const handleResize = () => {
+    if (window.innerWidth < 1280) {
+      setShowHamburger(true);
+    } else {
+      setShowHamburger(false);
+      setIsMenuOpen(false);
     }
   };
 
@@ -84,14 +88,14 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           : "py-4 bg-transparent"
       }`}
     >
-      <div className="container mx-auto max-w-6xl flex justify-between items-center py-2 px-4">
+      <div className=" mx-auto max-w-6xl flex justify-between items-center py-2 px-4">
         <ScrollLink
           to="landing"
           smooth={true}
           duration={500}
           className="cursor-pointer"
         >
-          <div className="text-3xl font-bold text-[var(--text-color)] hover:text-[var(--accent-color)]">
+          <div className="text-2xl sm:text-3xl font-bold text-[var(--text-color)] hover:text-[var(--accent-color)]">
             <span className="text-[var(--accent-color)] transition-all duration-500 ease-in-out">
               M
             </span>
@@ -101,32 +105,61 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           </div>
         </ScrollLink>
 
-        <div className="hidden xl:flex items-center space-x-6 font-semibold">
-          <LanguageSwitcher />
-          {["about", "skills", "projects", "contact"].map((section) => (
-            <ScrollLink
-              key={section}
-              to={section}
-              smooth={true}
-              offset={section === "contact" ? 330 : -70}
-              duration={500}
-              className={`text-lg text-[var(--text-color)] cursor-pointer relative group hover:text-[var(--${section}-color)] hover:bg-[var(--${section}-color)] transition-all`}
-            >
-              {translation[section]}
-              <span
-                className={`absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--${section}-color)] transition-all duration-300 group-hover:w-full`}
-              />
-            </ScrollLink>
-          ))}
+        <div className="hidden xl:flex items-center sm:space-x-6 space-x-0 font-semibold">
+          <LanguageSwitcher translation={translation.search} />
+          <ScrollLink
+            to="about"
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-lg text-[--text-color] cursor-pointer relative group hover:text-[--about-color] transition-all"
+          >
+            {translation.about}
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[--about-color] transition-all duration-300 group-hover:w-full" />
+          </ScrollLink>
+
+          <ScrollLink
+            to="skills"
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-lg text-[--text-color] cursor-pointer relative group hover:text-[--skills-color] transition-all"
+          >
+            {translation.skills}
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[--skills-color] transition-all duration-300 group-hover:w-full" />
+          </ScrollLink>
+
+          <ScrollLink
+            to="projects"
+            smooth={true}
+            offset={-70}
+            duration={500}
+            className="text-lg text-[--text-color] cursor-pointer relative group hover:text-[--projects-color] transition-all"
+          >
+            {translation.projects}
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[--projects-color] transition-all duration-300 group-hover:w-full" />
+          </ScrollLink>
+
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            offset={330}
+            duration={500}
+            className="text-lg text-[--text-color] cursor-pointer relative group hover:text-[--contact-color] transition-all"
+          >
+            {translation.contact}
+            <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-[--contact-color] transition-all duration-300 group-hover:w-full" />
+          </ScrollLink>
+
           <DarkModeSelector toggleTheme={toggleTheme} isDarkMode={isDarkMode} />
         </div>
         {showHamburger && (
-          <div className="ml-auto mr-6">
-            <LanguageSwitcher />
+          <div className="sm:block hidden ml-auto mr-6">
+            <LanguageSwitcher translation={translation.search} />
           </div>
         )}
         <button
-          className={`xl:hidden flex flex-col z-50 items-center justify-center space-y-1 w-10 h-10 transition-all duration-500 ease-in-out transform ${
+          className={` xl:hidden flex flex-col z-50 items-center justify-center space-y-1 w-10 h-10 mr-1 transition-all duration-500 ease-in-out transform ${
             showHamburger
               ? "translate-x-0 opacity-100"
               : "translate-x-10 opacity-0"
@@ -134,13 +167,13 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <div
-            className={`h-1 w-8 bg-[var(--text-color)] transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
+            className={`bg-[--text-color] h-1 w-8 transition-all duration-300 ${isMenuOpen ? "rotate-45 translate-y-2" : ""}`}
           />
           <div
-            className={`h-1 w-8 bg-[var(--text-color)] transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
+            className={`bg-[--text-color] h-1 w-8  transition-all duration-300 ${isMenuOpen ? "opacity-0" : ""}`}
           />
           <div
-            className={`h-1 w-8 bg-[var(--text-color)] transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
+            className={`bg-[--text-color] h-1 w-8  transition-all duration-300 ${isMenuOpen ? "-rotate-45 -translate-y-2" : ""}`}
           />
         </button>
       </div>
@@ -151,22 +184,79 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
         }`}
         ref={menuRef}
       >
-        {["landing", "about", "skills", "projects", "contact"].map(
-          (section, index) => (
-            <ScrollLink
-              key={section}
-              to={section}
-              smooth={true}
-              offset={section === "contact" ? 330 : -70}
-              duration={500}
-              className={`${section == "contact" ? "mb-4" : ""} text-3xl py-8 font-bold hover:text-[--navbar-color] text-[--text-color] w-full text-center py-4 cursor-pointer hover:bg-[--${section}-color] transition-all`}
-              onClick={() => setIsMenuOpen(false)}
-              tabIndex={0}
-            >
-              {translation[section]}
-            </ScrollLink>
-          ),
-        )}
+        <div className="sm:hidden block mb-4">
+          <LanguageSwitcher translation={translation.search} tabIndex={0} />
+        </div>
+        <ScrollLink
+          to="landing"
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
+    hover:text-[--navbar-color] hover:bg-[--landing-color] 
+    focus:text-[--navbar-color] focus:bg-[--landing-color] outline-none"
+          onClick={() => setIsMenuOpen(false)}
+          tabIndex={0}
+        >
+          {translation.landing}
+        </ScrollLink>
+
+        <ScrollLink
+          to="about"
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
+    hover:text-[--navbar-color] hover:bg-[--about-color] 
+    focus:text-[--navbar-color] focus:bg-[--about-color] outline-none"
+          onClick={() => setIsMenuOpen(false)}
+          tabIndex={0}
+        >
+          {translation.about}
+        </ScrollLink>
+
+        <ScrollLink
+          to="skills"
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
+    hover:text-[--navbar-color] hover:bg-[--skills-color] 
+    focus:text-[--navbar-color] focus:bg-[--skills-color] outline-none"
+          onClick={() => setIsMenuOpen(false)}
+          tabIndex={0}
+        >
+          {translation.skills}
+        </ScrollLink>
+
+        <ScrollLink
+          to="projects"
+          smooth={true}
+          offset={-70}
+          duration={500}
+          className="text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
+    hover:text-[--navbar-color] hover:bg-[--projects-color] 
+    focus:text-[--navbar-color] focus:bg-[--projects-color] outline-none"
+          onClick={() => setIsMenuOpen(false)}
+          tabIndex={0}
+        >
+          {translation.projects}
+        </ScrollLink>
+
+        <ScrollLink
+          to="contact"
+          smooth={true}
+          offset={330}
+          duration={500}
+          className="  mb-4  text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
+    hover:text-[--navbar-color] hover:bg-[--contact-color] 
+    focus:text-[--navbar-color] focus:bg-[--contact-color] outline-none"
+          onClick={() => setIsMenuOpen(false)}
+          tabIndex={0}
+        >
+          {translation.contact}
+        </ScrollLink>
+
         <DarkModeSelector
           large={true}
           toggleTheme={toggleTheme}

@@ -19,6 +19,7 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
     setVisibleIcons([]);
     setLoadedIcons({});
     setLoading(true);
+
     const allIconsLoaded = icons[tabValue].every(
       (icon) => loadedIcons[icon.name],
     );
@@ -58,23 +59,50 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
     handleTabChange("frontend");
   }, []);
 
+  const useWindowWidth = () => {
+    const [width, setWidth] = useState(window.innerWidth);
+
+    useEffect(() => {
+      const handleResize = () => setWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    return width;
+  };
+
+  const width = useWindowWidth();
+
+  const getColumnsPerRow = (width) => {
+    if (width >= 768) return 7;
+    if (width >= 640) return 4;
+    return 3;
+  };
+
+  const columnsPerRow = getColumnsPerRow(width);
+
   const filteredIcons = icons[activeTab];
 
+  const fullRowCount =
+    Math.floor(filteredIcons.length / columnsPerRow) * columnsPerRow;
+  const fullRows = filteredIcons.slice(0, fullRowCount);
+  const remainingIcons = filteredIcons.slice(fullRowCount);
   const handleIconLoad = (iconName) => {
     setLoadedIcons((prev) => ({ ...prev, [iconName]: true }));
   };
 
   return (
-    <div className="shadow-2xl flex flex-col items-center p-8 rounded-lg max-w-3xl mx-auto bg-[--foreground-color]">
-      <div className="mb-8 flex space-x-4 justify-center">
+    <div className="shadow-2xl flex flex-col items-center p-4 rounded-lg w-full  justify-center mx-auto max-w-md sm:max-w-lg md:max-w-3xl bg-[--foreground-color]">
+      <div className="mb-6 flex flex-col md:flex-row gap-2 justify-center items-center w-full">
         {tabs.map((tab) => (
           <Button
             key={tab.value}
             onClick={() => handleTabChange(tab.value)}
-            className={`relative border-2 w-36 overflow-hidden hover:brightness-75 transition-all ease-out duration-300 shadow-2xl ${
+            className={`relative border-2 w-full md:w-36 overflow-hidden hover:brightness-75 transition-all ease-out duration-300 shadow-2xl ${
               activeTab === tab.value
-                ? "border-[--skills-color] bg-[--skills-color]  text-[--background-color]"
-                : "border-[--skills-color] text-[--skills-color]  hover:text-[--background-color]"
+                ? "border-[--skills-color] bg-[--skills-color] text-[--background-color]"
+                : "border-[--skills-color] text-[--skills-color] hover:text-[--background-color]"
             } group`}
           >
             <span className="relative z-10">{tab.label}</span>
@@ -83,12 +111,22 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
         ))}
       </div>
 
-      <div className="flex justify-center w-full">
-        <div className="flex space-x-8">
-          {filteredIcons.map((icon, index) => (
+      <div className="flex flex-col items-center w-full">
+        <div
+          className={`grid gap-8 ${
+            columnsPerRow === 7
+              ? "grid-cols-7"
+              : columnsPerRow === 4
+                ? "grid-cols-4"
+                : columnsPerRow === 3
+                  ? "grid-cols-3"
+                  : "grid-cols-1"
+          }`}
+        >
+          {fullRows.map((icon, index) => (
             <div
               key={icon.name}
-              className={`flex flex-col items-center transition-all duration-500 transform ${
+              className={`flex flex-col items-center gap-2 transition-all duration-500 transform ${
                 visibleIcons.includes(index)
                   ? "opacity-100 translate-y-0"
                   : "opacity-0 translate-y-10"
@@ -98,7 +136,7 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
                 href={icon.documentation}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transform transition-transform duration-200 hover:scale-125"
+                className="transform transition-transform duration-200 hover:scale-110"
               >
                 <img
                   src={`/icons/tech/${
@@ -108,17 +146,57 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
                   }.svg`}
                   alt={icon.fullname}
                   onLoad={() => handleIconLoad(icon.name)}
-                  className={`w-16 h-16 mb-2 ${
+                  className={`w-12 h-12 sm:w-16 sm:h-16 mb-2 ${
                     icon.name === "github" && isDarkMode ? "filter invert" : ""
                   }`}
                 />
               </a>
-              <h3 className="text-lg font-semibold text-[--text-color]">
+              <h3 className="text-sm sm:text-lg font-semibold text-[--text-color] text-center">
                 {icon.fullname}
               </h3>
             </div>
           ))}
         </div>
+
+        {remainingIcons.length > 0 && (
+          <div className="flex justify-around w-full  mt-4">
+            {remainingIcons.map((icon, index) => (
+              <div
+                key={icon.name}
+                className={`flex flex-col items-center transition-all duration-500 transform ${
+                  visibleIcons.includes(index)
+                    ? "opacity-100 translate-y-0"
+                    : "opacity-0 translate-y-10"
+                }`}
+              >
+                <a
+                  href={icon.documentation}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transform transition-transform duration-200 hover:scale-110"
+                >
+                  <img
+                    src={`/icons/tech/${
+                      icon.name === "react" && !isDarkMode
+                        ? "react-dark"
+                        : `${icon.name}`
+                    }.svg`}
+                    alt={icon.fullname}
+                    onLoad={() => handleIconLoad(icon.name)}
+                    className={`w-12 h-12 sm:w-16 sm:h-16 mb-2 ${
+                      icon.name === "github" && isDarkMode
+                        ? "filter invert"
+                        : ""
+                    }`}
+                  />
+                </a>
+                <h3 className="text-sm sm:text-lg font-semibold text-[--text-color] text-center">
+                  {icon.fullname}
+                </h3>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );

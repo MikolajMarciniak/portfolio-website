@@ -18,7 +18,7 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
     >
       <div className="relative py-20 mx-auto w-full max-w-6xl text-center">
         <LazyLoad>
-          <h2 className="text-6xl font-bold">
+          <h2 className="text-4xl xl:text-5xl 2xl:text-6xl font-bold">
             <span className="shadow heading about text-[--about-color]">
               {translation.title}
             </span>
@@ -27,16 +27,16 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
       </div>
 
       <LazyLoad>
-        <div className="shadow-2xl py-3 text-lg font:semibold relative w-full bg-[--about-color] flex items-center justify-center ">
+        <div className="shadow-2xl px-3 md:py-0 pt-8 font:semibold relative w-full bg-[--about-color] flex items-center justify-center ">
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between">
             <LayeredParallax
               foreground={foreground}
               midground={midground}
               background={background}
             />
-            <div className="dark text-white max-w-xl">
-              <p className="mt-4">{translation.description}</p>
-              <p className="mt-4">
+            <div className="dark text-md sm:text-lg lg:text-xl text-white max-w-xl sm:pt-5 px-5">
+              <p className="sm:mt-3 mt-8">{translation.description}</p>
+              <p className="mt-4 ">
                 {translation.description2}{" "}
                 <a
                   href="https://www.linkedin.com/in/mikolaj-marciniak"
@@ -63,10 +63,11 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
 
               <div className="flex justify-center">
                 <Button
-                  href={translation.cv}
-                  className="relative mt-8 border-2 border-white text-white bg-[--about-color] font-bold transition-all ease-out duration-300 overflow-hidden group"
+                  href="/documents/MikolajMarciniak.pdf"
+                  // href={translation.cv}
+                  className="relative my-8 border-2 border-white text-white bg-[--about-color] font-bold transition-all ease-out duration-300 overflow-hidden group"
                 >
-                  <span className="relative z-10 group-hover:text-[--about-color]">
+                  <span className="relative z-10 group-hover:text-[--about-color] ">
                     {translation.viewcv}
                   </span>
                   <span className="absolute inset-0 w-0 bg-white transition-all duration-300 ease-out group-hover:w-full"></span>
