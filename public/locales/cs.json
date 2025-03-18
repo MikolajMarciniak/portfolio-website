@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Vyhledávání...",
+      "results": "Nebyly nalezeny žádné výsledky"
+    },
+    "landing": "Domovská stránka",
+    "about": "O mně",
+    "projects": "Moje projekty",
+    "skills": "Moje dovednosti",
+    "contact": "Kontaktujte mě"
+  },
+  "landing": {
+    "hero": "Ahoj, jsem",
+    "subtitle": "FullStack Developer",
+    "subtitle2": "Nezávislý pracovník",
+    "subtitle3": "Poradce",
+    "visitor": "Návštěvník č."
+  },
+  "about": {
+    "title": "O mně",
+    "description": "Jsem vývojář FullStack specializující se na <strong> Mern </strong> technický zásobník. V průběhu mé <strong> 3leté </strong> cesty jsem vytvořil přizpůsobené webové aplikace pro firmy a spotřebitele. Obzvláště si užívám integrace silných backendů s krásnými rozhraními pro <strong> vizualizace dat </strong>. <br/> <br/> Ve svém volném čase si užívám pohrávání s <strong> ML modely </strong> a vařením vlastního vína. Také mě baví pomáhat druhým tím, že uvolníme své komponenty React jako <strong> Foss </strong> a sdílením užitečného obsahu na mém <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' cíl = '_ prázdný' rel = noopener 'Class' Class 'CurSin Mr-2' Mr-2 'Mr-2' </a> <br/> <br/> Pokud něco z toho zní zajímavě, neváhejte mi následovat nebo pošlete zprávu",
+    "descriptionCont": "<br/> <br/> Pokud něco z toho zní zajímavě, neváhejte mě následovat",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Zobrazit CV",
+    "here": "zde"
+  },
+  "skills": {
+    "skillstitle": "Moje dovednosti",
+    "skills": [
+      "Frontend",
+      "Backend",
+      "Nástroje"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Kompletní kurz webového vývojáře 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principy + praktiky pro skvělý design uživatelského rozhraní"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress rychle"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Moje projekty",
+    "showmore": "Ukázat více",
+    "showless": "Ukázat méně",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Další projekty přicházejí brzy ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Driveguage",
+        "description": "<div class = 'MB-3 Break-Words Whitespace-Normal'> DriveGuage je systém monitorování výkonu ovladače Blackbox. Systém běží na Raspberry Pi, který se připojuje k portům OBD vozu a shromažďuje data jízdy. Ověřené klienti mohou sledovat změny v jejich „skóre řidiče“, míru řidičských návyků, jako je překročení rychlosti, ostré zatáčky a rychlé zrychlení. </Div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-anglické",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Když jsem byl v Premium Faber Ltd., zaměřil jsem se na vývoj aplikace s jednou stránkou (SPA) pro „extra-anglickou“ jazykovou školu. <br/> <br/> Počáteční verze aplikace byla statická, a poskytla klíčové informace o facingu klienta. Později jsem rozšířil svou funkčnost tak, aby zahrnoval fotogalerii, nekonečný zpravodajský kanál, přihlašovací formulář pro klient a interaktivní jazykový kvíz. <br/> <br/> Po opuštění prémiového Faber jsem pokračoval přímo s extra-anglickým. Nedávno jsem implementoval ověřování uživatelů, správu lekcí a sledování docházky a automatizované výpočty plateb. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'Duthie",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Tato navigační aplikace zaměřená na komunitu je důkazem konceptu vyvinutého pro hackathon 2024 RGU. <br/> <br/> Je vybaven interaktivní mapou s kolíky pro klíčové památky Aberdeen Duthie Park. Při klepání na PIN mohou uživatelé přečíst více informací o něm nebo se rozhodnout přejít na PIN. Aplikace má také krmivo, webovou skvrnu ze skupiny „Friends of Duthie Park“ Facebook. <br/> <br/> Aplikace má nastavení přístupnosti; Uživatelé mohou zapojit režim s vysokým kontrastem nebo zvětšit velikost písma pro lepší čitelnost. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktujte mě",
+    "quote": "Máte nápad nebo prostě chcete chatovat? Neváhejte a pošlete mi zprávu níže!",
+    "form": {
+      "name": "Jméno",
+      "email": "E-mail*",
+      "message": "Zpráva",
+      "entername": "Zadejte své jméno",
+      "enteremail": "Zadejte svůj e -mail",
+      "entermessage": "Zadejte svou zprávu",
+      "submit": "POSLAT",
+      "errors": {
+        "emailinvalid": "Neplatná e -mailová adresa.",
+        "emailrequired": "Je vyžadován e -mail.",
+        "forminvalid": "Opravte prosím chyby ve formuláři.",
+        "emailfailed": "Nepodařilo se odeslat e -mail. Zkuste to prosím znovu později.",
+        "genericerror": "Došlo k chybě. Zkuste to prosím znovu později."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Všechna práva vyhrazena.",
+    "description": "Vývojář FullStack se zkušenostmi v Mern, AWS a Pythonu. Vášnivý pro budování efektivních a škálovatelných webových aplikací."
+  }
+}

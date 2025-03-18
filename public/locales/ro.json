@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Căutare...",
+      "results": "Nu au fost găsite rezultate"
+    },
+    "landing": "Pagina de pornire",
+    "about": "Despre mine",
+    "projects": "Proiectele mele",
+    "skills": "Abilitățile mele",
+    "contact": "Contactați -mă"
+  },
+  "landing": {
+    "hero": "Bună, sunt",
+    "subtitle": "Dezvoltator FullStack",
+    "subtitle2": "Freelancer",
+    "subtitle3": "Consultant",
+    "visitor": "Vizitatorul nr."
+  },
+  "about": {
+    "title": "DESPRE MINE",
+    "description": "Sunt un dezvoltator FullStack specializat în stiva <strong> Mern </strong>. Pe parcursul călătoriei mele <strong> pe 3 ani </strong>, am creat aplicații web personalizate pentru companii și consumatori. Îmi place în mod deosebit să integrez backend -uri puternice cu interfețe frumoase pentru <strong> vizualizarea datelor </strong>. <br/> <br/> În timpul liber, mă bucur de tinkering cu modele <strong> ml </strong> și să -mi fac propriul vin. De asemenea, îmi place să îi ajut pe ceilalți, lansându-mi componentele React ca <strong> foss </strong> și împărtășesc conținut util pe <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' Target = '_ blank' rel = 'Noopener Noneferrer' ClassName = 'LinkedInin-poter Hover: Font-Bold sublin </a> <br/> <br/> Dacă vreunul dintre acestea sună interesant, nu ezitați să -mi urmați sau să -mi trimiteți un mesaj",
+    "descriptionCont": "<br/> <br/> Dacă vreunul dintre acestea sună interesant, nu ezitați să -mi urmați sau să -mi trimiteți un mesaj",
+    "cv": "/documente/mikolajmarciniak.pdf",
+    "viewcv": "Vizualizați CV",
+    "here": "Aici"
+  },
+  "skills": {
+    "skillstitle": "Abilitățile mele",
+    "skills": [
+      "ÎN FAȚĂ",
+      "Backend",
+      "Instrumente"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Cursul complet de dezvoltatori web 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principiile + practici pentru un design UI excelent"
+      },
+      {
+        "id": 3,
+        "title": "Maestrul WordPress rapid"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proiectele mele",
+    "showmore": "Arată mai mult",
+    "showless": "Arată mai puțin",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Mai multe proiecte vor veni în curând ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "DriveGuage",
+        "description": "<div class = 'MB-3 Break-Words Whitepace-Normal'> DriveGuage este un sistem de monitorizare a performanței driverului Blackbox. Sistemul rulează pe un Raspberry PI, care se conectează la portul OBD al mașinii pentru a colecta date de conducere. <br/> <br/> Datele sunt încărcate pe un server, procesate și afișate printr-o aplicație web prietenoasă cu utilizarea. Clienții autentificați pot urmări modificările în „scorul șoferului”, o măsură a obiceiurilor de conducere, cum ar fi viteza, virajele ascuțite și accelerația rapidă. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-englez",
+        "description": "<p ClassName = 'MB-3 Whords Whitespace-Normal'> În timp ce la Premium Faber Ltd., m-am concentrat pe dezvoltarea unei aplicații cu o singură pagină (SPA) pentru școala de limbă „extra-engleză”. <br/> <br/> Versiunea inițială a aplicației a fost statică, oferind informații cheie care fac față clienților. Ulterior, i-am extins funcționalitatea pentru a include o galerie foto, un feed de știri infinit, un formular de înscriere a clientului și un test de limbaj interactiv. <br/> <br/> După ce am părăsit Premium Faber, am continuat să lucrez direct cu extra-engleze. Recent, am implementat autentificarea utilizatorilor, gestionarea lecțiilor și urmărirea prezenței și calcule de plată automate. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'Duthie",
+        "description": "<p ClassName = 'MB-3 Whords Whitepace-Normal'> Această aplicație de navigație axată pe comunitate este o dovadă a conceptului dezvoltat pentru Hackathonul RGU din 2024. <br/> <br/> Prezintă o hartă interactivă cu pini pentru repere cheie ale parcului Aberdeen Duthie. Atunci când apăsați pe un PIN, utilizatorii pot citi mai multe informații despre acesta sau pot alege să navigheze la PIN. Aplicația are, de asemenea, un feed, scârțâit web din grupul Facebook „Prietenii Duthie Park”. <br/> <br/> Aplicația are setări de accesibilitate; Utilizatorii pot angaja un mod de contrast ridicat sau pot crește dimensiunea fontului pentru o mai bună lizibilitate. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactați -mă",
+    "quote": "Aveți o idee sau pur și simplu doriți să discutați? Simțiți -vă liber să -mi trimiteți un mesaj mai jos!",
+    "form": {
+      "name": "Nume",
+      "email": "E-mail*",
+      "message": "Mesaj",
+      "entername": "Introduceți numele",
+      "enteremail": "Introduceți e -mailul",
+      "entermessage": "Introduceți mesajul dvs.",
+      "submit": "TRIMITE",
+      "errors": {
+        "emailinvalid": "Adresa de e -mail nevalide.",
+        "emailrequired": "E -mailul este necesar.",
+        "forminvalid": "Vă rugăm să corectați erorile din formular.",
+        "emailfailed": "Nu a reușit să trimită e -mail. Vă rugăm să încercați din nou mai târziu.",
+        "genericerror": "A apărut o eroare. Vă rugăm să încercați din nou mai târziu."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Toate drepturile rezervate.",
+    "description": "Dezvoltator FullStack cu experiență în Mern, AWS și Python. Pasionat de construirea de aplicații web eficiente, scalabile."
+  }
+}

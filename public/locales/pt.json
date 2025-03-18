@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Procurar...",
+      "results": "Nenhum resultado encontrado"
+    },
+    "landing": "Página inicial",
+    "about": "Sobre mim",
+    "projects": "Meus projetos",
+    "skills": "Minhas habilidades",
+    "contact": "Entre em contato comigo"
+  },
+  "landing": {
+    "hero": "Oi eu sou",
+    "subtitle": "Desenvolvedor FullStack",
+    "subtitle2": "Freelancer",
+    "subtitle3": "Consultor",
+    "visitor": "Visitante no."
+  },
+  "about": {
+    "title": "Sobre mim",
+    "description": "Eu sou um desenvolvedor de pilhas fullstack especializado na pilha de tecnologia <strong> Mern </strong>. Ao longo da minha jornada <strong> </strong> </strong>, criei aplicativos da Web personalizados para empresas e consumidores. Gosto particularmente de integrar backnds poderosos com belas interfaces para <strong> Visualização de dados </strong>. <br/> <br/> No meu tempo livre, gosto de mexer com modelos <strong> ML </strong> e fabricar meu próprio vinho. Também gosto de ajudar os outros, liberando meus componentes do React como <strong> foss </strong> e compartilhando conteúdo útil no meu <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' alvo = '_ em branco' Rel = 'Noopener NoreferRer' ClassName = '' 'CURMO-POING' _ 'Rel = Noopener' Mresname = '' '' ' </a> <br/> <br/> Se isso parece interessante, fique à vontade para me seguir ou enviar uma mensagem",
+    "descriptionCont": "<br/> <br/> Se alguma dessas parecer interessante, fique à vontade para me seguir ou enviar uma mensagem",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Ver cv",
+    "here": "aqui"
+  },
+  "skills": {
+    "skillstitle": "Minhas habilidades",
+    "skills": [
+      "FRONT-END",
+      "Back -end",
+      "FERRAMENTAS"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "O curso completo do desenvolvedor da web 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Princípios + Práticas para um ótimo design de interface do usuário"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress rapidamente"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Meus projetos",
+    "showmore": "Mostre mais",
+    "showless": "Mostre menos",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Mais projetos em breve ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Driveguage",
+        "description": "<div class = 'MB-3-Break-Words Whitespace-Normal'> DriveGuage é um sistema de monitoramento de desempenho do Driver Blackbox. O sistema é executado em um Raspberry Pi, que se conecta à porta OBD do carro para coletar dados de direção. Clientes autenticados podem rastrear mudanças na sua 'pontuação do motorista', uma medida de hábitos de direção, como excesso de velocidade, reviravoltas nítidas e aceleração rápida. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-inglês",
+        "description": "<P ClassName = 'MB-3-Break-Words Whitespace-Normal'> Enquanto estava na Premium Faber Ltd., concentrei-me no desenvolvimento de um aplicativo de página única (SPA) para a escola de idiomas 'extra-inglês'. <br/> <br/> A versão inicial do aplicativo era estática, fornecendo informações importantes para o cliente. Mais tarde, expandi sua funcionalidade para incluir uma galeria de fotos, um feed de notícias infinitas, um formulário de inscrição do cliente e um questionário interativo de idioma. Recentemente, implementei autenticação de usuário, gerenciamento de lições e rastreamento de participação e cálculos de pagamento automatizados. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<P ClassName = 'MB-3-Break-Words Whitespace-Normal'> Este aplicativo de navegação focado na comunidade é uma prova de conceito desenvolvida para o 2024 RGU Hackathon. <br/> <br/> Possui um mapa interativo com pinos para os principais marcos do Aberdeen Duthie Park. Ao tocar em um pino, os usuários podem ler mais informações sobre ele ou optar por navegar até o PIN. O aplicativo também possui um feed, arranhado no grupo do Facebook 'Friends of Duthie Park'. <br/> <br/> O aplicativo possui configurações de acessibilidade; Os usuários podem envolver o modo de alto contraste ou aumentar o tamanho da fonte para obter melhor legibilidade. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Entre em contato comigo",
+    "quote": "Tem uma ideia ou simplesmente quer conversar? Sinta -se à vontade para me enviar uma mensagem abaixo!",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail*",
+      "message": "Mensagem",
+      "entername": "Digite seu nome",
+      "enteremail": "Digite seu e -mail",
+      "entermessage": "Digite sua mensagem",
+      "submit": "ENVIAR",
+      "errors": {
+        "emailinvalid": "Endereço de e -mail inválido.",
+        "emailrequired": "O email é necessário.",
+        "forminvalid": "Corrija os erros no formulário.",
+        "emailfailed": "Falha ao enviar e -mail. Por favor, tente novamente mais tarde.",
+        "genericerror": "Ocorreu um erro. Por favor, tente novamente mais tarde."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Todos os direitos reservados.",
+    "description": "Desenvolvedor Fullstack com experiência em Mern, AWS e Python. Apaixonado por criar aplicativos da Web eficientes e escaláveis."
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Iskanje ...",
+      "results": "Ni mogoče najti"
+    },
+    "landing": "Domača stran",
+    "about": "O meni",
+    "projects": "Moji projekti",
+    "skills": "Moje spretnosti",
+    "contact": "Kontaktirajte me"
+  },
+  "landing": {
+    "hero": "Živjo, jaz sem",
+    "subtitle": "Razvijalec FullStack",
+    "subtitle2": "Freelancer",
+    "subtitle3": "Svetovalec",
+    "visitor": "Obiskovalec št."
+  },
+  "about": {
+    "title": "O meni",
+    "description": "Sem razvijalec FullStack, specializiran za tehnološki niz <strong> mern </strong>. V času svojega <strong> 3-letnega </strong> potovanja sem ustvaril prilagojene spletne aplikacije za podjetja in potrošnike. Še posebej uživam v vključevanju močnih zalednikov s čudovitimi vmesniki za <strong> vizualizacijo podatkov </strong>. <br/> <br/> V prostem času uživam v tem, da se z modeli </strong> ml </strong> in pripravljam svoje vino. I also enjoy helping others by releasing my React components as <strong>FOSS</strong> and sharing useful content on my <a href='https://www.linkedin.com/in/mikolaj-marciniak' target='_blank' rel='noopener noreferrer' className='cursor-pointer hover:font-bold underline mr-2'>LinkedIn </a> <br/> <br/> Če se kaj od tega sliši zanimivo",
+    "descriptionCont": "<br/> <br/> Če se kaj od tega sliši zanimivo, mi lahko sledite ali sporočite",
+    "cv": "/Documents/mikolajmarciniak.pdf",
+    "viewcv": "Pogled cv",
+    "here": "tukaj"
+  },
+  "skills": {
+    "skillstitle": "Moje spretnosti",
+    "skills": [
+      "Frontend",
+      "Zaostanek",
+      "Orodja"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Celoten tečaj razvijalca spletnega razvijalca 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Načela + prakse za odličen dizajn uporabniškega vmesnika"
+      },
+      {
+        "id": 3,
+        "title": "Hitro mojster WordPress"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Moji projekti",
+    "showmore": "Pokaži več",
+    "showless": "Pokaži manj",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Kmalu prihaja več projektov ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "DriveGoage",
+        "description": "<Div Class = 'MB-3 Break-Words Whitespace-Normal'> DriveGuage je sistem za spremljanje zmogljivosti Blackbox. Sistem deluje na Raspberry Pi, ki se povezuje z vrat OBD avtomobila za zbiranje voznih podatkov. Overjene stranke lahko spremljajo spremembe v svoji 'vozniški oceni', merilo vozniških navad, kot so hitrost, ostri zavoji in hiter pospešek. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Ekstra-angleško",
+        "description": "<p className = 'MB-3 Break-Words WhiteSpace-Normal'> Medtem ko sem se v Premium Faber Ltd. osredotočil na razvoj ene strani aplikacije (SPA) za \"ekstra-angleško\" jezikovno šolo. Pozneje sem svojo funkcionalnost razširil tako, da sem vključil fotogalerijo, neskončni vir novic, obrazec za prijavo strank in kviz za interaktivni jezik. Pred kratkim sem implementiral overjanje uporabnikov, upravljanje lekcij in sledenje udeležbe ter avtomatizirane plačilne izračune. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Ta navigacijska aplikacija, usmerjena v skupnost, je dokaz koncepta, razvit za hackathon RGU 2024. <br/> <br/> Ima interaktivni zemljevid z zatiči za ključne znamenitosti parka Aberdeen Duthie. Ko se tapnete na PIN, lahko uporabniki preberejo več informacij o njem ali se odločijo za navigacijo do PIN -a. Aplikacija ima tudi vir, ki je na spletu posnet iz Facebook skupine \"Friends of Duthie Park\". <br/> <br/> Aplikacija ima nastavitve dostopnosti; Uporabniki lahko vključijo visoko kontrastni način ali povečajo velikost pisave za boljšo berljivost. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktirajte me",
+    "quote": "Imate idejo ali preprosto želite klepetati? Spodaj mi pošljite sporočilo!",
+    "form": {
+      "name": "Ime",
+      "email": "E -pošta*",
+      "message": "Sporočilo",
+      "entername": "Vnesite svoje ime",
+      "enteremail": "Vnesite svoj e -poštni naslov",
+      "entermessage": "Vnesite svoje sporočilo",
+      "submit": "Pošlji",
+      "errors": {
+        "emailinvalid": "Neveljaven e -poštni naslov.",
+        "emailrequired": "E -pošta je potrebna.",
+        "forminvalid": "Prosimo, popravite napake v obrazcu.",
+        "emailfailed": "Ni uspelo poslati e -pošte. Poskusite znova kasneje.",
+        "genericerror": "Prišlo je do napake. Poskusite znova kasneje."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Vse pravice pridržane.",
+    "description": "Razvijalec FullStack z izkušnjami v Mernu, AWS in Pythonu. Strastno pri gradnji učinkovitih, razširljivih spletnih aplikacij."
+  }
+}

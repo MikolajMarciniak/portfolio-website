@@ -27,8 +27,8 @@ const languages = [
   { code: "lt", fullCode: "lt-LT", label: "Lietuvių" },
   { code: "sl", fullCode: "sl-SI", label: "Slovenščina" },
   { code: "ja", fullCode: "ja-JP", label: "日本語" },
-  { code: "zhcn", fullCode: "zh-CN", label: "中文 (简体)" },
-  { code: "zhtw", fullCode: "zh-TW", label: "中文 (繁體)" },
+  { code: "zh-CN", fullCode: "zh-CN", label: "中文 (简体)" },
+  { code: "zh-TW", fullCode: "zh-TW", label: "中文 (繁體)" },
   { code: "ko", fullCode: "ko-KR", label: "한국어" },
 ];
 

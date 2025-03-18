@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import { useEffect, useRef, useState, useContext } from "react";
@@ -26,10 +27,6 @@ export default function Home() {
   const skillsRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
-
-  useEffect(() => {
-    setTimeout(() => setIsLoading(false), 1000);
-  }, []);
 
   useEffect(() => {
     if (
@@ -94,17 +91,17 @@ export default function Home() {
         ? "rgba(0, 0, 0, 0.9)"
         : "rgba(200, 200, 200, 0.6)",
       "--background-color": isDarkMode
-        ? "rgb(25, 25, 25)"
-        : "rgba(230, 230, 230, 0.95)",
+        ? "rgb(5,5,5)"
+        : "rgba(228, 228, 228, 0.95)",
       "--background-color-dark": isDarkMode
-        ? "rgba(20, 20, 20, 1)"
-        : "rgb(225, 225, 225)",
-      "--navbar-color": isDarkMode ? "rgb(15, 15, 15)" : "rgb(235, 235, 235)",
+        ? "rgb(5,5,5)"
+        : "rgb(228, 228, 228)",
+      "--navbar-color": isDarkMode ? "rgb(0, 0, 0)" : "rgb(235, 235, 235)",
       "--foreground-color": isDarkMode
-        ? "rgb(60, 60, 60)"
+        ? "rgb(40, 40, 40)"
         : "rgb(200, 200, 200)",
       "--foreground-color-dark": isDarkMode
-        ? "rgb(40, 40, 40)"
+        ? "rgb(30, 30, 30)"
         : "rgb(180, 180, 180)",
       "--text-color": isDarkMode ? "rgb(225, 225, 225)" : "rgb(15, 15, 15)",
     };
@@ -114,14 +111,13 @@ export default function Home() {
         ? "rgba(239, 68, 68, 1)"
         : "rgba(239, 68, 68, 1)",
       "--about-color": isDarkMode
-        ? "rgba(168, 85, 247, 1)"
-        : "rgba(168, 85, 247, 1)",
-      "--skills-color": isDarkMode
-        ? "rgba(0, 155, 160, 1)"
-        : "rgba(0, 155, 160, 1)",
-      "--projects-color": isDarkMode
-        ? "rgba(59, 130, 246, 1)"
-        : "rgba(59, 130, 246, 1)",
+        ? "rgb(87, 11, 163)   "
+        : "rgb(128, 35, 235) ",
+      "--skills-color": isDarkMode ? "rgb(20, 140, 140) " : "rgb(37, 156, 156)",
+      "--skills-color-transparent": isDarkMode
+        ? "rgba(20, 140, 140, 0.5) "
+        : "rgba(37, 156, 156, 0.7)",
+      "--projects-color": isDarkMode ? "rgb(0, 75, 195)" : "rgb(0, 75, 195)",
       "--contact-color": isDarkMode ? "rgb(255, 166, 0)" : "rgb(220, 106, 0)",
     };
 
@@ -133,7 +129,7 @@ export default function Home() {
   const toggleTheme = () => setIsDarkMode((prev) => !prev);
 
   return isLoading ? (
-    <LoadingSlider />
+    <LoadingSlider setIsLoading={setIsLoading} />
   ) : (
     <div>
       <main

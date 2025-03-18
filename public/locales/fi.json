@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Haku...",
+      "results": "Tuloksia ei löydy"
+    },
+    "landing": "Kotisivu",
+    "about": "Minusta",
+    "projects": "Projektini",
+    "skills": "Omat taitoni",
+    "contact": "Ottaa yhteyttä minuun"
+  },
+  "landing": {
+    "hero": "Hei, olen",
+    "subtitle": "FullStack -kehittäjä",
+    "subtitle2": "Freelanceri",
+    "subtitle3": "Konsultti",
+    "visitor": "Vierailija ei."
+  },
+  "about": {
+    "title": "Minusta",
+    "description": "Olen FullStack -kehittäjä, joka on erikoistunut <strong> mern </strong> -tekniikan pinoon. <strong> 3-vuotisen </strong> -matkani aikana olen luonut räätälöityjä verkkosovelluksia yrityksille ja kuluttajille. Nautin erityisesti tehokkaiden taustasuhteiden integroinnista kauniissa <strong> data visualisoinnissa </strong>. <br/> <br/> vapaa -ajallani nautin rynnäkkö <strong> ml -malleilla </strong> ja panostan oman viinini. Nautin myös muiden auttamisesta vapauttamalla reaktiokomponentit <strong> foss </strong> ja jakamalla hyödyllistä sisältöä <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' Target = '_ Blank' rel = 'Noopener Noreferrer' ClassName = 'Cursor-Pointer HOVER: FONOPER-Bold </a> <br/> <br/> Jos jokin niistä kuulostaa mielenkiintoiselta, seuraa vapaasti tai viesti minulle",
+    "descriptionCont": "<br/> <br/> Jos jokin niistä kuulostaa mielenkiintoiselta, seuraa vapaasti tai viesti minulle",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Näytä ansioluettelo",
+    "here": "tässä"
+  },
+  "skills": {
+    "skillstitle": "Minun taitoni",
+    "skills": [
+      "Etu",
+      "Tausta",
+      "Työkalut"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Koko web -kehittäjäkurssi 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Periaatteet + käytännöt suurelle käyttöliittymäsuunnittelulle"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress nopeasti"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projektini",
+    "showmore": "Näyttää enemmän",
+    "showless": "Näyttää vähemmän",
+    "expand": "Tai",
+    "collapse": "-",
+    "upcoming": "Lisää projekteja tulee pian ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Ajaa",
+        "description": "<div class = 'mb-3-murto-sanat välilyönti-normaali'> DriveGuage on blackbox-ohjaimen suorituskyvynvalvontajärjestelmä. Järjestelmä toimii Raspberry PI: llä, joka muodostaa yhteyden auton OBD-porttiin ajotietojen keräämiseen. <br/> <br/> tiedot ladataan palvelimelle, käsitellään ja näytetään käyttäjäystävällisen verkkosovelluksen kautta. Todennetut asiakkaat voivat seurata muutoksia heidän 'kuljettajapisteen', ajotapojen mittaan, kuten ylinopeus, terävät käännökset ja nopea kiihtyvyys. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Englanninkielinen",
+        "description": "<P className = 'MB-3-tauko-sanat villitys-normaali'> Premium Faber Ltd. -sovelluksessa keskityin yhden sivun sovelluksen (SPA) kehittämiseen 'Extra-English' -kielikoulun. Laajensin myöhemmin sen toiminnallisuutta sisällyttääksesi valokuvagallerian, äärettömän uutissyötteen, asiakkaan kirjautumislomakkeen ja interaktiivisen kielitauton. Äskettäin toteutin käyttäjän todennuksen, oppituntien hallinnan ja osallistumisen seurannan sekä automatisoidut maksuslaskelmat. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3-murto-sanat välilyönti-normaali'> Tämä yhteisökeskeinen navigointisovellus on todiste konseptista, joka on kehitetty vuoden 2024 rgu-hackathonille. <br/> <br/> Siinä on interaktiivinen kartta, jossa on tapit Aberdeen Duthie Parkin tärkeimpiin maamerkkeihin. Kun napautat PIN -koodia, käyttäjät voivat lukea lisätietoja siitä tai valita navigoida PIN -koodiin. Sovelluksessa on myös syöte, joka on rapittu Duthie Park -yrityksen Facebook-ryhmästä. <br/> <br/> sovelluksella on esteettömyysasetukset; Käyttäjät voivat kiinnittää korkeaa kontrasti -tilaa tai lisätä fonttikokoa paremman luettavuuden saavuttamiseksi. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Ottaa yhteyttä minuun",
+    "quote": "Onko sinulla idea tai haluat vain keskustella? Lähetä minulle viesti alla!",
+    "form": {
+      "name": "Nimi",
+      "email": "Sähköposti*",
+      "message": "Viesti",
+      "entername": "Kirjoita nimesi",
+      "enteremail": "Kirjoita sähköpostiosoitteesi",
+      "entermessage": "Kirjoita viestisi",
+      "submit": "Lähettää",
+      "errors": {
+        "emailinvalid": "Virheellinen sähköpostiosoite.",
+        "emailrequired": "Sähköposti vaaditaan.",
+        "forminvalid": "Korjaa virheet lomakkeessa.",
+        "emailfailed": "Sähköpostin lähettäminen epäonnistui. Yritä myöhemmin uudelleen.",
+        "genericerror": "Tapahtui virhe. Yritä myöhemmin uudelleen."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Kaikki oikeudet pidätetään.",
+    "description": "FullStack -kehittäjä, jolla on kokemusta Mernistä, AWS: stä ja Pythonista. Intohimoinen tehokkaiden, skaalautuvien verkkosovellusten rakentamiseen."
+  }
+}

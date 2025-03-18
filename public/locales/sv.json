@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Söka...",
+      "results": "Inga resultat hittades"
+    },
+    "landing": "Hemsida",
+    "about": "Om mig",
+    "projects": "Mina projekt",
+    "skills": "Mina färdigheter",
+    "contact": "Kontakta mig"
+  },
+  "landing": {
+    "hero": "Hej, jag är",
+    "subtitle": "Fullstackutvecklare",
+    "subtitle2": "Frilansare",
+    "subtitle3": "Konsult",
+    "visitor": "Besökare nr."
+  },
+  "about": {
+    "title": "Om mig",
+    "description": "Jag är en fullstack -utvecklare som specialiserat sig på <strong> mern </strong> teknisk stack. Under min <strong> 3-åriga </strong> resa har jag skapat skräddarsydda webbappar för företag och konsumenter. Jag tycker särskilt om att integrera kraftfulla backends med vackra gränssnitt för <strong> datavisualisering </strong>. <br/> <br/> På min fritid tycker jag om att tänka på <strong> ml -modeller </strong> och brygga mitt eget vin. I also enjoy helping others by releasing my React components as <strong>FOSS</strong> and sharing useful content on my <a href='https://www.linkedin.com/in/mikolaj-marciniak' target='_blank' rel='noopener noreferrer' className='cursor-pointer hover:font-bold underline mr-2'>LinkedIn </a> <br/> <br/> Om något av det låter intressant, känn dig fri att följa eller meddela mig",
+    "descriptionCont": "<br/> <br/> Om något av det låter intressant, känn dig fri att följa eller meddela mig",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Visa CV",
+    "here": "här"
+  },
+  "skills": {
+    "skillstitle": "Mina färdigheter",
+    "skills": [
+      "Frontend",
+      "Backend",
+      "Verktyg"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Den kompletta webbutvecklarkursen 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principer + praxis för bra UI -design"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress snabbt"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Mina projekt",
+    "showmore": "Visa mer",
+    "showless": "Visa mindre",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Fler projekt kommer snart ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Drivkraft",
+        "description": "<div class = 'MB-3 Break-Words Whitespace-Normal'> Driveguage är ett Blackbox Driver Performance Monitoring System. Systemet körs på en Raspberry Pi, som ansluter till bilens OBD-port för att samla in kördata. <br/> <br/> Uppgifterna laddas upp till en server, bearbetas och visas genom en användarvänlig webbapplikation. Autentiserade klienter kan spåra förändringar i sin \"förarpoäng\", ett mått på körvanor, som hastighet, skarpa svängar och snabb acceleration. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-engelska",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Medan jag var på Premium Faber Ltd., fokuserade jag på att utveckla en enda sida-applikation (SPA) för den \"extra-engelska\" språkskolan. <br/> <br/> Den initiala versionen av appen var statisk, vilket gav nyckelkundinformation. Senare utvidgade jag dess funktionalitet till att omfatta ett fotogalleri, ett oändligt nyhetsflöde, en klientregistreringsformulär och ett interaktivt språkquiz. <br/> <br/> Efter att ha lämnat Premium Faber fortsatte jag att arbeta direkt med extra-engelska. Nyligen implementerade jag användarverifiering, lektionshantering och närvarospårning och automatiserade betalningsberäkningar. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Denna community-fokuserade navigationsapp är ett bevis på koncept utvecklat för 2024 RGU Hackathon. <br/> <br/> Den har en interaktiv karta med stift för viktiga landmärken i Aberdeen Duthie Park. När du tappar på en stift kan användare läsa mer information om den eller välja att navigera till stiftet. Appen har också ett flöde, webbskrapad från Facebook-gruppen 'Friends of Duthie Park'. <br/> <br/> Appen har tillgänglighetsinställningar; Användare kan engagera högkontrastläge eller öka teckensnittsstorleken för bättre läsbarhet. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakta mig",
+    "quote": "Har du en idé eller vill helt enkelt chatta? Skicka mig gärna ett meddelande nedan!",
+    "form": {
+      "name": "Namn",
+      "email": "E-post*",
+      "message": "Meddelande",
+      "entername": "Ange ditt namn",
+      "enteremail": "Ange din e -post",
+      "entermessage": "Ange ditt meddelande",
+      "submit": "SKICKA",
+      "errors": {
+        "emailinvalid": "Ogiltig e -postadress.",
+        "emailrequired": "E -post krävs.",
+        "forminvalid": "Korrigera felen i formuläret.",
+        "emailfailed": "Det gick inte att skicka e -post. Försök igen senare.",
+        "genericerror": "Ett fel inträffade. Försök igen senare."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Alla rättigheter reserverade.",
+    "description": "Fullstack -utvecklare med erfarenhet av MERN, AWS och Python. Passionerad om att bygga effektiva, skalbara webbappar."
+  }
+}

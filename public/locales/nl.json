@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Zoekopdracht...",
+      "results": "Geen resultaten gevonden"
+    },
+    "landing": "Homepage",
+    "about": "Over mij",
+    "projects": "Mijn projecten",
+    "skills": "Mijn vaardigheden",
+    "contact": "Neem contact met mij op"
+  },
+  "landing": {
+    "hero": "Hallo, ik ben",
+    "subtitle": "Fullstack -ontwikkelaar",
+    "subtitle2": "Freelancer",
+    "subtitle3": "Consultant",
+    "visitor": "Bezoeker nr."
+  },
+  "about": {
+    "title": "Over mij",
+    "description": "Ik ben een Fullstack -ontwikkelaar die gespecialiseerd is in de <strong> mern </strong> tech -stack. In de loop van mijn <strong> 3-jarige reis heb ik op maat gemaakte web-apps gemaakt voor bedrijven en consumenten. Ik geniet vooral van het integreren van krachtige backends met prachtige interfaces voor <strong> datavisualisatie </strong>. <br/> <br/> In mijn vrije tijd geniet ik van knutselen met <strong> ml -modellen </strong> en het brouwen van mijn eigen wijn. Ik geniet er ook van om anderen te helpen door mijn reactcomponenten vrij te geven als <strong> foss </strong> en nuttige inhoud te delen op mijn <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' target = '_ blank' rel = 'nopener noreferrer' classor 'classor' classor </a> <br/> <br/> Als iemand daarvan interessant klinkt, voel je vrij om me te volgen of een bericht te sturen",
+    "descriptionCont": "<br/> <br/> Als iemand daarvan interessant klinkt, voel je vrij om me te volgen of een bericht te sturen",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Bekijk CV",
+    "here": "hier"
+  },
+  "skills": {
+    "skillstitle": "Mijn vaardigheden",
+    "skills": [
+      "Frontende",
+      "Backend",
+      "HULPMIDDELEN"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "De complete Web Developer Course 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principes + praktijken voor geweldig UI -ontwerp"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress snel"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Mijn projecten",
+    "showmore": "Laat meer zien",
+    "showless": "Minder laten zien",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Binnenkort komen er meer projecten ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Schijf",
+        "description": "<Div Class = 'MB-3 Break-Words Whitespace-Normal'> DriveGuage is een Blackbox Driver Prestation-monitoringsysteem. Het systeem draait op een Raspberry Pi, die verbinding maakt met de OBD-poort van de auto om rijgegevens te verzamelen. <br/> <br/> De gegevens worden geüpload naar een server, verwerkt en weergegeven via een gebruiksvriendelijke webtoepassing. Geauthenticeerde clients kunnen veranderingen volgen in hun 'Driver Score', een maat voor rijgewoonten, zoals snelheidsovertredingen, scherpe bochten en snelle versnelling. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra Engels",
+        "description": "<P className = 'MB-3 Break-Words witspace-Normal'> Terwijl ik bij Premium Faber Ltd. heb gericht op het ontwikkelen van een applicatie voor één pagina (SPA) voor de 'extra-Engelse' taalschool. <br/> <br/> De eerste versie van de app was statisch, die belangrijke klant-facing-informatie bood. Ik heb later de functionaliteit uitgebreid met een fotogalerij, een oneindig nieuwsfeed, een aanmeldingsformulier voor de klant en een interactieve taalquiz. <br/> <br/> Na het verlaten van de premium Faber bleef ik rechtstreeks werken met extra-Engels. Onlangs heb ik gebruikersauthenticatie, lesplanbeheer en aanwezigheidsvolgingen en geautomatiseerde betalingsberekeningen geïmplementeerd. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<P className = 'MB-3 Break-Words witspace-Normal'> Deze community-gerichte navigatie-app is een proof of concept ontwikkeld voor de 2024 RGU Hackathon. <br/> <br/> Het beschikt over een interactieve kaart met pennen voor belangrijke oriëntatiepunten van Aberdeen Duthie Park. Bij het tikken op een pin kunnen gebruikers er meer informatie over lezen of kiezen voor navigeren naar de pin. De app heeft ook een feed, web-scraped van de Facebook-groep 'Friends of Duthie Park'. <br/> <br/> De app heeft toegankelijkheidsinstellingen; Gebruikers kunnen een hoge contrastmodus inzetten of de lettergrootte vergroten voor betere leesbaarheid. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Neem contact met mij op",
+    "quote": "Heb je een idee of wil je gewoon chatten? Stuur me hieronder gerust een bericht!",
+    "form": {
+      "name": "Naam",
+      "email": "E -mail*",
+      "message": "Bericht",
+      "entername": "Voer uw naam in",
+      "enteremail": "Voer uw e -mail in",
+      "entermessage": "Voer uw bericht in",
+      "submit": "VERSTUREN",
+      "errors": {
+        "emailinvalid": "Ongeldig e -mailadres.",
+        "emailrequired": "E -mail is vereist.",
+        "forminvalid": "Corrigeer de fouten in het formulier.",
+        "emailfailed": "Kan geen e -mail verzenden. Probeer het later opnieuw.",
+        "genericerror": "Er is een fout opgetreden. Probeer het later opnieuw."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Alle rechten voorbehouden.",
+    "description": "Fullstack -ontwikkelaar met ervaring in Mern, AWS en Python. Gepassioneerd over het bouwen van efficiënte, schaalbare web -apps."
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Ieškokite ...",
+      "results": "Nerasta rezultatų"
+    },
+    "landing": "Pagrindinis puslapis",
+    "about": "Apie mane",
+    "projects": "Mano projektai",
+    "skills": "Mano įgūdžiai",
+    "contact": "Susisiekite su manimi"
+  },
+  "landing": {
+    "hero": "Sveiki, aš",
+    "subtitle": "„FullStack“ kūrėjas",
+    "subtitle2": "Laisvai samdomas vertėjas",
+    "subtitle3": "Konsultantas",
+    "visitor": "Lankytojas Nr."
+  },
+  "about": {
+    "title": "Apie mane",
+    "description": "Aš esu „FullStack“ kūrėjas, kurio specializacija yra <strong> Mern </strong> tech kaminas. Per savo <strong> 3 metų </strong> kelionę aš sukūriau pritaikytas žiniatinklio programas įmonėms ir vartotojams. Man ypač patinka integruoti galingus pagrindus su gražiomis sąsajomis <strong> duomenų vizualizacijai </strong>. <br/> <br/> laisvalaikiu mėgau mėgautis <strong> ML modeliais </strong> ir alaus darydama savo vyną. I also enjoy helping others by releasing my React components as <strong>FOSS</strong> and sharing useful content on my <a href='https://www.linkedin.com/in/mikolaj-marciniak' target='_blank' rel='noopener noreferrer' className='cursor-pointer hover:font-bold underline mr-2'>LinkedIn </a> <br/> <br/> Jei kas nors skamba įdomiai, nedvejodami sekite ar pranešite man",
+    "descriptionCont": "<br/> <br/> Jei kas nors skamba įdomiai, nedvejodami sekite ar pranešite man",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Peržiūrėti CV",
+    "here": "čia"
+  },
+  "skills": {
+    "skillstitle": "Mano įgūdžiai",
+    "skills": [
+      "Frontend",
+      "Backend",
+      "Įrankiai"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Visas žiniatinklio kūrėjų kursas 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principai + puikaus UI dizaino praktika"
+      },
+      {
+        "id": 3,
+        "title": "Greitai pagrindinį „WordPress“"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Mano projektai",
+    "showmore": "Parodyk daugiau",
+    "showless": "Parodyk mažiau",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Netrukus bus daugiau projektų ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "„DriveGuage“",
+        "description": "<div class = 'MB-3 burnos žodžiai, be abejo, normos'> „DriveGuage“ yra „Blackbox“ tvarkyklės veiklos stebėjimo sistema. Sistema veikia „Raspberry Pi“, kuri jungiasi su automobilio OBD prievadu, kad surinktų vairavimo duomenis. <br/> <br/> Duomenys įkeliami į serverį, apdorojami ir rodomi naudojant patogią žiniatinklio programą. Autentifikuoti klientai gali sekti savo „vairuotojo balo“ pokyčius - vairavimo įpročių, tokių kaip greičio viršijimas, aštrūs posūkiai ir greitas pagreitis, matas. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Ekstra-anglų kalba",
+        "description": "<P className = 'MB-3 BROURDS WHITAPACE-Normal'> Būdamas „Premium Faber Ltd.“, aš sutelkiau dėmesį į vieno puslapio programos (SPA) kūrimą „ekstra-anglų kalbų“ kalbų mokyklai. <br/> <br/> Pradinė programos versija buvo statiška, pateikiant pagrindinę kliento nukreiptą informaciją. Vėliau išplėčiau savo funkcionalumą, įtraukdamas nuotraukų galeriją, begalinį naujienų kanalą, kliento registracijos formą ir interaktyvią kalbos viktoriną. <br/> <br/> Išėjęs iš „Premium Faber“, aš ir toliau dirbau tiesiogiai su „Extre-English“. Neseniai įdiegiau vartotojo autentifikavimą, pamokų valdymą ir lankomumo stebėjimą bei automatinius mokėjimo skaičiavimus. </p>"
+      },
+      {
+        "id": 5,
+        "title": "De'n'duthie",
+        "description": "<P className = 'MB-3 BROURDS WORDS WHITESPACE-Normal'> Ši į bendruomenę orientuota navigacijos programa yra 2024 m. RGU hakatono koncepcijos įrodymas. <br/> <br/> jame yra interaktyvus žemėlapis su kaiščiais, skirtais pagrindiniams Aberdyno Duthie parko orientyrams. Bakstelėdami kaištį, vartotojai gali perskaityti daugiau informacijos apie jį arba pasirinkti pereiti prie PIN kodo. Programa taip pat turi informacijos sklaidos kanalą iš „Facebook“ grupės „Duthie Park Friends“. <br/> <br/> programa turi prieinamumo nustatymus; Vartotojai gali įjungti aukšto kontrasto režimą arba padidinti šrifto dydį, kad būtų geriau skaitomumas. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Susisiekite su manimi",
+    "quote": "Turite idėją ar tiesiog norite pabendrauti? Nedvejodami atsiųskite man žinutę žemiau!",
+    "form": {
+      "name": "Vardas",
+      "email": "El. Paštas*",
+      "message": "Pranešimas",
+      "entername": "Įveskite savo vardą",
+      "enteremail": "Įveskite savo el. Laišką",
+      "entermessage": "Įveskite savo pranešimą",
+      "submit": "Siųsti",
+      "errors": {
+        "emailinvalid": "Neteisingas el. Pašto adresas.",
+        "emailrequired": "Reikalingas el. Paštas.",
+        "forminvalid": "Pataisykite formos klaidas.",
+        "emailfailed": "Nepavyko siųsti el. Laiško. Pabandykite dar kartą vėliau.",
+        "genericerror": "Įvyko klaida. Pabandykite dar kartą vėliau."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Visos teisės saugomos.",
+    "description": "„FullStack“ kūrėjas, turintis patirties „Mern“, „AWS“ ir „Python“. Aistringa kurti efektyvias, keičiamas žiniatinklio programas."
+  }
+}

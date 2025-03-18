@@ -10,10 +10,11 @@ if (!bucketName) {
   process.exit(1);
 }
 
-const command = `aws s3 sync ./build s3://${bucketName}/ --profile ${profileName}`;
+const command = `aws s3 sync ./build s3://${bucketName}/ --delete --profile ${profileName}`;
 
 try {
   execSync(command, { stdio: "inherit" });
+  console.log("S3 sync completed successfully with --delete flag.");
 } catch (error) {
   console.error("Error during deployment:", error.message);
   process.exit(1);

@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Meklēt ...",
+      "results": "Rezultāti nav atrasti"
+    },
+    "landing": "Mājas lapa",
+    "about": "Par mani",
+    "projects": "Mani projekti",
+    "skills": "Manas prasmes",
+    "contact": "Sazinieties ar mani"
+  },
+  "landing": {
+    "hero": "Sveiki, es esmu",
+    "subtitle": "FullStack izstrādātājs",
+    "subtitle2": "Ārštata darbinieks",
+    "subtitle3": "Konsultants",
+    "visitor": "Apmeklētājs Nr."
+  },
+  "about": {
+    "title": "Par mani",
+    "description": "Es esmu pilna stack izstrādātājs, kas specializējas <strong> Mern </strong> tech kaudzē. Mana <strong> 3 gadu </strong> ceļojuma laikā esmu izveidojis pielāgotas tīmekļa lietotnes uzņēmumiem un patērētājiem. Man īpaši patīk integrēt jaudīgos aizmugures un skaistās saskarnes <strong> datu vizualizācijai </strong>. <br/> <br/> Brīvajā laikā es priecājos par to, ka tiek runāts ar <strong> ml modeļiem </strong> un pagatavoju savu vīnu. Man patīk arī palīdzēt citiem, atbrīvojot savus reaģēšanas komponentus kā <strong> foss </strong> un dalot noderīgu saturu manā <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' target = '_ blank </a> <br/> <br/> Ja kāds no tā izklausās interesants, nekautrējieties sekot vai nosūtīt man ziņu",
+    "descriptionCont": "<br/> <br/> Ja kāds no tā izklausās interesants, nekautrējieties sekot vai nosūtīt man ziņot",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Skatīt CV",
+    "here": "šeit"
+  },
+  "skills": {
+    "skillstitle": "Manas prasmes",
+    "skills": [
+      "Priekšējā daļa",
+      "Aizmugure",
+      "Instrumenti"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Pilns tīmekļa izstrādātāja kurss 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principi + lieliska lietotāja saskarnes dizaina prakse"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress ātri"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Mani projekti",
+    "showmore": "Parādīt vairāk",
+    "showless": "Rādīt mazāk",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Drīzumā parādīsies vairāk projektu ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Piedziņa",
+        "description": "<div class = 'mb-3 pārtraukumu vārdu balto lapas-normālie'> DriveGuage ir Blackbox draivera veiktspējas uzraudzības sistēma. Sistēma darbojas ar Raspberry Pi, kas savieno ar automašīnas OBD portu, lai apkopotu braukšanas datus. <br/> <br/> Dati tiek augšupielādēti serverī, apstrādāti un parādīti, izmantojot lietotājam draudzīgu tīmekļa lietojumprogrammu. Autentificēti klienti var izsekot izmaiņām viņu “vadītāja rezultātā”, braukšanas paradumu rādītājs, piemēram, ātruma pārsniegšana, asi pagriezieni un ātrs paātrinājums. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Ekstrēmisks",
+        "description": "<p className = 'MB-3 pārtraukuma vārdu balto lapas-normālie'>, kamēr SIA Premium Faber, es koncentrējos uz vienas lapas lietojumprogrammas (SPA) izstrādi “Extra-English” valodas skolai. <br/> <br/> Lietotnes sākotnējā versija bija statiska, nodrošinot galveno klientu informāciju. Vēlāk es paplašināju tā funkcionalitāti, iekļaujot fotogaleriju, bezgalīgu ziņu plūsmu, klienta pierakstīšanās formu un interaktīvu valodas viktorīnu. Nesen es ieviesu lietotāja autentifikāciju, stundu pārvaldību un apmeklējumu izsekošanu, kā arī automatizētus maksājumu aprēķinus. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3 pārtraukumu vārdu balto lapas-normālie'> Šī uz kopienu orientētā navigācijas lietotne ir koncepcijas pierādījums, kas izstrādāts 2024. gada RGU hakatonam. <br/> <br/> Tam ir interaktīva karte ar tapām Aberdeen Duthie Park galvenajiem orientieriem. Pieskaroties tapai, lietotāji var lasīt vairāk informācijas par to vai izvēlēties pārvietoties uz tapu. Lietotnei ir arī plūsma, kas ir noskrāpēta no “Duthie Park Friends” Facebook grupas. <br/> <br/> Lietotnei ir piekļuves iestatījumi; Lietotāji var izveidot augstu kontrasta režīmu vai palielināt fonta lielumu, lai iegūtu labāku lasāmību. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Sazinieties ar mani",
+    "quote": "Vai jums ir ideja vai vienkārši vēlaties tērzēt? Jūtieties brīvi atsūtīt man zemāk esošo ziņojumu!",
+    "form": {
+      "name": "Nosaukt",
+      "email": "E -pasts*",
+      "message": "Ziņot",
+      "entername": "Ievadiet savu vārdu",
+      "enteremail": "Ievadiet savu e -pastu",
+      "entermessage": "Ievadiet savu ziņojumu",
+      "submit": "Nosūtīt",
+      "errors": {
+        "emailinvalid": "Nederīga e -pasta adrese.",
+        "emailrequired": "Nepieciešams e -pasts.",
+        "forminvalid": "Lūdzu, labojiet kļūdas formā.",
+        "emailfailed": "Neizdevās nosūtīt e -pastu. Lūdzu, vēlāk mēģiniet vēlreiz.",
+        "genericerror": "Radās kļūda. Lūdzu, vēlāk mēģiniet vēlreiz."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Visas tiesības aizsargātas.",
+    "description": "FullStack izstrādātājs ar pieredzi Mern, AWS un Python. Kaislīgi veidojot efektīvas, pielāgojamas tīmekļa lietotnes."
+  }
+}

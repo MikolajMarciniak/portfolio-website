@@ -37,7 +37,7 @@ const ProjectCard = ({
 
   return (
     <div
-      className={`shadow-2xl rounded-lg bg-[--foreground-color-dark] 
+      className={`shadow-2xl rounded-lg bg-[--foreground-color] 
       transform transition-all duration-500 project-grow w-full h-full`}
     >
       <div
@@ -52,6 +52,7 @@ const ProjectCard = ({
             coverVideo ? "object-cover" : "object-contain"
           } `}
           poster={`/images/${imageStatic}`}
+          controls={isHovered}
           playsInline
           preload="auto"
           onClick={togglePlay}
@@ -125,7 +126,7 @@ const ProjectCard = ({
         </div>
         <div
           className={`mb-4 overflow-hidden projects-height ${
-            isExpanded ? "max-h-80" : "max-h-12"
+            isExpanded ? "max-h-[350px]" : "max-h-12"
           }`}
         >
           <div dangerouslySetInnerHTML={{ __html: description }} />

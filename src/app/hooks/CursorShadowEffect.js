@@ -12,11 +12,11 @@ const CursorShadowEffect = () => {
 
       document.documentElement.style.setProperty(
         "--shadow-offset-x",
-        `${-offsetX * 15}px`,
+        `${-offsetX * 20}px`,
       );
       document.documentElement.style.setProperty(
         "--shadow-offset-y",
-        `${-offsetY * 15}px`,
+        `${-offsetY * 20}px`,
       );
     };
 
@@ -26,11 +26,11 @@ const CursorShadowEffect = () => {
 
       document.documentElement.style.setProperty(
         "--shadow-offset-x",
-        `${-tiltX * 7}px`,
+        `${-tiltX * 10}px`,
       );
       document.documentElement.style.setProperty(
         "--shadow-offset-y",
-        `${-tiltY * 7}px`,
+        `${-tiltY * 10}px`,
       );
     };
 

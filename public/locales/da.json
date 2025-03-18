@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Søge...",
+      "results": "Ingen resultater fundet"
+    },
+    "landing": "Hjemmeside",
+    "about": "Om mig",
+    "projects": "Mine projekter",
+    "skills": "Mine evner",
+    "contact": "Kontakt mig"
+  },
+  "landing": {
+    "hero": "Hej, jeg er",
+    "subtitle": "Fullstack -udvikler",
+    "subtitle2": "Freelancer",
+    "subtitle3": "Konsulent",
+    "visitor": "Besøgende nr."
+  },
+  "about": {
+    "title": "Om mig",
+    "description": "Jeg er en Fullstack -udvikler, der har specialiseret sig i <strong> Mern </strong> tech -stakken. I løbet af min <strong> 3-årige </strong> rejse har jeg oprettet skræddersyede webapps til virksomheder og forbrugere. Jeg nyder især at integrere kraftfulde backends med smukke grænseflader til <strong> datavisualisering </strong>. <br/> <br/> I min fritid nyder jeg at klæbe med <strong> ml modeller </strong> og brygge min egen vin. Jeg nyder også at hjælpe andre ved at frigive mine react-komponenter som <strong> foss </strong> og dele nyttigt indhold på mit <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' mål = '_ blank' rel = 'noopener norefer' klassnavn = 'cursor-pointer hover: font-bold under linje MR-2'> forbindelse </a> <br/> <br/> Hvis noget af det lyder interessant, er du velkommen til at følge eller sende en besked til mig",
+    "descriptionCont": "<br/> <br/> Hvis noget af det lyder interessant, er du velkommen til at følge eller sende en besked til mig",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Se CV",
+    "here": "her"
+  },
+  "skills": {
+    "skillstitle": "Mine evner",
+    "skills": [
+      "Frontend",
+      "Backend",
+      "Værktøjer"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Det komplette Web Developer Course 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principper + praksis for fantastisk UI -design"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress hurtigt"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Mine projekter",
+    "showmore": "Vis mere",
+    "showless": "Vis mindre",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Flere projekter kommer snart ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Drivning",
+        "description": "<div class = 'MB-3 Break-Words Whitespace-Normal'> DrivGuage er et blackbox-driverpræstationsovervågningssystem. Systemet kører på en Raspberry Pi, der forbinder til bilens OBD-port for at indsamle køredata. <br/> <br/> Dataene uploades til en server, behandles og vises gennem en brugervenlig webapplikation. Autentificerede klienter kan spore ændringer i deres 'driverresultat', et mål for kørevaner, som hastighed, skarpe sving og hurtig acceleration. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Ekstra-engelsk",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Mens jeg var på Premium Faber Ltd., fokuserede jeg på at udvikle en enkelt side-applikation (SPA) til den 'ekstra-engelske' sprogskole. <br/> <br/> Den indledende version af appen var statisk og leverede nøgleklient-ansigt information. Senere udvidede jeg sin funktionalitet til at omfatte et fotogalleri, et uendeligt nyhedsfeed, en klienttilmeldingsformular og en interaktiv sprogquiz. <br/> <br/> Efter at have forladt Premium Faber fortsatte jeg med at arbejde direkte med ekstra-engelsk. For nylig implementerede jeg brugergodkendelse, lektionsstyring og deltagelse af sporing og automatiserede betalingsberegninger. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p ClassName = 'MB-3 Break-Words Whitespace-Normal'> Denne samfundsfokuserede navigationsapp er et bevis på koncept, der er udviklet til 2024 RGU Hackathon. <br/> <br/> Det har et interaktivt kort med stifter til vigtige vartegn i Aberdeen Duthie Park. Når du tapper på en pin, kan brugerne læse mere information om det eller vælge at navigere til stiften. Appen har også et feed, webskrabet fra 'Friends of Duthie Park' Facebook-gruppen. <br/> <br/> Appen har indstillinger for tilgængelighed; Brugere kan engagere høj kontrasttilstand eller øge skriftstørrelsen for bedre læsbarhed. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt mig",
+    "quote": "Har du en idé eller bare vil chatte? Du er velkommen til at sende mig en besked nedenfor!",
+    "form": {
+      "name": "Navn",
+      "email": "E -mail*",
+      "message": "Besked",
+      "entername": "Indtast dit navn",
+      "enteremail": "Indtast din e -mail",
+      "entermessage": "Indtast din besked",
+      "submit": "SENDE",
+      "errors": {
+        "emailinvalid": "Ugyldig e -mail -adresse.",
+        "emailrequired": "E -mail er påkrævet.",
+        "forminvalid": "Ret venligst fejlene i formularen.",
+        "emailfailed": "Kunne ikke sende e -mail. Prøv igen senere.",
+        "genericerror": "Der opstod en fejl. Prøv igen senere."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Alle rettigheder forbeholdes.",
+    "description": "Fullstack -udvikler med erfaring i Mern, AWS og Python. Lidenskabelig med at opbygge effektive, skalerbare webapps."
+  }
+}

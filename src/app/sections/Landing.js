@@ -95,7 +95,7 @@ const LandingSection = forwardRef(
                 {translation.visitor} {"   "}
                 <img
                   className="pl-1 inline-block align-middle"
-                  style={{ height: "1.4em", paddingBottom: "2px" }}
+                  style={{ height: "1.2em" }}
                   src="https://visit-counter.vercel.app/counter.png?page=marciniakm.com&s=40&c=ef4444BF&bg=00000000&no=1&ff=electrolize&tb=&ta="
                   alt="visitor no."
                 />
@@ -113,9 +113,8 @@ const LandingSection = forwardRef(
                     style={
                       index === 0
                         ? {
-                            fontSize: "1.11em",
-                            paddingBottom: "2px",
-                            transform: "scaleX(1.2)",
+                            fontSize: "1.1em",
+                            transform: "scaleX(1)",
                             display: "inline-block",
                           }
                         : {}

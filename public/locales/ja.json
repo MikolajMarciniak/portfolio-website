@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "検索...",
+      "results": "結果は見つかりませんでした"
+    },
+    "landing": "ホームページ",
+    "about": "私について",
+    "projects": "私のプロジェクト",
+    "skills": "私のスキル",
+    "contact": "私に連絡してください"
+  },
+  "landing": {
+    "hero": "こんにちは、私は",
+    "subtitle": "フルスタック開発者",
+    "subtitle2": "フリーランサー",
+    "subtitle3": "コンサルタント",
+    "visitor": "訪問者番号"
+  },
+  "about": {
+    "title": "私について",
+    "description": "私は<strong> mern </strong>技術スタックに特化したフルスタック開発者です。私の<strong> 3年間の旅の中で、私は企業や消費者向けにテーラードWebアプリを作成しました。私は特に、<strong>データの視覚化のための美しいインターフェイスと強力なバックエンドを統合することを楽しんでいます</strong>。 <br/> <br/>自由な時期には、<strong> MLモデルをいじくり回して自分のワインを醸造します。また、<strong> foss </strong>としてReactコンポーネントをリリースし、私の<a href = 'https：//www.linkedin.com/in/mikolaj-marciniak'ターゲット= '_ blank' rel = 'nopener noreferrer' classname = 'cur-po-pointer houbred bold bold bold bold nopeinter </a> <br/> <br/>それが面白いと思われる場合は、自由にフォローしたりメッセージを送ったりしてください",
+    "descriptionCont": "<br/> <br/>それが面白いと思われる場合は、お気軽にフォローしたりメッセージを送ったりしてください",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "履歴書を表示します",
+    "here": "ここ"
+  },
+  "skills": {
+    "skillstitle": "私のスキル",
+    "skills": [
+      "フロントエンド",
+      "バックエンド",
+      "ツール"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "完全なWeb開発者コース2.0"
+      },
+      {
+        "id": 2,
+        "title": "優れたUIデザインの原則 +プラクティス"
+      },
+      {
+        "id": 3,
+        "title": "素早くワードプレスをマスターします"
+      }
+    ]
+  },
+  "projects": {
+    "title": "私のプロジェクト",
+    "showmore": "もっと見せてください",
+    "showless": "少なく表示します",
+    "expand": "+",
+    "collapse": " - ",
+    "upcoming": "近日公開予定のプロジェクト...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "ドライブガージ",
+        "description": "<div class = 'MB-3ブレークワードホワイトスパース-Normal'> DriveGuageはBlackboxドライバーのパフォーマンス監視システムです。システムは、車のOBDポートに接続して運転データを収集するRaspberry Piで実行されます。認証されたクライアントは、スピード違反、鋭いターン、急速な加速などの運転習慣の尺度である「ドライバースコア」の変更を追跡できます。</div>"
+      },
+      {
+        "id": 3,
+        "title": "英語は非常に",
+        "description": "<P className = 'MB-3 Break-Words Whitespace-normal'>プレミアムFaber Ltd.では、「英語外」言語学校の単一ページアプリケーション（SPA）の開発に焦点を当てました。その後、機能性を拡張して、フォトギャラリー、無限のニュースフィード、クライアントサインアップフォーム、インタラクティブな言語クイズを含めました。最近、ユーザー認証、レッスン管理と出席追跡、および自動支払い計算を実装しました。</p>"
+      },
+      {
+        "id": 5,
+        "title": "dee'n'duthie",
+        "description": "<P className = 'MB-3 Break-Words Whitespace-Normal'>このコミュニティ中心のナビゲーションアプリは、2024 RGUハッカソン向けに開発された概念の証明です。 <br/> <br/>アバディーンのデュシーパークのキーランドマーク用のピンを備えたインタラクティブマップを備えています。ピンをタップするとき、ユーザーはそれについての詳細を読むか、ピンに移動することを選択できます。このアプリには、「Duthie ParkのFriends of Duthie Park」Facebook GroupからWebが登場したフィードもあります。 <br/> <br/>アプリにはアクセシビリティ設定があります。ユーザーは高いコントラストモードをエンゲージしたり、読みやすくするためにフォントサイズを増やすことができます。</p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "私に連絡してください",
+    "quote": "アイデアがありますか、それとも単にチャットしたいですか？以下にメッセージを送ってください！",
+    "form": {
+      "name": "名前",
+      "email": "メール*",
+      "message": "メッセージ",
+      "entername": "あなたの名前を入力してください",
+      "enteremail": "メールを入力してください",
+      "entermessage": "メッセージを入力してください",
+      "submit": "送信",
+      "errors": {
+        "emailinvalid": "無効なメールアドレス。",
+        "emailrequired": "メールが必要です。",
+        "forminvalid": "フォームのエラーを修正してください。",
+        "emailfailed": "電子メールの送信に失敗しました。後でもう一度やり直してください。",
+        "genericerror": "エラーが発生しました。後でもう一度やり直してください。"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "無断転載を禁じます。",
+    "description": "Mern、AWS、Pythonでの経験を持つフルスタック開発者。効率的でスケーラブルなWebアプリの構築に情熱を傾けています。"
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Ricerca...",
+      "results": "Nessun risultato trovato"
+    },
+    "landing": "Home page",
+    "about": "Su di me",
+    "projects": "I miei progetti",
+    "skills": "Le mie capacità",
+    "contact": "Contattami"
+  },
+  "landing": {
+    "hero": "Ciao, io",
+    "subtitle": "Sviluppatore FullStack",
+    "subtitle2": "Libero professionista",
+    "subtitle3": "Consulente",
+    "visitor": "Visitatore n."
+  },
+  "about": {
+    "title": "SU DI ME",
+    "description": "Sono uno sviluppatore FullStack specializzato nello stack tecnologico <strong> MERN </strong>. Nel corso del mio viaggio </strong> </strong> 3 anni, ho creato app Web su misura per aziende e consumatori. Mi piace particolarmente integrare potenti backend con bellissime interfacce per <strong> visualizzazione dei dati </strong>. <br/> <br/> Nel mio tempo libero mi piace armeggiare con i modelli <strong> ml </strong> e preparare il mio vino. Mi piace anche aiutare gli altri rilasciando i miei componenti React come <strong> foss </strong> e condividendo contenuti utili sul mio <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' target = '_ blank rel =' noopener noreferrer 'classname =' </a> <br/> <br/> Se qualcosa di ciò sembra interessante, sentiti libero di seguirmi o mandarmi un messaggio",
+    "descriptionCont": "<br/> <br/> Se qualcosa di ciò sembra interessante, sentiti libero di seguirmi o mandarmi un messaggio",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Visualizza cv",
+    "here": "Qui"
+  },
+  "skills": {
+    "skillstitle": "Le mie capacità",
+    "skills": [
+      "FINE FRONTALE",
+      "Backend",
+      "UTENSILI"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Il corso completo di sviluppatore Web 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principi + pratiche per un ottimo design dell'interfaccia utente"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress rapidamente"
+      }
+    ]
+  },
+  "projects": {
+    "title": "I miei progetti",
+    "showmore": "Mostra di più",
+    "showless": "Mostra meno",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Altri progetti in arrivo ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Guida drive",
+        "description": "<Div class = 'MB-3 Break-Words WhiteSpace-Normal'> DriveGage è un sistema di monitoraggio delle prestazioni del driver Blackbox. Il sistema funziona su un Raspberry Pi, che si collega alla porta OBD dell'auto per raccogliere i dati di guida. <br/> <br/> I dati vengono caricati su un server, elaborati e visualizzati tramite un'applicazione Web intuitiva. I client autenticati possono tenere traccia delle modifiche nel loro \"punteggio del conducente\", una misura delle abitudini di guida, come eccesso di velocità, curve acute e rapida accelerazione. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-English",
+        "description": "<P className = 'MB-3 Break-Words WhiteSpace-Normal'> Mentre presso Premium Faber Ltd., mi sono concentrato sullo sviluppo di un'applicazione a pagina singola (SPA) per la scuola di lingua \"extra-inglesi\". <br/> <br/> La versione iniziale dell'app era statica, fornendo informazioni chiave per la prima volta in client. In seguito ho ampliato la sua funzionalità per includere una galleria fotografica, un feed di notizie infinite, un modulo di iscrizione al cliente e un quiz in lingua interattivo. <br/> <br/> Dopo aver lasciato Premium Faber, ho continuato a lavorare direttamente con extra-inglese. Di recente ho implementato l'autenticazione utente, la gestione delle lezioni e il monitoraggio delle presenze e i calcoli di pagamenti automatizzati. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3 Break-Words WhiteSpace-Normal'> Questa app di navigazione incentrata sulla comunità è una prova del concetto sviluppato per il 2024 RGU Hackathon. <br/> <br/> presenta una mappa interattiva con pin per punti di riferimento chiave di Aberdeen Duthie Park. Quando toccano un PIN, gli utenti possono leggere ulteriori informazioni al riguardo o scegliere di navigare sul pin. L'app ha anche un feed, raschiato dal gruppo \"Friends of Duthie Park\". <br/> <br/> L'app possiede impostazioni di accessibilità; Gli utenti possono coinvolgere una modalità di contrasto elevato o aumentare la dimensione del carattere per una migliore leggibilità. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contattami",
+    "quote": "Hai un'idea o semplicemente vuoi chattare? Sentiti libero di inviarmi un messaggio qui sotto!",
+    "form": {
+      "name": "Nome",
+      "email": "E-mail*",
+      "message": "Messaggio",
+      "entername": "Inserisci il tuo nome",
+      "enteremail": "Inserisci la tua email",
+      "entermessage": "Inserisci il tuo messaggio",
+      "submit": "INVIARE",
+      "errors": {
+        "emailinvalid": "Indirizzo e -mail non valido.",
+        "emailrequired": "È richiesta l'e -mail.",
+        "forminvalid": "Correggi gli errori nel modulo.",
+        "emailfailed": "Impossibile inviare e -mail. Per favore riprova più tardi.",
+        "genericerror": "Si è verificato un errore. Per favore riprova più tardi."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Tutti i diritti riservati.",
+    "description": "Sviluppatore Fullstack con esperienza in Mern, AWS e Python. Appassionato di costruzione di app Web efficienti e scalabili."
+  }
+}

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState, useEffect } from "react";
 import { icons } from "../data/iconData";
 import Button from "./Button";
@@ -93,13 +94,13 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
   };
 
   return (
-    <div className="shadow-2xl flex flex-col items-center p-4 rounded-lg w-full  justify-center mx-auto max-w-md sm:max-w-lg md:max-w-3xl bg-[--foreground-color]">
-      <div className="mb-6 flex flex-col md:flex-row gap-2 justify-center items-center w-full">
+    <div className="shadow-2xl flex flex-col items-center p-4 rounded-lg w-full  justify-center mx-auto max-w-md sm:max-w-lg md:max-w-3xl z-20 bg-[--foreground-color]">
+      <div className="mb-10 flex flex-col md:flex-row gap-2 justify-center items-center w-full">
         {tabs.map((tab) => (
           <Button
             key={tab.value}
             onClick={() => handleTabChange(tab.value)}
-            className={`relative border-2 w-full md:w-36 overflow-hidden hover:brightness-75 transition-all ease-out duration-300 shadow-2xl ${
+            className={`relative border-2 w-full md:w-36 overflow-hidden transition-all ease-out duration-300 shadow-2xl ${
               activeTab === tab.value
                 ? "border-[--skills-color] bg-[--skills-color] text-[--background-color]"
                 : "border-[--skills-color] text-[--skills-color] hover:text-[--background-color]"
@@ -136,7 +137,7 @@ const SkillsContainer = ({ translation, isDarkMode }) => {
                 href={icon.documentation}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transform transition-transform duration-200 hover:scale-110"
+                className="transform transition-transform duration-150 hover:scale-125"
               >
                 <img
                   src={`/icons/tech/${

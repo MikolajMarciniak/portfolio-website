@@ -2,10 +2,10 @@ import React from "react";
 
 const Footer = ({ translation }) => {
   return (
-    <footer className="bg-[rgb(15,15,15)] text-white pt-8 pb-4 px-4">
+    <footer className="bg-black text-white pt-8 pb-4 px-4">
       <div className=" container mx-auto max-w-6xl flex flex-col md:flex-row items-center justify-between text-center md:text-left space-y-6 md:space-y-0 pb-10">
         <div className="flex flex-col items-end md:items-start space-y-4 md:w-1/2">
-          <p className="text-lg max-w-xl pb-6 md:border-transparent border-b border-white border-opacity-75">
+          <p className="text-lg max-w-xl pb-6 md:border-transparent border-b border-white border-opacity-50">
             <strong>Mikołaj Marciniak</strong>
             <br />
             <br />

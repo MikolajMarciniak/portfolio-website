@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Suchen...",
+      "results": "Keine Ergebnisse gefunden"
+    },
+    "landing": "Homepage",
+    "about": "Über mich",
+    "projects": "Meine Projekte",
+    "skills": "Meine Fähigkeiten",
+    "contact": "Kontaktieren Sie mich"
+  },
+  "landing": {
+    "hero": "Hallo, ich bin",
+    "subtitle": "FullStack -Entwickler",
+    "subtitle2": "Freiberufler",
+    "subtitle3": "Berater",
+    "visitor": "Besucher Nr."
+  },
+  "about": {
+    "title": "Über mich",
+    "description": "Ich bin ein FullStack -Entwickler, der sich auf den <strong> mern </strong> Tech -Stack spezialisiert hat. Während meiner <strong> 3-Jahres-Reise habe ich maßgeschneiderte Web-Apps für Unternehmen und Verbraucher erstellt. Ich genieße es besonders, leistungsstarke Backends mit wunderschönen Schnittstellen für <strong> Datenvisualisierung </strong> zu integrieren. <br/> <br/> In meiner Freizeit genieße ich es, an <strong> ML -Models </strong> zu basteln und meinen eigenen Wein zu brauen. Ich helfe auch gerne anderen, indem ich meine React-Komponenten als <strong> foss </strong> freigibt und nützlichen Inhalt auf meinem <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' target = '_ leer' rel = 'noopener Noreferrer' classname = 'curedin-pointerhover-ad-brade mr-2' classname = 'crossorsorSname =' CURNSORSORSORGE TEILE TEILE. </a> <br/> <br/> Wenn etwas davon interessant klingt, können Sie mir gerne folgen oder eine Nachricht machen",
+    "descriptionCont": "<br/> <br/> Wenn eines davon interessant klingt, können Sie mir gerne folgen oder eine Nachricht machen",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "CV anzeigen",
+    "here": "Hier"
+  },
+  "skills": {
+    "skillstitle": "Meine Fähigkeiten",
+    "skills": [
+      "FRONTEND",
+      "Backend",
+      "WERKZEUGE"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Der vollständige Webentwicklerkurs 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Prinzipien + Praktiken für großartiges UI -Design"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress schnell"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Meine Projekte",
+    "showmore": "Zeigen Sie mehr",
+    "showless": "Weniger zeigen",
+    "expand": "+",
+    "collapse": "- -",
+    "upcoming": "Weitere Projekte kommen bald ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "DriveGuage",
+        "description": "<Div class = 'MB-3 Break-Words Whitespace-Normal'> DriveGuage ist ein Blackbox-Treiber-Leistungsüberwachungssystem. Das System wird auf einem Raspberry Pi ausgeführt, der mit dem OBD-Port des Autos eine Verbindung herstellt, um Fahrdaten zu sammeln. <br/> <br/> Die Daten werden auf einen Server hochgeladen, verarbeitet und über eine benutzerfreundliche Webanwendung angezeigt. Authentifizierte Clients können Änderungen in ihrem 'Treiberwert' verfolgen, ein Maß für Fahrgewohnheiten wie Geschwindigkeitsüberschreitungen, scharfe Kurven und schnelle Beschleunigung. </Div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra englisch",
+        "description": "<p classname = 'MB-3-Break-Wörter Whitespace-Normal'> Während bei Premium Faber Ltd. konzentrierte ich mich auf die Entwicklung einer einzelnen Seitenanwendung (SPA) für die \"extra-englische\" Sprachschule. Ich erweiterte später seine Funktionalität um eine Fotogalerie, einen unendlichen Newsfeed, ein Client-Anmeldungsformular und ein interaktives Sprachquiz. Kürzlich habe ich die Benutzerauthentifizierung, das Lektionsverwaltung und die Verfolgung und die automatisierten Zahlungsberechnungen implementiert. </P>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Diese Community-fokussierte Navigations-App ist ein Proof of Concept, der für den 2024 RGU-Hackathon entwickelt wurde. <br/> <br/> Es verfügt über eine interaktive Karte mit Pins für wichtige Wahrzeichen des Aberdeen Duthie Park. Wenn Sie auf eine PIN tippen, können Benutzer weitere Informationen dazu lesen oder zur PIN navigieren. Die App verfügt auch über einen Feed, der von der Facebook-Gruppe der \"Friends of Duthie Park\" ausgestattet ist. <br/> <br/> Die App besitzt Barrierefreiheitseinstellungen. Benutzer können einen hohen Kontrastmodus einbeziehen oder die Schriftgröße für eine bessere Lesbarkeit erhöhen. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktieren Sie mich",
+    "quote": "Eine Idee haben oder einfach nur chatten wollen? Senden Sie mir gerne eine Nachricht unten!",
+    "form": {
+      "name": "Name",
+      "email": "E-Mail*",
+      "message": "Nachricht",
+      "entername": "Geben Sie Ihren Namen ein",
+      "enteremail": "Geben Sie Ihre E -Mail ein",
+      "entermessage": "Geben Sie Ihre Nachricht ein",
+      "submit": "SCHICKEN",
+      "errors": {
+        "emailinvalid": "Ungültige E -Mail -Adresse.",
+        "emailrequired": "E -Mail ist erforderlich.",
+        "forminvalid": "Bitte korrigieren Sie die Fehler im Formular.",
+        "emailfailed": "Versäumnis, E -Mails zu senden. Bitte versuchen Sie es später erneut.",
+        "genericerror": "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Alle Rechte vorbehalten.",
+    "description": "FullStack -Entwickler mit Erfahrung in Mern, AWS und Python. Leidenschaftlich für den Aufbau effizienter, skalierbarer Web -Apps."
+  }
+}

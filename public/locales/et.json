@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Otsige ...",
+      "results": "Tulemusi pole leitud"
+    },
+    "landing": "Koduleht",
+    "about": "Minust",
+    "projects": "Minu projektid",
+    "skills": "Minu oskused",
+    "contact": "Võtke minuga ühendust"
+  },
+  "landing": {
+    "hero": "Tere, ma olen",
+    "subtitle": "FullStacki arendaja",
+    "subtitle2": "Vabakutseline",
+    "subtitle3": "Konsultant",
+    "visitor": "Külastaja nr."
+  },
+  "about": {
+    "title": "Minust",
+    "description": "Olen Fulstacki arendaja, kes on spetsialiseerunud <strong> mern </strong> tehnika virnale. Oma <strong> 3-aastase </strong> teekonna jooksul olen loonud kohandatud veebirakendusi ettevõtetele ja tarbijatele. Eriti naudin võimsate taustaprogrammide integreerimist kaunite liidestega <strong> andmete visualiseerimiseks </strong>. <br/> <br/> Vabal ajal naudin <strong> ML -mudelitega </strong> ja oma veini pruulimist. Samuti naudin teiste abistamist, vabastades oma React komponendid kui <strong> foss </strong> ja jagades kasulikku sisu minu <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' Target = '_ _ blank' rel = 'nooropener noreferrer' ClassName = 'Linter: Font: Font: Powinter: Font-ponen: </a> <br/> <br/> Kui mõni neist kõlab huvitavalt, jälgige mind või saatke mulle sõnum",
+    "descriptionCont": "<br/> <br/> Kui mõni neist kõlab huvitavalt, siis jälgige mind või saatke mulle sõnum",
+    "cv": "/Documents/mikolajmarciniak.pdf",
+    "viewcv": "Vaata CV -d",
+    "here": "siin"
+  },
+  "skills": {
+    "skillstitle": "Minu oskused",
+    "skills": [
+      "Esiosa",
+      "Taustprogramm",
+      "Tööriistad"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Veebiarendaja täielik kursus 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Põhimõtted + tavade tavade kujundamise tavad"
+      },
+      {
+        "id": 3,
+        "title": "Meister WordPress kiiresti"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Minu projektid",
+    "showmore": "Näidata veel",
+    "showless": "Näitama vähem",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Veel peagi tulevad projektid ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Sõidukaits",
+        "description": "<div class = 'MB-3 purunemissõnad Whitespace-Normal'> Drivekage on Blackboxi draiveri jõudluse jälgimissüsteem. Süsteem töötab Raspberry Pi-l, mis ühendatakse autosõidu andmete kogumiseks auto OBD-pordiga. <br/> <br/> Andmed laaditakse serverisse üles, töödeldakse ja kuvatakse kasutajasõbraliku veebirakenduse kaudu. Autentitud kliendid saavad jälgida oma juhi skoori muudatusi, näiteks sõiduharjumuste, näiteks kiiruseületamise, teravate pöördeid ja kiire kiirendus. </iD>"
+      },
+      {
+        "id": 3,
+        "title": "Eriti inglise",
+        "description": "<P ClassName = 'MB-3 purunemissõnad Whitespace-Normal'> Kui Premium Faber Ltd. Hiljem laiendasin selle funktsionaalsust, et lisada fotogalerii, lõpmatu uudistevoog, kliendi registreerumisvorm ja interaktiivne keele viktoriin. Hiljuti rakendasin kasutaja autentimist, õppetundide haldamist ja külastatavuse jälgimist ning automatiseeritud maksete arvutusi. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<P ClassName = 'MB-3 purunemissõnad Whitespace-Normal'> See kogukonnakeskne navigeerimisrakendus on 2024. aasta RGU Hackathoni jaoks välja töötatud kontseptsiooni tõend. <br/> <br/> Sellel on interaktiivne kaart koos tihvtidega Aberdeen Duthie pargi peamiste vaatamisväärsuste jaoks. PIN -koodi koputamisel saavad kasutajad selle kohta lisateavet lugeda või valida tihvtile navigeerimise. Rakendusel on ka voog, mis on grupi „Duthie Parki sõbrad”. <br/> <br/> Rakendusel on juurdepääsetavuse sätted; Kasutajad saavad parema loetavuse saavutamiseks kaasata kõrge kontrastrežiimi või suurendada fondi suurust. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Võtke minuga ühendust",
+    "quote": "Kas teil on idee või soovite lihtsalt vestelda? Saatke mulle allpool teade!",
+    "form": {
+      "name": "Nimetus",
+      "email": "E -post*",
+      "message": "Teade",
+      "entername": "Sisestage oma nimi",
+      "enteremail": "Sisestage oma e -post",
+      "entermessage": "Sisestage oma teade",
+      "submit": "Saatma",
+      "errors": {
+        "emailinvalid": "Vale e -posti aadress.",
+        "emailrequired": "E -post on vajalik.",
+        "forminvalid": "Parandage vormil olevad vead.",
+        "emailfailed": "E -kirja saatmisel ebaõnnestus. Proovige hiljem uuesti.",
+        "genericerror": "Ilmnes viga. Proovige hiljem uuesti."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Kõik õigused kaitstud.",
+    "description": "FullStack arendaja, kellel on kogemusi Mernis, AWS -is ja Pythonis. Kirglik tõhusate, skaleeritavate veebirakenduste loomise vastu."
+  }
+}

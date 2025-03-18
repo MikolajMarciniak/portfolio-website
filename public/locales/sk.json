@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Hľadať ...",
+      "results": "Nezistili sa žiadne výsledky"
+    },
+    "landing": "Domovská stránka",
+    "about": "O mne",
+    "projects": "Moje projekty",
+    "skills": "Moje zručnosti",
+    "contact": "Kontaktujte ma"
+  },
+  "landing": {
+    "hero": "Ahoj, som",
+    "subtitle": "Vývojár FullStack",
+    "subtitle2": "Nezávislý pracovník",
+    "subtitle3": "Konzultant",
+    "visitor": "Návštevník č."
+  },
+  "about": {
+    "title": "O mne",
+    "description": "Som vývojár FullStack, ktorý sa špecializuje na Tech Stack <strong> Mern </strong>. V priebehu mojej cesty <strong> </strong> som vytvoril prispôsobené webové aplikácie pre podniky a spotrebiteľov. Obzvlášť sa mi páči integrácia silných backends s krásnymi rozhraniami pre vizualizáciu údajov </strong> </strong>. <br/> <br/> Vo svojom voľnom čase si užívam drotárstvo s modelmi <strong> ml </strong> a varím svoje vlastné víno. Tiež si užívam pomáham ostatným tým, že uvoľnia moje komponenty React ako <strong> foss </strong> a zdieľam užitočný obsah na mojom <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' Target = '_ blank' rel = 'noopener noreferrer' className = 'Cursor-Pointer hover </a> <br/> <br/> Ak niečo z toho znie zaujíma",
+    "descriptionCont": "<br/> <br/> Ak niečo z toho znie zaujíma",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Zobraziť životopis",
+    "here": "tu"
+  },
+  "skills": {
+    "skillstitle": "Moje zručnosti",
+    "skills": [
+      "Frontend",
+      "Backend",
+      "Náradie"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Kompletný kurz webového vývojára 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Princípy + postupy pre skvelý dizajn používateľského rozhrania"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress rýchlo"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Moje projekty",
+    "showmore": "Ukázať viac",
+    "showless": "Vykazovať menej",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Viac projektov už čoskoro ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Prepracovanie",
+        "description": "<Div Class = 'MB-3 Break-Words WhiteSpace-Normal'> DriveGuage je systém monitorovania výkonu ovládača Blackboxu. Systém beží na Raspberry Pi, ktorý sa pripája k portu OBD CAR na zhromažďovanie údajov o jazde. <br/> <br/> Dáta sa odovzdávajú na server, spracujú sa a zobrazujú sa prostredníctvom používateľskej webovej aplikácie. Autentifikovaní klienti môžu sledovať zmeny v ich „skóre vodiča“, mieru návykov jazdy, ako je prekročenie rýchlosti, ostré zákruty a rýchle zrýchlenie. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra anglický",
+        "description": "<p className = 'MB-3 Break-Words Whitepace-Normal'>, zatiaľ čo v Premium Faber Ltd., som sa zameral na vývoj jednej stránky aplikácie (SPA) pre „extra-anglisku“ jazykovú školu. <br/> <br/> Počiatočná verzia aplikácie bola statická a poskytovala kľúčové informácie zamerané na klienta. Neskôr som rozšíril jeho funkčnosť o fotogalériu fotogalérie, nekonečný spravodajský informačný kanál, formulár na registráciu klienta a kvíz interaktívneho jazyka. <br/> <br/> Po opustení Premium Faber som pokračoval priamo v práci s extra anglickými. Nedávno som implementoval autentifikáciu používateľov, správu lekcií a sledovanie účasti a automatizované výpočty platby. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'Duthie",
+        "description": "<p className = 'MB-3 Break-Words Whitepace-Normal'> Táto navigačná aplikácia zameraná na komunitu je dôkazom koncepcie vyvinutého pre Hackathon RGU 2024. <br/> <br/> Je vybavený interaktívnou mapou s kolíkmi pre kľúčové pamiatky Aberdeen Duthie Park. Pri poklepaní na špendlík si používatelia môžu prečítať viac informácií o ňom alebo sa rozhodnúť prejsť do PIN. Aplikácia má tiež informačný kanál, ktorý je postrkakovaný na webovú skupinu „Friends of Duthie Park“. <br/> <br/> Aplikácia má nastavenia prístupnosti; Používatelia môžu zapojiť režim s vysokým kontrastom alebo zväčšiť veľkosť písma pre lepšiu čitateľnosť. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktujte ma",
+    "quote": "Máte predstavu alebo chcete jednoducho chatovať? Neváhajte a pošlite mi správu nižšie!",
+    "form": {
+      "name": "Pomenovať",
+      "email": "E -mail*",
+      "message": "Správa",
+      "entername": "Zadajte svoje meno",
+      "enteremail": "Zadajte svoj e -mail",
+      "entermessage": "Zadajte svoju správu",
+      "submit": "Odoslať",
+      "errors": {
+        "emailinvalid": "Neplatná e -mailová adresa.",
+        "emailrequired": "Vyžaduje sa e -mail.",
+        "forminvalid": "Opravte chyby vo formulári.",
+        "emailfailed": "Nepodarilo sa odosielať e -mail. Skúste to znova neskôr.",
+        "genericerror": "Došlo k chybe. Skúste to znova neskôr."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Všetky práva vyhradené.",
+    "description": "Vývojár FullStack so skúsenosťami v Mern, AWS a Python. Vášnivý pre budovanie efektívnych a škálovateľných webových aplikácií."
+  }
+}

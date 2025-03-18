@@ -12,7 +12,8 @@
     "print": "npx dotenv -p AWS_BUCKET_NAME",
     "deploy": "node deploy.js",
     "testLoc": "node ./src/app/tests/testLoc.js ./public/locales",
-    "translate": "node ./translate-json.js en.json ./public/locales"
+    "translate": "node ./translate-json.js en.json ./public/locales",
+    "translate-missing": "node ./translate-json.js en.json ./public/locales true"
   },
   "dependencies": {
     "@react-spring/web": "^9.7.5",

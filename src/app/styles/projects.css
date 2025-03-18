@@ -60,3 +60,80 @@
   opacity: 1;
   overflow: visible;
 }
+
+.radial-background {
+  background-color: var(--background-color-dark);
+  min-height: 100vh; /* Stretch to full viewport height */
+
+  background-image:
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(3, 49, 254, 0.2) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(3, 49, 254, 0.2) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      50% 50% at 50% 50%,
+      rgba(3, 49, 254, 0.1) 0%,
+      transparent 100%
+    );
+
+  background-repeat: no-repeat;
+  background-size:
+    70vw 80vh,
+    80vw 100vh,
+    50vw 90vh;
+  background-position:
+    50% 50px,
+    50% 100px,
+    50% 70px;
+}
+@media (max-width: 1280px) {
+  .radial-background {
+    background-size:
+      110% 100%,
+      110% 100%,
+      110% 100%;
+    background-position:
+      50% 33%,
+      50% 66%,
+      50% 99%;
+  }
+}
+@media (max-width: 768px) {
+  .radial-background {
+    background-size:
+      130% 100%,
+      130% 100%,
+      130% 100%;
+    background-position:
+      50% 33%,
+      50% 66%,
+      50% 99%;
+  }
+}
+
+/* Light mode adjustments */
+.light .radial-background {
+  background-color: var(--background-color-light);
+  background-image:
+    radial-gradient(
+      40% 40% at 50% 50%,
+      rgba(3, 49, 254, 0.5) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      51% 50% at 50% 50%,
+      rgba(3, 49, 254, 0.5) 0%,
+      transparent 100%
+    ),
+    radial-gradient(
+      40% 40% at 50% 50%,
+      rgba(3, 49, 254, 0.5) 0%,
+      transparent 100%
+    );
+}

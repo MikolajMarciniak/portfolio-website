@@ -66,12 +66,12 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
   return (
     <section
       ref={ref}
-      className={` bg-[--background-color-dark]`}
+      className={`radial-background ${isDarkMode ? "dark" : "light"} flex flex-col justify-center  relative`}
       id="projects"
     >
-      <div className="relative py-20 z-10 mx-auto w-full max-w-6xl text-center ">
+      <div className="relative py-20 mx-auto w-full max-w-6xl text-center">
         <LazyLoad>
-          <h2 className="text-4xl xl:text-5xl 2xl:text-6xl font-semibold ">
+          <h2 className="text-4xl xl:text-5xl 2xl:text-6xl font-bold">
             <span className="shadow projects text-[--projects-color]">
               {translation.title}
             </span>
@@ -81,7 +81,7 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
 
       {width > 1280 ? (
         <div
-          className={`flex w-full max-w-6xl mx-auto space-x-4 projects-height ${
+          className={` flex w-full max-w-6xl mx-auto space-x-4 projects-height ${
             expandedItem ? "expand min-h-[140vh]" : "min-h-screen"
           } overflow-visible`}
         >
@@ -170,7 +170,7 @@ const ProjectsSection = forwardRef(({ translation, isDarkMode }, ref) => {
         </div>
       ) : (
         <div
-          className={`flex mx-5 px-4 flex-col space-y-1 w-full max-w-2xl mx-auto projects-height pb-12 min-h-[1000px] ${
+          className={`flex mx-auto px-8 flex-col space-y-1 w-full max-w-2xl mx-auto projects-height pb-12 min-h-[1000px] ${
             showMore ? "expand" : ""
           } overflow-visible`}
         >

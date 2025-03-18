@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "찾다...",
+      "results": "결과가 없습니다"
+    },
+    "landing": "홈페이지",
+    "about": "나에 대해",
+    "projects": "내 프로젝트",
+    "skills": "내 기술",
+    "contact": "저에게 연락하십시오"
+  },
+  "landing": {
+    "hero": "안녕, 난",
+    "subtitle": "풀 스택 개발자",
+    "subtitle2": "프리랜서",
+    "subtitle3": "컨설턴트",
+    "visitor": "방문자 번호."
+  },
+  "about": {
+    "title": "나에 대해",
+    "description": "저는 <strong> mern </strong> 기술 스택을 전문으로하는 풀 스택 개발자입니다. <strong> 3 년 </strong> 여행 과정에서 비즈니스 및 소비자를위한 맞춤형 웹 앱을 만들었습니다. 특히 <strong> 데이터 시각화 </strong>에 대한 아름다운 인터페이스와 강력한 백엔드를 통합하는 것을 즐깁니다. <br/> <br/> 여가 시간에는 <strong> ml 모델 </strong>로 땜질을하고 내 와인을 양조합니다. 또한 <strong> foss </strong>로 반응 구성 요소를 공개하고 <a href = 'https : //www.linkedin.com/in/mikolaj-marciniak'target = '_ rel ='noreferferrer 'classname ='cursor-pointer hover : font-bold oldline mr-2 's Linter-Pointer Hover에서 유용한 콘텐츠를 공유함으로써 다른 사람들을 돕는 것을 즐깁니다. </a> <br/> <br/> 그 중 하나가 흥미로워지면 언제든지 따르거나 메시지를 보내 주시기 바랍니다.",
+    "descriptionCont": "<br/> <br/> 그 중 하나가 흥미로워지면 자유롭게 따르거나 메시지를 보내주십시오.",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "이력서보기",
+    "here": "여기"
+  },
+  "skills": {
+    "skillstitle": "내 기술",
+    "skills": [
+      "프론트 엔드",
+      "백엔드",
+      "도구"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "완전한 웹 개발자 코스 2.0"
+      },
+      {
+        "id": 2,
+        "title": "훌륭한 UI 디자인을위한 원칙 + 관행"
+      },
+      {
+        "id": 3,
+        "title": "마스터 워드 프레스를 빨리"
+      }
+    ]
+  },
+  "projects": {
+    "title": "내 프로젝트",
+    "showmore": "더 보여주십시오",
+    "showless": "덜 보여주십시오",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "더 많은 프로젝트가 곧 올 것입니다 ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Driveguage",
+        "description": "<div class = 'MB-3 Break-Words Whitespace-Normal'> DriveGuage는 BlackBox 드라이버 성능 모니터링 시스템입니다. 이 시스템은 운전 데이터를 수집하기 위해 자동차의 OBD 포트에 연결되는 Raspberry Pi에서 실행됩니다. <br/> <br/> 데이터는 서버에 업로드되어 처리되어 사용자 친화적 인 웹 응용 프로그램을 통해 표시됩니다. 인증 된 고객은 속도, 날카로운 회전 및 빠른 가속과 같은 운전 습관의 '운전자 점수'의 변화를 추적 할 수 있습니다. </div>"
+      },
+      {
+        "id": 3,
+        "title": "외식",
+        "description": "<p classname = 'MB-3 Break-Words WhiteSpace-Normal'> Premium Faber Ltd.에서는 'Extra-English'언어 학교의 단일 페이지 응용 프로그램 (SPA)을 개발하는 데 중점을 두었습니다. <br/> <br/> 앱의 초기 버전은 주요 클라이언트 가공 정보를 제공합니다. 나중에 사진 갤러리, 무한 뉴스 피드, 클라이언트 가입 양식 및 대화식 언어 퀴즈를 포함하도록 기능을 확장했습니다. <br/> <br/> 프리미엄 Faber를 떠난 후, 나는 Earch-English와 직접 작업했습니다. 최근에 사용자 인증, 수업 관리 및 출석 추적 및 자동 지불 계산을 구현했습니다. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p classname = 'MB-3 Break-Words Whitespace-Normal'>이 커뮤니티 중심의 내비게이션 앱은 2024 RGU Hackathon을 위해 개발 된 개념 증명입니다. <br/> <br/> Aberdeen Duthie Park의 주요 랜드 마크를위한 핀이있는 대화식지도가 특징입니다. 핀을 탭하면 사용자는 이에 대한 자세한 정보를 읽거나 PIN으로 이동하도록 선택할 수 있습니다. 이 앱에는 또한 'Friends of Duthie Park'Facebook 그룹의 웹 스크랩 된 피드가 있습니다. <br/> <br/> 앱에는 접근성 설정이 있습니다. 사용자는 높은 대비 모드를 사용하거나 더 나은 가독성을 위해 글꼴 크기를 늘릴 수 있습니다. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "저에게 연락하십시오",
+    "quote": "아이디어가 있거나 단순히 채팅하고 싶습니까? 아래에 메시지를 보내 주시기 바랍니다!",
+    "form": {
+      "name": "이름",
+      "email": "이메일*",
+      "message": "메시지",
+      "entername": "이름을 입력하십시오",
+      "enteremail": "이메일을 입력하십시오",
+      "entermessage": "메시지를 입력하십시오",
+      "submit": "보내다",
+      "errors": {
+        "emailinvalid": "잘못된 이메일 주소.",
+        "emailrequired": "이메일이 필요합니다.",
+        "forminvalid": "양식의 오류를 수정하십시오.",
+        "emailfailed": "이메일을 보내지 못했습니다. 나중에 다시 시도하십시오.",
+        "genericerror": "오류가 발생했습니다. 나중에 다시 시도하십시오."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "모든 권리 보유.",
+    "description": "Mern, AWS 및 Python에 대한 경험이있는 Fullstack 개발자. 효율적이고 확장 가능한 웹 앱을 구축하는 데 열정적입니다."
+  }
+}

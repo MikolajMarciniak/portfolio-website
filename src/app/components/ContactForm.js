@@ -42,6 +42,7 @@ const ContactForm = ({ translation }) => {
     setLoading(true);
 
     try {
+      console.log(formData);
       const response = await fetch(
         process.env.NEXT_PUBLIC_AWS_EMAIL_API_ADDRESS,
         {
@@ -73,7 +74,7 @@ const ContactForm = ({ translation }) => {
   };
 
   return (
-    <div className="bg-[--foreground-color] h-full text-sm sm:text-md xl:text-lg mx-5 px-4 sm:px-0 sm:mx-auto max-w-3xl rounded-md shadow-2xl">
+    <div className=" bg-[--foreground-color] h-full text-sm sm:text-md xl:text-lg mx-5 px-4 md:px-0 sm:mx-auto max-w-3xl rounded-md shadow-2xl">
       <div className="relative z-10 mx-auto flex flex-col pb-18 py-12">
         <form
           className="space-y-6 w-full max-w-2xl mx-auto"
@@ -94,7 +95,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.entername}
               value={formData.name}
               onChange={handleChange}
-              className={`w-full p-2 mt-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
+              className={`focus:outline-none focus:ring-[--contact-color] focus:ring-2 focus:ring-offset-0 w-full p-2 mt-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
                 errors.name ? "border-red-500" : ""
               }`}
             />
@@ -119,9 +120,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.enteremail}
               value={formData.email}
               onChange={handleChange}
-              className={`w-full mt-2 p-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
-                errors.email ? "border-red-500" : ""
-              } `}
+              className={`focus:outline-none focus:ring-[--contact-color] focus:ring-2 focus:ring-offset-0  w-full mt-2 p-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${errors.email ? "border-red-500" : ""} `}
             />
             <p className="text-red-500 text-sm-1 mt-1 ml-2">
               {errors.email && errors.email}
@@ -141,9 +140,7 @@ const ContactForm = ({ translation }) => {
               placeholder={translation.entermessage}
               value={formData.message}
               onChange={handleChange}
-              className={`w-full p-2 mt-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${
-                errors.message ? "border-red-500" : ""
-              }`}
+              className={`focus:outline-none focus:ring-[--contact-color] focus:ring-2 focus:ring-offset-0 w-full p-2 mt-2  rounded-md bg-[--foreground-color-dark] placeholder-[--text-color] text-[--text-color]  border-[--contact-color] ${errors.message ? "border-red-500" : ""}`}
               rows="8"
             />
             {errors.message && (

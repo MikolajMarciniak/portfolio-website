@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Recherche...",
+      "results": "Aucun résultat trouvé"
+    },
+    "landing": "Page d'accueil",
+    "about": "Sur moi",
+    "projects": "Mes projets",
+    "skills": "Mes compétences",
+    "contact": "Contactez-moi"
+  },
+  "landing": {
+    "hero": "Salut, je suis",
+    "subtitle": "Développeur de Fullstack",
+    "subtitle2": "Pigiste",
+    "subtitle3": "Consultant",
+    "visitor": "Visiteur no."
+  },
+  "about": {
+    "title": "SUR MOI",
+    "description": "Je suis un développeur Fullstack spécialisé dans la pile technique <strong> Mern </strong>. Au cours de mon voyage <strong> de 3 ans </strong>, j'ai créé des applications Web sur mesure pour les entreprises et les consommateurs. J'aime particulièrement intégrer des backends puissants avec de belles interfaces pour <strong> visualisation des données </strong>. <br/> <br/> Pendant mon temps libre, j'aime bricoler <strong> les modèles ML </strong> et brasser mon propre vin. J'aime aussi aider les autres en libérant mes composants de réaction en tant que <strong> foss </strong> et en partageant du contenu utile sur mon <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' cible = '_ Blank' Rel = 'NoOpenner Noreferrer' ClassName = 'Cursor-Pointer Hover: Fontbold sous-2' </a> <br/> <br/> Si tout cela semble intéressant, n'hésitez pas à me suivre ou à m'envoyer un message",
+    "descriptionCont": "<br/> <br/> Si tout cela semble intéressant, n'hésitez pas à me suivre ou à m'envoyer un message",
+    "cv": "/Documents/mikolajmarciniak.pdf",
+    "viewcv": "Voir CV",
+    "here": "ici"
+  },
+  "skills": {
+    "skillstitle": "Mes compétences",
+    "skills": [
+      "L'EXTRÉMITÉ AVANT",
+      "Backend",
+      "OUTILS"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Le cours complet du développeur Web 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principes + pratiques pour une grande conception d'interface utilisateur"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress rapidement"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Mes projets",
+    "showmore": "Montrer plus",
+    "showless": "Montrer moins",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Plus de projets à venir bientôt ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Drive",
+        "description": "<div class = 'MB-3 Break-Words Whitespace-normal'> DriveGuage est un système de surveillance des performances du pilote BlackBox. Le système s'exécute sur un Raspberry Pi, qui se connecte au port OBD de la voiture pour collecter des données de conduite. <br/> <br/> Les données sont téléchargées sur un serveur, traitées et affichées via une application Web conviviale. Les clients authentifiés peuvent suivre les changements dans leur «score de conducteur», une mesure des habitudes de conduite, comme la vitesse, les virages nets et l'accélération rapide. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra-anglais",
+        "description": "<P classname = 'MB-3 Break-Wryspacepace-normal'> Alors que chez Premium Faber Ltd., je me suis concentré sur le développement d'une application de page unique (SPA) pour la langue `` extra-anglaise ''. <br/> <br/> La version initiale de l'application était statique, fournissant des informations clés en matière de clientèle. J'ai ensuite élargi sa fonctionnalité pour inclure une galerie de photos, un fil d'actualités infini, un formulaire d'inscription au client et un quiz linguistique interactif <br/> <br/> Après avoir quitté Preum Faber, j'ai continué à travailler directement avec l'extra-anglais. Récemment, j'ai implémenté l'authentification des utilisateurs, la gestion des leçons et le suivi de la fréquentation et les calculs de paiement automatisés. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p classname = 'MB-3 Break-words Whitespace-normal'> Cette application de navigation axée sur la communauté est une preuve de concept développée pour le hackathon RGU 2024. <br/> <br/> Il dispose d'une carte interactive avec des épingles pour les points de repère clés du parc Aberdeen Duthie. Lorsque vous appuyez sur une broche, les utilisateurs peuvent lire plus d'informations à ce sujet ou choisir de naviguer vers la broche. L'application a également un flux, le web-crampant du groupe Facebook «Friends of Duthie Park». <br/> <br/> L'application possède des paramètres d'accessibilité; Les utilisateurs peuvent engager un mode de contraste élevé ou augmenter la taille de la police pour une meilleure lisibilité. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "quote": "Vous avez une idée ou vous voulez simplement discuter? N'hésitez pas à m'envoyer un message ci-dessous!",
+    "form": {
+      "name": "Nom",
+      "email": "E-mail*",
+      "message": "Message",
+      "entername": "Entrez votre nom",
+      "enteremail": "Entrez votre e-mail",
+      "entermessage": "Entrez votre message",
+      "submit": "ENVOYER",
+      "errors": {
+        "emailinvalid": "Adresse e-mail non valide.",
+        "emailrequired": "Un e-mail est requis.",
+        "forminvalid": "Veuillez corriger les erreurs dans le formulaire.",
+        "emailfailed": "Échec de l'envoi par e-mail. Veuillez réessayer plus tard.",
+        "genericerror": "Une erreur s'est produite. Veuillez réessayer plus tard."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Tous droits réservés.",
+    "description": "Développeur FullStack avec de l'expérience dans Mern, AWS et Python. Passionné par la création d'applications Web efficaces et évolutives."
+  }
+}

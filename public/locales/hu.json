@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Keresés...",
+      "results": "Nincs eredmény"
+    },
+    "landing": "Honlap",
+    "about": "Rólam",
+    "projects": "Projektjeim",
+    "skills": "Képességeim",
+    "contact": "Vegye fel a kapcsolatot velem"
+  },
+  "landing": {
+    "hero": "Szia, én vagyok",
+    "subtitle": "FullStack fejlesztő",
+    "subtitle2": "Szabadúszó",
+    "subtitle3": "Tanácsadó",
+    "visitor": "Látogató száma."
+  },
+  "about": {
+    "title": "Rólam",
+    "description": "Fullstack fejlesztő vagyok, aki a <strong> MERN </strong> tech veremre szakosodott. A <strong> 3 éves </strong> utazásom során testreszabott webes alkalmazásokat hoztam létre a vállalkozások és a fogyasztók számára. Különösen örülök annak, hogy integrálom az erőteljes háttérképeket a gyönyörű interfészekkel a <strong> adatok megjelenítéséhez </strong>. <br/> <br/> Szabadidőmben élvezem a <strong> ml modellekkel való megbotlást </strong> és a saját borom főzése. Nagyon örülök annak, hogy másoknak segítek azáltal, hogy a React komponenseimet <strong> foss </strong> néven osztom, és hasznos tartalmat osztok meg a <a href = 'https: //www.linkedin.com/in/mikolaj-marciniak' célpont = '_ üres' rel = 'noopener noreferrer' classname = 'cursor-pointer hover' célponton: </a> <br/> <br/> Ha ezek közül bármelyik érdekesnek hangzik, nyugodtan kövesse vagy üzenjen nekem",
+    "descriptionCont": "<br/> <br/> Ha ezek közül bármelyik érdekesnek hangzik, nyugodtan kövesse vagy üzenjen nekem",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Az önéletrajz megtekintése",
+    "here": "itt"
+  },
+  "skills": {
+    "skillstitle": "Képességeim",
+    "skills": [
+      "Előlap",
+      "Háttér",
+      "Szerszámok"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "A teljes webfejlesztő 2.0 tanfolyam"
+      },
+      {
+        "id": 2,
+        "title": "Alapelvek + gyakorlatok a nagyszerű felhasználói felület tervezéséhez"
+      },
+      {
+        "id": 3,
+        "title": "A WordPress elsajátítása gyorsan"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projektjeim",
+    "showmore": "Mutasson többet",
+    "showless": "Mutasson kevesebbet",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "További projektek hamarosan ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Meghajtó",
+        "description": "<div class = 'MB-3 Break-Words Whitespace-Normal'> A DriveGuage egy Blackbox illesztőprogram-megfigyelő rendszer. A rendszer egy Raspberry Pi-en fut, amely csatlakozik az autó OBD portjához, hogy gyűjtse a vezetési adatokat. A hitelesített ügyfelek nyomon követhetik a „illesztőprogram -pontszám” változását, a vezetési szokások mértékét, például a gyorshajtást, az éles fordulatot és a gyors gyorsulást. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Extra angol",
+        "description": "<p classname = 'MB-3 Break-Words Whitespace-Normal'> A Premium Faber Ltd.-nél az egyoldalas alkalmazás (SPA) kifejlesztésére összpontosítottam az „extra-angol” nyelviskola számára. Később kibővítettem annak funkcionalitását, hogy tartalmazzam egy fotógalériát, egy végtelen hírcsatornát, egy ügyfélirodat-űrlapot és egy interaktív nyelvi kvízt. Nemrégiben végrehajtottam a felhasználói hitelesítést, az órakezelés és a részvételi követési követést, valamint az automatizált fizetési számításokat. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3 Break-Words Whitespace-Normal'> Ez a közösség-központú navigációs alkalmazás a 2024-es RGU Hackathon számára kidolgozott koncepció bizonyítéka. <br/> <br/> Interaktív térképet tartalmaz az Aberdeen Duthie Park kulcsfontosságú tereptárgyainak csapjaival. A PIN -kód megérintésekor a felhasználók további információkat olvashatnak róla, vagy úgy dönthetnek, hogy navigálnak a PIN -re. Az alkalmazásnak van egy hírcsatornája, a „Friends of Duthie Park” Facebook csoportból. <br/> <br/> Az alkalmazás akadálymentesség -beállításokkal rendelkezik; A felhasználók nagy kontraszt üzemmódot vonhatnak be, vagy növelhetik a betűméretet a jobb olvashatóság érdekében. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Vegye fel a kapcsolatot velem",
+    "quote": "Van ötlete, vagy egyszerűen csak beszélgetni akar? Nyugodtan küldjön nekem egy üzenetet az alábbiakban!",
+    "form": {
+      "name": "Név",
+      "email": "Email*",
+      "message": "Üzenet",
+      "entername": "Írja be a nevét",
+      "enteremail": "Írja be e -mailjét",
+      "entermessage": "Írja be üzenetét",
+      "submit": "ELKÜLD",
+      "errors": {
+        "emailinvalid": "Érvénytelen e -mail cím.",
+        "emailrequired": "E -mail szükséges.",
+        "forminvalid": "Kérjük, javítsa ki a hibákat az űrlapon.",
+        "emailfailed": "Nem sikerült e -mailt küldeni. Kérjük, próbálkozzon újra később.",
+        "genericerror": "Hiba történt. Kérjük, próbálkozzon újra később."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Minden jog fenntartva.",
+    "description": "Fullstack fejlesztő, aki tapasztalattal rendelkezik a MERN -ben, az AWS -ben és a Pythonban. Szenvedélyesen építi a hatékony, méretezhető webes alkalmazásokat."
+  }
+}

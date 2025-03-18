@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "搜索...",
+      "results": "找不到结果"
+    },
+    "landing": "首页",
+    "about": "关于我",
+    "projects": "我的项目",
+    "skills": "我的技能",
+    "contact": "与我联系"
+  },
+  "landing": {
+    "hero": "嗨，我",
+    "subtitle": "Fullstack开发人员",
+    "subtitle2": "自由职业者",
+    "subtitle3": "顾问",
+    "visitor": "访客"
+  },
+  "about": {
+    "title": "关于我",
+    "description": "我是专门从事<strong> Mern </strong>技术堆栈的Fullstack开发人员。在我的<strong> 3年的过程中，我为企业和消费者创建了量身定制的Web应用程序。我特别喜欢将强大的后端与精美的界面集成在一起，以<strong>数据可视化</strong>。 <br/> <br/>在空闲时间里，我喜欢修补<strong> ml型号</strong>并酿造自己的葡萄酒。我也喜欢通过释放<strong> foss </strong>并在我的上共享有用的内容来帮助他人",
+    "descriptionCont": "<br/> <br/>如果听起来很有趣，请随时关注或给我发消息",
+    "here": "这里",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "查看简历"
+  },
+  "skills": {
+    "skillstitle": "我的技能",
+    "skills": [
+      "前端",
+      "后端",
+      "工具"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "完整的Web开发人员课程2.0"
+      },
+      {
+        "id": 2,
+        "title": "原则 +出色UI设计的实践"
+      },
+      {
+        "id": 3,
+        "title": "大师wordpress迅速"
+      }
+    ]
+  },
+  "projects": {
+    "title": "我的项目",
+    "showmore": "显示更多",
+    "showless": "少显示",
+    "expand": "+",
+    "collapse": " - ",
+    "upcoming": "更多项目即将推出...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "驱动器",
+        "description": "<div class ='MB-3断开字形whitespace-Normal'>驱动器guage是一个黑盒驱动程序性能监视系统。该系统在Raspberry Pi上运行，该Raspberry Pi连接到汽车的OBD端口以收集驾驶数据。<br/> <br/>将数据上传到服务器，处理并通过用户友好的Web应用程序显示。经过验证的客户可以跟踪其“驾驶员得分”的变化，这是驾驶习惯的度量，例如超速，急转弯和快速加速。</div>"
+      },
+      {
+        "id": 3,
+        "title": "外英语",
+        "description": "<p className ='MB-3 brake-words whitespace-normal'>在Premium Faber Ltd.时，我专注于为“超级英语”语言学校开发单页应用程序（SPA）。<br/> <br/> <br/>该应用程序的初始版本是静态的，是静态的，提供了关键的客户端信息信息。后来，我扩大了其功能，包括一个照片库，无限新闻提要，客户注册表格和交互式语言测验。<br/> <br/>离开Premium Faber后，我继续直接与Extre-English合作。最近，我实施了用户身份验证，课程管理和出勤跟踪以及自动付款计算。</p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className ='MB-3 Break-words Whitespace-Normal'>此以社区为中心的导航应用程序是为2024 RGU Hackathon开发的概念证明。 <br/> <br/>它具有一张互动地图，带有销钉，用于Aberdeen Duthie Park的关键地标。敲击PIN时，用户可以阅读有关它的更多信息或选择导航到PIN。该应用程序还提供了来自“ Duthie Park之友” Facebook Group的供稿。 <br/> <br/>该应用具有可访问性设置；用户可以参与高对比度模式或增加字体大小以获得更好的可读性。</p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "与我联系",
+    "quote": "有一个想法还是只是想聊天？请随时在下面向我发送一条消息！",
+    "form": {
+      "name": "姓名",
+      "email": "电子邮件*",
+      "message": "信息",
+      "entername": "输入您的名字",
+      "enteremail": "输入您的电子邮件",
+      "entermessage": "输入您的消息",
+      "submit": "发送",
+      "errors": {
+        "emailinvalid": "无效的电子邮件地址。",
+        "emailrequired": "需要电子邮件。",
+        "forminvalid": "请更正表格中的错误。",
+        "emailfailed": "未能发送电子邮件。请稍后再试。",
+        "genericerror": "发生错误。请稍后再试。"
+      }
+    }
+  },
+  "footer": {
+    "copyright": "版权所有。",
+    "description": "Fullstack开发人员在Mern，AWS和Python方面具有经验。热衷于构建高效，可扩展的Web应用程序。"
+  }
+}

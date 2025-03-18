@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Aramak...",
+      "results": "Sonuç bulunamadı"
+    },
+    "landing": "Ana sayfa",
+    "about": "Hakkımda",
+    "projects": "Projelerim",
+    "skills": "Becerilerim",
+    "contact": "Benimle iletişime geç"
+  },
+  "landing": {
+    "hero": "Merhaba ben",
+    "subtitle": "FullStack Geliştirici",
+    "subtitle2": "Serbest çalışan",
+    "subtitle3": "Danışman",
+    "visitor": "Ziyaretçi no."
+  },
+  "about": {
+    "title": "Hakkımda",
+    "description": "Ben <strong> mern </strong> teknoloji yığınında uzmanlaşmış bir FullStack geliştiricisiyim. <strong> 3 yıllık </strong> yolculuğum boyunca, işletmeler ve tüketiciler için özel web uygulamaları oluşturdum. Özellikle <strong> veri görselleştirme </strong> için güçlü arka uçları güzel arayüzlerle entegre etmekten zevk alıyorum. <br/> <br/> Boş zamanlarımda <strong> ml modellerle uğraşmaktan ve kendi şarabımı demlemekten zevk alıyorum. Ayrıca reaksiyon bileşenlerimi <strong> foss </strong> olarak serbest bırakarak başkalarına yardım etmekten ve <a href = 'https: //www.linkedin.com/in/mikolaj-po-_ blank' rel = 'noopener noreFerrer' className = 'cursor-poeferrer' classname = ' </a> <br/> <br/> Bunlardan herhangi biri ilginç geliyorsa, takip etmekten çekinmeyin veya bana mesaj atın",
+    "descriptionCont": "<br/> <br/> Bunlardan herhangi biri ilginç geliyorsa, takip etmekten çekinmeyin veya bana mesaj atın",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "CV'yi görüntüle",
+    "here": "Burada"
+  },
+  "skills": {
+    "skillstitle": "Becerilerim",
+    "skills": [
+      "BAŞLANGIÇ AŞAMASI",
+      "Arka uç",
+      "ALETLER"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Tam Web Geliştirici Kursu 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Mükemmel kullanıcı arayüzü tasarımı için ilkeler + uygulamalar"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress Hızlı"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projelerim",
+    "showmore": "Daha Fazla Göster",
+    "showless": "Daha az göster",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Yakında daha fazla proje geliyor ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Sürücü",
+        "description": "<div class = 'MB-3 Break-Words Whitespace-Normal'> DriveGuage bir Blackbox sürücü performans izleme sistemidir. Sistem, sürüş veri toplamak için otomobilin OBD bağlantı noktasına bağlanan bir Raspberry Pi üzerinde çalışır. Kimlik doğrulanmış müşteriler, hız, keskin dönüşler ve hızlı hızlanma gibi sürüş alışkanlıklarının bir ölçüsü olan 'sürücü puanlarındaki' değişiklikleri izleyebilir."
+      },
+      {
+        "id": 3,
+        "title": "Ekstra",
+        "description": "<P className = 'MB-Words Whitespace-Normal'> Premium Faber Ltd.'deyken, 'Ekstra Yokluk' dil okulu için tek bir sayfa uygulaması (SPA) geliştirmeye odaklandım. Daha sonra işlevselliğini bir fotoğraf galerisi, sonsuz bir haber akışı, bir müşteri kayıt formu ve etkileşimli bir dil sınavı içerecek şekilde genişlettim. Son zamanlarda, kullanıcı kimlik doğrulaması, ders yönetimi ve katılım izleme ve otomatik ödeme hesaplamaları uyguladım. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'Duthie",
+        "description": "<P className = 'MB-3 Break-Words Whitespace-Normal'> Topluluk odaklı bu navigasyon uygulaması, 2024 RGU hackathon için geliştirilen bir kavram kanıtıdır. <br/> <br/> Aberdeen Duthie Park'ın önemli yerleri için pimleri olan etkileşimli bir haritaya sahiptir. Bir PIN'e dokunurken, kullanıcılar bu konuda daha fazla bilgi okuyabilir veya PIN'e gitmeyi seçebilir. Uygulamada ayrıca 'Duthie Park Friends' Facebook Grubundan web-screed bir beslemeye sahiptir. <br/> <br/> Uygulama erişilebilirlik ayarlarına sahiptir; Kullanıcılar yüksek kontrast moduna girebilir veya daha iyi okunabilirlik için yazı tipi boyutunu artırabilir. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Benimle iletişime geç",
+    "quote": "Bir fikriniz mi var yoksa sadece sohbet etmek mi istiyorsunuz? Bana bir mesaj göndermekten çekinmeyin!",
+    "form": {
+      "name": "İsim",
+      "email": "E -posta*",
+      "message": "Mesaj",
+      "entername": "Adınızı Girin",
+      "enteremail": "E -postanızı girin",
+      "entermessage": "Mesajınızı girin",
+      "submit": "GÖNDERMEK",
+      "errors": {
+        "emailinvalid": "Geçersiz e -posta adresi.",
+        "emailrequired": "E -posta gereklidir.",
+        "forminvalid": "Lütfen formdaki hataları düzeltin.",
+        "emailfailed": "E -posta gönderemedi. Lütfen daha sonra tekrar deneyin.",
+        "genericerror": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Her hakkı saklıdır.",
+    "description": "Mern, AWS ve Python'da deneyime sahip FullStack Geliştirici. Verimli, ölçeklenebilir web uygulamaları oluşturma konusunda tutkulu."
+  }
+}

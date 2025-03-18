@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Pretraživanje...",
+      "results": "Nisu pronađeni rezultati"
+    },
+    "landing": "Početna stranica",
+    "about": "O meni",
+    "projects": "Moji projekti",
+    "skills": "Moje vještine",
+    "contact": "Kontaktirajte me"
+  },
+  "landing": {
+    "hero": "Bok, ja sam",
+    "subtitle": "FullStack programer",
+    "subtitle2": "Freelancer",
+    "subtitle3": "Konzultant",
+    "visitor": "Posjetitelj br."
+  },
+  "about": {
+    "title": "O meni",
+    "description": "Ja sam programer FullStack specijaliziran za <strong> Mern </strong> Tech Stack. Tijekom mog <strong> trogodišnjeg </strong> putovanja, stvorio sam prilagođene web aplikacije za tvrtke i potrošače. Posebno uživam u integriranju moćnih backenda s prekrasnim sučeljima za <strong> vizualizaciju podataka </strong>. <br/> <br/> U slobodno vrijeme uživam u tinkeri s <strong> ml modelima </strong> i kuhanjem vlastitog vina. Također uživam u pomaganju drugima puštajući svoje komponente React kao <strong> foss </strong> i dijelim koristan sadržaj na mom <a href = 'https: //www.linkedin.com/in/mikolaj-Marciniak' Target = '_ bland' obrisir 'ClassName' </a> <br/> <br/> Ako bilo što od toga zvuči zanimljivo, slobodno mi pratite ili mi pošaljite poruku",
+    "descriptionCont": "<br/> <br/> Ako bilo što od toga zvuči zanimljivo, slobodno mi pratite ili pošaljite poruku",
+    "cv": "/documents/MIkolajMarciniak.pdf",
+    "viewcv": "View CV",
+    "here": "ovdje"
+  },
+  "skills": {
+    "skillstitle": "Moje vještine",
+    "skills": [
+      "Prednji dio",
+      "Podupirati",
+      "Alati"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Kompletni tečaj web programera 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principi + prakse za sjajan dizajn korisničkog sučelja"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress brzo"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Moji projekti",
+    "showmore": "Pokažite više",
+    "showless": "Pokazati manje",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Uskoro dolazi još projekata ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "Pogon",
+        "description": "<div class = 'MB-3 break-words whitespace-Normal'> DriveGuage je sustav praćenja performansi vozača Blackbox. Sustav radi na Raspberry Pi, koji se povezuje s OBD priključkom automobila za prikupljanje podataka o vožnji. <br/> <br/> Podaci se prenose na poslužitelj, obrađuju i prikazuju putem web aplikacije prilagođene korisniku. Autentificirani klijenti mogu pratiti promjene u njihovom \"rezultatu vozača\", mjeru navika vožnje, poput prebrze vožnje, oštrih zavoja i brzog ubrzanja. </viv>"
+      },
+      {
+        "id": 3,
+        "title": "Ekstra-engleski",
+        "description": "<p className = 'MB-3 razbijaju se Whitespace-Normal'> Dok sam na Premium Faber Ltd., fokusirao sam se na razvoj aplikacije jedne stranice (SPA) za 'Extra-English' jezičnu školu. <br/> <br/> početna verzija aplikacije bila je statična, pružajući ključne informacije o klijentima. Kasnije sam proširio njegovu funkcionalnost na uključivanje fotogalerije, beskonačne feedove vijesti, obrazac za prijavu klijenta i kviz za interaktivni jezik. <br/> <br/> Nakon što sam napustio Premium Faber, nastavio sam izravno raditi s ekstra-engleskim. Nedavno sam implementirao korisničku provjeru autentičnosti, upravljanje lekcijama i praćenje pohađanja i automatizirane proračune plaćanja. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<p className = 'MB-3 break-words Whitespace-Normal'> Ova navigacijska aplikacija usmjerena na zajednicu dokaz je koncepta razvijenog za RGU Hackathon 2024. godine. <br/> <br/> sadrži interaktivnu kartu s igle za ključne znamenitosti parka Aberdeen Duthie. Prilikom dodirivanja PIN -a, korisnici mogu pročitati više informacija o njoj ili odlučiti navigaciju do PIN -a. Aplikacija također ima feed, na mreži iz Facebook grupe 'Friends of Duthie Park'. <br/> <br/> Aplikacija posjeduje postavke pristupačnosti; Korisnici mogu angažirati način visokog kontrasta ili povećati veličinu fonta za bolju čitljivost. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontaktirajte me",
+    "quote": "Imate ideju ili jednostavno želite razgovarati? Slobodno mi pošaljite poruku u nastavku!",
+    "form": {
+      "name": "Ime",
+      "email": "E -pošta*",
+      "message": "Poruka",
+      "entername": "Unesite svoje ime",
+      "enteremail": "Unesite svoju e -poštu",
+      "entermessage": "Unesite svoju poruku",
+      "submit": "POSLATI",
+      "errors": {
+        "emailinvalid": "Nevažeća adresa e -pošte.",
+        "emailrequired": "Potrebna je e -pošta.",
+        "forminvalid": "Ispravite pogreške u obrascu.",
+        "emailfailed": "Nije uspio slati e -poštu. Molimo pokušajte ponovo kasnije.",
+        "genericerror": "Došlo je do pogreške. Molimo pokušajte ponovo kasnije."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Sva prava pridržana.",
+    "description": "FullStack programer s iskustvom u Mern, AWS i Python. Strastveni u izgradnji učinkovitih, skalabilnih web aplikacija."
+  }
+}

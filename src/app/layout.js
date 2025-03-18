@@ -34,7 +34,7 @@ async function getTranslations(locale) {
 
 export default async function RootLayout({ children }) {
   const defaultLocale =
-    typeof window !== "undefined" ? navigator.language : "en-Gb";
+    typeof navigator.language !== undefined ? navigator.language : "en-Gb";
   const translations = await getTranslations(defaultLocale);
 
   return (
@@ -42,12 +42,6 @@ export default async function RootLayout({ children }) {
       <head>
         <link rel="preload" href="./images/banner.jpg" as="image" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-        <link
-          key={defaultLocale}
-          rel="preload"
-          href={`/icons/flags/${defaultLocale.split("-")[0]}.svg`}
-          as="image"
-        />
       </head>
       <body>
         <LocaleProvider

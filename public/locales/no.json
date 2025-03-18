@@ -1,0 +1,99 @@
+{
+  "navbar": {
+    "language": {
+      "search": "Søk ...",
+      "results": "Ingen resultater funnet"
+    },
+    "landing": "Hjemmeside",
+    "about": "Om meg",
+    "projects": "Prosjektene mine",
+    "skills": "Mine ferdigheter",
+    "contact": "Kontakt meg"
+  },
+  "landing": {
+    "hero": "Hei, det er jeg",
+    "subtitle": "Fullstack Developer",
+    "subtitle2": "Frilanser",
+    "subtitle3": "Konsulent",
+    "visitor": "Besøkende nr."
+  },
+  "about": {
+    "title": "Om meg",
+    "description": "Jeg er en fullstack -utvikler som spesialiserer seg på <strong> mern </strong> tech stack. I løpet av min <strong> 3-årige </strong> reise har jeg laget skreddersydde webapper for bedrifter og forbrukere. Jeg liker spesielt godt å integrere kraftige backends med vakre grensesnitt for <strong> datavisualisering </strong>. <br/> <br/> På fritiden liker jeg å tulle med <strong> ML -modeller </strong> og brygge min egen vin. Jeg liker også </a> <br/> <br/> Hvis noe av det høres interessant ut, føl deg fri til å følge eller sende meg beskjed",
+    "descriptionCont": "<br/> <br/> Hvis noe av det høres interessant ut, føl deg fri til å følge eller sende meg beskjed",
+    "cv": "/documents/mikolajmarciniak.pdf",
+    "viewcv": "Se CV",
+    "here": "her"
+  },
+  "skills": {
+    "skillstitle": "Mine ferdigheter",
+    "skills": [
+      "Frontend",
+      "Backend",
+      "Verktøy"
+    ],
+    "certs": [
+      {
+        "id": 1,
+        "title": "Det komplette webutviklerkurset 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Prinsipper + praksis for flott UI -design"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress raskt"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Prosjektene mine",
+    "showmore": "Vis mer",
+    "showless": "Vis mindre",
+    "expand": "+",
+    "collapse": "-",
+    "upcoming": "Flere prosjekter kommer snart ...",
+    "cards": [
+      {
+        "id": 1,
+        "title": "DriveGuage",
+        "description": "<Div class = 'MB-3 Break-Words Whitespace-Normal'> DriveGuage er et Blackbox Driver Performance Monitoring System. Systemet kjører på en Raspberry Pi, som kobles til bilens OBD-port for å samle inn kjøredata. <br/> <br/> Dataene lastes opp til en server, behandlet og vises gjennom en brukervennlig webapplikasjon. Autentiserte klienter kan spore endringer i sin 'Driver Score', et mål på kjørevaner, som fartsovertredelse, skarpe svinger og rask akselerasjon. </div>"
+      },
+      {
+        "id": 3,
+        "title": "Ekstra-engelsk",
+        "description": "<P ClassName = 'MB-3 Break-Words Whitespace-Normal'> Mens jeg var på Premium Faber Ltd., fokuserte jeg på å utvikle en enkelt sidesøknad (SPA) for den 'ekstra-engelsk' språkskolen. <br/> <br/> Den første versjonen av appen var statisk, og ga nøkkel klient-facing informasjon. Senere utvidet jeg funksjonaliteten til å omfatte et fotogalleri, et uendelig nyhetsfeed, et klientsegistreringsskjema og en interaktiv språkquiz. <br/> <br/> Etter å ha forlatt Premium Faber, fortsatte jeg å jobbe direkte med ekstra-engelsk. Nylig implementerte jeg brukerautentisering, leksjonsstyring og sporing av automatiserte betalingsberegninger. </p>"
+      },
+      {
+        "id": 5,
+        "title": "Dee'n'duthie",
+        "description": "<P ClassName = 'MB-3 Break-Words Whitespace-Normal'> Denne samfunnsfokuserte navigasjonsappen er et bevis på konsept utviklet for 2024 RGU Hackathon. <br/> <br/> Det har et interaktivt kart med pinner for viktige landemerker i Aberdeen Duthie Park. Når de tapper på en pin, kan brukerne lese mer informasjon om den eller velge å navigere til pinnen. Appen har også en feed, webskrapet fra Facebook-gruppen 'Friends of Duthie Park'. <br/> <br/> Appen har tilgjengelighetsinnstillinger; Brukere kan engasjere høykontrastmodus eller øke skriftstørrelsen for bedre lesbarhet. </p>"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Kontakt meg",
+    "quote": "Har du en idé eller bare vil chatte? Send meg gjerne en melding nedenfor!",
+    "form": {
+      "name": "Navn",
+      "email": "E -post*",
+      "message": "Beskjed",
+      "entername": "Skriv inn navnet ditt",
+      "enteremail": "Skriv inn e -posten din",
+      "entermessage": "Skriv inn meldingen din",
+      "submit": "SENDE",
+      "errors": {
+        "emailinvalid": "Ugyldig e -postadresse.",
+        "emailrequired": "E -post kreves.",
+        "forminvalid": "Rett feilene i skjemaet.",
+        "emailfailed": "Kunne ikke sende e -post. Vennligst prøv igjen senere.",
+        "genericerror": "Det oppstod en feil. Vennligst prøv igjen senere."
+      }
+    }
+  },
+  "footer": {
+    "copyright": "Alle rettigheter forbeholdt.",
+    "description": "Fullstack Developer with erfaring innen Mern, AWS og Python. Lidenskapelig om å bygge effektive, skalerbare webapper."
+  }
+}

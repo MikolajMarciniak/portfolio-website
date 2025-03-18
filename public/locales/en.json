@@ -1,6 +1,6 @@
 {
   "navbar": {
-    "search": "Search...",
+    "language": { "search": "Search...", "results": "No results found" },
     "landing": "Homepage",
     "about": "About Me",
     "projects": "My Projects",
@@ -16,16 +16,29 @@
   },
   "about": {
     "title": "ABOUT ME",
-    "description": "I'm a fullstack developer specialising in the MERN stack. Over the course of my 3-year journey, I've created tailored web apps for businesses and consumers. I particularly enjoy integrating powerful backends with beautiful interfaces for data visualisation.",
-    "description2": "In my free time I enjoy tinkering with ML models and brewing my own wine. I also enjoy helping others by releasing my React components as FOSS and sharing useful content on my",
-    "linkedin": "LinkedIn.",
-    "description3": "If any of that sounds interesting, feel free to follow or message me",
+    "description": "I'm a fullstack developer specialising in the <strong>MERN</strong> tech stack. Over the course of my <strong>3-year</strong> journey, I've created tailored web apps for businesses and consumers. I particularly enjoy integrating powerful backends with beautiful interfaces for <strong>data visualisation</strong>. <br/><br/>In my free time I enjoy tinkering with <strong>ML models</strong> and brewing my own wine. I also enjoy helping others by releasing my React components as <strong>FOSS</strong> and sharing useful content on my ",
+    "descriptionCont": "<br/><br/> If any of that sounds interesting, feel free to follow or message me",
+    "here": "here",
     "cv": "/documents/MikolajMarciniak.pdf",
     "viewcv": "VIEW CV"
   },
   "skills": {
     "skillstitle": "MY SKILLS",
-    "skills": ["FRONTEND", "BACKEND", "TOOLS"]
+    "skills": ["FRONTEND", "BACKEND", "TOOLS"],
+    "certs": [
+      {
+        "id": 1,
+        "title": "The Complete Web Developer Course 2.0"
+      },
+      {
+        "id": 2,
+        "title": "Principles + Practices for great UI design"
+      },
+      {
+        "id": 3,
+        "title": "Master WordPress Quickly"
+      }
+    ]
   },
 
   "projects": {
@@ -44,7 +57,7 @@
       {
         "id": 3,
         "title": "Extra-English",
-        "description": "<p className='mb-3 break-words whitespace-normal'>While at Premium Faber Ltd., I focused on developing a single-page application (SPA) for the Extra-English language school.<br/><br/>The initial version of the app was static, providing key client-facing information. I later expanded its functionality to include a photo gallery, an infinite news feed, a client sign-up form, and an interactive language quiz.<br/><br/>After leaving Premium Faber, I continued working directly with Extra-English. Recently, I implemented user authentication, lesson management and attendance tracking, and automated payment calculations.</p>"
+        "description": "<p className='mb-3 break-words whitespace-normal'>While at Premium Faber Ltd., I focused on developing a single page application (SPA) for the 'Extra-English' language school.<br/><br/>The initial version of the app was static, providing key client-facing information. I later expanded its functionality to include a photo gallery, an infinite news feed, a client sign-up form, and an interactive language quiz.<br/><br/>After leaving Premium Faber, I continued working directly with Extra-English. Recently, I implemented user authentication, lesson management and attendance tracking, and automated payment calculations.</p>"
       },
       {
         "id": 5,
@@ -70,7 +83,7 @@
         "emailrequired": "Email is required.",
         "forminvalid": "Please correct the errors in the form.",
         "emailfailed": "Failed to send email. Please try again later.",
-        "genericerror": "An errors occurred. Please try again later."
+        "genericerror": "An error occurred. Please try again later."
       }
     }
   },

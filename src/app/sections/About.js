@@ -14,7 +14,7 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
     <section
       ref={ref}
       id="about"
-      className="z-10 about-section min-h-screen flex flex-col relative overflow-x-hidden bg-[--background-color-dark]"
+      className="z-10 about-section justify-center min-h-screen flex flex-col relative overflow-x-hidden bg-[--background-color-dark]"
     >
       <div className="relative py-20 mx-auto w-full max-w-6xl text-center">
         <LazyLoad>
@@ -27,41 +27,42 @@ const AboutSection = forwardRef(({ translation, isDarkMode }, ref) => {
       </div>
 
       <LazyLoad>
-        <div className="shadow-2xl px-3 md:py-0 pt-8 font:semibold relative w-full bg-[--about-color] flex items-center justify-center ">
+        <div className="shadow-2xl mb-20 px-3 md:py-4 pt-8 font:semibold relative w-full bg-[--about-color] flex items-center justify-center ">
           <div className="max-w-6xl w-full flex flex-col md:flex-row items-center justify-between">
             <LayeredParallax
               foreground={foreground}
               midground={midground}
               background={background}
             />
-            <div className="dark text-md sm:text-lg lg:text-xl text-white max-w-xl sm:pt-5 px-5">
-              <p className="sm:mt-3 mt-8">{translation.description}</p>
-              <p className="mt-4 ">
-                {translation.description2}{" "}
-                <a
-                  href="https://www.linkedin.com/in/mikolaj-marciniak"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="cursor-pointer hover:font-bold underline mr-2"
-                >
-                  {translation.linkedin}
-                </a>
-              </p>
-
-              <p className="mt-4">
-                {translation.description3}{" "}
-                <ScrollLink
-                  to="contact"
-                  smooth={true}
-                  offset={-70}
-                  duration={500}
-                  className="cursor-pointer hover:font-bold underline"
-                >
-                  here.
-                </ScrollLink>
-              </p>
-
-              <div className="flex justify-center">
+            <div className="dark text-md sm:text-lg text-white max-w-xl sm:pt-5 px-5 sm:mt-3 mt-8">
+              <span
+                dangerouslySetInnerHTML={{ __html: translation.description }}
+              />
+              <a
+                href="https://www.linkedin.com/in/mikolaj-marciniak"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer hover:font-bold underline mr-2"
+              >
+                {" "}
+                LinkedIn{" "}
+              </a>
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: translation.descriptionCont,
+                }}
+              />
+              <ScrollLink
+                to="contact"
+                smooth={true}
+                offset={330}
+                duration={500}
+                className="ml-2 cursor-pointer hover:font-bold underline"
+              >
+                {translation.here}
+              </ScrollLink>
+              .
+              <div className="flex justify-center pr-0 sm:pr-10">
                 <Button
                   href="/documents/MikolajMarciniak.pdf"
                   // href={translation.cv}

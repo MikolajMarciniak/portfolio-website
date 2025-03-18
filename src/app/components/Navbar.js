@@ -106,11 +106,11 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
         </ScrollLink>
 
         <div className="hidden xl:flex items-center sm:space-x-6 space-x-0 font-semibold">
-          <LanguageSwitcher translation={translation.search} />
+          <LanguageSwitcher translation={translation.language} />
           <ScrollLink
             to="about"
             smooth={true}
-            offset={-70}
+            offset={0}
             duration={500}
             className="text-lg text-[--text-color] cursor-pointer relative group hover:text-[--about-color] transition-all"
           >
@@ -121,7 +121,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           <ScrollLink
             to="skills"
             smooth={true}
-            offset={-70}
+            offset={0}
             duration={500}
             className="text-lg text-[--text-color] cursor-pointer relative group hover:text-[--skills-color] transition-all"
           >
@@ -132,7 +132,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
           <ScrollLink
             to="projects"
             smooth={true}
-            offset={-70}
+            offset={-80}
             duration={500}
             className="text-lg text-[--text-color] cursor-pointer relative group hover:text-[--projects-color] transition-all"
           >
@@ -190,7 +190,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
         <ScrollLink
           to="landing"
           smooth={true}
-          offset={-70}
+          offset={-50}
           duration={500}
           className="text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
     hover:text-[--navbar-color] hover:bg-[--landing-color] 
@@ -204,7 +204,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
         <ScrollLink
           to="about"
           smooth={true}
-          offset={-70}
+          offset={-50}
           duration={500}
           className="text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
     hover:text-[--navbar-color] hover:bg-[--about-color] 
@@ -218,7 +218,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
         <ScrollLink
           to="skills"
           smooth={true}
-          offset={-70}
+          offset={-80}
           duration={500}
           className="text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
     hover:text-[--navbar-color] hover:bg-[--skills-color] 
@@ -232,7 +232,7 @@ const Navbar = ({ translation, toggleTheme, isDarkMode, isScrolled }) => {
         <ScrollLink
           to="projects"
           smooth={true}
-          offset={-70}
+          offset={-50}
           duration={500}
           className="text-3xl py-8 font-bold text-[--text-color] w-full text-center py-4 cursor-pointer transition-all 
     hover:text-[--navbar-color] hover:bg-[--projects-color] 
